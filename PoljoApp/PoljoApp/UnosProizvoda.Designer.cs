@@ -1,6 +1,6 @@
 ﻿namespace PoljoAppVerzija2
 {
-    partial class UnesiPovrsinu
+    partial class UnosProizvoda
     {
         /// <summary>
         /// Required designer variable.
@@ -31,11 +31,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.uiUnosNaziva = new System.Windows.Forms.TextBox();
-            this.uiUnosPovrsine = new System.Windows.Forms.TextBox();
+            this.uiUnosCijene = new System.Windows.Forms.TextBox();
+            this.uiActionOdabirJednicineMjere = new System.Windows.Forms.ComboBox();
+            this.uiActionOdabirVrste = new System.Windows.Forms.ComboBox();
             this.uiActionOdustani = new System.Windows.Forms.Button();
             this.uiActionSpremi = new System.Windows.Forms.Button();
-            this.uiActionOdabirNamjene = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -52,74 +54,93 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(12, 38);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 13);
+            this.label2.Size = new System.Drawing.Size(83, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Površina (m2):";
+            this.label2.Text = "Jedinična mjera:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 66);
+            this.label3.Location = new System.Drawing.Point(12, 70);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 13);
+            this.label3.Size = new System.Drawing.Size(39, 13);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Namjena:";
+            this.label3.Text = "Cijena:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 102);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(34, 13);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Vrsta:";
             // 
             // uiUnosNaziva
             // 
-            this.uiUnosNaziva.Location = new System.Drawing.Point(97, 6);
+            this.uiUnosNaziva.Location = new System.Drawing.Point(102, 6);
             this.uiUnosNaziva.Name = "uiUnosNaziva";
-            this.uiUnosNaziva.Size = new System.Drawing.Size(177, 20);
-            this.uiUnosNaziva.TabIndex = 3;
+            this.uiUnosNaziva.Size = new System.Drawing.Size(175, 20);
+            this.uiUnosNaziva.TabIndex = 4;
             // 
-            // uiUnosPovrsine
+            // uiUnosCijene
             // 
-            this.uiUnosPovrsine.Location = new System.Drawing.Point(97, 35);
-            this.uiUnosPovrsine.Name = "uiUnosPovrsine";
-            this.uiUnosPovrsine.Size = new System.Drawing.Size(177, 20);
-            this.uiUnosPovrsine.TabIndex = 4;
+            this.uiUnosCijene.Location = new System.Drawing.Point(102, 67);
+            this.uiUnosCijene.Name = "uiUnosCijene";
+            this.uiUnosCijene.Size = new System.Drawing.Size(175, 20);
+            this.uiUnosCijene.TabIndex = 6;
+            // 
+            // uiActionOdabirJednicineMjere
+            // 
+            this.uiActionOdabirJednicineMjere.FormattingEnabled = true;
+            this.uiActionOdabirJednicineMjere.Location = new System.Drawing.Point(102, 35);
+            this.uiActionOdabirJednicineMjere.Name = "uiActionOdabirJednicineMjere";
+            this.uiActionOdabirJednicineMjere.Size = new System.Drawing.Size(175, 21);
+            this.uiActionOdabirJednicineMjere.TabIndex = 7;
+            // 
+            // uiActionOdabirVrste
+            // 
+            this.uiActionOdabirVrste.FormattingEnabled = true;
+            this.uiActionOdabirVrste.Location = new System.Drawing.Point(102, 99);
+            this.uiActionOdabirVrste.Name = "uiActionOdabirVrste";
+            this.uiActionOdabirVrste.Size = new System.Drawing.Size(175, 21);
+            this.uiActionOdabirVrste.TabIndex = 8;
             // 
             // uiActionOdustani
             // 
-            this.uiActionOdustani.Location = new System.Drawing.Point(97, 103);
+            this.uiActionOdustani.Location = new System.Drawing.Point(102, 137);
             this.uiActionOdustani.Name = "uiActionOdustani";
             this.uiActionOdustani.Size = new System.Drawing.Size(75, 23);
-            this.uiActionOdustani.TabIndex = 6;
+            this.uiActionOdustani.TabIndex = 9;
             this.uiActionOdustani.Text = "Odustani";
             this.uiActionOdustani.UseVisualStyleBackColor = true;
             // 
             // uiActionSpremi
             // 
-            this.uiActionSpremi.Location = new System.Drawing.Point(199, 103);
+            this.uiActionSpremi.Location = new System.Drawing.Point(202, 137);
             this.uiActionSpremi.Name = "uiActionSpremi";
             this.uiActionSpremi.Size = new System.Drawing.Size(75, 23);
-            this.uiActionSpremi.TabIndex = 7;
+            this.uiActionSpremi.TabIndex = 10;
             this.uiActionSpremi.Text = "Spremi";
             this.uiActionSpremi.UseVisualStyleBackColor = true;
             // 
-            // uiActionOdabirNamjene
-            // 
-            this.uiActionOdabirNamjene.FormattingEnabled = true;
-            this.uiActionOdabirNamjene.Location = new System.Drawing.Point(97, 66);
-            this.uiActionOdabirNamjene.Name = "uiActionOdabirNamjene";
-            this.uiActionOdabirNamjene.Size = new System.Drawing.Size(177, 21);
-            this.uiActionOdabirNamjene.TabIndex = 8;
-            // 
-            // UnesiPovrsinu
+            // UnosProizvoda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(303, 147);
-            this.Controls.Add(this.uiActionOdabirNamjene);
+            this.ClientSize = new System.Drawing.Size(298, 177);
             this.Controls.Add(this.uiActionSpremi);
             this.Controls.Add(this.uiActionOdustani);
-            this.Controls.Add(this.uiUnosPovrsine);
+            this.Controls.Add(this.uiActionOdabirVrste);
+            this.Controls.Add(this.uiActionOdabirJednicineMjere);
+            this.Controls.Add(this.uiUnosCijene);
             this.Controls.Add(this.uiUnosNaziva);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "UnesiPovrsinu";
-            this.Text = "UnesiPovrsinu";
+            this.Name = "UnosProizvoda";
+            this.Text = "UnosProizvoda";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -130,10 +151,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox uiUnosNaziva;
-        private System.Windows.Forms.TextBox uiUnosPovrsine;
+        private System.Windows.Forms.TextBox uiUnosCijene;
+        private System.Windows.Forms.ComboBox uiActionOdabirJednicineMjere;
+        private System.Windows.Forms.ComboBox uiActionOdabirVrste;
         private System.Windows.Forms.Button uiActionOdustani;
         private System.Windows.Forms.Button uiActionSpremi;
-        private System.Windows.Forms.ComboBox uiActionOdabirNamjene;
     }
 }
