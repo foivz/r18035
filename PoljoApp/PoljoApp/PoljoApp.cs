@@ -19,14 +19,24 @@ namespace PoljoAppVerzija2
             uiUserControlPovrsine.BringToFront();
         }
 
-        private void uiActionOpenSadnja_Click(object sender, EventArgs e)
+        private void UiActionOpenSadnja_Click(object sender, EventArgs e)
         {
             uiUserControlSadnja.BringToFront();
         }
 
-        private void uiActionOpenPovrsine_Click(object sender, EventArgs e)
+        private void UiActionOpenPovrsine_Click(object sender, EventArgs e)
         {
             uiUserControlPovrsine.BringToFront();
+        }
+
+        private void UiActionNavodnjavanje_Click(object sender, EventArgs e)
+        {
+            uiNavodnjavanje.BringToFront();
+        }
+
+        private void UiActionPrskanje_Click(object sender, EventArgs e)
+        {
+            uiPrskanje.BringToFront();
         }
     }
 }
