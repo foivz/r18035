@@ -16,7 +16,7 @@ namespace PoljoAppVerzija2
         public PoljoApp()
         {
             InitializeComponent();
-            uiUserControlPovrsine.BringToFront();
+            proizvodi1.BringToFront();
         }
 
         private void UiActionOpenSadnja_Click(object sender, EventArgs e)
@@ -37,6 +37,16 @@ namespace PoljoAppVerzija2
         private void UiActionPrskanje_Click(object sender, EventArgs e)
         {
             uiPrskanje.BringToFront();
+        }
+
+        private void uiActionOpenProizvodi_Click(object sender, EventArgs e)
+        {
+            zastita1.BringToFront();
+        }
+
+        private void uiActionOpenZastita_Click(object sender, EventArgs e)
+        {
+            proizvodi1.BringToFront();
         }
     }
 }

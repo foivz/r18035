@@ -89,6 +89,12 @@
     <Compile Include="UnesiPovrsinu.Designer.cs">
       <DependentUpon>UnesiPovrsinu.cs</DependentUpon>
     </Compile>
+    <Compile Include="UnosSadnje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnosSadnje.Designer.cs">
+      <DependentUpon>UnosSadnje.cs</DependentUpon>
+    </Compile>
     <Compile Include="UnosProizvoda.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +142,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UnesiPovrsinu.resx">
       <DependentUpon>UnesiPovrsinu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnosSadnje.resx">
+      <DependentUpon>UnosSadnje.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UnosProizvoda.resx">
       <DependentUpon>UnosProizvoda.cs</DependentUpon>

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PoljoAppVerzija2
 {
-    public partial class UnesiPovrsinu : Form
+    public partial class UnosPovrsine : Form
     {
-        public UnesiPovrsinu()
+        public UnosPovrsine()
         {
             InitializeComponent();
         }
