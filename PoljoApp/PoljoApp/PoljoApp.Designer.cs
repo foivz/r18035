@@ -37,14 +37,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.uiOdjava = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.proizvodi1 = new PoljoAppVerzija2.uiUserControlProizvodi();
+            this.proizvodi1 = new PoljoAppVerzija2.KontrolaProizvodi();
             this.uiPrskanje = new PoljoAppVerzija2.KontrolaPrskanje();
             this.uiNavodnjavanje = new PoljoAppVerzija2.KontrolaNavodnjavanje();
             this.uiUserControlPovrsine = new PoljoAppVerzija2.Povrsine();
             this.uiUserControlSadnja = new PoljoAppVerzija2.KontrolaSadnja();
-            this.zastita1 = new PoljoAppVerzija2.uiUserControlZastita();
-            this.uiOdjava = new System.Windows.Forms.Button();
+            this.zastita1 = new PoljoAppVerzija2.KontrolaZastita();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,7 +59,7 @@
             this.uiActionOpenProizvodi.Text = "Proizvodi";
             this.uiActionOpenProizvodi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.uiActionOpenProizvodi.UseVisualStyleBackColor = true;
-            this.uiActionOpenProizvodi.Click += new System.EventHandler(this.uiActionOpenProizvodi_Click);
+            this.uiActionOpenProizvodi.Click += new System.EventHandler(this.UiActionOpenProizvodi_Click);
             // 
             // uiActionOpenZastita
             // 
@@ -72,7 +72,7 @@
             this.uiActionOpenZastita.Text = "Zaštita";
             this.uiActionOpenZastita.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.uiActionOpenZastita.UseVisualStyleBackColor = true;
-            this.uiActionOpenZastita.Click += new System.EventHandler(this.uiActionOpenZastita_Click);
+            this.uiActionOpenZastita.Click += new System.EventHandler(this.UiActionOpenZastita_Click);
             // 
             // uiActionOpenPovrsine
             // 
@@ -134,7 +134,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.Location = new System.Drawing.Point(12, 101);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 32);
+            this.label1.Size = new System.Drawing.Size(72, 26);
             this.label1.TabIndex = 0;
             this.label1.Text = "Popisi";
             // 
@@ -146,7 +146,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label2.Location = new System.Drawing.Point(12, 308);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(147, 32);
+            this.label2.Size = new System.Drawing.Size(112, 26);
             this.label2.TabIndex = 7;
             this.label2.Text = "Evidencije";
             // 
@@ -163,6 +163,16 @@
             this.panel1.Size = new System.Drawing.Size(915, 69);
             this.panel1.TabIndex = 8;
             // 
+            // uiOdjava
+            // 
+            this.uiOdjava.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.uiOdjava.Location = new System.Drawing.Point(744, 15);
+            this.uiOdjava.Name = "uiOdjava";
+            this.uiOdjava.Size = new System.Drawing.Size(127, 36);
+            this.uiOdjava.TabIndex = 10;
+            this.uiOdjava.Text = "Odjava";
+            this.uiOdjava.UseVisualStyleBackColor = true;
+            // 
             // label3
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -171,7 +181,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label3.Location = new System.Drawing.Point(5, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(183, 46);
+            this.label3.Size = new System.Drawing.Size(146, 37);
             this.label3.TabIndex = 9;
             this.label3.Text = "PoljoApp";
             // 
@@ -203,7 +213,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.uiNavodnjavanje.Location = new System.Drawing.Point(221, 101);
-            this.uiNavodnjavanje.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.uiNavodnjavanje.Margin = new System.Windows.Forms.Padding(4);
             this.uiNavodnjavanje.Name = "uiNavodnjavanje";
             this.uiNavodnjavanje.Size = new System.Drawing.Size(680, 418);
             this.uiNavodnjavanje.TabIndex = 11;
@@ -240,15 +250,6 @@
             this.zastita1.Name = "zastita1";
             this.zastita1.Size = new System.Drawing.Size(680, 418);
             this.zastita1.TabIndex = 15;
-            // 
-            // uiOdjava
-            // 
-            this.uiOdjava.Location = new System.Drawing.Point(785, 30);
-            this.uiOdjava.Name = "uiOdjava";
-            this.uiOdjava.Size = new System.Drawing.Size(127, 36);
-            this.uiOdjava.TabIndex = 10;
-            this.uiOdjava.Text = "Odjava";
-            this.uiOdjava.UseVisualStyleBackColor = true;
             // 
             // PoljoApp
             // 
@@ -295,8 +296,8 @@
         private KontrolaSadnja uiUserControlSadnja;
         private KontrolaNavodnjavanje uiNavodnjavanje;
         private KontrolaPrskanje uiPrskanje;
-        private uiUserControlProizvodi proizvodi1;
-        private uiUserControlZastita zastita1;
+        private KontrolaProizvodi proizvodi1;
+        private KontrolaZastita zastita1;
         private System.Windows.Forms.Button uiOdjava;
     }
 }

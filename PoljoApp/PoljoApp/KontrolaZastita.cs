@@ -10,17 +10,16 @@ using System.Windows.Forms;
 
 namespace PoljoAppVerzija2
 {
-    public partial class KontrolaProizvodi : UserControl
+    public partial class KontrolaZastita : UserControl
     {
-        public KontrolaProizvodi()
+        public KontrolaZastita()
         {
             InitializeComponent();
         }
 
-        private void UiDodajProizvod_Click(object sender, EventArgs e)
+        private void ActionDodajZastitu_Click(object sender, EventArgs e)
         {
-            UnosProizvoda unosProizvoda = new UnosProizvoda();
-            unosProizvoda.ShowDialog();
+            
         }
     }
 }
