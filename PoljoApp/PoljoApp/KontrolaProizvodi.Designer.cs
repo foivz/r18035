@@ -1,6 +1,6 @@
 ﻿namespace PoljoAppVerzija2
 {
-    partial class uiUserControlProizvodi
+    partial class KontrolaProizvodi
     {
         /// <summary> 
         /// Required designer variable.
@@ -162,13 +162,13 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Pomoć korisniku";
             // 
-            // uiUserControlProizvodi
+            // KontrolaProizvodi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tabControl1);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "uiUserControlProizvodi";
+            this.Name = "KontrolaProizvodi";
             this.Size = new System.Drawing.Size(680, 418);
             this.tabControl1.ResumeLayout(false);
             this.sadnjaTab.ResumeLayout(false);

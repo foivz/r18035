@@ -12,6 +12,7 @@ namespace PoljoAppVerzija2
         private int idZastita;
         private DateTime datum;
         private string opis;
+        private int djelatnik;
 
         public void SpremiPrskanje()
         {

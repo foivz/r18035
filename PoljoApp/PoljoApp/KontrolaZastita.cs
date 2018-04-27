@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace PoljoAppVerzija2
 {
-    public partial class uiUserControlZastita : UserControl
+    public partial class KontrolaZastita : UserControl
     {
-        public uiUserControlZastita()
+        public KontrolaZastita()
         {
             InitializeComponent();
         }
 
-        private void actionDodajZastitu_Click(object sender, EventArgs e)
+        private void ActionDodajZastitu_Click(object sender, EventArgs e)
         {
             
         }

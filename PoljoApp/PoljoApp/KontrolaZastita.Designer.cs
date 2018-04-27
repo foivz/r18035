@@ -1,6 +1,6 @@
 ﻿namespace PoljoAppVerzija2
 {
-    partial class uiUserControlZastita
+    partial class KontrolaZastita
     {
         /// <summary> 
         /// Required designer variable.
@@ -138,7 +138,7 @@
             this.actionDodajZastitu.TabIndex = 4;
             this.actionDodajZastitu.Text = "Dodaj zaštitu";
             this.actionDodajZastitu.UseVisualStyleBackColor = true;
-            this.actionDodajZastitu.Click += new System.EventHandler(this.actionDodajZastitu_Click);
+            this.actionDodajZastitu.Click += new System.EventHandler(this.ActionDodajZastitu_Click);
             // 
             // pomocTab
             // 
@@ -162,13 +162,13 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Pomoć korisniku";
             // 
-            // uiUserControlZastita
+            // KontrolaZastita
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tabControl1);
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "uiUserControlZastita";
+            this.Name = "KontrolaZastita";
             this.Size = new System.Drawing.Size(680, 418);
             this.tabControl1.ResumeLayout(false);
             this.sadnjaTab.ResumeLayout(false);

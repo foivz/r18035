@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PoljoAppVerzija2
 {
-    public partial class uiUserControlProizvodi : UserControl
+    public partial class KontrolaProizvodi : UserControl
     {
-        public uiUserControlProizvodi()
+        public KontrolaProizvodi()
         {
             InitializeComponent();
         }

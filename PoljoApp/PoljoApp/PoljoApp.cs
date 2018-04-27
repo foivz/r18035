@@ -39,14 +39,14 @@ namespace PoljoAppVerzija2
             uiPrskanje.BringToFront();
         }
 
-        private void uiActionOpenProizvodi_Click(object sender, EventArgs e)
-        {
-            zastita1.BringToFront();
-        }
-
-        private void uiActionOpenZastita_Click(object sender, EventArgs e)
+        private void UiActionOpenProizvodi_Click(object sender, EventArgs e)
         {
             proizvodi1.BringToFront();
+        }
+
+        private void UiActionOpenZastita_Click(object sender, EventArgs e)
+        {
+            zastita1.BringToFront();
         }
     }
 }
