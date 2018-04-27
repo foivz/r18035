@@ -45,7 +45,9 @@
             this.uiUserControlPovrsine = new PoljoAppVerzija2.Povrsine();
             this.uiUserControlSadnja = new PoljoAppVerzija2.KontrolaSadnja();
             this.zastita1 = new PoljoAppVerzija2.KontrolaZastita();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // uiActionOpenProizvodi
@@ -155,6 +157,7 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.LightGreen;
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.uiOdjava);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -178,10 +181,11 @@
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(5, 9);
+            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label3.Location = new System.Drawing.Point(6, 17);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(146, 37);
+            this.label3.Size = new System.Drawing.Size(154, 37);
             this.label3.TabIndex = 9;
             this.label3.Text = "PoljoApp";
             // 
@@ -251,6 +255,16 @@
             this.zastita1.Size = new System.Drawing.Size(680, 418);
             this.zastita1.TabIndex = 15;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::PoljoAppVerzija2.Properties.Resources.Logo___crni;
+            this.pictureBox1.Location = new System.Drawing.Point(161, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(53, 51);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
+            // 
             // PoljoApp
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -275,6 +289,7 @@
             this.Text = "PoljoApp";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -299,6 +314,7 @@
         private KontrolaProizvodi proizvodi1;
         private KontrolaZastita zastita1;
         private System.Windows.Forms.Button uiOdjava;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

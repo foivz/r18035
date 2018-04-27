@@ -19,7 +19,8 @@ namespace PoljoAppVerzija2
 
         private void ActionDodajZastitu_Click(object sender, EventArgs e)
         {
-            
+            UnosZastite unosZastite = new UnosZastite();
+            unosZastite.ShowDialog();
         }
     }
 }
