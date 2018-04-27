@@ -34,7 +34,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.uiActionNovo = new System.Windows.Forms.Button();
             this.pomocTab = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
@@ -62,7 +62,7 @@
             this.navodnjavanjeTab.Controls.Add(this.button3);
             this.navodnjavanjeTab.Controls.Add(this.button2);
             this.navodnjavanjeTab.Controls.Add(this.dataGridView1);
-            this.navodnjavanjeTab.Controls.Add(this.button1);
+            this.navodnjavanjeTab.Controls.Add(this.uiActionNovo);
             this.navodnjavanjeTab.Location = new System.Drawing.Point(4, 22);
             this.navodnjavanjeTab.Name = "navodnjavanjeTab";
             this.navodnjavanjeTab.Padding = new System.Windows.Forms.Padding(3);
@@ -112,15 +112,16 @@
             this.dataGridView1.Size = new System.Drawing.Size(418, 179);
             this.dataGridView1.TabIndex = 5;
             // 
-            // button1
+            // uiActionNovo
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(341, 239);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(102, 34);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Dodaj navodnjavanje";
-            this.button1.UseVisualStyleBackColor = true;
+            this.uiActionNovo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.uiActionNovo.Location = new System.Drawing.Point(341, 239);
+            this.uiActionNovo.Name = "uiActionNovo";
+            this.uiActionNovo.Size = new System.Drawing.Size(102, 34);
+            this.uiActionNovo.TabIndex = 4;
+            this.uiActionNovo.Text = "Dodaj navodnjavanje";
+            this.uiActionNovo.UseVisualStyleBackColor = true;
+            this.uiActionNovo.Click += new System.EventHandler(this.UiActionNovo_Click);
             // 
             // pomocTab
             // 
@@ -142,12 +143,12 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Pomoć korisniku";
             // 
-            // Navodnjavanje
+            // KontrolaNavodnjavanje
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tabControl1);
-            this.Name = "Navodnjavanje";
+            this.Name = "KontrolaNavodnjavanje";
             this.Size = new System.Drawing.Size(510, 340);
             this.tabControl1.ResumeLayout(false);
             this.navodnjavanjeTab.ResumeLayout(false);
@@ -166,7 +167,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button uiActionNovo;
         private System.Windows.Forms.TabPage pomocTab;
         private System.Windows.Forms.Label label1;
     }

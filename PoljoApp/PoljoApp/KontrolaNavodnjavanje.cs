@@ -16,5 +16,11 @@ namespace PoljoAppVerzija2
         {
             InitializeComponent();
         }
+
+        private void UiActionNovo_Click(object sender, EventArgs e)
+        {
+            UnosNavodnjavanja novo = new UnosNavodnjavanja();
+            novo.ShowDialog();
+        }
     }
 }
