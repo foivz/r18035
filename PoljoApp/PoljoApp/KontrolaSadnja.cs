@@ -16,5 +16,11 @@ namespace PoljoAppVerzija2
         {
             InitializeComponent();
         }
+
+        private void UiDodajSadnju_Click(object sender, EventArgs e)
+        {
+            UnosSadnje unosSadnje = new UnosSadnje();
+            unosSadnje.ShowDialog();
+        }
     }
 }

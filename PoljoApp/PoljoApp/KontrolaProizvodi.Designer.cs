@@ -35,7 +35,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.actionDodajZastitu = new System.Windows.Forms.Button();
+            this.uiDodajProizvod = new System.Windows.Forms.Button();
             this.pomocTab = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
@@ -52,7 +52,7 @@
             this.tabControl1.Controls.Add(this.sadnjaTab);
             this.tabControl1.Controls.Add(this.pomocTab);
             this.tabControl1.Location = new System.Drawing.Point(24, 22);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(632, 375);
@@ -65,11 +65,11 @@
             this.sadnjaTab.Controls.Add(this.button3);
             this.sadnjaTab.Controls.Add(this.button2);
             this.sadnjaTab.Controls.Add(this.dataGridView1);
-            this.sadnjaTab.Controls.Add(this.actionDodajZastitu);
+            this.sadnjaTab.Controls.Add(this.uiDodajProizvod);
             this.sadnjaTab.Location = new System.Drawing.Point(4, 25);
-            this.sadnjaTab.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.sadnjaTab.Margin = new System.Windows.Forms.Padding(4);
             this.sadnjaTab.Name = "sadnjaTab";
-            this.sadnjaTab.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.sadnjaTab.Padding = new System.Windows.Forms.Padding(4);
             this.sadnjaTab.Size = new System.Drawing.Size(624, 346);
             this.sadnjaTab.TabIndex = 1;
             this.sadnjaTab.Text = "Proizvod";
@@ -79,7 +79,7 @@
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(35, 27);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(160, 24);
             this.comboBox1.TabIndex = 9;
@@ -87,7 +87,7 @@
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(204, 17);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(136, 42);
             this.button4.TabIndex = 8;
@@ -98,7 +98,7 @@
             // 
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button3.Location = new System.Drawing.Point(204, 294);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(136, 42);
             this.button3.TabIndex = 7;
@@ -109,7 +109,7 @@
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button2.Location = new System.Drawing.Point(33, 294);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(136, 42);
             this.button2.TabIndex = 6;
@@ -123,29 +123,30 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(33, 66);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(557, 220);
             this.dataGridView1.TabIndex = 5;
             // 
-            // actionDodajZastitu
+            // uiDodajProizvod
             // 
-            this.actionDodajZastitu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.actionDodajZastitu.Location = new System.Drawing.Point(455, 294);
-            this.actionDodajZastitu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.actionDodajZastitu.Name = "actionDodajZastitu";
-            this.actionDodajZastitu.Size = new System.Drawing.Size(136, 42);
-            this.actionDodajZastitu.TabIndex = 4;
-            this.actionDodajZastitu.Text = "Dodaj proizvod";
-            this.actionDodajZastitu.UseVisualStyleBackColor = true;
+            this.uiDodajProizvod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.uiDodajProizvod.Location = new System.Drawing.Point(455, 294);
+            this.uiDodajProizvod.Margin = new System.Windows.Forms.Padding(4);
+            this.uiDodajProizvod.Name = "uiDodajProizvod";
+            this.uiDodajProizvod.Size = new System.Drawing.Size(136, 42);
+            this.uiDodajProizvod.TabIndex = 4;
+            this.uiDodajProizvod.Text = "Dodaj proizvod";
+            this.uiDodajProizvod.UseVisualStyleBackColor = true;
+            this.uiDodajProizvod.Click += new System.EventHandler(this.UiDodajProizvod_Click);
             // 
             // pomocTab
             // 
             this.pomocTab.Controls.Add(this.label1);
             this.pomocTab.Location = new System.Drawing.Point(4, 25);
-            this.pomocTab.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pomocTab.Margin = new System.Windows.Forms.Padding(4);
             this.pomocTab.Name = "pomocTab";
-            this.pomocTab.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pomocTab.Padding = new System.Windows.Forms.Padding(4);
             this.pomocTab.Size = new System.Drawing.Size(624, 346);
             this.pomocTab.TabIndex = 0;
             this.pomocTab.Text = "Pomoć";
@@ -166,7 +167,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tabControl1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "uiUserControlProizvodi";
             this.Size = new System.Drawing.Size(680, 418);
             this.tabControl1.ResumeLayout(false);
@@ -187,7 +188,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button actionDodajZastitu;
+        private System.Windows.Forms.Button uiDodajProizvod;
         private System.Windows.Forms.TabPage pomocTab;
         private System.Windows.Forms.Label label1;
     }
