@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PoljoAppVerzija2
 {
-    public partial class Prskanje : UserControl
+    public partial class KontrolaPrskanje : UserControl
     {
-        public Prskanje()
+        public KontrolaPrskanje()
         {
             InitializeComponent();
         }

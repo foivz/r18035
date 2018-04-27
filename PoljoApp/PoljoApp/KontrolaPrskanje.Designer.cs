@@ -1,6 +1,6 @@
 ﻿namespace PoljoAppVerzija2
 {
-    partial class Prskanje
+    partial class KontrolaPrskanje
     {
         /// <summary> 
         /// Required designer variable.

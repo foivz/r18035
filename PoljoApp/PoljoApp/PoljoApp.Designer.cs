@@ -39,10 +39,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.proizvodi1 = new PoljoAppVerzija2.uiUserControlProizvodi();
-            this.uiPrskanje = new PoljoAppVerzija2.Prskanje();
-            this.uiNavodnjavanje = new PoljoAppVerzija2.Navodnjavanje();
+            this.uiPrskanje = new PoljoAppVerzija2.KontrolaPrskanje();
+            this.uiNavodnjavanje = new PoljoAppVerzija2.KontrolaNavodnjavanje();
             this.uiUserControlPovrsine = new PoljoAppVerzija2.Povrsine();
-            this.uiUserControlSadnja = new PoljoAppVerzija2.Sadnja();
+            this.uiUserControlSadnja = new PoljoAppVerzija2.KontrolaSadnja();
             this.zastita1 = new PoljoAppVerzija2.uiUserControlZastita();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -278,9 +278,9 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
         private Povrsine uiUserControlPovrsine;
-        private Sadnja uiUserControlSadnja;
-        private Navodnjavanje uiNavodnjavanje;
-        private Prskanje uiPrskanje;
+        private KontrolaSadnja uiUserControlSadnja;
+        private KontrolaNavodnjavanje uiNavodnjavanje;
+        private KontrolaPrskanje uiPrskanje;
         private uiUserControlProizvodi proizvodi1;
         private uiUserControlZastita zastita1;
     }

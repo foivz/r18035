@@ -45,11 +45,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Navodnjavanje.cs">
+    <Compile Include="KontrolaNavodnjavanje.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Navodnjavanje.Designer.cs">
-      <DependentUpon>Navodnjavanje.cs</DependentUpon>
+    <Compile Include="KontrolaNavodnjavanje.Designer.cs">
+      <DependentUpon>KontrolaNavodnjavanje.cs</DependentUpon>
     </Compile>
     <Compile Include="PoljoApp.cs">
       <SubType>Form</SubType>
@@ -58,36 +58,36 @@
       <DependentUpon>PoljoApp.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
-    <Compile Include="Povrsine.cs">
+    <Compile Include="KontrolaPovrsina.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Povrsine.Designer.cs">
-      <DependentUpon>Povrsine.cs</DependentUpon>
+    <Compile Include="KontrolaPovrsina.Designer.cs">
+      <DependentUpon>KontrolaPovrsina.cs</DependentUpon>
     </Compile>
-    <Compile Include="Proizvodi.cs">
+    <Compile Include="KontrolaProizvodi.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Proizvodi.Designer.cs">
-      <DependentUpon>Proizvodi.cs</DependentUpon>
+    <Compile Include="KontrolaProizvodi.Designer.cs">
+      <DependentUpon>KontrolaProizvodi.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Prskanje.cs">
+    <Compile Include="KontrolaPrskanje.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Prskanje.Designer.cs">
-      <DependentUpon>Prskanje.cs</DependentUpon>
+    <Compile Include="KontrolaPrskanje.Designer.cs">
+      <DependentUpon>KontrolaPrskanje.cs</DependentUpon>
     </Compile>
-    <Compile Include="Sadnja.cs">
+    <Compile Include="KontrolaSadnja.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Sadnja.Designer.cs">
-      <DependentUpon>Sadnja.cs</DependentUpon>
+    <Compile Include="KontrolaSadnja.Designer.cs">
+      <DependentUpon>KontrolaSadnja.cs</DependentUpon>
     </Compile>
-    <Compile Include="UnesiPovrsinu.cs">
+    <Compile Include="UnosPovrsine.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UnesiPovrsinu.Designer.cs">
-      <DependentUpon>UnesiPovrsinu.cs</DependentUpon>
+    <Compile Include="UnosPovrsine.Designer.cs">
+      <DependentUpon>UnosPovrsine.cs</DependentUpon>
     </Compile>
     <Compile Include="UnosSadnje.cs">
       <SubType>Form</SubType>
@@ -107,23 +107,23 @@
     <Compile Include="UnosZastite.Designer.cs">
       <DependentUpon>UnosZastite.cs</DependentUpon>
     </Compile>
-    <Compile Include="Zastita.cs">
+    <Compile Include="KontrolaZaštita.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Zastita.Designer.cs">
-      <DependentUpon>Zastita.cs</DependentUpon>
+    <Compile Include="KontrolaZaštita.Designer.cs">
+      <DependentUpon>KontrolaZaštita.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Navodnjavanje.resx">
-      <DependentUpon>Navodnjavanje.cs</DependentUpon>
+    <EmbeddedResource Include="KontrolaNavodnjavanje.resx">
+      <DependentUpon>KontrolaNavodnjavanje.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PoljoApp.resx">
       <DependentUpon>PoljoApp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Povrsine.resx">
-      <DependentUpon>Povrsine.cs</DependentUpon>
+    <EmbeddedResource Include="KontrolaPovrsina.resx">
+      <DependentUpon>KontrolaPovrsina.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Proizvodi.resx">
-      <DependentUpon>Proizvodi.cs</DependentUpon>
+    <EmbeddedResource Include="KontrolaProizvodi.resx">
+      <DependentUpon>KontrolaProizvodi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -134,14 +134,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Prskanje.resx">
-      <DependentUpon>Prskanje.cs</DependentUpon>
+    <EmbeddedResource Include="KontrolaPrskanje.resx">
+      <DependentUpon>KontrolaPrskanje.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Sadnja.resx">
-      <DependentUpon>Sadnja.cs</DependentUpon>
+    <EmbeddedResource Include="KontrolaSadnja.resx">
+      <DependentUpon>KontrolaSadnja.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UnesiPovrsinu.resx">
-      <DependentUpon>UnesiPovrsinu.cs</DependentUpon>
+    <EmbeddedResource Include="UnosPovrsine.resx">
+      <DependentUpon>UnosPovrsine.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UnosSadnje.resx">
       <DependentUpon>UnosSadnje.cs</DependentUpon>
@@ -152,8 +152,8 @@
     <EmbeddedResource Include="UnosZastite.resx">
       <DependentUpon>UnosZastite.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Zastita.resx">
-      <DependentUpon>Zastita.cs</DependentUpon>
+    <EmbeddedResource Include="KontrolaZaštita.resx">
+      <DependentUpon>KontrolaZaštita.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
