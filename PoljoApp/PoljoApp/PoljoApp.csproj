@@ -13,7 +13,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -88,11 +88,23 @@
     </Compile>
     <Compile Include="Prskanje.cs" />
     <Compile Include="Sadnja.cs" />
+    <Compile Include="UnosNavodnjavanja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnosNavodnjavanja.Designer.cs">
+      <DependentUpon>UnosNavodnjavanja.cs</DependentUpon>
+    </Compile>
     <Compile Include="UnosPovrsine.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UnosPovrsine.Designer.cs">
       <DependentUpon>UnosPovrsine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnosPrskanja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnosPrskanja.Designer.cs">
+      <DependentUpon>UnosPrskanja.cs</DependentUpon>
     </Compile>
     <Compile Include="UnosSadnje.cs">
       <SubType>Form</SubType>
@@ -112,11 +124,11 @@
     <Compile Include="UnosZastite.Designer.cs">
       <DependentUpon>UnosZastite.cs</DependentUpon>
     </Compile>
-    <Compile Include="KontrolaZaštita.cs">
+    <Compile Include="KontrolaZastita.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="KontrolaZaštita.Designer.cs">
-      <DependentUpon>KontrolaZaštita.cs</DependentUpon>
+    <Compile Include="KontrolaZastita.Designer.cs">
+      <DependentUpon>KontrolaZastita.cs</DependentUpon>
     </Compile>
     <Compile Include="Zastita.cs" />
     <EmbeddedResource Include="KontrolaNavodnjavanje.resx">
@@ -146,8 +158,14 @@
     <EmbeddedResource Include="KontrolaSadnja.resx">
       <DependentUpon>KontrolaSadnja.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UnosNavodnjavanja.resx">
+      <DependentUpon>UnosNavodnjavanja.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UnosPovrsine.resx">
       <DependentUpon>UnosPovrsine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnosPrskanja.resx">
+      <DependentUpon>UnosPrskanja.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UnosSadnje.resx">
       <DependentUpon>UnosSadnje.cs</DependentUpon>
@@ -158,8 +176,8 @@
     <EmbeddedResource Include="UnosZastite.resx">
       <DependentUpon>UnosZastite.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="KontrolaZaštita.resx">
-      <DependentUpon>KontrolaZaštita.cs</DependentUpon>
+    <EmbeddedResource Include="KontrolaZastita.resx">
+      <DependentUpon>KontrolaZastita.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
