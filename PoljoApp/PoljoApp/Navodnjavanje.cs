@@ -8,7 +8,7 @@ namespace PoljoAppVerzija2
 {
     class Navodnjavanje
     {
-        private int idPovrsina;
+        private Povrsina povrsina;
         private DateTime datum;
         private decimal kolicinaVodeULitrama;
         private int vrsta;

@@ -59,12 +59,18 @@
       <DependentUpon>PoljoApp.cs</DependentUpon>
     </Compile>
     <Compile Include="Povrsina.cs" />
+    <Compile Include="PrijavaForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrijavaForma.Designer.cs">
+      <DependentUpon>PrijavaForma.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
-    <Compile Include="KontrolaPovrsina.cs">
+    <Compile Include="KontrolaPovrsine.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="KontrolaPovrsina.Designer.cs">
-      <DependentUpon>KontrolaPovrsina.cs</DependentUpon>
+    <Compile Include="KontrolaPovrsine.Designer.cs">
+      <DependentUpon>KontrolaPovrsine.cs</DependentUpon>
     </Compile>
     <Compile Include="KontrolaProizvodi.cs">
       <SubType>UserControl</SubType>
@@ -137,11 +143,14 @@
     <EmbeddedResource Include="PoljoApp.resx">
       <DependentUpon>PoljoApp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="KontrolaPovrsina.resx">
-      <DependentUpon>KontrolaPovrsina.cs</DependentUpon>
+    <EmbeddedResource Include="KontrolaPovrsine.resx">
+      <DependentUpon>KontrolaPovrsine.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KontrolaProizvodi.resx">
       <DependentUpon>KontrolaProizvodi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrijavaForma.resx">
+      <DependentUpon>PrijavaForma.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

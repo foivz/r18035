@@ -1,6 +1,6 @@
 ﻿namespace PoljoAppVerzija2
 {
-    partial class Povrsine
+    partial class KontrolaPovrsine
     {
         /// <summary> 
         /// Required designer variable.
@@ -70,7 +70,7 @@
             this.povrsineTab.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.povrsineTab.Size = new System.Drawing.Size(466, 279);
             this.povrsineTab.TabIndex = 1;
-            this.povrsineTab.Text = "Povrsine";
+            this.povrsineTab.Text = "KontrolaPovrsine";
             this.povrsineTab.UseVisualStyleBackColor = true;
             // 
             // button3
@@ -151,13 +151,13 @@
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 9;
             // 
-            // Povrsine
+            // KontrolaPovrsine
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tabControl1);
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "Povrsine";
+            this.Name = "KontrolaPovrsine";
             this.Size = new System.Drawing.Size(510, 340);
             this.Load += new System.EventHandler(this.Proizvodi_Load);
             this.tabControl1.ResumeLayout(false);

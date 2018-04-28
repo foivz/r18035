@@ -8,8 +8,8 @@ namespace PoljoAppVerzija2
 {
     class Sadnja
     {
-        private int idProizvoda;
-        private int idPovrsina;
+        private Proizvod proizvod;
+        private Povrsina povrsina;
         private DateTime datum;
         private float kolicinaSadnica;
 
