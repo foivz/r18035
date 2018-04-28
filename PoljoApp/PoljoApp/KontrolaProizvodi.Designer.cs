@@ -72,7 +72,7 @@
             this.sadnjaTab.Padding = new System.Windows.Forms.Padding(4);
             this.sadnjaTab.Size = new System.Drawing.Size(624, 346);
             this.sadnjaTab.TabIndex = 1;
-            this.sadnjaTab.Text = "Proizvod";
+            this.sadnjaTab.Text = "Proizvodi";
             this.sadnjaTab.UseVisualStyleBackColor = true;
             // 
             // comboBox1

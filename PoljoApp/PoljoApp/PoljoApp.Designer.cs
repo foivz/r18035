@@ -37,15 +37,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.uiOdjava = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.proizvodi1 = new PoljoAppVerzija2.KontrolaProizvodi();
             this.uiPrskanje = new PoljoAppVerzija2.KontrolaPrskanje();
             this.uiNavodnjavanje = new PoljoAppVerzija2.KontrolaNavodnjavanje();
-            this.uiUserControlPovrsine = new PoljoAppVerzija2.KontrolaPovrsine();
-            this.uiUserControlSadnja = new PoljoAppVerzija2.KontrolaSadnja();
-            this.zastita1 = new PoljoAppVerzija2.KontrolaZastita();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.uiSadnja = new PoljoAppVerzija2.KontrolaSadnja();
+            this.uiProizvodi = new PoljoAppVerzija2.KontrolaProizvodi();
+            this.uiPovrsine = new PoljoAppVerzija2.KontrolaPovrsine();
+            this.uiZastita = new PoljoAppVerzija2.KontrolaZastita();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -136,7 +136,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.Location = new System.Drawing.Point(12, 101);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 26);
+            this.label1.Size = new System.Drawing.Size(94, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "Popisi";
             // 
@@ -148,7 +148,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label2.Location = new System.Drawing.Point(12, 308);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(112, 26);
+            this.label2.Size = new System.Drawing.Size(147, 32);
             this.label2.TabIndex = 7;
             this.label2.Text = "Evidencije";
             // 
@@ -165,6 +165,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(915, 69);
             this.panel1.TabIndex = 8;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::PoljoAppVerzija2.Properties.Resources.Logo___crni;
+            this.pictureBox1.Location = new System.Drawing.Point(161, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(53, 51);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
             // 
             // uiOdjava
             // 
@@ -185,28 +195,17 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label3.Location = new System.Drawing.Point(6, 17);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(154, 37);
+            this.label3.Size = new System.Drawing.Size(191, 46);
             this.label3.TabIndex = 9;
             this.label3.Text = "PoljoApp";
-            // 
-            // proizvodi1
-            // 
-            this.proizvodi1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.proizvodi1.Location = new System.Drawing.Point(221, 101);
-            this.proizvodi1.Margin = new System.Windows.Forms.Padding(4);
-            this.proizvodi1.Name = "proizvodi1";
-            this.proizvodi1.Size = new System.Drawing.Size(680, 418);
-            this.proizvodi1.TabIndex = 14;
             // 
             // uiPrskanje
             // 
             this.uiPrskanje.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.uiPrskanje.Location = new System.Drawing.Point(222, 101);
-            this.uiPrskanje.Margin = new System.Windows.Forms.Padding(4);
+            this.uiPrskanje.Location = new System.Drawing.Point(217, 101);
+            this.uiPrskanje.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.uiPrskanje.Name = "uiPrskanje";
             this.uiPrskanje.Size = new System.Drawing.Size(680, 418);
             this.uiPrskanje.TabIndex = 13;
@@ -216,54 +215,55 @@
             this.uiNavodnjavanje.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.uiNavodnjavanje.Location = new System.Drawing.Point(221, 101);
-            this.uiNavodnjavanje.Margin = new System.Windows.Forms.Padding(4);
+            this.uiNavodnjavanje.Location = new System.Drawing.Point(217, 101);
+            this.uiNavodnjavanje.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.uiNavodnjavanje.Name = "uiNavodnjavanje";
             this.uiNavodnjavanje.Size = new System.Drawing.Size(680, 418);
             this.uiNavodnjavanje.TabIndex = 11;
             // 
-            // uiUserControlPovrsine
+            // uiSadnja
             // 
-            this.uiUserControlPovrsine.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.uiSadnja.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.uiUserControlPovrsine.Location = new System.Drawing.Point(221, 101);
-            this.uiUserControlPovrsine.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.uiUserControlPovrsine.Name = "uiUserControlPovrsine";
-            this.uiUserControlPovrsine.Size = new System.Drawing.Size(680, 418);
-            this.uiUserControlPovrsine.TabIndex = 9;
+            this.uiSadnja.Location = new System.Drawing.Point(217, 101);
+            this.uiSadnja.Margin = new System.Windows.Forms.Padding(5);
+            this.uiSadnja.Name = "uiSadnja";
+            this.uiSadnja.Size = new System.Drawing.Size(680, 418);
+            this.uiSadnja.TabIndex = 10;
             // 
-            // uiUserControlSadnja
+            // uiProizvodi
             // 
-            this.uiUserControlSadnja.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.uiProizvodi.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.uiUserControlSadnja.Location = new System.Drawing.Point(222, 101);
-            this.uiUserControlSadnja.Margin = new System.Windows.Forms.Padding(5);
-            this.uiUserControlSadnja.Name = "uiUserControlSadnja";
-            this.uiUserControlSadnja.Size = new System.Drawing.Size(680, 418);
-            this.uiUserControlSadnja.TabIndex = 10;
+            this.uiProizvodi.Location = new System.Drawing.Point(217, 101);
+            this.uiProizvodi.Margin = new System.Windows.Forms.Padding(4);
+            this.uiProizvodi.Name = "uiProizvodi";
+            this.uiProizvodi.Size = new System.Drawing.Size(680, 418);
+            this.uiProizvodi.TabIndex = 15;
             // 
-            // zastita1
+            // uiPovrsine
             // 
-            this.zastita1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.uiPovrsine.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.zastita1.Location = new System.Drawing.Point(222, 101);
-            this.zastita1.Margin = new System.Windows.Forms.Padding(4);
-            this.zastita1.Name = "zastita1";
-            this.zastita1.Size = new System.Drawing.Size(680, 418);
-            this.zastita1.TabIndex = 15;
+            this.uiPovrsine.Location = new System.Drawing.Point(217, 101);
+            this.uiPovrsine.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.uiPovrsine.Name = "uiPovrsine";
+            this.uiPovrsine.Size = new System.Drawing.Size(680, 418);
+            this.uiPovrsine.TabIndex = 16;
             // 
-            // pictureBox1
+            // uiZastita
             // 
-            this.pictureBox1.Image = global::PoljoAppVerzija2.Properties.Resources.Logo___crni;
-            this.pictureBox1.Location = new System.Drawing.Point(161, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(53, 51);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 11;
-            this.pictureBox1.TabStop = false;
+            this.uiZastita.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.uiZastita.Location = new System.Drawing.Point(217, 101);
+            this.uiZastita.Margin = new System.Windows.Forms.Padding(4);
+            this.uiZastita.Name = "uiZastita";
+            this.uiZastita.Size = new System.Drawing.Size(680, 418);
+            this.uiZastita.TabIndex = 17;
             // 
             // PoljoApp
             // 
@@ -278,15 +278,16 @@
             this.Controls.Add(this.uiActionOpenPovrsine);
             this.Controls.Add(this.uiActionOpenZastita);
             this.Controls.Add(this.uiActionOpenProizvodi);
+            this.Controls.Add(this.uiProizvodi);
+            this.Controls.Add(this.uiSadnja);
             this.Controls.Add(this.uiPrskanje);
             this.Controls.Add(this.uiNavodnjavanje);
-            this.Controls.Add(this.uiUserControlPovrsine);
-            this.Controls.Add(this.uiUserControlSadnja);
-            this.Controls.Add(this.zastita1);
-            this.Controls.Add(this.proizvodi1);
+            this.Controls.Add(this.uiZastita);
+            this.Controls.Add(this.uiPovrsine);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "PoljoApp";
             this.Text = "PoljoApp";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -308,13 +309,16 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
         private KontrolaPovrsine uiUserControlPovrsine;
-        private KontrolaSadnja uiUserControlSadnja;
+        private KontrolaSadnja uiSadnja;
         private KontrolaNavodnjavanje uiNavodnjavanje;
         private KontrolaPrskanje uiPrskanje;
         private KontrolaProizvodi proizvodi1;
         private KontrolaZastita zastita1;
         private System.Windows.Forms.Button uiOdjava;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private KontrolaProizvodi uiProizvodi;
+        private KontrolaPovrsine uiPovrsine;
+        private KontrolaZastita uiZastita;
     }
 }
 

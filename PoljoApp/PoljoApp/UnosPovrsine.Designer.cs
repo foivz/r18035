@@ -71,7 +71,7 @@
             // uiUnosNaziva
             // 
             this.uiUnosNaziva.Location = new System.Drawing.Point(129, 7);
-            this.uiUnosNaziva.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.uiUnosNaziva.Margin = new System.Windows.Forms.Padding(4);
             this.uiUnosNaziva.Name = "uiUnosNaziva";
             this.uiUnosNaziva.Size = new System.Drawing.Size(235, 22);
             this.uiUnosNaziva.TabIndex = 3;
@@ -79,7 +79,7 @@
             // uiUnosPovrsine
             // 
             this.uiUnosPovrsine.Location = new System.Drawing.Point(129, 43);
-            this.uiUnosPovrsine.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.uiUnosPovrsine.Margin = new System.Windows.Forms.Padding(4);
             this.uiUnosPovrsine.Name = "uiUnosPovrsine";
             this.uiUnosPovrsine.Size = new System.Drawing.Size(235, 22);
             this.uiUnosPovrsine.TabIndex = 4;
@@ -87,7 +87,7 @@
             // uiActionOdustani
             // 
             this.uiActionOdustani.Location = new System.Drawing.Point(129, 127);
-            this.uiActionOdustani.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.uiActionOdustani.Margin = new System.Windows.Forms.Padding(4);
             this.uiActionOdustani.Name = "uiActionOdustani";
             this.uiActionOdustani.Size = new System.Drawing.Size(100, 28);
             this.uiActionOdustani.TabIndex = 6;
@@ -97,7 +97,7 @@
             // uiActionSpremi
             // 
             this.uiActionSpremi.Location = new System.Drawing.Point(265, 127);
-            this.uiActionSpremi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.uiActionSpremi.Margin = new System.Windows.Forms.Padding(4);
             this.uiActionSpremi.Name = "uiActionSpremi";
             this.uiActionSpremi.Size = new System.Drawing.Size(100, 28);
             this.uiActionSpremi.TabIndex = 7;
@@ -108,7 +108,7 @@
             // 
             this.uiActionOdabirNamjene.FormattingEnabled = true;
             this.uiActionOdabirNamjene.Location = new System.Drawing.Point(129, 81);
-            this.uiActionOdabirNamjene.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.uiActionOdabirNamjene.Margin = new System.Windows.Forms.Padding(4);
             this.uiActionOdabirNamjene.Name = "uiActionOdabirNamjene";
             this.uiActionOdabirNamjene.Size = new System.Drawing.Size(235, 24);
             this.uiActionOdabirNamjene.TabIndex = 8;
@@ -126,9 +126,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UnosPovrsine";
-            this.Text = "Unos KontrolaPovrsine";
+            this.Text = "Unos Povrsine";
             this.ResumeLayout(false);
             this.PerformLayout();
 

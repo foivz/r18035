@@ -19,7 +19,13 @@ namespace PoljoAppVerzija2
 
         private void Proizvodi_Load(object sender, EventArgs e)
         {
+            
+        }
 
+        private void uiDodajPovrsinu_Click(object sender, EventArgs e)
+        {
+            UnosPovrsine unosPovrsine = new UnosPovrsine();
+            unosPovrsine.ShowDialog();
         }
     }
 }
