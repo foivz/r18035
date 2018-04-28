@@ -8,8 +8,8 @@ namespace PoljoAppVerzija2
 {
     class Prskanje
     {
-        private int idPovrsina;
-        private int idZastita;
+        private Povrsina povrsina;
+        private Zastita zastita;
         private DateTime datum;
         private string opis;
         private int djelatnik;
