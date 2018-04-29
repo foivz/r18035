@@ -40,12 +40,12 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.uiOdjava = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.uiProizvodi = new PoljoAppVerzija2.KontrolaProizvodi();
+            this.uiSadnja = new PoljoAppVerzija2.KontrolaSadnja();
             this.uiPrskanje = new PoljoAppVerzija2.KontrolaPrskanje();
             this.uiNavodnjavanje = new PoljoAppVerzija2.KontrolaNavodnjavanje();
-            this.uiSadnja = new PoljoAppVerzija2.KontrolaSadnja();
-            this.uiProizvodi = new PoljoAppVerzija2.KontrolaProizvodi();
-            this.uiPovrsine = new PoljoAppVerzija2.KontrolaPovrsine();
             this.uiZastita = new PoljoAppVerzija2.KontrolaZastita();
+            this.uiPovrsine = new PoljoAppVerzija2.KontrolaPovrsine();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -199,6 +199,28 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "PoljoApp";
             // 
+            // uiProizvodi
+            // 
+            this.uiProizvodi.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.uiProizvodi.Location = new System.Drawing.Point(217, 101);
+            this.uiProizvodi.Margin = new System.Windows.Forms.Padding(4);
+            this.uiProizvodi.Name = "uiProizvodi";
+            this.uiProizvodi.Size = new System.Drawing.Size(680, 418);
+            this.uiProizvodi.TabIndex = 15;
+            // 
+            // uiSadnja
+            // 
+            this.uiSadnja.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.uiSadnja.Location = new System.Drawing.Point(217, 101);
+            this.uiSadnja.Margin = new System.Windows.Forms.Padding(5);
+            this.uiSadnja.Name = "uiSadnja";
+            this.uiSadnja.Size = new System.Drawing.Size(680, 418);
+            this.uiSadnja.TabIndex = 10;
+            // 
             // uiPrskanje
             // 
             this.uiPrskanje.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -221,28 +243,16 @@
             this.uiNavodnjavanje.Size = new System.Drawing.Size(680, 418);
             this.uiNavodnjavanje.TabIndex = 11;
             // 
-            // uiSadnja
+            // uiZastita
             // 
-            this.uiSadnja.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.uiZastita.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.uiSadnja.Location = new System.Drawing.Point(217, 101);
-            this.uiSadnja.Margin = new System.Windows.Forms.Padding(5);
-            this.uiSadnja.Name = "uiSadnja";
-            this.uiSadnja.Size = new System.Drawing.Size(680, 418);
-            this.uiSadnja.TabIndex = 10;
-            // 
-            // uiProizvodi
-            // 
-            this.uiProizvodi.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.uiProizvodi.Location = new System.Drawing.Point(217, 101);
-            this.uiProizvodi.Margin = new System.Windows.Forms.Padding(4);
-            this.uiProizvodi.Name = "uiProizvodi";
-            this.uiProizvodi.Size = new System.Drawing.Size(680, 418);
-            this.uiProizvodi.TabIndex = 15;
-
+            this.uiZastita.Location = new System.Drawing.Point(217, 101);
+            this.uiZastita.Margin = new System.Windows.Forms.Padding(4);
+            this.uiZastita.Name = "uiZastita";
+            this.uiZastita.Size = new System.Drawing.Size(680, 418);
+            this.uiZastita.TabIndex = 17;
             // 
             // uiPovrsine
             // 
@@ -254,17 +264,6 @@
             this.uiPovrsine.Name = "uiPovrsine";
             this.uiPovrsine.Size = new System.Drawing.Size(680, 418);
             this.uiPovrsine.TabIndex = 16;
-            // 
-            // uiZastita
-            // 
-            this.uiZastita.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.uiZastita.Location = new System.Drawing.Point(217, 101);
-            this.uiZastita.Margin = new System.Windows.Forms.Padding(4);
-            this.uiZastita.Name = "uiZastita";
-            this.uiZastita.Size = new System.Drawing.Size(680, 418);
-            this.uiZastita.TabIndex = 17;
             // 
             // PoljoApp
             // 
