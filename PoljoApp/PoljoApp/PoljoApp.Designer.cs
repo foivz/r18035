@@ -205,7 +205,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.uiPrskanje.Location = new System.Drawing.Point(217, 101);
-            this.uiPrskanje.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.uiPrskanje.Margin = new System.Windows.Forms.Padding(4);
             this.uiPrskanje.Name = "uiPrskanje";
             this.uiPrskanje.Size = new System.Drawing.Size(680, 418);
             this.uiPrskanje.TabIndex = 13;
@@ -242,6 +242,7 @@
             this.uiProizvodi.Name = "uiProizvodi";
             this.uiProizvodi.Size = new System.Drawing.Size(680, 418);
             this.uiProizvodi.TabIndex = 15;
+
             // 
             // uiPovrsine
             // 
