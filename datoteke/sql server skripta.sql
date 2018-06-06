@@ -66,7 +66,7 @@ CREATE TABLE "18035_DB".djelatnik (
 -- Table `18035_DB`.`namjena_povrsine`
 -- -----------------------------------------------------
 CREATE TABLE "18035_DB".namjena_povrsine (
-  [id] INT NOT NULL,
+  [id] INT NOT NULL IDENTITY,
   [namjena] VARCHAR(100) NOT NULL,
   PRIMARY KEY ([id]),
   CONSTRAINT [namjena_UNIQUE] UNIQUE  ([namjena] ASC))
@@ -123,7 +123,7 @@ CREATE INDEX [fk_sadnja_proizvodi1_idx] ON "18035_DB".sadnja ([id_materijal] ASC
 -- Table `18035_DB`.`stanje_navodnjavanja`
 -- -----------------------------------------------------
 CREATE TABLE "18035_DB".stanje_navodnjavanja (
-  [id] INT NOT NULL,
+  [id] INT NOT NULL IDENTITY,
   [naziv] VARCHAR(45) NOT NULL,
   PRIMARY KEY ([id]),
   CONSTRAINT [stnav_naziv_UNIQUE] UNIQUE  ([naziv] ASC))
