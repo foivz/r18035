@@ -37,6 +37,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.uiUpravljanje = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.uiOdjava = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,7 +47,6 @@
             this.uiNavodnjavanje = new PoljoAppVerzija2.KontrolaNavodnjavanje();
             this.uiZastita = new PoljoAppVerzija2.KontrolaZastita();
             this.uiPovrsine = new PoljoAppVerzija2.KontrolaPovrsine();
-            this.uiUpravljanje = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -168,6 +168,18 @@
             this.panel1.Size = new System.Drawing.Size(915, 69);
             this.panel1.TabIndex = 8;
             // 
+            // uiUpravljanje
+            // 
+            this.uiUpravljanje.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.uiUpravljanje.Location = new System.Drawing.Point(611, 15);
+            this.uiUpravljanje.Name = "uiUpravljanje";
+            this.uiUpravljanje.Size = new System.Drawing.Size(127, 36);
+            this.uiUpravljanje.TabIndex = 12;
+            this.uiUpravljanje.Text = "Upravljanje";
+            this.uiUpravljanje.UseVisualStyleBackColor = true;
+            this.uiUpravljanje.Visible = false;
+            this.uiUpravljanje.Click += new System.EventHandler(this.UiUpravljanje_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::PoljoAppVerzija2.Properties.Resources.Logo___crni;
@@ -267,17 +279,6 @@
             this.uiPovrsine.Name = "uiPovrsine";
             this.uiPovrsine.Size = new System.Drawing.Size(680, 418);
             this.uiPovrsine.TabIndex = 16;
-            // 
-            // uiUpravljanje
-            // 
-            this.uiUpravljanje.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.uiUpravljanje.Location = new System.Drawing.Point(611, 15);
-            this.uiUpravljanje.Name = "uiUpravljanje";
-            this.uiUpravljanje.Size = new System.Drawing.Size(127, 36);
-            this.uiUpravljanje.TabIndex = 12;
-            this.uiUpravljanje.Text = "Upravljanje";
-            this.uiUpravljanje.UseVisualStyleBackColor = true;
-            this.uiUpravljanje.Visible = false;
             // 
             // PoljoApp
             // 

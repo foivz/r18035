@@ -60,5 +60,11 @@ namespace PoljoAppVerzija2
             prijava.Activated += (s,args) => this.Close();
             prijava.ShowDialog();
         }
+
+        private void UiUpravljanje_Click(object sender, EventArgs e)
+        {
+            Admin.DjelatniciForma pregledDjelatnika = new Admin.DjelatniciForma();
+            pregledDjelatnika.ShowDialog();
+        }
     }
 }
