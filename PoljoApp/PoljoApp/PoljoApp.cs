@@ -12,11 +12,15 @@ namespace PoljoAppVerzija2
 {
     public partial class PoljoApp : Form
     {
-        
-        public PoljoApp()
+        private djelatnik Korisnik;
+
+        public PoljoApp(djelatnik prijava)
         {
             InitializeComponent();
             uiProizvodi.BringToFront();
+
+            Korisnik = prijava;
+            if (Korisnik.admin == 1) uiUpravljanje.Visible = true;
         }
 
         private void UiActionOpenSadnja_Click(object sender, EventArgs e)
@@ -49,6 +53,12 @@ namespace PoljoAppVerzija2
             uiZastita.BringToFront();
         }
 
-       
+        private void UiOdjava_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            PrijavaForma prijava = new PrijavaForma();
+            prijava.Activated += (s,args) => this.Close();
+            prijava.ShowDialog();
+        }
     }
 }

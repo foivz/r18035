@@ -25,6 +25,7 @@ namespace PoljoAppVerzija2
         public string email { get; set; }
         public string lozinka { get; set; }
         public string broj_telefona { get; set; }
+        public Nullable<int> admin { get; set; }
     
         public virtual ICollection<prskanje> prskanje { get; set; }
     }

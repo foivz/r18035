@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\rebek\Documents\r18035\PoljoApp\PoljoApp\PoljoAppModel.edmx'. 
+﻿// T4 code generation is enabled for model 'E:\FOI\6. semestar\PI\Projekt\Projekt repozitorij\PoljoApp\PoljoApp\PoljoAppModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

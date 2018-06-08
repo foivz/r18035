@@ -52,15 +52,18 @@
             // 
             this.unosLozinka.Location = new System.Drawing.Point(149, 89);
             this.unosLozinka.Name = "unosLozinka";
+            this.unosLozinka.PasswordChar = '*';
             this.unosLozinka.Size = new System.Drawing.Size(176, 20);
-            this.unosLozinka.TabIndex = 13;
+            this.unosLozinka.TabIndex = 1;
+            this.unosLozinka.Leave += new System.EventHandler(this.UnosLozinka_Leave);
             // 
             // unosEmail
             // 
             this.unosEmail.Location = new System.Drawing.Point(149, 41);
             this.unosEmail.Name = "unosEmail";
             this.unosEmail.Size = new System.Drawing.Size(176, 20);
-            this.unosEmail.TabIndex = 14;
+            this.unosEmail.TabIndex = 0;
+            this.unosEmail.Leave += new System.EventHandler(this.UnosEmail_Leave);
             // 
             // label1
             // 
@@ -88,6 +91,7 @@
             this.uiActionPrijava.TabIndex = 17;
             this.uiActionPrijava.Text = "Prijava";
             this.uiActionPrijava.UseVisualStyleBackColor = true;
+            this.uiActionPrijava.Click += new System.EventHandler(this.UiActionPrijava_Click);
             // 
             // uiActionOdustani
             // 
@@ -97,6 +101,7 @@
             this.uiActionOdustani.TabIndex = 18;
             this.uiActionOdustani.Text = "Odustani";
             this.uiActionOdustani.UseVisualStyleBackColor = true;
+            this.uiActionOdustani.Click += new System.EventHandler(this.UiActionOdustani_Click);
             // 
             // PrijavaForma
             // 
@@ -110,7 +115,9 @@
             this.Controls.Add(this.unosEmail);
             this.Controls.Add(this.unosLozinka);
             this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "PrijavaForma";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Prijava";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

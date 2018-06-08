@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DBPoljoApp.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="DBPoljoApp.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="djelatnik">
           <Key>
             <PropertyRef Name="id" />
@@ -15,6 +15,7 @@
           <Property Name="email" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="lozinka" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="broj_telefona" Type="varchar" MaxLength="45" />
+          <Property Name="admin" Type="int" />
         </EntityType>
         <EntityType Name="namjena_povrsine">
           <Key>
@@ -284,8 +285,7 @@
             <End Role="zastita" EntitySet="zastita" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DBPoljoApp" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -300,6 +300,7 @@
           <Property Name="lozinka" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="broj_telefona" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="prskanje" Relationship="Self.fk_prskanje_korisnik1" FromRole="djelatnik" ToRole="prskanje" />
+          <Property Name="admin" Type="Int32" />
         </EntityType>
         <EntityType Name="namjena_povrsine">
           <Key>
@@ -597,6 +598,7 @@
           <EntitySetMapping Name="djelatnik">
             <EntityTypeMapping TypeName="DBPoljoApp.djelatnik">
               <MappingFragment StoreEntitySet="djelatnik">
+                <ScalarProperty Name="admin" ColumnName="admin" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="ime" ColumnName="ime" />
                 <ScalarProperty Name="prezime" ColumnName="prezime" />

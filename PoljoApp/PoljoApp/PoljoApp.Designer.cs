@@ -46,6 +46,7 @@
             this.uiNavodnjavanje = new PoljoAppVerzija2.KontrolaNavodnjavanje();
             this.uiZastita = new PoljoAppVerzija2.KontrolaZastita();
             this.uiPovrsine = new PoljoAppVerzija2.KontrolaPovrsine();
+            this.uiUpravljanje = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -136,7 +137,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.Location = new System.Drawing.Point(12, 101);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 32);
+            this.label1.Size = new System.Drawing.Size(72, 26);
             this.label1.TabIndex = 0;
             this.label1.Text = "Popisi";
             // 
@@ -148,7 +149,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label2.Location = new System.Drawing.Point(12, 308);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(147, 32);
+            this.label2.Size = new System.Drawing.Size(112, 26);
             this.label2.TabIndex = 7;
             this.label2.Text = "Evidencije";
             // 
@@ -157,6 +158,7 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.LightGreen;
+            this.panel1.Controls.Add(this.uiUpravljanje);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.uiOdjava);
             this.panel1.Controls.Add(this.label3);
@@ -185,6 +187,7 @@
             this.uiOdjava.TabIndex = 10;
             this.uiOdjava.Text = "Odjava";
             this.uiOdjava.UseVisualStyleBackColor = true;
+            this.uiOdjava.Click += new System.EventHandler(this.UiOdjava_Click);
             // 
             // label3
             // 
@@ -195,7 +198,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label3.Location = new System.Drawing.Point(6, 17);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(191, 46);
+            this.label3.Size = new System.Drawing.Size(154, 37);
             this.label3.TabIndex = 9;
             this.label3.Text = "PoljoApp";
             // 
@@ -238,7 +241,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.uiNavodnjavanje.Location = new System.Drawing.Point(217, 101);
-            this.uiNavodnjavanje.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.uiNavodnjavanje.Margin = new System.Windows.Forms.Padding(4);
             this.uiNavodnjavanje.Name = "uiNavodnjavanje";
             this.uiNavodnjavanje.Size = new System.Drawing.Size(680, 418);
             this.uiNavodnjavanje.TabIndex = 11;
@@ -264,6 +267,17 @@
             this.uiPovrsine.Name = "uiPovrsine";
             this.uiPovrsine.Size = new System.Drawing.Size(680, 418);
             this.uiPovrsine.TabIndex = 16;
+            // 
+            // uiUpravljanje
+            // 
+            this.uiUpravljanje.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.uiUpravljanje.Location = new System.Drawing.Point(611, 15);
+            this.uiUpravljanje.Name = "uiUpravljanje";
+            this.uiUpravljanje.Size = new System.Drawing.Size(127, 36);
+            this.uiUpravljanje.TabIndex = 12;
+            this.uiUpravljanje.Text = "Upravljanje";
+            this.uiUpravljanje.UseVisualStyleBackColor = true;
+            this.uiUpravljanje.Visible = false;
             // 
             // PoljoApp
             // 
@@ -308,17 +322,15 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
-        private KontrolaPovrsine uiUserControlPovrsine;
         private KontrolaSadnja uiSadnja;
         private KontrolaNavodnjavanje uiNavodnjavanje;
         private KontrolaPrskanje uiPrskanje;
-        private KontrolaProizvodi proizvodi1;
-        private KontrolaZastita zastita1;
         private System.Windows.Forms.Button uiOdjava;
         private System.Windows.Forms.PictureBox pictureBox1;
         private KontrolaProizvodi uiProizvodi;
         private KontrolaPovrsine uiPovrsine;
         private KontrolaZastita uiZastita;
+        private System.Windows.Forms.Button uiUpravljanje;
     }
 }
 
