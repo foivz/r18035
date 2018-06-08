@@ -53,6 +53,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\DjelatniciForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\DjelatniciForma.Designer.cs">
+      <DependentUpon>DjelatniciForma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UnosDjelatnika.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\UnosDjelatnika.Designer.cs">
+      <DependentUpon>UnosDjelatnika.cs</DependentUpon>
+    </Compile>
     <Compile Include="djelatnik.cs">
       <DependentUpon>PoljoAppModel.tt</DependentUpon>
     </Compile>
@@ -187,6 +199,12 @@
     <Compile Include="zastita.cs">
       <DependentUpon>PoljoAppModel.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Admin\DjelatniciForma.resx">
+      <DependentUpon>DjelatniciForma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\UnosDjelatnika.resx">
+      <DependentUpon>UnosDjelatnika.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="KontrolaNavodnjavanje.resx">
       <DependentUpon>KontrolaNavodnjavanje.cs</DependentUpon>
     </EmbeddedResource>
