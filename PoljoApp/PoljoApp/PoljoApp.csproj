@@ -32,8 +32,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,17 +52,44 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="djelatnik.cs">
+      <DependentUpon>PoljoAppModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="KontrolaNavodnjavanje.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="KontrolaNavodnjavanje.Designer.cs">
       <DependentUpon>KontrolaNavodnjavanje.cs</DependentUpon>
     </Compile>
+    <Compile Include="namjena_povrsine.cs">
+      <DependentUpon>PoljoAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="navodnjavanje.cs">
+      <DependentUpon>PoljoAppModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="PoljoApp.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PoljoApp.Designer.cs">
       <DependentUpon>PoljoApp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PoljoAppModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PoljoAppModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PoljoAppModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PoljoAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PoljoAppModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PoljoAppModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="polj_povrsina.cs">
+      <DependentUpon>PoljoAppModel.tt</DependentUpon>
     </Compile>
     <Compile Include="PrijavaForma.cs">
       <SubType>Form</SubType>
@@ -88,6 +122,18 @@
     </Compile>
     <Compile Include="KontrolaSadnja.Designer.cs">
       <DependentUpon>KontrolaSadnja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="prskanje.cs">
+      <DependentUpon>PoljoAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sadni_materijal.cs">
+      <DependentUpon>PoljoAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sadnja.cs">
+      <DependentUpon>PoljoAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="stanje_navodnjavanja.cs">
+      <DependentUpon>PoljoAppModel.tt</DependentUpon>
     </Compile>
     <Compile Include="UnosNavodnjavanja.cs">
       <SubType>Form</SubType>
@@ -130,6 +176,15 @@
     </Compile>
     <Compile Include="KontrolaZastita.Designer.cs">
       <DependentUpon>KontrolaZastita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vrsta_sadnog_materijala.cs">
+      <DependentUpon>PoljoAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vrsta_zastite.cs">
+      <DependentUpon>PoljoAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="zastita.cs">
+      <DependentUpon>PoljoAppModel.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="KontrolaNavodnjavanje.resx">
       <DependentUpon>KontrolaNavodnjavanje.cs</DependentUpon>
@@ -183,6 +238,14 @@
     <EmbeddedResource Include="KontrolaZastita.resx">
       <DependentUpon>KontrolaZastita.cs</DependentUpon>
     </EmbeddedResource>
+    <EntityDeploy Include="PoljoAppModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PoljoAppModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="packages.config" />
+    <None Include="PoljoAppModel.edmx.diagram">
+      <DependentUpon>PoljoAppModel.edmx</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -198,6 +261,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Logo - crni.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PoljoAppModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>PoljoAppModel.Context.cs</LastGenOutput>
+      <DependentUpon>PoljoAppModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="PoljoAppModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PoljoAppModel.edmx</DependentUpon>
+      <LastGenOutput>PoljoAppModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

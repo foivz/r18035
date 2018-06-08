@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d5b562517bdc4143b7bb68e5421823e3" Name="Diagram1">
+        <EntityTypeShape EntityType="DBPoljoApp.djelatnik" Width="1.5" PointX="6" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBPoljoApp.namjena_povrsine" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBPoljoApp.navodnjavanje" Width="1.5" PointX="5.25" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBPoljoApp.polj_povrsina" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBPoljoApp.prskanje" Width="1.5" PointX="8.25" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBPoljoApp.sadni_materijal" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBPoljoApp.sadnja" Width="1.5" PointX="5.25" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBPoljoApp.stanje_navodnjavanja" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBPoljoApp.vrsta_sadnog_materijala" Width="1.5" PointX="0.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBPoljoApp.vrsta_zastite" Width="1.5" PointX="3.75" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBPoljoApp.zastita" Width="1.5" PointX="6" PointY="11.25" IsExpanded="true" />
+        <AssociationConnector Association="DBPoljoApp.fk_prskanje_korisnik1" ManuallyRouted="false" />
+        <AssociationConnector Association="DBPoljoApp.fk_polj_povrsina_namjena_povrsine1" ManuallyRouted="false" />
+        <AssociationConnector Association="DBPoljoApp.fk_navodnjavanje_polj_povrsine1" ManuallyRouted="false" />
+        <AssociationConnector Association="DBPoljoApp.fk_navodnjavanje_vrsta_navodnjavanja1" ManuallyRouted="false" />
+        <AssociationConnector Association="DBPoljoApp.fk_prskanje_polj_povrsine1" ManuallyRouted="false" />
+        <AssociationConnector Association="DBPoljoApp.fk_sadnja_polj_povrsine1" ManuallyRouted="false" />
+        <AssociationConnector Association="DBPoljoApp.fk_prskanje_zastita1" ManuallyRouted="false" />
+        <AssociationConnector Association="DBPoljoApp.fk_proizvodi_vrste_proizvoda1" ManuallyRouted="false" />
+        <AssociationConnector Association="DBPoljoApp.fk_sadnja_proizvodi1" ManuallyRouted="false" />
+        <AssociationConnector Association="DBPoljoApp.fk_zastita_vrste_zastite1" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
