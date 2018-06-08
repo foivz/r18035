@@ -32,17 +32,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -54,23 +45,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="djelatnik.cs" />
     <Compile Include="KontrolaNavodnjavanje.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="KontrolaNavodnjavanje.Designer.cs">
       <DependentUpon>KontrolaNavodnjavanje.cs</DependentUpon>
     </Compile>
-    <Compile Include="namjena_povrsine.cs" />
-    <Compile Include="navodnjavanje.cs" />
     <Compile Include="PoljoApp.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PoljoApp.Designer.cs">
       <DependentUpon>PoljoApp.cs</DependentUpon>
     </Compile>
-    <Compile Include="PoljoAppModel.cs" />
-    <Compile Include="polj_povrsina.cs" />
     <Compile Include="PrijavaForma.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,10 +89,6 @@
     <Compile Include="KontrolaSadnja.Designer.cs">
       <DependentUpon>KontrolaSadnja.cs</DependentUpon>
     </Compile>
-    <Compile Include="prskanje.cs" />
-    <Compile Include="sadni_materijal.cs" />
-    <Compile Include="sadnja.cs" />
-    <Compile Include="stanje_navodnjavanja.cs" />
     <Compile Include="UnosNavodnjavanja.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,9 +131,6 @@
     <Compile Include="KontrolaZastita.Designer.cs">
       <DependentUpon>KontrolaZastita.cs</DependentUpon>
     </Compile>
-    <Compile Include="vrsta_sadnog_materijala.cs" />
-    <Compile Include="vrsta_zastite.cs" />
-    <Compile Include="zastita.cs" />
     <EmbeddedResource Include="KontrolaNavodnjavanje.resx">
       <DependentUpon>KontrolaNavodnjavanje.cs</DependentUpon>
     </EmbeddedResource>
@@ -204,7 +183,6 @@
     <EmbeddedResource Include="KontrolaZastita.resx">
       <DependentUpon>KontrolaZastita.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
