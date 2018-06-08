@@ -53,7 +53,7 @@
             this.tabControl1.Controls.Add(this.prskanjeTab);
             this.tabControl1.Controls.Add(this.pomocTab);
             this.tabControl1.Location = new System.Drawing.Point(24, 22);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(632, 375);
@@ -69,9 +69,9 @@
             this.prskanjeTab.Controls.Add(this.dataGridView1);
             this.prskanjeTab.Controls.Add(this.uiActionNovo);
             this.prskanjeTab.Location = new System.Drawing.Point(4, 25);
-            this.prskanjeTab.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.prskanjeTab.Margin = new System.Windows.Forms.Padding(4);
             this.prskanjeTab.Name = "prskanjeTab";
-            this.prskanjeTab.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.prskanjeTab.Padding = new System.Windows.Forms.Padding(4);
             this.prskanjeTab.Size = new System.Drawing.Size(624, 346);
             this.prskanjeTab.TabIndex = 1;
             this.prskanjeTab.Text = "Prskanje";
@@ -81,7 +81,7 @@
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(35, 27);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(160, 24);
             this.comboBox1.TabIndex = 11;
@@ -90,7 +90,7 @@
             // 
             this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button4.Location = new System.Drawing.Point(455, 17);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(136, 42);
             this.button4.TabIndex = 8;
@@ -100,7 +100,7 @@
             // button5
             // 
             this.button5.Location = new System.Drawing.Point(204, 17);
-            this.button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button5.Margin = new System.Windows.Forms.Padding(4);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(136, 42);
             this.button5.TabIndex = 10;
@@ -111,7 +111,7 @@
             // 
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button3.Location = new System.Drawing.Point(204, 294);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(136, 42);
             this.button3.TabIndex = 7;
@@ -122,7 +122,7 @@
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button2.Location = new System.Drawing.Point(33, 294);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(136, 42);
             this.button2.TabIndex = 6;
@@ -136,7 +136,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(33, 66);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(557, 220);
             this.dataGridView1.TabIndex = 5;
@@ -145,7 +145,7 @@
             // 
             this.uiActionNovo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.uiActionNovo.Location = new System.Drawing.Point(455, 294);
-            this.uiActionNovo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.uiActionNovo.Margin = new System.Windows.Forms.Padding(4);
             this.uiActionNovo.Name = "uiActionNovo";
             this.uiActionNovo.Size = new System.Drawing.Size(136, 42);
             this.uiActionNovo.TabIndex = 4;
@@ -157,9 +157,9 @@
             // 
             this.pomocTab.Controls.Add(this.label1);
             this.pomocTab.Location = new System.Drawing.Point(4, 25);
-            this.pomocTab.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pomocTab.Margin = new System.Windows.Forms.Padding(4);
             this.pomocTab.Name = "pomocTab";
-            this.pomocTab.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pomocTab.Padding = new System.Windows.Forms.Padding(4);
             this.pomocTab.Size = new System.Drawing.Size(624, 346);
             this.pomocTab.TabIndex = 0;
             this.pomocTab.Text = "Pomoć";
@@ -180,9 +180,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tabControl1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "KontrolaPrskanje";
             this.Size = new System.Drawing.Size(680, 418);
+            this.Load += new System.EventHandler(this.KontrolaPrskanje_Load);
             this.tabControl1.ResumeLayout(false);
             this.prskanjeTab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

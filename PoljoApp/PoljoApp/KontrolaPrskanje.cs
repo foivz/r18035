@@ -22,5 +22,10 @@ namespace PoljoAppVerzija2
             UnosPrskanja novo = new UnosPrskanja();
             novo.ShowDialog();
         }
+
+        private void KontrolaPrskanje_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

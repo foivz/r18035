@@ -242,10 +242,12 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>PoljoAppModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="namjena_povrsine.datasource" />
     <None Include="packages.config" />
     <None Include="PoljoAppModel.edmx.diagram">
       <DependentUpon>PoljoAppModel.edmx</DependentUpon>
     </None>
+    <None Include="polj_povrsina.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

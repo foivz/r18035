@@ -22,5 +22,10 @@ namespace PoljoAppVerzija2
             UnosProizvoda unosProizvoda = new UnosProizvoda();
             unosProizvoda.ShowDialog();
         }
+
+        private void KontrolaProizvodi_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

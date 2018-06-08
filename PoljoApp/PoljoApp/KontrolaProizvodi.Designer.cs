@@ -170,6 +170,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "KontrolaProizvodi";
             this.Size = new System.Drawing.Size(680, 418);
+            this.Load += new System.EventHandler(this.KontrolaProizvodi_Load);
             this.tabControl1.ResumeLayout(false);
             this.sadnjaTab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

@@ -278,12 +278,12 @@
             this.Controls.Add(this.uiActionOpenPovrsine);
             this.Controls.Add(this.uiActionOpenZastita);
             this.Controls.Add(this.uiActionOpenProizvodi);
-            this.Controls.Add(this.uiProizvodi);
-            this.Controls.Add(this.uiSadnja);
             this.Controls.Add(this.uiPrskanje);
             this.Controls.Add(this.uiNavodnjavanje);
             this.Controls.Add(this.uiZastita);
             this.Controls.Add(this.uiPovrsine);
+            this.Controls.Add(this.uiProizvodi);
+            this.Controls.Add(this.uiSadnja);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "PoljoApp";
             this.Text = "PoljoApp";
