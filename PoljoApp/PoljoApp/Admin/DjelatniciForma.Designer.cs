@@ -28,33 +28,58 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.components = new System.ComponentModel.Container();
+            this.pregledDjelatnika = new System.Windows.Forms.DataGridView();
             this.uiActionAzuriraj = new System.Windows.Forms.Button();
             this.uiActionUnos = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prezimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lozinkaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.brojtelefonaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adminDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prskanjeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.djelatnikBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.pregledDjelatnika)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.djelatnikBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // pregledDjelatnika
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 58);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(588, 265);
-            this.dataGridView1.TabIndex = 0;
+            this.pregledDjelatnika.AllowUserToAddRows = false;
+            this.pregledDjelatnika.AllowUserToDeleteRows = false;
+            this.pregledDjelatnika.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pregledDjelatnika.AutoGenerateColumns = false;
+            this.pregledDjelatnika.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.pregledDjelatnika.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.imeDataGridViewTextBoxColumn,
+            this.prezimeDataGridViewTextBoxColumn,
+            this.emailDataGridViewTextBoxColumn,
+            this.lozinkaDataGridViewTextBoxColumn,
+            this.brojtelefonaDataGridViewTextBoxColumn,
+            this.adminDataGridViewTextBoxColumn,
+            this.prskanjeDataGridViewTextBoxColumn});
+            this.pregledDjelatnika.DataSource = this.djelatnikBindingSource;
+            this.pregledDjelatnika.Location = new System.Drawing.Point(12, 58);
+            this.pregledDjelatnika.MultiSelect = false;
+            this.pregledDjelatnika.Name = "pregledDjelatnika";
+            this.pregledDjelatnika.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.pregledDjelatnika.Size = new System.Drawing.Size(588, 265);
+            this.pregledDjelatnika.TabIndex = 0;
             // 
             // uiActionAzuriraj
             // 
-            this.uiActionAzuriraj.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.uiActionAzuriraj.Location = new System.Drawing.Point(12, 18);
             this.uiActionAzuriraj.Name = "uiActionAzuriraj";
             this.uiActionAzuriraj.Size = new System.Drawing.Size(102, 34);
             this.uiActionAzuriraj.TabIndex = 9;
             this.uiActionAzuriraj.Text = "Ažuriraj";
             this.uiActionAzuriraj.UseVisualStyleBackColor = true;
+            this.uiActionAzuriraj.Click += new System.EventHandler(this.UiActionAzuriraj_Click);
             // 
             // uiActionUnos
             // 
@@ -67,6 +92,61 @@
             this.uiActionUnos.UseVisualStyleBackColor = true;
             this.uiActionUnos.Click += new System.EventHandler(this.UiActionUnos_Click);
             // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            // 
+            // imeDataGridViewTextBoxColumn
+            // 
+            this.imeDataGridViewTextBoxColumn.DataPropertyName = "ime";
+            this.imeDataGridViewTextBoxColumn.HeaderText = "ime";
+            this.imeDataGridViewTextBoxColumn.Name = "imeDataGridViewTextBoxColumn";
+            // 
+            // prezimeDataGridViewTextBoxColumn
+            // 
+            this.prezimeDataGridViewTextBoxColumn.DataPropertyName = "prezime";
+            this.prezimeDataGridViewTextBoxColumn.HeaderText = "prezime";
+            this.prezimeDataGridViewTextBoxColumn.Name = "prezimeDataGridViewTextBoxColumn";
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "email";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            // 
+            // lozinkaDataGridViewTextBoxColumn
+            // 
+            this.lozinkaDataGridViewTextBoxColumn.DataPropertyName = "lozinka";
+            this.lozinkaDataGridViewTextBoxColumn.HeaderText = "lozinka";
+            this.lozinkaDataGridViewTextBoxColumn.Name = "lozinkaDataGridViewTextBoxColumn";
+            this.lozinkaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // brojtelefonaDataGridViewTextBoxColumn
+            // 
+            this.brojtelefonaDataGridViewTextBoxColumn.DataPropertyName = "broj_telefona";
+            this.brojtelefonaDataGridViewTextBoxColumn.HeaderText = "broj_telefona";
+            this.brojtelefonaDataGridViewTextBoxColumn.Name = "brojtelefonaDataGridViewTextBoxColumn";
+            // 
+            // adminDataGridViewTextBoxColumn
+            // 
+            this.adminDataGridViewTextBoxColumn.DataPropertyName = "admin";
+            this.adminDataGridViewTextBoxColumn.HeaderText = "admin";
+            this.adminDataGridViewTextBoxColumn.Name = "adminDataGridViewTextBoxColumn";
+            this.adminDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // prskanjeDataGridViewTextBoxColumn
+            // 
+            this.prskanjeDataGridViewTextBoxColumn.DataPropertyName = "prskanje";
+            this.prskanjeDataGridViewTextBoxColumn.HeaderText = "prskanje";
+            this.prskanjeDataGridViewTextBoxColumn.Name = "prskanjeDataGridViewTextBoxColumn";
+            this.prskanjeDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // djelatnikBindingSource
+            // 
+            this.djelatnikBindingSource.DataSource = typeof(PoljoAppVerzija2.djelatnik);
+            // 
             // DjelatniciForma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -74,18 +154,29 @@
             this.ClientSize = new System.Drawing.Size(612, 335);
             this.Controls.Add(this.uiActionUnos);
             this.Controls.Add(this.uiActionAzuriraj);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.pregledDjelatnika);
             this.Name = "DjelatniciForma";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Djelatnici";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pregledDjelatnika)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.djelatnikBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView pregledDjelatnika;
         private System.Windows.Forms.Button uiActionAzuriraj;
         private System.Windows.Forms.Button uiActionUnos;
+        private System.Windows.Forms.BindingSource djelatnikBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn imeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn prezimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lozinkaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn brojtelefonaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn adminDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn prskanjeDataGridViewTextBoxColumn;
     }
 }

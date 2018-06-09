@@ -15,12 +15,33 @@ namespace PoljoAppVerzija2.Admin
         public DjelatniciForma()
         {
             InitializeComponent();
+            PrikaziDjelatnike();
         }
 
         private void UiActionUnos_Click(object sender, EventArgs e)
         {
             UnosDjelatnika unos = new UnosDjelatnika();
             unos.ShowDialog();
+            PrikaziDjelatnike();
+        }
+
+        private void PrikaziDjelatnike()
+        {
+            BindingList<djelatnik> listaDjelatnika = null;
+            using (var db = new Entities()) {
+                listaDjelatnika = new BindingList<djelatnik>(db.djelatnik.ToList());
+            }
+            djelatnikBindingSource.DataSource = listaDjelatnika;
+        }
+
+        private void UiActionAzuriraj_Click(object sender, EventArgs e)
+        {
+            if(djelatnikBindingSource.Current != null)
+            {
+                UnosDjelatnika unos = new UnosDjelatnika(djelatnikBindingSource.Current as djelatnik);
+                unos.ShowDialog();
+                PrikaziDjelatnike();
+            }
         }
     }
 }

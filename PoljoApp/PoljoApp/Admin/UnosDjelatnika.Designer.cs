@@ -35,20 +35,21 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.unosIme = new System.Windows.Forms.TextBox();
+            this.unosPrezime = new System.Windows.Forms.TextBox();
+            this.unosEmail = new System.Windows.Forms.TextBox();
+            this.unosLozinka = new System.Windows.Forms.TextBox();
+            this.unosTelefon = new System.Windows.Forms.TextBox();
+            this.ispisID = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.vidljivostLozinke = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // uiActionOdustani
             // 
             this.uiActionOdustani.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.uiActionOdustani.Location = new System.Drawing.Point(187, 198);
+            this.uiActionOdustani.Location = new System.Drawing.Point(187, 207);
             this.uiActionOdustani.Name = "uiActionOdustani";
             this.uiActionOdustani.Size = new System.Drawing.Size(102, 34);
             this.uiActionOdustani.TabIndex = 9;
@@ -59,12 +60,14 @@
             // uiActionSpremi
             // 
             this.uiActionSpremi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.uiActionSpremi.Location = new System.Drawing.Point(295, 198);
+            this.uiActionSpremi.Enabled = false;
+            this.uiActionSpremi.Location = new System.Drawing.Point(295, 207);
             this.uiActionSpremi.Name = "uiActionSpremi";
             this.uiActionSpremi.Size = new System.Drawing.Size(102, 34);
             this.uiActionSpremi.TabIndex = 10;
             this.uiActionSpremi.Text = "Spremi";
             this.uiActionSpremi.UseVisualStyleBackColor = true;
+            this.uiActionSpremi.Click += new System.EventHandler(this.UiActionSpremi_Click);
             // 
             // label1
             // 
@@ -111,50 +114,50 @@
             this.label5.TabIndex = 15;
             this.label5.Text = "Broj telefona:";
             // 
-            // textBox1
+            // unosIme
             // 
-            this.textBox1.Location = new System.Drawing.Point(241, 62);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(152, 20);
-            this.textBox1.TabIndex = 16;
+            this.unosIme.Location = new System.Drawing.Point(241, 62);
+            this.unosIme.Name = "unosIme";
+            this.unosIme.Size = new System.Drawing.Size(152, 20);
+            this.unosIme.TabIndex = 16;
             // 
-            // textBox2
+            // unosPrezime
             // 
-            this.textBox2.Location = new System.Drawing.Point(241, 110);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(152, 20);
-            this.textBox2.TabIndex = 17;
+            this.unosPrezime.Location = new System.Drawing.Point(241, 110);
+            this.unosPrezime.Name = "unosPrezime";
+            this.unosPrezime.Size = new System.Drawing.Size(152, 20);
+            this.unosPrezime.TabIndex = 17;
             // 
-            // textBox3
+            // unosEmail
             // 
-            this.textBox3.Location = new System.Drawing.Point(25, 110);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(152, 20);
-            this.textBox3.TabIndex = 18;
+            this.unosEmail.Location = new System.Drawing.Point(25, 110);
+            this.unosEmail.Name = "unosEmail";
+            this.unosEmail.Size = new System.Drawing.Size(152, 20);
+            this.unosEmail.TabIndex = 18;
             // 
-            // textBox4
+            // unosLozinka
             // 
-            this.textBox4.Location = new System.Drawing.Point(25, 156);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.PasswordChar = '*';
-            this.textBox4.Size = new System.Drawing.Size(152, 20);
-            this.textBox4.TabIndex = 19;
+            this.unosLozinka.Location = new System.Drawing.Point(25, 156);
+            this.unosLozinka.Name = "unosLozinka";
+            this.unosLozinka.Size = new System.Drawing.Size(152, 20);
+            this.unosLozinka.TabIndex = 19;
+            this.unosLozinka.UseSystemPasswordChar = true;
             // 
-            // textBox5
+            // unosTelefon
             // 
-            this.textBox5.Location = new System.Drawing.Point(241, 156);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(152, 20);
-            this.textBox5.TabIndex = 20;
+            this.unosTelefon.Location = new System.Drawing.Point(241, 156);
+            this.unosTelefon.Name = "unosTelefon";
+            this.unosTelefon.Size = new System.Drawing.Size(152, 20);
+            this.unosTelefon.TabIndex = 20;
             // 
-            // label7
+            // ispisID
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(22, 20);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(21, 13);
-            this.label7.TabIndex = 22;
-            this.label7.Text = "ID:";
+            this.ispisID.AutoSize = true;
+            this.ispisID.Location = new System.Drawing.Point(22, 20);
+            this.ispisID.Name = "ispisID";
+            this.ispisID.Size = new System.Drawing.Size(21, 13);
+            this.ispisID.TabIndex = 22;
+            this.ispisID.Text = "ID:";
             // 
             // label8
             // 
@@ -176,19 +179,31 @@
             this.label9.TabIndex = 24;
             this.label9.Text = "Opći podaci";
             // 
+            // vidljivostLozinke
+            // 
+            this.vidljivostLozinke.AutoSize = true;
+            this.vidljivostLozinke.Location = new System.Drawing.Point(38, 182);
+            this.vidljivostLozinke.Name = "vidljivostLozinke";
+            this.vidljivostLozinke.Size = new System.Drawing.Size(89, 17);
+            this.vidljivostLozinke.TabIndex = 25;
+            this.vidljivostLozinke.Text = "Pokaži/Sakrij";
+            this.vidljivostLozinke.UseVisualStyleBackColor = true;
+            this.vidljivostLozinke.CheckedChanged += new System.EventHandler(this.VidljivostLozinke_CheckedChanged);
+            // 
             // UnosDjelatnika
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(412, 244);
+            this.ClientSize = new System.Drawing.Size(412, 253);
+            this.Controls.Add(this.vidljivostLozinke);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.ispisID);
+            this.Controls.Add(this.unosTelefon);
+            this.Controls.Add(this.unosLozinka);
+            this.Controls.Add(this.unosEmail);
+            this.Controls.Add(this.unosPrezime);
+            this.Controls.Add(this.unosIme);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -196,8 +211,11 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.uiActionSpremi);
             this.Controls.Add(this.uiActionOdustani);
+            this.KeyPreview = true;
             this.Name = "UnosDjelatnika";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Unos djelatnika";
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.UnosDjelatnika_KeyUp);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -212,13 +230,14 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox unosIme;
+        private System.Windows.Forms.TextBox unosPrezime;
+        private System.Windows.Forms.TextBox unosEmail;
+        private System.Windows.Forms.TextBox unosLozinka;
+        private System.Windows.Forms.TextBox unosTelefon;
+        private System.Windows.Forms.Label ispisID;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.CheckBox vidljivostLozinke;
     }
 }
