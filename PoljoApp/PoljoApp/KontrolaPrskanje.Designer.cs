@@ -28,21 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.prskanjeTab = new System.Windows.Forms.TabPage();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.izborGodine = new System.Windows.Forms.ComboBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.uiActionIzbrisi = new System.Windows.Forms.Button();
+            this.uiActionAzuriraj = new System.Windows.Forms.Button();
+            this.pregledPrskanja = new System.Windows.Forms.DataGridView();
             this.uiActionNovo = new System.Windows.Forms.Button();
             this.pomocTab = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
+            this.ispisPomoc = new System.Windows.Forms.Label();
+            this.imeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prezimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nazivDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.povrsinaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.datumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.opisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idzastitaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idpovrsinaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prskanjeViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1.SuspendLayout();
             this.prskanjeTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pregledPrskanja)).BeginInit();
             this.pomocTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.prskanjeViewBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -52,102 +63,110 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.prskanjeTab);
             this.tabControl1.Controls.Add(this.pomocTab);
-            this.tabControl1.Location = new System.Drawing.Point(24, 22);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
+            this.tabControl1.Location = new System.Drawing.Point(18, 18);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(632, 375);
+            this.tabControl1.Size = new System.Drawing.Size(474, 305);
             this.tabControl1.TabIndex = 9;
             // 
             // prskanjeTab
             // 
-            this.prskanjeTab.Controls.Add(this.comboBox1);
+            this.prskanjeTab.Controls.Add(this.izborGodine);
             this.prskanjeTab.Controls.Add(this.button4);
             this.prskanjeTab.Controls.Add(this.button5);
-            this.prskanjeTab.Controls.Add(this.button3);
-            this.prskanjeTab.Controls.Add(this.button2);
-            this.prskanjeTab.Controls.Add(this.dataGridView1);
+            this.prskanjeTab.Controls.Add(this.uiActionIzbrisi);
+            this.prskanjeTab.Controls.Add(this.uiActionAzuriraj);
+            this.prskanjeTab.Controls.Add(this.pregledPrskanja);
             this.prskanjeTab.Controls.Add(this.uiActionNovo);
-            this.prskanjeTab.Location = new System.Drawing.Point(4, 25);
-            this.prskanjeTab.Margin = new System.Windows.Forms.Padding(4);
+            this.prskanjeTab.Location = new System.Drawing.Point(4, 22);
             this.prskanjeTab.Name = "prskanjeTab";
-            this.prskanjeTab.Padding = new System.Windows.Forms.Padding(4);
-            this.prskanjeTab.Size = new System.Drawing.Size(624, 346);
+            this.prskanjeTab.Padding = new System.Windows.Forms.Padding(3);
+            this.prskanjeTab.Size = new System.Drawing.Size(466, 279);
             this.prskanjeTab.TabIndex = 1;
             this.prskanjeTab.Text = "Prskanje";
             this.prskanjeTab.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // izborGodine
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(35, 27);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(160, 24);
-            this.comboBox1.TabIndex = 11;
+            this.izborGodine.FormattingEnabled = true;
+            this.izborGodine.Location = new System.Drawing.Point(26, 22);
+            this.izborGodine.Name = "izborGodine";
+            this.izborGodine.Size = new System.Drawing.Size(121, 21);
+            this.izborGodine.TabIndex = 11;
             // 
             // button4
             // 
             this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.Location = new System.Drawing.Point(455, 17);
-            this.button4.Margin = new System.Windows.Forms.Padding(4);
+            this.button4.Location = new System.Drawing.Point(341, 14);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(136, 42);
+            this.button4.Size = new System.Drawing.Size(102, 34);
             this.button4.TabIndex = 8;
             this.button4.Text = "Ispiši u PDF";
             this.button4.UseVisualStyleBackColor = true;
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(204, 17);
-            this.button5.Margin = new System.Windows.Forms.Padding(4);
+            this.button5.Location = new System.Drawing.Point(153, 14);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(136, 42);
+            this.button5.Size = new System.Drawing.Size(102, 34);
             this.button5.TabIndex = 10;
             this.button5.Text = "Sortiraj";
             this.button5.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // uiActionIzbrisi
             // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button3.Location = new System.Drawing.Point(204, 294);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(136, 42);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "Izbriši";
-            this.button3.UseVisualStyleBackColor = true;
+            this.uiActionIzbrisi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.uiActionIzbrisi.Location = new System.Drawing.Point(153, 239);
+            this.uiActionIzbrisi.Name = "uiActionIzbrisi";
+            this.uiActionIzbrisi.Size = new System.Drawing.Size(102, 34);
+            this.uiActionIzbrisi.TabIndex = 7;
+            this.uiActionIzbrisi.Text = "Izbriši";
+            this.uiActionIzbrisi.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // uiActionAzuriraj
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button2.Location = new System.Drawing.Point(33, 294);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(136, 42);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Ažuriraj";
-            this.button2.UseVisualStyleBackColor = true;
+            this.uiActionAzuriraj.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.uiActionAzuriraj.Location = new System.Drawing.Point(25, 239);
+            this.uiActionAzuriraj.Name = "uiActionAzuriraj";
+            this.uiActionAzuriraj.Size = new System.Drawing.Size(102, 34);
+            this.uiActionAzuriraj.TabIndex = 6;
+            this.uiActionAzuriraj.Text = "Ažuriraj";
+            this.uiActionAzuriraj.UseVisualStyleBackColor = true;
+            this.uiActionAzuriraj.Click += new System.EventHandler(this.UiActionAzuriraj_Click);
             // 
-            // dataGridView1
+            // pregledPrskanja
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.pregledPrskanja.AllowUserToAddRows = false;
+            this.pregledPrskanja.AllowUserToDeleteRows = false;
+            this.pregledPrskanja.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(33, 66);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(557, 220);
-            this.dataGridView1.TabIndex = 5;
+            this.pregledPrskanja.AutoGenerateColumns = false;
+            this.pregledPrskanja.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.pregledPrskanja.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.imeDataGridViewTextBoxColumn,
+            this.prezimeDataGridViewTextBoxColumn,
+            this.nazivDataGridViewTextBoxColumn,
+            this.povrsinaDataGridViewTextBoxColumn,
+            this.datumDataGridViewTextBoxColumn,
+            this.opisDataGridViewTextBoxColumn,
+            this.idzastitaDataGridViewTextBoxColumn,
+            this.idpovrsinaDataGridViewTextBoxColumn});
+            this.pregledPrskanja.DataSource = this.prskanjeViewBindingSource;
+            this.pregledPrskanja.Location = new System.Drawing.Point(25, 54);
+            this.pregledPrskanja.MultiSelect = false;
+            this.pregledPrskanja.Name = "pregledPrskanja";
+            this.pregledPrskanja.ReadOnly = true;
+            this.pregledPrskanja.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.pregledPrskanja.Size = new System.Drawing.Size(418, 179);
+            this.pregledPrskanja.TabIndex = 5;
             // 
             // uiActionNovo
             // 
             this.uiActionNovo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.uiActionNovo.Location = new System.Drawing.Point(455, 294);
-            this.uiActionNovo.Margin = new System.Windows.Forms.Padding(4);
+            this.uiActionNovo.Location = new System.Drawing.Point(341, 239);
             this.uiActionNovo.Name = "uiActionNovo";
-            this.uiActionNovo.Size = new System.Drawing.Size(136, 42);
+            this.uiActionNovo.Size = new System.Drawing.Size(102, 34);
             this.uiActionNovo.TabIndex = 4;
             this.uiActionNovo.Text = "Dodaj prskanje";
             this.uiActionNovo.UseVisualStyleBackColor = true;
@@ -155,40 +174,100 @@
             // 
             // pomocTab
             // 
-            this.pomocTab.Controls.Add(this.label1);
-            this.pomocTab.Location = new System.Drawing.Point(4, 25);
-            this.pomocTab.Margin = new System.Windows.Forms.Padding(4);
+            this.pomocTab.Controls.Add(this.ispisPomoc);
+            this.pomocTab.Location = new System.Drawing.Point(4, 22);
             this.pomocTab.Name = "pomocTab";
-            this.pomocTab.Padding = new System.Windows.Forms.Padding(4);
-            this.pomocTab.Size = new System.Drawing.Size(624, 346);
+            this.pomocTab.Padding = new System.Windows.Forms.Padding(3);
+            this.pomocTab.Size = new System.Drawing.Size(466, 279);
             this.pomocTab.TabIndex = 0;
             this.pomocTab.Text = "Pomoć";
             this.pomocTab.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // ispisPomoc
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(28, 23);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Pomoć korisniku";
+            this.ispisPomoc.AutoSize = true;
+            this.ispisPomoc.Location = new System.Drawing.Point(21, 19);
+            this.ispisPomoc.Name = "ispisPomoc";
+            this.ispisPomoc.Size = new System.Drawing.Size(85, 13);
+            this.ispisPomoc.TabIndex = 0;
+            this.ispisPomoc.Text = "Pomoć korisniku";
+            // 
+            // imeDataGridViewTextBoxColumn
+            // 
+            this.imeDataGridViewTextBoxColumn.DataPropertyName = "ime";
+            this.imeDataGridViewTextBoxColumn.HeaderText = "ime";
+            this.imeDataGridViewTextBoxColumn.Name = "imeDataGridViewTextBoxColumn";
+            this.imeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // prezimeDataGridViewTextBoxColumn
+            // 
+            this.prezimeDataGridViewTextBoxColumn.DataPropertyName = "prezime";
+            this.prezimeDataGridViewTextBoxColumn.HeaderText = "prezime";
+            this.prezimeDataGridViewTextBoxColumn.Name = "prezimeDataGridViewTextBoxColumn";
+            this.prezimeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nazivDataGridViewTextBoxColumn
+            // 
+            this.nazivDataGridViewTextBoxColumn.DataPropertyName = "naziv";
+            this.nazivDataGridViewTextBoxColumn.HeaderText = "naziv";
+            this.nazivDataGridViewTextBoxColumn.Name = "nazivDataGridViewTextBoxColumn";
+            this.nazivDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // povrsinaDataGridViewTextBoxColumn
+            // 
+            this.povrsinaDataGridViewTextBoxColumn.DataPropertyName = "povrsina";
+            this.povrsinaDataGridViewTextBoxColumn.HeaderText = "povrsina";
+            this.povrsinaDataGridViewTextBoxColumn.Name = "povrsinaDataGridViewTextBoxColumn";
+            this.povrsinaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // datumDataGridViewTextBoxColumn
+            // 
+            this.datumDataGridViewTextBoxColumn.DataPropertyName = "datum";
+            this.datumDataGridViewTextBoxColumn.HeaderText = "datum";
+            this.datumDataGridViewTextBoxColumn.Name = "datumDataGridViewTextBoxColumn";
+            this.datumDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // opisDataGridViewTextBoxColumn
+            // 
+            this.opisDataGridViewTextBoxColumn.DataPropertyName = "opis";
+            this.opisDataGridViewTextBoxColumn.HeaderText = "opis";
+            this.opisDataGridViewTextBoxColumn.Name = "opisDataGridViewTextBoxColumn";
+            this.opisDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // idzastitaDataGridViewTextBoxColumn
+            // 
+            this.idzastitaDataGridViewTextBoxColumn.DataPropertyName = "id_zastita";
+            this.idzastitaDataGridViewTextBoxColumn.HeaderText = "id_zastita";
+            this.idzastitaDataGridViewTextBoxColumn.Name = "idzastitaDataGridViewTextBoxColumn";
+            this.idzastitaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idzastitaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // idpovrsinaDataGridViewTextBoxColumn
+            // 
+            this.idpovrsinaDataGridViewTextBoxColumn.DataPropertyName = "id_povrsina";
+            this.idpovrsinaDataGridViewTextBoxColumn.HeaderText = "id_povrsina";
+            this.idpovrsinaDataGridViewTextBoxColumn.Name = "idpovrsinaDataGridViewTextBoxColumn";
+            this.idpovrsinaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idpovrsinaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // prskanjeViewBindingSource
+            // 
+            this.prskanjeViewBindingSource.DataSource = typeof(PoljoAppVerzija2.prskanjeView);
             // 
             // KontrolaPrskanje
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tabControl1);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "KontrolaPrskanje";
-            this.Size = new System.Drawing.Size(680, 418);
+            this.Size = new System.Drawing.Size(510, 340);
             this.Load += new System.EventHandler(this.KontrolaPrskanje_Load);
             this.tabControl1.ResumeLayout(false);
             this.prskanjeTab.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pregledPrskanja)).EndInit();
             this.pomocTab.ResumeLayout(false);
             this.pomocTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.prskanjeViewBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -198,13 +277,22 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage prskanjeTab;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button uiActionIzbrisi;
+        private System.Windows.Forms.Button uiActionAzuriraj;
+        private System.Windows.Forms.DataGridView pregledPrskanja;
         private System.Windows.Forms.Button uiActionNovo;
         private System.Windows.Forms.TabPage pomocTab;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label ispisPomoc;
+        private System.Windows.Forms.ComboBox izborGodine;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.BindingSource prskanjeViewBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn imeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn prezimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nazivDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn povrsinaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn datumDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn opisDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idzastitaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idpovrsinaDataGridViewTextBoxColumn;
     }
 }

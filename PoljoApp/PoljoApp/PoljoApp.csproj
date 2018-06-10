@@ -139,6 +139,9 @@
     <Compile Include="prskanje.cs">
       <DependentUpon>PoljoAppModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="prskanjeView.cs">
+      <DependentUpon>PoljoAppModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="sadni_materijal.cs">
       <DependentUpon>PoljoAppModel.tt</DependentUpon>
     </Compile>
@@ -268,6 +271,9 @@
     </None>
     <None Include="polj_povrsina.datasource" />
     <None Include="Properties\DataSources\djelatnik.datasource" />
+    <None Include="Properties\DataSources\prskanje.datasource" />
+    <None Include="Properties\DataSources\prskanjeView.datasource" />
+    <None Include="Properties\DataSources\zastita.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

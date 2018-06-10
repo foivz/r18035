@@ -28,18 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.uiActionOdustani = new System.Windows.Forms.Button();
             this.uiActionSpremi = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.izborDjelatnik = new System.Windows.Forms.ComboBox();
+            this.djelatnikBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.izborDatum = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.izborPovrsine = new System.Windows.Forms.ComboBox();
+            this.poljpovrsinaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.izborZastita = new System.Windows.Forms.ComboBox();
+            this.zastitaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.unosOpis = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.djelatnikBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.poljpovrsinaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zastitaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // uiActionOdustani
@@ -50,15 +57,18 @@
             this.uiActionOdustani.TabIndex = 19;
             this.uiActionOdustani.Text = "Odustani";
             this.uiActionOdustani.UseVisualStyleBackColor = true;
+            this.uiActionOdustani.Click += new System.EventHandler(this.UiActionOdustani_Click);
             // 
             // uiActionSpremi
             // 
+            this.uiActionSpremi.Enabled = false;
             this.uiActionSpremi.Location = new System.Drawing.Point(211, 256);
             this.uiActionSpremi.Name = "uiActionSpremi";
             this.uiActionSpremi.Size = new System.Drawing.Size(75, 33);
             this.uiActionSpremi.TabIndex = 18;
             this.uiActionSpremi.Text = "Spremi";
             this.uiActionSpremi.UseVisualStyleBackColor = true;
+            this.uiActionSpremi.Click += new System.EventHandler(this.UiActionSpremi_Click);
             // 
             // label4
             // 
@@ -79,11 +89,18 @@
             // 
             // izborDjelatnik
             // 
+            this.izborDjelatnik.DataSource = this.djelatnikBindingSource;
+            this.izborDjelatnik.DisplayMember = "ime";
             this.izborDjelatnik.FormattingEnabled = true;
             this.izborDjelatnik.Location = new System.Drawing.Point(106, 46);
             this.izborDjelatnik.Name = "izborDjelatnik";
             this.izborDjelatnik.Size = new System.Drawing.Size(156, 21);
             this.izborDjelatnik.TabIndex = 14;
+            this.izborDjelatnik.ValueMember = "id";
+            // 
+            // djelatnikBindingSource
+            // 
+            this.djelatnikBindingSource.DataSource = typeof(PoljoAppVerzija2.djelatnik);
             // 
             // izborDatum
             // 
@@ -112,19 +129,33 @@
             // 
             // izborPovrsine
             // 
+            this.izborPovrsine.DataSource = this.poljpovrsinaBindingSource;
+            this.izborPovrsine.DisplayMember = "naziv";
             this.izborPovrsine.FormattingEnabled = true;
             this.izborPovrsine.Location = new System.Drawing.Point(17, 115);
             this.izborPovrsine.Name = "izborPovrsine";
             this.izborPovrsine.Size = new System.Drawing.Size(156, 21);
             this.izborPovrsine.TabIndex = 10;
+            this.izborPovrsine.ValueMember = "id";
+            // 
+            // poljpovrsinaBindingSource
+            // 
+            this.poljpovrsinaBindingSource.DataSource = typeof(PoljoAppVerzija2.polj_povrsina);
             // 
             // izborZastita
             // 
+            this.izborZastita.DataSource = this.zastitaBindingSource;
+            this.izborZastita.DisplayMember = "naziv";
             this.izborZastita.FormattingEnabled = true;
             this.izborZastita.Location = new System.Drawing.Point(211, 115);
             this.izborZastita.Name = "izborZastita";
             this.izborZastita.Size = new System.Drawing.Size(156, 21);
             this.izborZastita.TabIndex = 20;
+            this.izborZastita.ValueMember = "id";
+            // 
+            // zastitaBindingSource
+            // 
+            this.zastitaBindingSource.DataSource = typeof(PoljoAppVerzija2.zastita);
             // 
             // label5
             // 
@@ -135,20 +166,20 @@
             this.label5.TabIndex = 21;
             this.label5.Text = "Opis";
             // 
-            // textBox1
+            // unosOpis
             // 
-            this.textBox1.Location = new System.Drawing.Point(17, 166);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(350, 73);
-            this.textBox1.TabIndex = 22;
+            this.unosOpis.Location = new System.Drawing.Point(17, 166);
+            this.unosOpis.Multiline = true;
+            this.unosOpis.Name = "unosOpis";
+            this.unosOpis.Size = new System.Drawing.Size(350, 73);
+            this.unosOpis.TabIndex = 22;
             // 
             // UnosPrskanja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(389, 301);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.unosOpis);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.izborZastita);
             this.Controls.Add(this.uiActionOdustani);
@@ -160,8 +191,13 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.izborPovrsine);
+            this.KeyPreview = true;
             this.Name = "UnosPrskanja";
             this.Text = "Unos prskanja";
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.UnosPrskanja_KeyUp);
+            ((System.ComponentModel.ISupportInitialize)(this.djelatnikBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.poljpovrsinaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zastitaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -180,6 +216,9 @@
         private System.Windows.Forms.ComboBox izborPovrsine;
         private System.Windows.Forms.ComboBox izborZastita;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox unosOpis;
+        private System.Windows.Forms.BindingSource djelatnikBindingSource;
+        private System.Windows.Forms.BindingSource poljpovrsinaBindingSource;
+        private System.Windows.Forms.BindingSource zastitaBindingSource;
     }
 }

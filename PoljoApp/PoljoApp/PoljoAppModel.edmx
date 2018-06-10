@@ -11,7 +11,7 @@
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ime" Type="varchar" MaxLength="45" Nullable="false" />
-          <Property Name="prezime" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="prezime" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="email" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="lozinka" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="broj_telefona" Type="varchar" MaxLength="45" />
@@ -41,8 +41,9 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="naziv" Type="varchar" MaxLength="45" Nullable="false" />
           <Property Name="povrsina_m2" Type="decimal" Precision="10" Scale="2" Nullable="false" />
-          <Property Name="koordinate" Type="geometry" Nullable="false" />
           <Property Name="id_namjene" Type="int" Nullable="false" />
+          <Property Name="x_koordinata" Type="decimal" Precision="5" Scale="3" Nullable="false" />
+          <Property Name="y_koordinata" Type="decimal" Precision="6" Scale="3" Nullable="false" />
         </EntityType>
         <EntityType Name="prskanje">
           <Key>
@@ -105,6 +106,24 @@
           <Property Name="naziv" Type="varchar" MaxLength="45" />
           <Property Name="koncentracija" Type="varchar" MaxLength="20" />
           <Property Name="id_vrste_zastite" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view '18035_DB.18035_DB.prskanjeView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="prskanjeView">
+          <Key>
+            <PropertyRef Name="povrsina" />
+            <PropertyRef Name="datum" />
+            <PropertyRef Name="id_zastita" />
+            <PropertyRef Name="id_povrsina" />
+          </Key>
+          <Property Name="ime" Type="varchar" MaxLength="45" />
+          <Property Name="prezime" Type="nvarchar" MaxLength="50" />
+          <Property Name="naziv" Type="varchar" MaxLength="45" />
+          <Property Name="povrsina" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="datum" Type="date" Nullable="false" />
+          <Property Name="opis" Type="varchar" MaxLength="45" />
+          <Property Name="id_zastita" Type="int" Nullable="false" />
+          <Property Name="id_povrsina" Type="int" Nullable="false" />
         </EntityType>
         <Association Name="fk_navodnjavanje_polj_povrsine1">
           <End Role="polj_povrsina" Type="Self.polj_povrsina" Multiplicity="1">
@@ -244,6 +263,18 @@
           <EntitySet Name="vrsta_sadnog_materijala" EntityType="Self.vrsta_sadnog_materijala" Schema="18035_DB" store:Type="Tables" />
           <EntitySet Name="vrsta_zastite" EntityType="Self.vrsta_zastite" Schema="18035_DB" store:Type="Tables" />
           <EntitySet Name="zastita" EntityType="Self.zastita" Schema="18035_DB" store:Type="Tables" />
+          <EntitySet Name="prskanjeView" EntityType="Self.prskanjeView" store:Type="Views" store:Schema="18035_DB">
+            <DefiningQuery>SELECT 
+[prskanjeView].[ime] AS [ime], 
+[prskanjeView].[prezime] AS [prezime], 
+[prskanjeView].[naziv] AS [naziv], 
+[prskanjeView].[povrsina] AS [povrsina], 
+[prskanjeView].[datum] AS [datum], 
+[prskanjeView].[opis] AS [opis], 
+[prskanjeView].[id_zastita] AS [id_zastita], 
+[prskanjeView].[id_povrsina] AS [id_povrsina]
+FROM [18035_DB].[prskanjeView] AS [prskanjeView]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="fk_navodnjavanje_polj_povrsine1" Association="Self.fk_navodnjavanje_polj_povrsine1">
             <End Role="polj_povrsina" EntitySet="polj_povrsina" />
             <End Role="navodnjavanje" EntitySet="navodnjavanje" />
@@ -295,7 +326,7 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ime" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="prezime" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="prezime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="lozinka" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="broj_telefona" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
@@ -329,12 +360,13 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="naziv" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="povrsina_m2" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
-          <Property Name="koordinate" Type="Geometry" Nullable="false" />
           <Property Name="id_namjene" Type="Int32" Nullable="false" />
           <NavigationProperty Name="namjena_povrsine" Relationship="Self.fk_polj_povrsina_namjena_povrsine1" FromRole="polj_povrsina" ToRole="namjena_povrsine" />
           <NavigationProperty Name="navodnjavanje" Relationship="Self.fk_navodnjavanje_polj_povrsine1" FromRole="polj_povrsina" ToRole="navodnjavanje" />
           <NavigationProperty Name="prskanje" Relationship="Self.fk_prskanje_polj_povrsine1" FromRole="polj_povrsina" ToRole="prskanje" />
           <NavigationProperty Name="sadnja" Relationship="Self.fk_sadnja_polj_povrsine1" FromRole="polj_povrsina" ToRole="sadnja" />
+          <Property Name="x_koordinata" Type="Decimal" Nullable="false" Precision="5" Scale="3" />
+          <Property Name="y_koordinata" Type="Decimal" Nullable="false" Precision="6" Scale="3" />
         </EntityType>
         <EntityType Name="prskanje">
           <Key>
@@ -588,7 +620,24 @@
             <End Role="vrsta_zastite" EntitySet="vrsta_zastite" />
             <End Role="zastita" EntitySet="zastita" />
           </AssociationSet>
+          <EntitySet Name="prskanjeView" EntityType="DBPoljoApp.prskanjeView" />
         </EntityContainer>
+        <EntityType Name="prskanjeView">
+          <Key>
+            <PropertyRef Name="povrsina" />
+            <PropertyRef Name="datum" />
+            <PropertyRef Name="id_zastita" />
+            <PropertyRef Name="id_povrsina" />
+          </Key>
+          <Property Name="ime" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="prezime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="naziv" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="povrsina" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="datum" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="opis" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="id_zastita" Type="Int32" Nullable="false" />
+          <Property Name="id_povrsina" Type="Int32" Nullable="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -629,10 +678,11 @@
           <EntitySetMapping Name="polj_povrsina">
             <EntityTypeMapping TypeName="DBPoljoApp.polj_povrsina">
               <MappingFragment StoreEntitySet="polj_povrsina">
+                <ScalarProperty Name="y_koordinata" ColumnName="y_koordinata" />
+                <ScalarProperty Name="x_koordinata" ColumnName="x_koordinata" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="naziv" ColumnName="naziv" />
                 <ScalarProperty Name="povrsina_m2" ColumnName="povrsina_m2" />
-                <ScalarProperty Name="koordinate" ColumnName="koordinate" />
                 <ScalarProperty Name="id_namjene" ColumnName="id_namjene" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -699,6 +749,20 @@
                 <ScalarProperty Name="naziv" ColumnName="naziv" />
                 <ScalarProperty Name="koncentracija" ColumnName="koncentracija" />
                 <ScalarProperty Name="id_vrste_zastite" ColumnName="id_vrste_zastite" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="prskanjeView">
+            <EntityTypeMapping TypeName="DBPoljoApp.prskanjeView">
+              <MappingFragment StoreEntitySet="prskanjeView">
+                <ScalarProperty Name="id_povrsina" ColumnName="id_povrsina" />
+                <ScalarProperty Name="id_zastita" ColumnName="id_zastita" />
+                <ScalarProperty Name="opis" ColumnName="opis" />
+                <ScalarProperty Name="datum" ColumnName="datum" />
+                <ScalarProperty Name="povrsina" ColumnName="povrsina" />
+                <ScalarProperty Name="naziv" ColumnName="naziv" />
+                <ScalarProperty Name="prezime" ColumnName="prezime" />
+                <ScalarProperty Name="ime" ColumnName="ime" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
