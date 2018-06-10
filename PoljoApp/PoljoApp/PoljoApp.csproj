@@ -36,6 +36,7 @@
       <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
+<<<<<<< HEAD
     <Reference Include="Microsoft.ReportViewer.Common, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
     </Reference>
@@ -74,6 +75,8 @@
       <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
       <Private>True</Private>
     </Reference>
+=======
+>>>>>>> parent of 5f08b80... Dodaj logiku za ispis izvještaja i brisanja zapisa o prskanju
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -179,6 +182,7 @@
       <DependentUpon>PoljoAppModel.tt</DependentUpon>
     </Compile>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Compile Include="PrskanjeReportForma.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,6 +191,8 @@
     </Compile>
 =======
 >>>>>>> ec4b8185a6d34f70b6b43d7de6ee8bee0f082888
+=======
+>>>>>>> parent of 5f08b80... Dodaj logiku za ispis izvještaja i brisanja zapisa o prskanju
     <Compile Include="prskanjeView.cs">
       <DependentUpon>PoljoAppModel.tt</DependentUpon>
     </Compile>
