@@ -77,7 +77,7 @@
             // 
             // uiUnosNaziva
             // 
-            this.uiUnosNaziva.Location = new System.Drawing.Point(129, 7);
+            this.uiUnosNaziva.Location = new System.Drawing.Point(130, 6);
             this.uiUnosNaziva.Margin = new System.Windows.Forms.Padding(4);
             this.uiUnosNaziva.Name = "uiUnosNaziva";
             this.uiUnosNaziva.Size = new System.Drawing.Size(235, 22);

@@ -90,5 +90,16 @@ namespace PoljoAppVerzija2
             }
             
         }
+
+        private void uiActionAžurirajPovršinu_Click(object sender, EventArgs e)
+        {
+            polj_povrsina odabranaPovršina = poljpovrsinaBindingSource.Current as polj_povrsina;
+            if (odabranaPovršina != null)
+            {
+                UnosPovrsine formaUnosPovrsine = new UnosPovrsine(odabranaPovršina);
+                formaUnosPovrsine.ShowDialog();
+                PrikaziPovrsine();
+            }
+        }
     }
 }
