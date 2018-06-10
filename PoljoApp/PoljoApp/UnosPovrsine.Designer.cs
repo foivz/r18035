@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -35,13 +36,19 @@
             this.uiUnosPovrsine = new System.Windows.Forms.TextBox();
             this.uiActionOdustani = new System.Windows.Forms.Button();
             this.uiActionSpremi = new System.Windows.Forms.Button();
-            this.uiActionOdabirNamjene = new System.Windows.Forms.ComboBox();
+            this.uiOdabirNamjene = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.uiUnosKoordinateX = new System.Windows.Forms.TextBox();
+            this.uiUnosKoordinateY = new System.Windows.Forms.TextBox();
+            this.namjenapovrsineBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.namjenapovrsineBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 11);
+            this.label1.Location = new System.Drawing.Point(16, 10);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(47, 17);
@@ -51,7 +58,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 47);
+            this.label2.Location = new System.Drawing.Point(16, 46);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 17);
@@ -61,7 +68,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 81);
+            this.label3.Location = new System.Drawing.Point(16, 84);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(68, 17);
@@ -86,7 +93,7 @@
             // 
             // uiActionOdustani
             // 
-            this.uiActionOdustani.Location = new System.Drawing.Point(129, 127);
+            this.uiActionOdustani.Location = new System.Drawing.Point(128, 204);
             this.uiActionOdustani.Margin = new System.Windows.Forms.Padding(4);
             this.uiActionOdustani.Name = "uiActionOdustani";
             this.uiActionOdustani.Size = new System.Drawing.Size(100, 28);
@@ -96,29 +103,75 @@
             // 
             // uiActionSpremi
             // 
-            this.uiActionSpremi.Location = new System.Drawing.Point(265, 127);
+            this.uiActionSpremi.Location = new System.Drawing.Point(264, 204);
             this.uiActionSpremi.Margin = new System.Windows.Forms.Padding(4);
             this.uiActionSpremi.Name = "uiActionSpremi";
             this.uiActionSpremi.Size = new System.Drawing.Size(100, 28);
             this.uiActionSpremi.TabIndex = 7;
             this.uiActionSpremi.Text = "Spremi";
             this.uiActionSpremi.UseVisualStyleBackColor = true;
+            this.uiActionSpremi.Click += new System.EventHandler(this.uiActionSpremi_Click);
             // 
-            // uiActionOdabirNamjene
+            // uiOdabirNamjene
             // 
-            this.uiActionOdabirNamjene.FormattingEnabled = true;
-            this.uiActionOdabirNamjene.Location = new System.Drawing.Point(129, 81);
-            this.uiActionOdabirNamjene.Margin = new System.Windows.Forms.Padding(4);
-            this.uiActionOdabirNamjene.Name = "uiActionOdabirNamjene";
-            this.uiActionOdabirNamjene.Size = new System.Drawing.Size(235, 24);
-            this.uiActionOdabirNamjene.TabIndex = 8;
+            this.uiOdabirNamjene.DataSource = this.namjenapovrsineBindingSource;
+            this.uiOdabirNamjene.DisplayMember = "namjena";
+            this.uiOdabirNamjene.FormattingEnabled = true;
+            this.uiOdabirNamjene.Location = new System.Drawing.Point(129, 81);
+            this.uiOdabirNamjene.Margin = new System.Windows.Forms.Padding(4);
+            this.uiOdabirNamjene.Name = "uiOdabirNamjene";
+            this.uiOdabirNamjene.Size = new System.Drawing.Size(235, 24);
+            this.uiOdabirNamjene.TabIndex = 8;
+            this.uiOdabirNamjene.ValueMember = "id";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(16, 149);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(92, 17);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Koordinata y:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(16, 116);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(91, 17);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Koordinata x:";
+            // 
+            // uiUnosKoordinateX
+            // 
+            this.uiUnosKoordinateX.Location = new System.Drawing.Point(129, 113);
+            this.uiUnosKoordinateX.Margin = new System.Windows.Forms.Padding(4);
+            this.uiUnosKoordinateX.Name = "uiUnosKoordinateX";
+            this.uiUnosKoordinateX.Size = new System.Drawing.Size(101, 22);
+            this.uiUnosKoordinateX.TabIndex = 11;
+            // 
+            // uiUnosKoordinateY
+            // 
+            this.uiUnosKoordinateY.Location = new System.Drawing.Point(129, 146);
+            this.uiUnosKoordinateY.Margin = new System.Windows.Forms.Padding(4);
+            this.uiUnosKoordinateY.Name = "uiUnosKoordinateY";
+            this.uiUnosKoordinateY.Size = new System.Drawing.Size(101, 22);
+            this.uiUnosKoordinateY.TabIndex = 12;
+            // 
+            // namjenapovrsineBindingSource
+            // 
+            this.namjenapovrsineBindingSource.DataSource = typeof(PoljoAppVerzija2.namjena_povrsine);
             // 
             // UnosPovrsine
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(404, 181);
-            this.Controls.Add(this.uiActionOdabirNamjene);
+            this.ClientSize = new System.Drawing.Size(404, 262);
+            this.Controls.Add(this.uiUnosKoordinateY);
+            this.Controls.Add(this.uiUnosKoordinateX);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.uiOdabirNamjene);
             this.Controls.Add(this.uiActionSpremi);
             this.Controls.Add(this.uiActionOdustani);
             this.Controls.Add(this.uiUnosPovrsine);
@@ -129,6 +182,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UnosPovrsine";
             this.Text = "Unos Povrsine";
+            ((System.ComponentModel.ISupportInitialize)(this.namjenapovrsineBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -143,6 +197,11 @@
         private System.Windows.Forms.TextBox uiUnosPovrsine;
         private System.Windows.Forms.Button uiActionOdustani;
         private System.Windows.Forms.Button uiActionSpremi;
-        private System.Windows.Forms.ComboBox uiActionOdabirNamjene;
+        private System.Windows.Forms.ComboBox uiOdabirNamjene;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox uiUnosKoordinateX;
+        private System.Windows.Forms.TextBox uiUnosKoordinateY;
+        private System.Windows.Forms.BindingSource namjenapovrsineBindingSource;
     }
 }
