@@ -44,16 +44,23 @@ namespace PoljoAppVerzija2
 
         private void UiActionAzuriraj_Click(object sender, EventArgs e)
         {
-            prskanjeView oznaceno = prskanjeViewBindingSource.Current as prskanjeView;
-            prskanje zaIzmjenu;
-            using (var db = new Entities()) {
-                zaIzmjenu = db.prskanje.Where(p=>p.datum==oznaceno.datum && p.id_povrsina == oznaceno.id_povrsina && p.id_zastita==oznaceno.id_zastita).FirstOrDefault();
-            }
+            prskanje zaIzmjenu = DohvatiOznacenoPrskanje();
 
             UnosPrskanja azuriraj = new UnosPrskanja(zaIzmjenu);
             azuriraj.ShowDialog();
             PrikaziPrskanja();
 
+        }
+
+        private prskanje DohvatiOznacenoPrskanje()
+        {
+            prskanjeView oznaceno = prskanjeViewBindingSource.Current as prskanjeView;
+            prskanje zaIzmjenu;
+            using (var db = new Entities())
+            {
+                zaIzmjenu = db.prskanje.Where(p => p.datum == oznaceno.datum && p.id_povrsina == oznaceno.id_povrsina && p.id_zastita == oznaceno.id_zastita).FirstOrDefault();
+            }
+            return zaIzmjenu;
         }
 
         private void DohvatiGodine()
@@ -68,6 +75,29 @@ namespace PoljoAppVerzija2
                 izborGodine.Items.Add(datum);
             }
             izborGodine.SelectedIndex = 0;
+        }
+
+        private void UiActionIspis_Click(object sender, EventArgs e)
+        {
+            PrskanjeReportForma izvjestaj = new PrskanjeReportForma(int.Parse(izborGodine.Text));
+            izvjestaj.ShowDialog();
+        }
+
+        private void UiActionIzbrisi_Click(object sender, EventArgs e)
+        {
+            prskanje zaBrisanje = DohvatiOznacenoPrskanje();
+
+            if (MessageBox.Show("Jeste li ste sigurni da želite obrisati prskanje?", "Upozorenje!", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+            {
+                using (var db = new Entities())
+                {
+                    db.prskanje.Attach(zaBrisanje);
+                    db.prskanje.Remove(zaBrisanje);
+                    db.SaveChanges();
+                }
+                
+            }
+            PrikaziPrskanja();
         }
     }
 }
