@@ -37,5 +37,7 @@ namespace PoljoAppVerzija2
         public DbSet<vrsta_zastite> vrsta_zastite { get; set; }
         public DbSet<zastita> zastita { get; set; }
         public DbSet<prskanjeView> prskanjeView { get; set; }
+        public DbSet<navodnjavanjeView> navodnjavanjeView { get; set; }
+        public DbSet<SadnjaView> SadnjaView { get; set; }
     }
 }

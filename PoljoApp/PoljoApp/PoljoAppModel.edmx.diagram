@@ -27,6 +27,8 @@
         <AssociationConnector Association="DBPoljoApp.fk_sadnja_proizvodi1" ManuallyRouted="false" />
         <AssociationConnector Association="DBPoljoApp.fk_zastita_vrste_zastite1" ManuallyRouted="false" />
         <EntityTypeShape EntityType="DBPoljoApp.prskanjeView" Width="1.5" PointX="7.375" PointY="0.75" />
+        <EntityTypeShape EntityType="DBPoljoApp.navodnjavanjeView" Width="1.5" PointX="8.375" PointY="8.75" />
+        <EntityTypeShape EntityType="DBPoljoApp.SadnjaView" Width="1.5" PointX="9.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

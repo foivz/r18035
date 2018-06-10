@@ -28,18 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.navodnjavanjeTab = new System.Windows.Forms.TabPage();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.uiActionStatistika = new System.Windows.Forms.Button();
+            this.uiActionIzbrisi = new System.Windows.Forms.Button();
+            this.uiActionAzuiraj = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idpovrsinaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.datumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kolicinavodelitriDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idstanjaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nazivDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.povrsinanazivDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.povrsinam2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.navodnjavanjeViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.uiActionNovo = new System.Windows.Forms.Button();
             this.pomocTab = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.navodnjavanjeTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.navodnjavanjeViewBindingSource)).BeginInit();
             this.pomocTab.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,9 +68,9 @@
             // 
             // navodnjavanjeTab
             // 
-            this.navodnjavanjeTab.Controls.Add(this.button4);
-            this.navodnjavanjeTab.Controls.Add(this.button3);
-            this.navodnjavanjeTab.Controls.Add(this.button2);
+            this.navodnjavanjeTab.Controls.Add(this.uiActionStatistika);
+            this.navodnjavanjeTab.Controls.Add(this.uiActionIzbrisi);
+            this.navodnjavanjeTab.Controls.Add(this.uiActionAzuiraj);
             this.navodnjavanjeTab.Controls.Add(this.dataGridView1);
             this.navodnjavanjeTab.Controls.Add(this.uiActionNovo);
             this.navodnjavanjeTab.Location = new System.Drawing.Point(4, 22);
@@ -71,46 +81,118 @@
             this.navodnjavanjeTab.Text = "Navodnjavanje";
             this.navodnjavanjeTab.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // uiActionStatistika
             // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.Location = new System.Drawing.Point(341, 14);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(102, 34);
-            this.button4.TabIndex = 8;
-            this.button4.Text = "Statistika";
-            this.button4.UseVisualStyleBackColor = true;
+            this.uiActionStatistika.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.uiActionStatistika.Location = new System.Drawing.Point(341, 14);
+            this.uiActionStatistika.Name = "uiActionStatistika";
+            this.uiActionStatistika.Size = new System.Drawing.Size(102, 34);
+            this.uiActionStatistika.TabIndex = 8;
+            this.uiActionStatistika.Text = "Statistika";
+            this.uiActionStatistika.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // uiActionIzbrisi
             // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button3.Location = new System.Drawing.Point(153, 239);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(102, 34);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "Izbriši";
-            this.button3.UseVisualStyleBackColor = true;
+            this.uiActionIzbrisi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.uiActionIzbrisi.Location = new System.Drawing.Point(153, 239);
+            this.uiActionIzbrisi.Name = "uiActionIzbrisi";
+            this.uiActionIzbrisi.Size = new System.Drawing.Size(102, 34);
+            this.uiActionIzbrisi.TabIndex = 7;
+            this.uiActionIzbrisi.Text = "Izbriši";
+            this.uiActionIzbrisi.UseVisualStyleBackColor = true;
+            this.uiActionIzbrisi.Click += new System.EventHandler(this.UiActionIzbrisi_Click);
             // 
-            // button2
+            // uiActionAzuiraj
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button2.Location = new System.Drawing.Point(25, 239);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(102, 34);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Ažuriraj";
-            this.button2.UseVisualStyleBackColor = true;
+            this.uiActionAzuiraj.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.uiActionAzuiraj.Location = new System.Drawing.Point(25, 239);
+            this.uiActionAzuiraj.Name = "uiActionAzuiraj";
+            this.uiActionAzuiraj.Size = new System.Drawing.Size(102, 34);
+            this.uiActionAzuiraj.TabIndex = 6;
+            this.uiActionAzuiraj.Text = "Ažuriraj";
+            this.uiActionAzuiraj.UseVisualStyleBackColor = true;
+            this.uiActionAzuiraj.Click += new System.EventHandler(this.UiActionAzuiraj_Click);
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idpovrsinaDataGridViewTextBoxColumn,
+            this.datumDataGridViewTextBoxColumn,
+            this.kolicinavodelitriDataGridViewTextBoxColumn,
+            this.idstanjaDataGridViewTextBoxColumn,
+            this.nazivDataGridViewTextBoxColumn,
+            this.povrsinanazivDataGridViewTextBoxColumn,
+            this.povrsinam2DataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.navodnjavanjeViewBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(25, 54);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(418, 179);
             this.dataGridView1.TabIndex = 5;
+            // 
+            // idpovrsinaDataGridViewTextBoxColumn
+            // 
+            this.idpovrsinaDataGridViewTextBoxColumn.DataPropertyName = "id_povrsina";
+            this.idpovrsinaDataGridViewTextBoxColumn.HeaderText = "id_povrsina";
+            this.idpovrsinaDataGridViewTextBoxColumn.Name = "idpovrsinaDataGridViewTextBoxColumn";
+            this.idpovrsinaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idpovrsinaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // datumDataGridViewTextBoxColumn
+            // 
+            this.datumDataGridViewTextBoxColumn.DataPropertyName = "datum";
+            this.datumDataGridViewTextBoxColumn.HeaderText = "datum";
+            this.datumDataGridViewTextBoxColumn.Name = "datumDataGridViewTextBoxColumn";
+            this.datumDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // kolicinavodelitriDataGridViewTextBoxColumn
+            // 
+            this.kolicinavodelitriDataGridViewTextBoxColumn.DataPropertyName = "kolicina_vode_litri";
+            this.kolicinavodelitriDataGridViewTextBoxColumn.HeaderText = "kolicina_vode_litri";
+            this.kolicinavodelitriDataGridViewTextBoxColumn.Name = "kolicinavodelitriDataGridViewTextBoxColumn";
+            this.kolicinavodelitriDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // idstanjaDataGridViewTextBoxColumn
+            // 
+            this.idstanjaDataGridViewTextBoxColumn.DataPropertyName = "id_stanja";
+            this.idstanjaDataGridViewTextBoxColumn.HeaderText = "id_stanja";
+            this.idstanjaDataGridViewTextBoxColumn.Name = "idstanjaDataGridViewTextBoxColumn";
+            this.idstanjaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idstanjaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nazivDataGridViewTextBoxColumn
+            // 
+            this.nazivDataGridViewTextBoxColumn.DataPropertyName = "naziv";
+            this.nazivDataGridViewTextBoxColumn.HeaderText = "naziv";
+            this.nazivDataGridViewTextBoxColumn.Name = "nazivDataGridViewTextBoxColumn";
+            this.nazivDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // povrsinanazivDataGridViewTextBoxColumn
+            // 
+            this.povrsinanazivDataGridViewTextBoxColumn.DataPropertyName = "povrsina_naziv";
+            this.povrsinanazivDataGridViewTextBoxColumn.HeaderText = "povrsina_naziv";
+            this.povrsinanazivDataGridViewTextBoxColumn.Name = "povrsinanazivDataGridViewTextBoxColumn";
+            this.povrsinanazivDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // povrsinam2DataGridViewTextBoxColumn
+            // 
+            this.povrsinam2DataGridViewTextBoxColumn.DataPropertyName = "povrsina_m2";
+            this.povrsinam2DataGridViewTextBoxColumn.HeaderText = "povrsina_m2";
+            this.povrsinam2DataGridViewTextBoxColumn.Name = "povrsinam2DataGridViewTextBoxColumn";
+            this.povrsinam2DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // navodnjavanjeViewBindingSource
+            // 
+            this.navodnjavanjeViewBindingSource.DataSource = typeof(PoljoAppVerzija2.navodnjavanjeView);
             // 
             // uiActionNovo
             // 
@@ -153,6 +235,7 @@
             this.tabControl1.ResumeLayout(false);
             this.navodnjavanjeTab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.navodnjavanjeViewBindingSource)).EndInit();
             this.pomocTab.ResumeLayout(false);
             this.pomocTab.PerformLayout();
             this.ResumeLayout(false);
@@ -163,12 +246,20 @@
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage navodnjavanjeTab;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button uiActionStatistika;
+        private System.Windows.Forms.Button uiActionIzbrisi;
+        private System.Windows.Forms.Button uiActionAzuiraj;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button uiActionNovo;
         private System.Windows.Forms.TabPage pomocTab;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idpovrsinaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn datumDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kolicinavodelitriDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idstanjaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nazivDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn povrsinanazivDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn povrsinam2DataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource navodnjavanjeViewBindingSource;
     }
 }

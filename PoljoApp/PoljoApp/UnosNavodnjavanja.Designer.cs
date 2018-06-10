@@ -28,25 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.izborPovrsine = new System.Windows.Forms.ComboBox();
+            this.poljpovrsinaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.izborDatum = new System.Windows.Forms.DateTimePicker();
             this.izborVrsta = new System.Windows.Forms.ComboBox();
+            this.stanjenavodnjavanjaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.unosKolicinaVode = new System.Windows.Forms.TextBox();
             this.uiActionSpremi = new System.Windows.Forms.Button();
             this.uiActionOdustani = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.poljpovrsinaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stanjenavodnjavanjaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // izborPovrsine
             // 
+            this.izborPovrsine.DataSource = this.poljpovrsinaBindingSource;
+            this.izborPovrsine.DisplayMember = "naziv";
             this.izborPovrsine.FormattingEnabled = true;
             this.izborPovrsine.Location = new System.Drawing.Point(15, 115);
             this.izborPovrsine.Name = "izborPovrsine";
             this.izborPovrsine.Size = new System.Drawing.Size(156, 21);
             this.izborPovrsine.TabIndex = 0;
+            this.izborPovrsine.ValueMember = "id";
+            // 
+            // poljpovrsinaBindingSource
+            // 
+            this.poljpovrsinaBindingSource.DataSource = typeof(PoljoAppVerzija2.polj_povrsina);
             // 
             // label1
             // 
@@ -75,11 +87,18 @@
             // 
             // izborVrsta
             // 
+            this.izborVrsta.DataSource = this.stanjenavodnjavanjaBindingSource;
+            this.izborVrsta.DisplayMember = "naziv";
             this.izborVrsta.FormattingEnabled = true;
             this.izborVrsta.Location = new System.Drawing.Point(104, 46);
             this.izborVrsta.Name = "izborVrsta";
             this.izborVrsta.Size = new System.Drawing.Size(156, 21);
             this.izborVrsta.TabIndex = 4;
+            this.izborVrsta.ValueMember = "id";
+            // 
+            // stanjenavodnjavanjaBindingSource
+            // 
+            this.stanjenavodnjavanjaBindingSource.DataSource = typeof(PoljoAppVerzija2.stanje_navodnjavanja);
             // 
             // label3
             // 
@@ -107,12 +126,14 @@
             // 
             // uiActionSpremi
             // 
+            this.uiActionSpremi.Enabled = false;
             this.uiActionSpremi.Location = new System.Drawing.Point(209, 168);
             this.uiActionSpremi.Name = "uiActionSpremi";
             this.uiActionSpremi.Size = new System.Drawing.Size(75, 33);
             this.uiActionSpremi.TabIndex = 8;
             this.uiActionSpremi.Text = "Spremi";
             this.uiActionSpremi.UseVisualStyleBackColor = true;
+            this.uiActionSpremi.Click += new System.EventHandler(this.UiActionSpremi_Click);
             // 
             // uiActionOdustani
             // 
@@ -122,6 +143,7 @@
             this.uiActionOdustani.TabIndex = 9;
             this.uiActionOdustani.Text = "Odustani";
             this.uiActionOdustani.UseVisualStyleBackColor = true;
+            this.uiActionOdustani.Click += new System.EventHandler(this.UiActionOdustani_Click);
             // 
             // UnosNavodnjavanja
             // 
@@ -138,8 +160,12 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.izborPovrsine);
+            this.KeyPreview = true;
             this.Name = "UnosNavodnjavanja";
             this.Text = "Unos navodnjavanja";
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.UnosNavodnjavanja_KeyUp);
+            ((System.ComponentModel.ISupportInitialize)(this.poljpovrsinaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stanjenavodnjavanjaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -157,5 +183,7 @@
         private System.Windows.Forms.TextBox unosKolicinaVode;
         private System.Windows.Forms.Button uiActionSpremi;
         private System.Windows.Forms.Button uiActionOdustani;
+        private System.Windows.Forms.BindingSource poljpovrsinaBindingSource;
+        private System.Windows.Forms.BindingSource stanjenavodnjavanjaBindingSource;
     }
 }

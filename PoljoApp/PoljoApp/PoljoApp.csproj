@@ -99,6 +99,9 @@
     <Compile Include="navodnjavanje.cs">
       <DependentUpon>PoljoAppModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="navodnjavanjeView.cs">
+      <DependentUpon>PoljoAppModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="PoljoApp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,6 +174,9 @@
       <DependentUpon>PoljoAppModel.tt</DependentUpon>
     </Compile>
     <Compile Include="sadnja.cs">
+      <DependentUpon>PoljoAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SadnjaView.cs">
       <DependentUpon>PoljoAppModel.tt</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
@@ -301,8 +307,10 @@
     </None>
     <None Include="polj_povrsina.datasource" />
     <None Include="Properties\DataSources\djelatnik.datasource" />
+    <None Include="Properties\DataSources\navodnjavanjeView.datasource" />
     <None Include="Properties\DataSources\prskanje.datasource" />
     <None Include="Properties\DataSources\prskanjeView.datasource" />
+    <None Include="Properties\DataSources\stanje_navodnjavanja.datasource" />
     <None Include="Properties\DataSources\zastita.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
