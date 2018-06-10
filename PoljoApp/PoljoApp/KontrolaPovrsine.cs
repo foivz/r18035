@@ -28,6 +28,7 @@ namespace PoljoAppVerzija2
         private void KontrolaPovrsine_Load(object sender, EventArgs e)
         {
             PrikaziNamjenePovrsina();
+            PrikaziPovrsine();
         }
 
         private void PrikaziNamjenePovrsina()
@@ -52,9 +53,11 @@ namespace PoljoAppVerzija2
             using (var db = new Entities())
             {
                 var obj = izborNamjenePovrsina.SelectedItem as namjena_povrsine;
-                if(obj.namjena=="Prikazi sve")
+
+                if(obj!=null && obj.namjena=="Prikazi sve")
                     listaPovrsina = new BindingList<polj_povrsina>(db.polj_povrsina.ToList());
-                else
+
+                else if(obj!=null)
                 {
                     db.namjena_povrsine.Attach(obj);
                     listaPovrsina = new BindingList<polj_povrsina>(obj.polj_povrsina.ToList());

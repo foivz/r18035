@@ -37,25 +37,26 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.uiDodajPovrsinu = new System.Windows.Forms.Button();
-            this.pomocTab = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
-            this.poljpovrsinaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nazivDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.povrsinam2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.koordinateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idnamjeneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.xkoordinataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ykoordinataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.namjenapovrsineDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.navodnjavanjeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prskanjeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sadnjaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.poljpovrsinaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.uiDodajPovrsinu = new System.Windows.Forms.Button();
+            this.pomocTab = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.povrsineTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.namjenapovrsineBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.pomocTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.poljpovrsinaBindingSource)).BeginInit();
+            this.pomocTab.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -140,6 +141,8 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -149,8 +152,9 @@
             this.idDataGridViewTextBoxColumn,
             this.nazivDataGridViewTextBoxColumn,
             this.povrsinam2DataGridViewTextBoxColumn,
-            this.koordinateDataGridViewTextBoxColumn,
             this.idnamjeneDataGridViewTextBoxColumn,
+            this.xkoordinataDataGridViewTextBoxColumn,
+            this.ykoordinataDataGridViewTextBoxColumn,
             this.namjenapovrsineDataGridViewTextBoxColumn,
             this.navodnjavanjeDataGridViewTextBoxColumn,
             this.prskanjeDataGridViewTextBoxColumn,
@@ -159,8 +163,87 @@
             this.dataGridView1.Location = new System.Drawing.Point(33, 66);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(557, 220);
             this.dataGridView1.TabIndex = 5;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nazivDataGridViewTextBoxColumn
+            // 
+            this.nazivDataGridViewTextBoxColumn.DataPropertyName = "naziv";
+            this.nazivDataGridViewTextBoxColumn.HeaderText = "naziv";
+            this.nazivDataGridViewTextBoxColumn.Name = "nazivDataGridViewTextBoxColumn";
+            this.nazivDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // povrsinam2DataGridViewTextBoxColumn
+            // 
+            this.povrsinam2DataGridViewTextBoxColumn.DataPropertyName = "povrsina_m2";
+            this.povrsinam2DataGridViewTextBoxColumn.HeaderText = "povrsina_m2";
+            this.povrsinam2DataGridViewTextBoxColumn.Name = "povrsinam2DataGridViewTextBoxColumn";
+            this.povrsinam2DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // idnamjeneDataGridViewTextBoxColumn
+            // 
+            this.idnamjeneDataGridViewTextBoxColumn.DataPropertyName = "id_namjene";
+            this.idnamjeneDataGridViewTextBoxColumn.HeaderText = "id_namjene";
+            this.idnamjeneDataGridViewTextBoxColumn.Name = "idnamjeneDataGridViewTextBoxColumn";
+            this.idnamjeneDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // xkoordinataDataGridViewTextBoxColumn
+            // 
+            this.xkoordinataDataGridViewTextBoxColumn.DataPropertyName = "x_koordinata";
+            this.xkoordinataDataGridViewTextBoxColumn.HeaderText = "x_koordinata";
+            this.xkoordinataDataGridViewTextBoxColumn.Name = "xkoordinataDataGridViewTextBoxColumn";
+            this.xkoordinataDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // ykoordinataDataGridViewTextBoxColumn
+            // 
+            this.ykoordinataDataGridViewTextBoxColumn.DataPropertyName = "y_koordinata";
+            this.ykoordinataDataGridViewTextBoxColumn.HeaderText = "y_koordinata";
+            this.ykoordinataDataGridViewTextBoxColumn.Name = "ykoordinataDataGridViewTextBoxColumn";
+            this.ykoordinataDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // namjenapovrsineDataGridViewTextBoxColumn
+            // 
+            this.namjenapovrsineDataGridViewTextBoxColumn.DataPropertyName = "namjena_povrsine";
+            this.namjenapovrsineDataGridViewTextBoxColumn.HeaderText = "namjena_povrsine";
+            this.namjenapovrsineDataGridViewTextBoxColumn.Name = "namjenapovrsineDataGridViewTextBoxColumn";
+            this.namjenapovrsineDataGridViewTextBoxColumn.ReadOnly = true;
+            this.namjenapovrsineDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // navodnjavanjeDataGridViewTextBoxColumn
+            // 
+            this.navodnjavanjeDataGridViewTextBoxColumn.DataPropertyName = "navodnjavanje";
+            this.navodnjavanjeDataGridViewTextBoxColumn.HeaderText = "navodnjavanje";
+            this.navodnjavanjeDataGridViewTextBoxColumn.Name = "navodnjavanjeDataGridViewTextBoxColumn";
+            this.navodnjavanjeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.navodnjavanjeDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // prskanjeDataGridViewTextBoxColumn
+            // 
+            this.prskanjeDataGridViewTextBoxColumn.DataPropertyName = "prskanje";
+            this.prskanjeDataGridViewTextBoxColumn.HeaderText = "prskanje";
+            this.prskanjeDataGridViewTextBoxColumn.Name = "prskanjeDataGridViewTextBoxColumn";
+            this.prskanjeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.prskanjeDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // sadnjaDataGridViewTextBoxColumn
+            // 
+            this.sadnjaDataGridViewTextBoxColumn.DataPropertyName = "sadnja";
+            this.sadnjaDataGridViewTextBoxColumn.HeaderText = "sadnja";
+            this.sadnjaDataGridViewTextBoxColumn.Name = "sadnjaDataGridViewTextBoxColumn";
+            this.sadnjaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sadnjaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // poljpovrsinaBindingSource
+            // 
+            this.poljpovrsinaBindingSource.DataSource = typeof(PoljoAppVerzija2.polj_povrsina);
             // 
             // uiDodajPovrsinu
             // 
@@ -196,64 +279,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Pomoć korisniku";
             // 
-            // poljpovrsinaBindingSource
-            // 
-            this.poljpovrsinaBindingSource.DataSource = typeof(PoljoAppVerzija2.polj_povrsina);
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            // 
-            // nazivDataGridViewTextBoxColumn
-            // 
-            this.nazivDataGridViewTextBoxColumn.DataPropertyName = "naziv";
-            this.nazivDataGridViewTextBoxColumn.HeaderText = "naziv";
-            this.nazivDataGridViewTextBoxColumn.Name = "nazivDataGridViewTextBoxColumn";
-            // 
-            // povrsinam2DataGridViewTextBoxColumn
-            // 
-            this.povrsinam2DataGridViewTextBoxColumn.DataPropertyName = "povrsina_m2";
-            this.povrsinam2DataGridViewTextBoxColumn.HeaderText = "povrsina_m2";
-            this.povrsinam2DataGridViewTextBoxColumn.Name = "povrsinam2DataGridViewTextBoxColumn";
-            // 
-            // koordinateDataGridViewTextBoxColumn
-            // 
-            this.koordinateDataGridViewTextBoxColumn.DataPropertyName = "koordinate";
-            this.koordinateDataGridViewTextBoxColumn.HeaderText = "koordinate";
-            this.koordinateDataGridViewTextBoxColumn.Name = "koordinateDataGridViewTextBoxColumn";
-            // 
-            // idnamjeneDataGridViewTextBoxColumn
-            // 
-            this.idnamjeneDataGridViewTextBoxColumn.DataPropertyName = "id_namjene";
-            this.idnamjeneDataGridViewTextBoxColumn.HeaderText = "id_namjene";
-            this.idnamjeneDataGridViewTextBoxColumn.Name = "idnamjeneDataGridViewTextBoxColumn";
-            // 
-            // namjenapovrsineDataGridViewTextBoxColumn
-            // 
-            this.namjenapovrsineDataGridViewTextBoxColumn.DataPropertyName = "namjena_povrsine";
-            this.namjenapovrsineDataGridViewTextBoxColumn.HeaderText = "namjena_povrsine";
-            this.namjenapovrsineDataGridViewTextBoxColumn.Name = "namjenapovrsineDataGridViewTextBoxColumn";
-            // 
-            // navodnjavanjeDataGridViewTextBoxColumn
-            // 
-            this.navodnjavanjeDataGridViewTextBoxColumn.DataPropertyName = "navodnjavanje";
-            this.navodnjavanjeDataGridViewTextBoxColumn.HeaderText = "navodnjavanje";
-            this.navodnjavanjeDataGridViewTextBoxColumn.Name = "navodnjavanjeDataGridViewTextBoxColumn";
-            // 
-            // prskanjeDataGridViewTextBoxColumn
-            // 
-            this.prskanjeDataGridViewTextBoxColumn.DataPropertyName = "prskanje";
-            this.prskanjeDataGridViewTextBoxColumn.HeaderText = "prskanje";
-            this.prskanjeDataGridViewTextBoxColumn.Name = "prskanjeDataGridViewTextBoxColumn";
-            // 
-            // sadnjaDataGridViewTextBoxColumn
-            // 
-            this.sadnjaDataGridViewTextBoxColumn.DataPropertyName = "sadnja";
-            this.sadnjaDataGridViewTextBoxColumn.HeaderText = "sadnja";
-            this.sadnjaDataGridViewTextBoxColumn.Name = "sadnjaDataGridViewTextBoxColumn";
-            // 
             // KontrolaPovrsine
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -267,9 +292,9 @@
             this.povrsineTab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.namjenapovrsineBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.poljpovrsinaBindingSource)).EndInit();
             this.pomocTab.ResumeLayout(false);
             this.pomocTab.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.poljpovrsinaBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -290,8 +315,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nazivDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn povrsinam2DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn koordinateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idnamjeneDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn xkoordinataDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ykoordinataDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn namjenapovrsineDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn navodnjavanjeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn prskanjeDataGridViewTextBoxColumn;

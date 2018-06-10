@@ -24,8 +24,9 @@ namespace PoljoAppVerzija2
         public int id { get; set; }
         public string naziv { get; set; }
         public decimal povrsina_m2 { get; set; }
-        public System.Data.Spatial.DbGeometry koordinate { get; set; }
         public int id_namjene { get; set; }
+        public decimal x_koordinata { get; set; }
+        public decimal y_koordinata { get; set; }
     
         public virtual namjena_povrsine namjena_povrsine { get; set; }
         public virtual ICollection<navodnjavanje> navodnjavanje { get; set; }

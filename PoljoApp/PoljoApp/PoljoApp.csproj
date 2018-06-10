@@ -126,6 +126,9 @@
     <Compile Include="prskanje.cs">
       <DependentUpon>PoljoAppModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="prskanjeView.cs">
+      <DependentUpon>PoljoAppModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="sadni_materijal.cs">
       <DependentUpon>PoljoAppModel.tt</DependentUpon>
     </Compile>

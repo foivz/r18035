@@ -26,6 +26,7 @@
         <AssociationConnector Association="DBPoljoApp.fk_proizvodi_vrste_proizvoda1" ManuallyRouted="false" />
         <AssociationConnector Association="DBPoljoApp.fk_sadnja_proizvodi1" ManuallyRouted="false" />
         <AssociationConnector Association="DBPoljoApp.fk_zastita_vrste_zastite1" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DBPoljoApp.prskanjeView" Width="1.5" PointX="7.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
