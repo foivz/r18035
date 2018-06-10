@@ -21,6 +21,7 @@ namespace PoljoAppVerzija2
 
         private void uiDodajPovrsinu_Click(object sender, EventArgs e)
         {
+            //Dodavanje nove površine 
             UnosPovrsine unosPovrsine = new UnosPovrsine();
             unosPovrsine.ShowDialog();
         }
@@ -28,10 +29,12 @@ namespace PoljoAppVerzija2
         private void KontrolaPovrsine_Load(object sender, EventArgs e)
         {
             PrikaziNamjenePovrsina();
+            PrikaziPovrsine();
         }
 
         private void PrikaziNamjenePovrsina()
         {
+            //Prikaz namjene površina u data grid viewu
             BindingList<namjena_povrsine> listaNamjenaPovrsina = null;
             using(var db= new Entities())
             {
@@ -48,19 +51,55 @@ namespace PoljoAppVerzija2
 
         public void PrikaziPovrsine()
         {
+            //Prikaz površina
             BindingList<polj_povrsina> listaPovrsina = null;
             using (var db = new Entities())
             {
                 var obj = izborNamjenePovrsina.SelectedItem as namjena_povrsine;
-                if(obj.namjena=="Prikazi sve")
+
+                if(obj!=null && obj.namjena=="Prikazi sve")
                     listaPovrsina = new BindingList<polj_povrsina>(db.polj_povrsina.ToList());
-                else
+
+                else if(obj!=null)
                 {
                     db.namjena_povrsine.Attach(obj);
                     listaPovrsina = new BindingList<polj_povrsina>(obj.polj_povrsina.ToList());
                 }
             }
             poljpovrsinaBindingSource.DataSource = listaPovrsina;
+        }
+
+        private void uiActionIzbrisi_Click(object sender, EventArgs e)
+        {
+           //Brisanje površine
+            polj_povrsina odabranaPovrsina = poljpovrsinaBindingSource.Current as polj_povrsina;
+            if (odabranaPovrsina != null)
+            {
+                if (MessageBox.Show("Želte li izbrisati površinu?", "Pitanje",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+                {
+                    using (var db = new Entities())
+                    {
+                        db.polj_povrsina.Attach(odabranaPovrsina); 
+                        db.polj_povrsina.Remove(odabranaPovrsina); 
+                        db.SaveChanges(); 
+                    }
+                    PrikaziPovrsine();   
+                }
+            }
+            
+        }
+
+        private void uiActionAžurirajPovršinu_Click(object sender, EventArgs e)
+        {
+            polj_povrsina odabranaPovršina = poljpovrsinaBindingSource.Current as polj_povrsina;
+            if (odabranaPovršina != null)
+            {
+                UnosPovrsine formaUnosPovrsine = new UnosPovrsine(odabranaPovršina);
+                formaUnosPovrsine.ShowDialog();
+                PrikaziPovrsine();
+            }
         }
     }
 }
