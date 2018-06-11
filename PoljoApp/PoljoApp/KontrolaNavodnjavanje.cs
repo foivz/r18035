@@ -96,7 +96,7 @@ namespace PoljoAppVerzija2
             statistikaForma.ShowDialog();
         }
 
-        private void izborGodine_SelectedIndexChanged(object sender, EventArgs e)
+        private void IzborGodine_SelectedIndexChanged(object sender, EventArgs e)
         {
             PrikaziNavodnjavanje();
         }

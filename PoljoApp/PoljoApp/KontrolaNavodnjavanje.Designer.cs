@@ -90,7 +90,7 @@
             this.izborGodine.Name = "izborGodine";
             this.izborGodine.Size = new System.Drawing.Size(121, 21);
             this.izborGodine.TabIndex = 13;
-            this.izborGodine.SelectedIndexChanged += new System.EventHandler(this.izborGodine_SelectedIndexChanged);
+            this.izborGodine.SelectedIndexChanged += new System.EventHandler(this.IzborGodine_SelectedIndexChanged);
             // 
             // uiActionStatistika
             // 

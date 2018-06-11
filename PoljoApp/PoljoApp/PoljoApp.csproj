@@ -61,6 +61,7 @@
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -98,6 +99,12 @@
     </Compile>
     <Compile Include="navodnjavanje.cs">
       <DependentUpon>PoljoAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NavodnjavanjeStatistikaForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NavodnjavanjeStatistikaForma.Designer.cs">
+      <DependentUpon>NavodnjavanjeStatistikaForma.cs</DependentUpon>
     </Compile>
     <Compile Include="navodnjavanjeView.cs">
       <DependentUpon>PoljoAppModel.tt</DependentUpon>
@@ -243,6 +250,9 @@
     <EmbeddedResource Include="KontrolaNavodnjavanje.resx">
       <DependentUpon>KontrolaNavodnjavanje.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NavodnjavanjeStatistikaForma.resx">
+      <DependentUpon>NavodnjavanjeStatistikaForma.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PoljoApp.resx">
       <DependentUpon>PoljoApp.cs</DependentUpon>
     </EmbeddedResource>
@@ -311,10 +321,8 @@
     <None Include="Properties\DataSources\prskanje.datasource" />
     <None Include="Properties\DataSources\prskanjeView.datasource" />
     <None Include="Properties\DataSources\sadni_materijal.datasource" />
-
     <None Include="Properties\DataSources\sadnja.datasource" />
     <None Include="Properties\DataSources\SadnjaView.datasource" />
-
     <None Include="Properties\DataSources\stanje_navodnjavanja.datasource" />
     <None Include="Properties\DataSources\vrsta_sadnog_materijala.datasource" />
     <None Include="Properties\DataSources\zastita.datasource" />
