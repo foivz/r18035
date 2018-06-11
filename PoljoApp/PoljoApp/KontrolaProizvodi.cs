@@ -69,6 +69,7 @@ namespace PoljoAppVerzija2
 
         private void uiAzurirajProizvod_Click(object sender, EventArgs e)
         {
+            //Ažuriranje odabranog proizvoda
             sadni_materijal odabraniProizvod = sadnimaterijalBindingSource.Current as sadni_materijal;
             if (odabraniProizvod != null)
             {

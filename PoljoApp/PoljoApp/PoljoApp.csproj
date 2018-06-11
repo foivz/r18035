@@ -325,6 +325,7 @@
     <None Include="Properties\DataSources\SadnjaView.datasource" />
     <None Include="Properties\DataSources\stanje_navodnjavanja.datasource" />
     <None Include="Properties\DataSources\vrsta_sadnog_materijala.datasource" />
+    <None Include="Properties\DataSources\vrsta_zastite.datasource" />
     <None Include="Properties\DataSources\zastita.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
