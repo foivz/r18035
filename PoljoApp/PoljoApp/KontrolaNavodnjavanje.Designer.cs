@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.navodnjavanjeTab = new System.Windows.Forms.TabPage();
+            this.izborGodine = new System.Windows.Forms.ComboBox();
             this.uiActionStatistika = new System.Windows.Forms.Button();
             this.uiActionIzbrisi = new System.Windows.Forms.Button();
             this.uiActionAzuiraj = new System.Windows.Forms.Button();
@@ -68,6 +69,7 @@
             // 
             // navodnjavanjeTab
             // 
+            this.navodnjavanjeTab.Controls.Add(this.izborGodine);
             this.navodnjavanjeTab.Controls.Add(this.uiActionStatistika);
             this.navodnjavanjeTab.Controls.Add(this.uiActionIzbrisi);
             this.navodnjavanjeTab.Controls.Add(this.uiActionAzuiraj);
@@ -80,6 +82,15 @@
             this.navodnjavanjeTab.TabIndex = 1;
             this.navodnjavanjeTab.Text = "Navodnjavanje";
             this.navodnjavanjeTab.UseVisualStyleBackColor = true;
+            // 
+            // izborGodine
+            // 
+            this.izborGodine.FormattingEnabled = true;
+            this.izborGodine.Location = new System.Drawing.Point(25, 22);
+            this.izborGodine.Name = "izborGodine";
+            this.izborGodine.Size = new System.Drawing.Size(121, 21);
+            this.izborGodine.TabIndex = 13;
+            this.izborGodine.SelectedIndexChanged += new System.EventHandler(this.izborGodine_SelectedIndexChanged);
             // 
             // uiActionStatistika
             // 
@@ -261,5 +272,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn povrsinanazivDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn povrsinam2DataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource navodnjavanjeViewBindingSource;
+        private System.Windows.Forms.ComboBox izborGodine;
     }
 }

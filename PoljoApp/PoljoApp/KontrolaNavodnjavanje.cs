@@ -15,6 +15,8 @@ namespace PoljoAppVerzija2
         public KontrolaNavodnjavanje()
         {
             InitializeComponent();
+
+            DohvatiGodine();
             PrikaziNavodnjavanje();
         }
 
@@ -27,10 +29,12 @@ namespace PoljoAppVerzija2
 
         private void PrikaziNavodnjavanje()
         {
+            int godina = int.Parse(izborGodine.Text);
+
             BindingList<navodnjavanjeView> listaNavodnjavanja = null;
             using (var db = new Entities())
             {
-                listaNavodnjavanja = new BindingList<navodnjavanjeView>(db.navodnjavanjeView.Where(n=>n.id_stanja<3).ToList());
+                listaNavodnjavanja = new BindingList<navodnjavanjeView>(db.navodnjavanjeView.Where(n=>n.id_stanja<3 && n.datum.Year == godina).ToList());
             }
             navodnjavanjeViewBindingSource.DataSource = listaNavodnjavanja;
         }
@@ -68,6 +72,26 @@ namespace PoljoAppVerzija2
             navodnjavanje zaIzmjenu = DohvatiOznacenoNavodnjavanje();
             UnosNavodnjavanja azuriraj = new UnosNavodnjavanja(zaIzmjenu);
             azuriraj.ShowDialog();
+            PrikaziNavodnjavanje();
+        }
+
+        private void DohvatiGodine()
+        {
+            List<int> listaGodina = null;
+            using (var db = new Entities())
+            {
+                listaGodina = new List<int>(db.navodnjavanje.Select(p => p.datum.Year).Distinct());
+            }
+
+            foreach (var datum in listaGodina)
+            {
+                izborGodine.Items.Add(datum);
+            }
+            izborGodine.SelectedIndex = 0;
+        }
+
+        private void izborGodine_SelectedIndexChanged(object sender, EventArgs e)
+        {
             PrikaziNavodnjavanje();
         }
     }
