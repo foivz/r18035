@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.uiActionSpremi = new System.Windows.Forms.Button();
             this.uiActionOdustani = new System.Windows.Forms.Button();
-            this.izborMjerneJedinice = new System.Windows.Forms.ComboBox();
             this.izborProizvodaZaSadnju = new System.Windows.Forms.ComboBox();
             this.sadnimaterijalBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.uiUnosKolicine = new System.Windows.Forms.TextBox();
@@ -43,6 +42,7 @@
             this.poljpovrsinaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.datum = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
+            this.uiLabelaMjernaJedinica = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.sadnimaterijalBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.poljpovrsinaBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -69,15 +69,6 @@
             this.uiActionOdustani.UseVisualStyleBackColor = true;
             this.uiActionOdustani.Click += new System.EventHandler(this.uiActionOdustani_Click);
             // 
-            // izborMjerneJedinice
-            // 
-            this.izborMjerneJedinice.FormattingEnabled = true;
-            this.izborMjerneJedinice.Location = new System.Drawing.Point(256, 143);
-            this.izborMjerneJedinice.Margin = new System.Windows.Forms.Padding(4);
-            this.izborMjerneJedinice.Name = "izborMjerneJedinice";
-            this.izborMjerneJedinice.Size = new System.Drawing.Size(91, 24);
-            this.izborMjerneJedinice.TabIndex = 18;
-            // 
             // izborProizvodaZaSadnju
             // 
             this.izborProizvodaZaSadnju.DataSource = this.sadnimaterijalBindingSource;
@@ -89,6 +80,7 @@
             this.izborProizvodaZaSadnju.Size = new System.Drawing.Size(232, 24);
             this.izborProizvodaZaSadnju.TabIndex = 17;
             this.izborProizvodaZaSadnju.ValueMember = "id";
+            this.izborProizvodaZaSadnju.SelectedIndexChanged += new System.EventHandler(this.izborProizvodaZaSadnju_SelectedIndexChanged);
             // 
             // sadnimaterijalBindingSource
             // 
@@ -108,9 +100,9 @@
             this.label4.Location = new System.Drawing.Point(253, 122);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(215, 17);
+            this.label4.Size = new System.Drawing.Size(107, 17);
             this.label4.TabIndex = 14;
-            this.label4.Text = "Odaberi mjernu jedinicu sadnica:";
+            this.label4.Text = "Mjerna jedinica:\r\n";
             // 
             // label3
             // 
@@ -153,6 +145,7 @@
             this.izborPovrsine.Size = new System.Drawing.Size(232, 24);
             this.izborPovrsine.TabIndex = 21;
             this.izborPovrsine.ValueMember = "id";
+            this.izborPovrsine.SelectedIndexChanged += new System.EventHandler(this.izborPovrsine_SelectedIndexChanged);
             // 
             // poljpovrsinaBindingSource
             // 
@@ -174,17 +167,26 @@
             this.label6.TabIndex = 24;
             this.label6.Text = "Odaberi datumm sadnje:";
             // 
+            // uiLabelaMjernaJedinica
+            // 
+            this.uiLabelaMjernaJedinica.AutoSize = true;
+            this.uiLabelaMjernaJedinica.Location = new System.Drawing.Point(253, 148);
+            this.uiLabelaMjernaJedinica.Name = "uiLabelaMjernaJedinica";
+            this.uiLabelaMjernaJedinica.Size = new System.Drawing.Size(46, 17);
+            this.uiLabelaMjernaJedinica.TabIndex = 25;
+            this.uiLabelaMjernaJedinica.Text = "label5";
+            // 
             // UnosSadnje
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(478, 241);
+            this.Controls.Add(this.uiLabelaMjernaJedinica);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.datum);
             this.Controls.Add(this.izborPovrsine);
             this.Controls.Add(this.uiActionSpremi);
             this.Controls.Add(this.uiActionOdustani);
-            this.Controls.Add(this.izborMjerneJedinice);
             this.Controls.Add(this.izborProizvodaZaSadnju);
             this.Controls.Add(this.uiUnosKolicine);
             this.Controls.Add(this.label4);
@@ -204,7 +206,6 @@
 
         private System.Windows.Forms.Button uiActionSpremi;
         private System.Windows.Forms.Button uiActionOdustani;
-        private System.Windows.Forms.ComboBox izborMjerneJedinice;
         private System.Windows.Forms.ComboBox izborProizvodaZaSadnju;
         private System.Windows.Forms.TextBox uiUnosKolicine;
         private System.Windows.Forms.Label label4;
@@ -216,5 +217,6 @@
         private System.Windows.Forms.BindingSource poljpovrsinaBindingSource;
         private System.Windows.Forms.DateTimePicker datum;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label uiLabelaMjernaJedinica;
     }
 }

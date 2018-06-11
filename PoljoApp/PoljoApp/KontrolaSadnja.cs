@@ -17,6 +17,7 @@ namespace PoljoAppVerzija2
             InitializeComponent();
             PrikaziVrsteSadnihMaterijala();
             PrikaziPoljoprivrednePovršine();
+            PrikaziSadnju();
         }
 
         private void UiDodajSadnju_Click(object sender, EventArgs e)
@@ -64,26 +65,54 @@ namespace PoljoAppVerzija2
 
                 else if (obj != null)
                 {
-                    db.polj_povrsina.Attach(obj);
-                    listaSadnja = new BindingList<SadnjaView>();
+                    listaSadnja = new BindingList<SadnjaView>(db.SadnjaView.Where(s=>s.id_povrsina==obj.id).ToList());
                 }
 
             }
+            sadnjaViewBindingSource.DataSource = listaSadnja;
         }
         private void uiActionAzurirajSadnju_Click(object sender, EventArgs e)
         {
-
+            sadnja zaIzmjenu = DohvatiOznacenuSadnju();
+            UnosSadnje azuriraj = new UnosSadnje(zaIzmjenu);
+            azuriraj.ShowDialog();
+            PrikaziSadnju();
         }
 
         private void uiActionIzbrisiSadnju_Click(object sender, EventArgs e)
         {
+            sadnja zaBrisanje = DohvatiOznacenuSadnju();
 
+            if (MessageBox.Show("Jeste li ste sigurni da želite obrisati sadnju?", "Upozorenje!", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+            {
+                using (var db = new Entities())
+                {
+                    db.sadnja.Attach(zaBrisanje);
+                    db.sadnja.Remove(zaBrisanje);
+                    db.SaveChanges();
+                }
+
+            }
+            PrikaziSadnju();
+        }
+        private sadnja DohvatiOznacenuSadnju()
+        {
+            SadnjaView oznacenaSadnja = sadnjaViewBindingSource.Current as SadnjaView;
+            sadnja sadnjaZaIzmjenu;
+            using (var db=new Entities())
+            {
+                sadnjaZaIzmjenu = db.sadnja.Where(s => s.datum_sadnje == oznacenaSadnja.datum_sadnje 
+                && s.id_materijal == oznacenaSadnja.id_materijal 
+                && s.id_povrsina == oznacenaSadnja.id_povrsina).FirstOrDefault();
+            }
+            return sadnjaZaIzmjenu;
         }
 
         private void KontrolaSadnja_Load(object sender, EventArgs e)
         {
             PrikaziPoljoprivrednePovršine();
             PrikaziVrsteSadnihMaterijala();
+            PrikaziSadnju();
         }
 
         private void izborPoljPovrsina_SelectedIndexChanged(object sender, EventArgs e)
