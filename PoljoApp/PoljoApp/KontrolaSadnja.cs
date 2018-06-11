@@ -34,7 +34,7 @@ namespace PoljoAppVerzija2
             {
                listaPoljPovrsina = new BindingList<polj_povrsina> (db.polj_povrsina.ToList());
             }
-            listaPoljPovrsina.Add(new polj_povrsina() { naziv = "Prikazi sve" });
+            listaPoljPovrsina.Insert(0,new polj_povrsina() { naziv = "Prikazi sve" });
             poljpovrsinaBindingSource.DataSource = listaPoljPovrsina;
         }
 
@@ -46,7 +46,7 @@ namespace PoljoAppVerzija2
             {
                 listaSadnogMaterijala = new BindingList<sadni_materijal>(db.sadni_materijal.ToList());
             }
-            listaSadnogMaterijala.Add(new sadni_materijal() { naziv = "Prikazi sve" });
+            listaSadnogMaterijala.Insert(0,new sadni_materijal() { naziv = "Prikazi sve" });
             sadnimaterijalBindingSource.DataSource = listaSadnogMaterijala;
         }
 

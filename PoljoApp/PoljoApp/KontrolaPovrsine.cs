@@ -42,7 +42,7 @@ namespace PoljoAppVerzija2
             {
                 listaNamjenaPovrsina = new BindingList<namjena_povrsine>(db.namjena_povrsine.ToList());
             }
-            listaNamjenaPovrsina.Add(new namjena_povrsine() { namjena = "Prikazi sve" });
+            listaNamjenaPovrsina.Insert(0,new namjena_povrsine() { namjena = "Prikazi sve" });
             namjenapovrsineBindingSource.DataSource = listaNamjenaPovrsina;
         }
 
