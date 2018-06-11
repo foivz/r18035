@@ -28,68 +28,84 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.uiActionSpremi = new System.Windows.Forms.Button();
             this.uiActionOdustani = new System.Windows.Forms.Button();
-            this.uiActionOdabirVrste = new System.Windows.Forms.ComboBox();
-            this.uiActionOdabirJednicineMjere = new System.Windows.Forms.ComboBox();
-            this.uiUnosCijene = new System.Windows.Forms.TextBox();
+            this.izborMjerneJedinice = new System.Windows.Forms.ComboBox();
+            this.izborProizvodaZaSadnju = new System.Windows.Forms.ComboBox();
+            this.sadnimaterijalBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.uiUnosKolicine = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.izborPovrsine = new System.Windows.Forms.ComboBox();
+            this.poljpovrsinaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.datum = new System.Windows.Forms.DateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.sadnimaterijalBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.poljpovrsinaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // uiActionSpremi
             // 
-            this.uiActionSpremi.Location = new System.Drawing.Point(275, 176);
+            this.uiActionSpremi.Location = new System.Drawing.Point(256, 189);
             this.uiActionSpremi.Margin = new System.Windows.Forms.Padding(4);
             this.uiActionSpremi.Name = "uiActionSpremi";
             this.uiActionSpremi.Size = new System.Drawing.Size(100, 28);
             this.uiActionSpremi.TabIndex = 20;
             this.uiActionSpremi.Text = "Spremi";
             this.uiActionSpremi.UseVisualStyleBackColor = true;
+            this.uiActionSpremi.Click += new System.EventHandler(this.uiActionSpremi_Click);
             // 
             // uiActionOdustani
             // 
-            this.uiActionOdustani.Location = new System.Drawing.Point(142, 176);
+            this.uiActionOdustani.Location = new System.Drawing.Point(127, 189);
             this.uiActionOdustani.Margin = new System.Windows.Forms.Padding(4);
             this.uiActionOdustani.Name = "uiActionOdustani";
             this.uiActionOdustani.Size = new System.Drawing.Size(100, 28);
             this.uiActionOdustani.TabIndex = 19;
             this.uiActionOdustani.Text = "Odustani";
             this.uiActionOdustani.UseVisualStyleBackColor = true;
+            this.uiActionOdustani.Click += new System.EventHandler(this.uiActionOdustani_Click);
             // 
-            // uiActionOdabirVrste
+            // izborMjerneJedinice
             // 
-            this.uiActionOdabirVrste.FormattingEnabled = true;
-            this.uiActionOdabirVrste.Location = new System.Drawing.Point(258, 116);
-            this.uiActionOdabirVrste.Margin = new System.Windows.Forms.Padding(4);
-            this.uiActionOdabirVrste.Name = "uiActionOdabirVrste";
-            this.uiActionOdabirVrste.Size = new System.Drawing.Size(91, 24);
-            this.uiActionOdabirVrste.TabIndex = 18;
+            this.izborMjerneJedinice.FormattingEnabled = true;
+            this.izborMjerneJedinice.Location = new System.Drawing.Point(256, 143);
+            this.izborMjerneJedinice.Margin = new System.Windows.Forms.Padding(4);
+            this.izborMjerneJedinice.Name = "izborMjerneJedinice";
+            this.izborMjerneJedinice.Size = new System.Drawing.Size(91, 24);
+            this.izborMjerneJedinice.TabIndex = 18;
             // 
-            // uiActionOdabirJednicineMjere
+            // izborProizvodaZaSadnju
             // 
-            this.uiActionOdabirJednicineMjere.FormattingEnabled = true;
-            this.uiActionOdabirJednicineMjere.Location = new System.Drawing.Point(238, 50);
-            this.uiActionOdabirJednicineMjere.Margin = new System.Windows.Forms.Padding(4);
-            this.uiActionOdabirJednicineMjere.Name = "uiActionOdabirJednicineMjere";
-            this.uiActionOdabirJednicineMjere.Size = new System.Drawing.Size(232, 24);
-            this.uiActionOdabirJednicineMjere.TabIndex = 17;
+            this.izborProizvodaZaSadnju.DataSource = this.sadnimaterijalBindingSource;
+            this.izborProizvodaZaSadnju.DisplayMember = "naziv";
+            this.izborProizvodaZaSadnju.FormattingEnabled = true;
+            this.izborProizvodaZaSadnju.Location = new System.Drawing.Point(198, 50);
+            this.izborProizvodaZaSadnju.Margin = new System.Windows.Forms.Padding(4);
+            this.izborProizvodaZaSadnju.Name = "izborProizvodaZaSadnju";
+            this.izborProizvodaZaSadnju.Size = new System.Drawing.Size(232, 24);
+            this.izborProizvodaZaSadnju.TabIndex = 17;
+            this.izborProizvodaZaSadnju.ValueMember = "id";
             // 
-            // uiUnosCijene
+            // sadnimaterijalBindingSource
             // 
-            this.uiUnosCijene.Location = new System.Drawing.Point(18, 118);
-            this.uiUnosCijene.Margin = new System.Windows.Forms.Padding(4);
-            this.uiUnosCijene.Name = "uiUnosCijene";
-            this.uiUnosCijene.Size = new System.Drawing.Size(232, 22);
-            this.uiUnosCijene.TabIndex = 16;
+            this.sadnimaterijalBindingSource.DataSource = typeof(PoljoAppVerzija2.sadni_materijal);
+            // 
+            // uiUnosKolicine
+            // 
+            this.uiUnosKolicine.Location = new System.Drawing.Point(16, 145);
+            this.uiUnosKolicine.Margin = new System.Windows.Forms.Padding(4);
+            this.uiUnosKolicine.Name = "uiUnosKolicine";
+            this.uiUnosKolicine.Size = new System.Drawing.Size(186, 22);
+            this.uiUnosKolicine.TabIndex = 16;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(255, 95);
+            this.label4.Location = new System.Drawing.Point(253, 122);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(215, 17);
@@ -99,7 +115,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 97);
+            this.label3.Location = new System.Drawing.Point(14, 122);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(151, 17);
@@ -109,7 +125,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 53);
+            this.label2.Location = new System.Drawing.Point(14, 53);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(121, 17);
@@ -119,39 +135,66 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 14);
+            this.label1.Location = new System.Drawing.Point(14, 14);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(121, 17);
             this.label1.TabIndex = 11;
             this.label1.Text = "Odaberi površinu:";
             // 
-            // comboBox1
+            // izborPovrsine
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(238, 11);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(232, 24);
-            this.comboBox1.TabIndex = 21;
+            this.izborPovrsine.DataSource = this.poljpovrsinaBindingSource;
+            this.izborPovrsine.DisplayMember = "naziv";
+            this.izborPovrsine.FormattingEnabled = true;
+            this.izborPovrsine.Location = new System.Drawing.Point(198, 11);
+            this.izborPovrsine.Margin = new System.Windows.Forms.Padding(4);
+            this.izborPovrsine.Name = "izborPovrsine";
+            this.izborPovrsine.Size = new System.Drawing.Size(232, 24);
+            this.izborPovrsine.TabIndex = 21;
+            this.izborPovrsine.ValueMember = "id";
+            // 
+            // poljpovrsinaBindingSource
+            // 
+            this.poljpovrsinaBindingSource.DataSource = typeof(PoljoAppVerzija2.polj_povrsina);
+            // 
+            // datum
+            // 
+            this.datum.Location = new System.Drawing.Point(198, 81);
+            this.datum.Name = "datum";
+            this.datum.Size = new System.Drawing.Size(200, 22);
+            this.datum.TabIndex = 22;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(14, 86);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(163, 17);
+            this.label6.TabIndex = 24;
+            this.label6.Text = "Odaberi datumm sadnje:";
             // 
             // UnosSadnje
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(587, 223);
-            this.Controls.Add(this.comboBox1);
+            this.ClientSize = new System.Drawing.Size(478, 241);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.datum);
+            this.Controls.Add(this.izborPovrsine);
             this.Controls.Add(this.uiActionSpremi);
             this.Controls.Add(this.uiActionOdustani);
-            this.Controls.Add(this.uiActionOdabirVrste);
-            this.Controls.Add(this.uiActionOdabirJednicineMjere);
-            this.Controls.Add(this.uiUnosCijene);
+            this.Controls.Add(this.izborMjerneJedinice);
+            this.Controls.Add(this.izborProizvodaZaSadnju);
+            this.Controls.Add(this.uiUnosKolicine);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "UnosSadnje";
             this.Text = "Unos Sadnje";
+            ((System.ComponentModel.ISupportInitialize)(this.sadnimaterijalBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.poljpovrsinaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -161,13 +204,17 @@
 
         private System.Windows.Forms.Button uiActionSpremi;
         private System.Windows.Forms.Button uiActionOdustani;
-        private System.Windows.Forms.ComboBox uiActionOdabirVrste;
-        private System.Windows.Forms.ComboBox uiActionOdabirJednicineMjere;
-        private System.Windows.Forms.TextBox uiUnosCijene;
+        private System.Windows.Forms.ComboBox izborMjerneJedinice;
+        private System.Windows.Forms.ComboBox izborProizvodaZaSadnju;
+        private System.Windows.Forms.TextBox uiUnosKolicine;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox izborPovrsine;
+        private System.Windows.Forms.BindingSource sadnimaterijalBindingSource;
+        private System.Windows.Forms.BindingSource poljpovrsinaBindingSource;
+        private System.Windows.Forms.DateTimePicker datum;
+        private System.Windows.Forms.Label label6;
     }
 }

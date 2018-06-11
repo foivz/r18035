@@ -37,11 +37,11 @@
             this.uiActionOdustani = new System.Windows.Forms.Button();
             this.uiActionSpremi = new System.Windows.Forms.Button();
             this.uiOdabirNamjene = new System.Windows.Forms.ComboBox();
+            this.namjenapovrsineBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.uiUnosKoordinateX = new System.Windows.Forms.TextBox();
             this.uiUnosKoordinateY = new System.Windows.Forms.TextBox();
-            this.namjenapovrsineBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.namjenapovrsineBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -100,6 +100,7 @@
             this.uiActionOdustani.TabIndex = 6;
             this.uiActionOdustani.Text = "Odustani";
             this.uiActionOdustani.UseVisualStyleBackColor = true;
+            this.uiActionOdustani.Click += new System.EventHandler(this.uiActionOdustani_Click);
             // 
             // uiActionSpremi
             // 
@@ -123,6 +124,10 @@
             this.uiOdabirNamjene.Size = new System.Drawing.Size(235, 24);
             this.uiOdabirNamjene.TabIndex = 8;
             this.uiOdabirNamjene.ValueMember = "id";
+            // 
+            // namjenapovrsineBindingSource
+            // 
+            this.namjenapovrsineBindingSource.DataSource = typeof(PoljoAppVerzija2.namjena_povrsine);
             // 
             // label4
             // 
@@ -157,10 +162,6 @@
             this.uiUnosKoordinateY.Name = "uiUnosKoordinateY";
             this.uiUnosKoordinateY.Size = new System.Drawing.Size(101, 22);
             this.uiUnosKoordinateY.TabIndex = 12;
-            // 
-            // namjenapovrsineBindingSource
-            // 
-            this.namjenapovrsineBindingSource.DataSource = typeof(PoljoAppVerzija2.namjena_povrsine);
             // 
             // UnosPovrsine
             // 

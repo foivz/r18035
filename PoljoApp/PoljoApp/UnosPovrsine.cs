@@ -77,5 +77,10 @@ namespace PoljoAppVerzija2
                 Close();
             }
         }
+
+        private void uiActionOdustani_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

@@ -15,12 +15,80 @@ namespace PoljoAppVerzija2
         public KontrolaSadnja()
         {
             InitializeComponent();
+            PrikaziVrsteSadnihMaterijala();
+            PrikaziPoljoprivrednePovršine();
         }
 
         private void UiDodajSadnju_Click(object sender, EventArgs e)
         {
             UnosSadnje unosSadnje = new UnosSadnje();
             unosSadnje.ShowDialog();
+            PrikaziSadnju();
+        }
+
+        private void PrikaziPoljoprivrednePovršine()
+        {
+            //Prikaz poljoprivrednih povrsina u combo boxu
+            BindingList<polj_povrsina> listaPoljPovrsina = null;
+            using (var db= new Entities())
+            {
+               listaPoljPovrsina = new BindingList<polj_povrsina> (db.polj_povrsina.ToList());
+            }
+            listaPoljPovrsina.Add(new polj_povrsina() { naziv = "Prikazi sve" });
+            poljpovrsinaBindingSource.DataSource = listaPoljPovrsina;
+        }
+
+        private void PrikaziVrsteSadnihMaterijala()
+        {
+            //Prikaz vrsta sadnog materijala u combo boxu
+            BindingList<sadni_materijal> listaSadnogMaterijala = null;
+            using (var db = new Entities())
+            {
+                listaSadnogMaterijala = new BindingList<sadni_materijal>(db.sadni_materijal.ToList());
+            }
+            listaSadnogMaterijala.Add(new sadni_materijal() { naziv = "Prikazi sve" });
+            sadnimaterijalBindingSource.DataSource = listaSadnogMaterijala;
+        }
+
+        private void PrikaziSadnju()
+        {
+            //Prikaz sadnja
+            BindingList<SadnjaView> listaSadnja = null;
+            using (var db= new Entities())
+            {
+                var obj = izborPoljPovrsina.SelectedItem as polj_povrsina;
+                if(obj!=null && obj.naziv=="Prikazi sve")
+                {
+                    listaSadnja = new BindingList<SadnjaView>(db.SadnjaView.ToList());
+                }
+
+                else if (obj != null)
+                {
+                    db.polj_povrsina.Attach(obj);
+                    listaSadnja = new BindingList<SadnjaView>();
+                }
+
+            }
+        }
+        private void uiActionAzurirajSadnju_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void uiActionIzbrisiSadnju_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void KontrolaSadnja_Load(object sender, EventArgs e)
+        {
+            PrikaziPoljoprivrednePovršine();
+            PrikaziVrsteSadnihMaterijala();
+        }
+
+        private void izborPoljPovrsina_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            PrikaziSadnju();
         }
     }
 }

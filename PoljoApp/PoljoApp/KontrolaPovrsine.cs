@@ -15,6 +15,7 @@ namespace PoljoAppVerzija2
         public KontrolaPovrsine()
         {
             InitializeComponent();
+            PrikaziPovrsine();
         }
 
 
@@ -24,6 +25,7 @@ namespace PoljoAppVerzija2
             //Dodavanje nove površine 
             UnosPovrsine unosPovrsine = new UnosPovrsine();
             unosPovrsine.ShowDialog();
+            PrikaziPovrsine();
         }
 
         private void KontrolaPovrsine_Load(object sender, EventArgs e)
@@ -34,7 +36,7 @@ namespace PoljoAppVerzija2
 
         private void PrikaziNamjenePovrsina()
         {
-            //Prikaz namjene površina u data grid viewu
+            //Prikaz namjene površina
             BindingList<namjena_povrsine> listaNamjenaPovrsina = null;
             using (var db = new Entities())
             {
