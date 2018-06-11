@@ -311,9 +311,13 @@
     <None Include="Properties\DataSources\prskanje.datasource" />
     <None Include="Properties\DataSources\prskanjeView.datasource" />
     <None Include="Properties\DataSources\sadni_materijal.datasource" />
+<<<<<<< HEAD
     <None Include="Properties\DataSources\sadnja.datasource" />
     <None Include="Properties\DataSources\SadnjaView.datasource" />
+=======
+>>>>>>> 5a660871f36a0d0c537ee74d2353c0f0861535d5
     <None Include="Properties\DataSources\stanje_navodnjavanja.datasource" />
+    <None Include="Properties\DataSources\vrsta_sadnog_materijala.datasource" />
     <None Include="Properties\DataSources\zastita.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
