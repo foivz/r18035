@@ -90,6 +90,12 @@ namespace PoljoAppVerzija2
             izborGodine.SelectedIndex = 0;
         }
 
+        private void UiActionStatistika_Click(object sender, EventArgs e)
+        {
+            NavodnjavanjeStatistikaForma statistikaForma = new NavodnjavanjeStatistikaForma(int.Parse(izborGodine.Text));
+            statistikaForma.ShowDialog();
+        }
+
         private void izborGodine_SelectedIndexChanged(object sender, EventArgs e)
         {
             PrikaziNavodnjavanje();

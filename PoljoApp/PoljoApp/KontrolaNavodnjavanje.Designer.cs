@@ -101,6 +101,7 @@
             this.uiActionStatistika.TabIndex = 8;
             this.uiActionStatistika.Text = "Statistika";
             this.uiActionStatistika.UseVisualStyleBackColor = true;
+            this.uiActionStatistika.Click += new System.EventHandler(this.UiActionStatistika_Click);
             // 
             // uiActionIzbrisi
             // 
