@@ -36,6 +36,10 @@
             this.uiActionIzbrisi = new System.Windows.Forms.Button();
             this.uiActionAzuiraj = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.navodnjavanjeViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.uiActionNovo = new System.Windows.Forms.Button();
+            this.pomocTab = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
             this.idpovrsinaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kolicinavodelitriDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,10 +47,6 @@
             this.nazivDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.povrsinanazivDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.povrsinam2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.navodnjavanjeViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.uiActionNovo = new System.Windows.Forms.Button();
-            this.pomocTab = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.navodnjavanjeTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -151,57 +151,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(418, 179);
             this.dataGridView1.TabIndex = 5;
             // 
-            // idpovrsinaDataGridViewTextBoxColumn
-            // 
-            this.idpovrsinaDataGridViewTextBoxColumn.DataPropertyName = "id_povrsina";
-            this.idpovrsinaDataGridViewTextBoxColumn.HeaderText = "id_povrsina";
-            this.idpovrsinaDataGridViewTextBoxColumn.Name = "idpovrsinaDataGridViewTextBoxColumn";
-            this.idpovrsinaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idpovrsinaDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // datumDataGridViewTextBoxColumn
-            // 
-            this.datumDataGridViewTextBoxColumn.DataPropertyName = "datum";
-            this.datumDataGridViewTextBoxColumn.HeaderText = "datum";
-            this.datumDataGridViewTextBoxColumn.Name = "datumDataGridViewTextBoxColumn";
-            this.datumDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // kolicinavodelitriDataGridViewTextBoxColumn
-            // 
-            this.kolicinavodelitriDataGridViewTextBoxColumn.DataPropertyName = "kolicina_vode_litri";
-            this.kolicinavodelitriDataGridViewTextBoxColumn.HeaderText = "kolicina_vode_litri";
-            this.kolicinavodelitriDataGridViewTextBoxColumn.Name = "kolicinavodelitriDataGridViewTextBoxColumn";
-            this.kolicinavodelitriDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // idstanjaDataGridViewTextBoxColumn
-            // 
-            this.idstanjaDataGridViewTextBoxColumn.DataPropertyName = "id_stanja";
-            this.idstanjaDataGridViewTextBoxColumn.HeaderText = "id_stanja";
-            this.idstanjaDataGridViewTextBoxColumn.Name = "idstanjaDataGridViewTextBoxColumn";
-            this.idstanjaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idstanjaDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // nazivDataGridViewTextBoxColumn
-            // 
-            this.nazivDataGridViewTextBoxColumn.DataPropertyName = "naziv";
-            this.nazivDataGridViewTextBoxColumn.HeaderText = "naziv";
-            this.nazivDataGridViewTextBoxColumn.Name = "nazivDataGridViewTextBoxColumn";
-            this.nazivDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // povrsinanazivDataGridViewTextBoxColumn
-            // 
-            this.povrsinanazivDataGridViewTextBoxColumn.DataPropertyName = "povrsina_naziv";
-            this.povrsinanazivDataGridViewTextBoxColumn.HeaderText = "povrsina_naziv";
-            this.povrsinanazivDataGridViewTextBoxColumn.Name = "povrsinanazivDataGridViewTextBoxColumn";
-            this.povrsinanazivDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // povrsinam2DataGridViewTextBoxColumn
-            // 
-            this.povrsinam2DataGridViewTextBoxColumn.DataPropertyName = "povrsina_m2";
-            this.povrsinam2DataGridViewTextBoxColumn.HeaderText = "povrsina_m2";
-            this.povrsinam2DataGridViewTextBoxColumn.Name = "povrsinam2DataGridViewTextBoxColumn";
-            this.povrsinam2DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // navodnjavanjeViewBindingSource
             // 
             this.navodnjavanjeViewBindingSource.DataSource = typeof(PoljoAppVerzija2.navodnjavanjeView);
@@ -237,6 +186,57 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Pomoć korisniku";
             // 
+            // idpovrsinaDataGridViewTextBoxColumn
+            // 
+            this.idpovrsinaDataGridViewTextBoxColumn.DataPropertyName = "id_povrsina";
+            this.idpovrsinaDataGridViewTextBoxColumn.HeaderText = "id_povrsina";
+            this.idpovrsinaDataGridViewTextBoxColumn.Name = "idpovrsinaDataGridViewTextBoxColumn";
+            this.idpovrsinaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idpovrsinaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // datumDataGridViewTextBoxColumn
+            // 
+            this.datumDataGridViewTextBoxColumn.DataPropertyName = "datum";
+            this.datumDataGridViewTextBoxColumn.HeaderText = "Datum";
+            this.datumDataGridViewTextBoxColumn.Name = "datumDataGridViewTextBoxColumn";
+            this.datumDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // kolicinavodelitriDataGridViewTextBoxColumn
+            // 
+            this.kolicinavodelitriDataGridViewTextBoxColumn.DataPropertyName = "kolicina_vode_litri";
+            this.kolicinavodelitriDataGridViewTextBoxColumn.HeaderText = "Količina vode";
+            this.kolicinavodelitriDataGridViewTextBoxColumn.Name = "kolicinavodelitriDataGridViewTextBoxColumn";
+            this.kolicinavodelitriDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // idstanjaDataGridViewTextBoxColumn
+            // 
+            this.idstanjaDataGridViewTextBoxColumn.DataPropertyName = "id_stanja";
+            this.idstanjaDataGridViewTextBoxColumn.HeaderText = "id_stanja";
+            this.idstanjaDataGridViewTextBoxColumn.Name = "idstanjaDataGridViewTextBoxColumn";
+            this.idstanjaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idstanjaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nazivDataGridViewTextBoxColumn
+            // 
+            this.nazivDataGridViewTextBoxColumn.DataPropertyName = "naziv";
+            this.nazivDataGridViewTextBoxColumn.HeaderText = "Vrsta navodnjavanja";
+            this.nazivDataGridViewTextBoxColumn.Name = "nazivDataGridViewTextBoxColumn";
+            this.nazivDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // povrsinanazivDataGridViewTextBoxColumn
+            // 
+            this.povrsinanazivDataGridViewTextBoxColumn.DataPropertyName = "povrsina_naziv";
+            this.povrsinanazivDataGridViewTextBoxColumn.HeaderText = "Naziv površine";
+            this.povrsinanazivDataGridViewTextBoxColumn.Name = "povrsinanazivDataGridViewTextBoxColumn";
+            this.povrsinanazivDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // povrsinam2DataGridViewTextBoxColumn
+            // 
+            this.povrsinam2DataGridViewTextBoxColumn.DataPropertyName = "povrsina_m2";
+            this.povrsinam2DataGridViewTextBoxColumn.HeaderText = "Veličina (m2)";
+            this.povrsinam2DataGridViewTextBoxColumn.Name = "povrsinam2DataGridViewTextBoxColumn";
+            this.povrsinam2DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // KontrolaNavodnjavanje
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -265,6 +265,8 @@
         private System.Windows.Forms.Button uiActionNovo;
         private System.Windows.Forms.TabPage pomocTab;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.BindingSource navodnjavanjeViewBindingSource;
+        private System.Windows.Forms.ComboBox izborGodine;
         private System.Windows.Forms.DataGridViewTextBoxColumn idpovrsinaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn datumDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn kolicinavodelitriDataGridViewTextBoxColumn;
@@ -272,7 +274,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nazivDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn povrsinanazivDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn povrsinam2DataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource navodnjavanjeViewBindingSource;
-        private System.Windows.Forms.ComboBox izborGodine;
     }
 }

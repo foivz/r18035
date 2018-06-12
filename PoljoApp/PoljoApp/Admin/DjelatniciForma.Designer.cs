@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.pregledDjelatnika = new System.Windows.Forms.DataGridView();
+            this.djelatnikBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.uiActionAzuriraj = new System.Windows.Forms.Button();
             this.uiActionUnos = new System.Windows.Forms.Button();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,7 +41,6 @@
             this.brojtelefonaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.adminDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prskanjeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.djelatnikBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pregledDjelatnika)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.djelatnikBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -71,6 +71,10 @@
             this.pregledDjelatnika.Size = new System.Drawing.Size(588, 265);
             this.pregledDjelatnika.TabIndex = 0;
             // 
+            // djelatnikBindingSource
+            // 
+            this.djelatnikBindingSource.DataSource = typeof(PoljoAppVerzija2.djelatnik);
+            // 
             // uiActionAzuriraj
             // 
             this.uiActionAzuriraj.Location = new System.Drawing.Point(12, 18);
@@ -95,38 +99,38 @@
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "ID";
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             // 
             // imeDataGridViewTextBoxColumn
             // 
             this.imeDataGridViewTextBoxColumn.DataPropertyName = "ime";
-            this.imeDataGridViewTextBoxColumn.HeaderText = "ime";
+            this.imeDataGridViewTextBoxColumn.HeaderText = "Ime";
             this.imeDataGridViewTextBoxColumn.Name = "imeDataGridViewTextBoxColumn";
             // 
             // prezimeDataGridViewTextBoxColumn
             // 
             this.prezimeDataGridViewTextBoxColumn.DataPropertyName = "prezime";
-            this.prezimeDataGridViewTextBoxColumn.HeaderText = "prezime";
+            this.prezimeDataGridViewTextBoxColumn.HeaderText = "Prezime";
             this.prezimeDataGridViewTextBoxColumn.Name = "prezimeDataGridViewTextBoxColumn";
             // 
             // emailDataGridViewTextBoxColumn
             // 
             this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
             this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
             // 
             // lozinkaDataGridViewTextBoxColumn
             // 
             this.lozinkaDataGridViewTextBoxColumn.DataPropertyName = "lozinka";
-            this.lozinkaDataGridViewTextBoxColumn.HeaderText = "lozinka";
+            this.lozinkaDataGridViewTextBoxColumn.HeaderText = "Lozinka";
             this.lozinkaDataGridViewTextBoxColumn.Name = "lozinkaDataGridViewTextBoxColumn";
             this.lozinkaDataGridViewTextBoxColumn.Visible = false;
             // 
             // brojtelefonaDataGridViewTextBoxColumn
             // 
             this.brojtelefonaDataGridViewTextBoxColumn.DataPropertyName = "broj_telefona";
-            this.brojtelefonaDataGridViewTextBoxColumn.HeaderText = "broj_telefona";
+            this.brojtelefonaDataGridViewTextBoxColumn.HeaderText = "Broj telefona";
             this.brojtelefonaDataGridViewTextBoxColumn.Name = "brojtelefonaDataGridViewTextBoxColumn";
             // 
             // adminDataGridViewTextBoxColumn
@@ -142,10 +146,6 @@
             this.prskanjeDataGridViewTextBoxColumn.HeaderText = "prskanje";
             this.prskanjeDataGridViewTextBoxColumn.Name = "prskanjeDataGridViewTextBoxColumn";
             this.prskanjeDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // djelatnikBindingSource
-            // 
-            this.djelatnikBindingSource.DataSource = typeof(PoljoAppVerzija2.djelatnik);
             // 
             // DjelatniciForma
             // 

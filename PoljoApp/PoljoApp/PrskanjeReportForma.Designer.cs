@@ -30,10 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.prskanjeReport = new Microsoft.Reporting.WinForms.ReportViewer();
             this.prskanjeViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.prskanjeReport = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.prskanjeViewBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // prskanjeViewBindingSource
+            // 
+            this.prskanjeViewBindingSource.DataSource = typeof(PoljoAppVerzija2.prskanjeView);
             // 
             // prskanjeReport
             // 
@@ -50,10 +54,8 @@
             this.prskanjeReport.ServerReport.BearerToken = null;
             this.prskanjeReport.Size = new System.Drawing.Size(598, 345);
             this.prskanjeReport.TabIndex = 0;
-            // 
-            // prskanjeViewBindingSource
-            // 
-            this.prskanjeViewBindingSource.DataSource = typeof(PoljoAppVerzija2.prskanjeView);
+            this.prskanjeReport.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.FullPage;
+            this.prskanjeReport.ZoomPercent = 150;
             // 
             // PrskanjeReportForma
             // 
