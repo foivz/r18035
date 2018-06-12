@@ -22,15 +22,15 @@ namespace PoljoAppVerzija2
 
             uiUnosKolicine.Text = sadnjaZaIzmjenu.kolicina.ToString();
             datum.Text = sadnjaZaIzmjenu.datum_sadnje.ToString();
-            izborPovrsine.SelectedValue = sadnjaZaIzmjenu.id_povrsina.ToString();
-            izborProizvodaZaSadnju.SelectedValue = sadnjaZaIzmjenu.id_materijal.ToString();
+            izborPovrsine.SelectedValue = sadnjaZaIzmjenu.id_povrsina;
+            izborProizvodaZaSadnju.SelectedValue = sadnjaZaIzmjenu.id_materijal;
             
         }
         public UnosSadnje()
         {
             InitializeComponent();
             PrikaziPoljoprivrednePovršine();
-            this.PrikaziVrsteSadnihMaterijala();
+            PrikaziVrsteSadnihMaterijala();
             
         }
 
@@ -53,6 +53,8 @@ namespace PoljoAppVerzija2
                 listaSadnogMaterijala = new BindingList<sadni_materijal>(db.sadni_materijal.ToList());
             }
             sadnimaterijalBindingSource.DataSource = listaSadnogMaterijala;
+            izborProizvodaZaSadnju.SelectedIndex = 1;
+            izborProizvodaZaSadnju.SelectedIndex = 0;
         }
 
 
@@ -106,7 +108,7 @@ namespace PoljoAppVerzija2
         {
             sadni_materijal oznaceno = izborProizvodaZaSadnju.SelectedItem as sadni_materijal;
 
-            uiLabelaMjernaJedinica.Text = oznaceno.jedinicna_mjera;
+            if(oznaceno!=null)uiLabelaMjernaJedinica.Text = oznaceno.jedinicna_mjera;
         }
     }
 }

@@ -141,6 +141,8 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -160,6 +162,7 @@
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(557, 220);
@@ -170,30 +173,35 @@
             this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
             this.idDataGridViewTextBoxColumn.HeaderText = "id";
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // nazivDataGridViewTextBoxColumn
             // 
             this.nazivDataGridViewTextBoxColumn.DataPropertyName = "naziv";
             this.nazivDataGridViewTextBoxColumn.HeaderText = "naziv";
             this.nazivDataGridViewTextBoxColumn.Name = "nazivDataGridViewTextBoxColumn";
+            this.nazivDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // povrsinam2DataGridViewTextBoxColumn
             // 
             this.povrsinam2DataGridViewTextBoxColumn.DataPropertyName = "povrsina_m2";
             this.povrsinam2DataGridViewTextBoxColumn.HeaderText = "povrsina_m2";
             this.povrsinam2DataGridViewTextBoxColumn.Name = "povrsinam2DataGridViewTextBoxColumn";
+            this.povrsinam2DataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // idnamjeneDataGridViewTextBoxColumn
             // 
             this.idnamjeneDataGridViewTextBoxColumn.DataPropertyName = "id_namjene";
             this.idnamjeneDataGridViewTextBoxColumn.HeaderText = "id_namjene";
             this.idnamjeneDataGridViewTextBoxColumn.Name = "idnamjeneDataGridViewTextBoxColumn";
+            this.idnamjeneDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // namjenapovrsineDataGridViewTextBoxColumn
             // 
             this.namjenapovrsineDataGridViewTextBoxColumn.DataPropertyName = "namjena_povrsine";
             this.namjenapovrsineDataGridViewTextBoxColumn.HeaderText = "namjena_povrsine";
             this.namjenapovrsineDataGridViewTextBoxColumn.Name = "namjenapovrsineDataGridViewTextBoxColumn";
+            this.namjenapovrsineDataGridViewTextBoxColumn.ReadOnly = true;
             this.namjenapovrsineDataGridViewTextBoxColumn.Visible = false;
             // 
             // navodnjavanjeDataGridViewTextBoxColumn
@@ -201,6 +209,7 @@
             this.navodnjavanjeDataGridViewTextBoxColumn.DataPropertyName = "navodnjavanje";
             this.navodnjavanjeDataGridViewTextBoxColumn.HeaderText = "navodnjavanje";
             this.navodnjavanjeDataGridViewTextBoxColumn.Name = "navodnjavanjeDataGridViewTextBoxColumn";
+            this.navodnjavanjeDataGridViewTextBoxColumn.ReadOnly = true;
             this.navodnjavanjeDataGridViewTextBoxColumn.Visible = false;
             // 
             // prskanjeDataGridViewTextBoxColumn
@@ -208,6 +217,7 @@
             this.prskanjeDataGridViewTextBoxColumn.DataPropertyName = "prskanje";
             this.prskanjeDataGridViewTextBoxColumn.HeaderText = "prskanje";
             this.prskanjeDataGridViewTextBoxColumn.Name = "prskanjeDataGridViewTextBoxColumn";
+            this.prskanjeDataGridViewTextBoxColumn.ReadOnly = true;
             this.prskanjeDataGridViewTextBoxColumn.Visible = false;
             // 
             // sadnjaDataGridViewTextBoxColumn
@@ -215,6 +225,7 @@
             this.sadnjaDataGridViewTextBoxColumn.DataPropertyName = "sadnja";
             this.sadnjaDataGridViewTextBoxColumn.HeaderText = "sadnja";
             this.sadnjaDataGridViewTextBoxColumn.Name = "sadnjaDataGridViewTextBoxColumn";
+            this.sadnjaDataGridViewTextBoxColumn.ReadOnly = true;
             this.sadnjaDataGridViewTextBoxColumn.Visible = false;
             // 
             // poljpovrsinaBindingSource

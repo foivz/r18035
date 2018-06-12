@@ -58,14 +58,25 @@ namespace PoljoAppVerzija2
             using (var db= new Entities())
             {
                 var obj = izborPoljPovrsina.SelectedItem as polj_povrsina;
-                if(obj!=null && obj.naziv=="Prikazi sve")
+                var obj2 = izborSadnogMaterijala.SelectedItem as sadni_materijal;
+                if(obj!=null && obj.naziv=="Prikazi sve"  && obj2!=null && obj2.naziv=="Prikazi sve")
                 {
                     listaSadnja = new BindingList<SadnjaView>(db.SadnjaView.ToList());
                 }
 
-                else if (obj != null)
+                else if (obj != null && obj2!= null && obj2.naziv=="Prikazi sve")
                 {
                     listaSadnja = new BindingList<SadnjaView>(db.SadnjaView.Where(s=>s.id_povrsina==obj.id).ToList());
+                }
+
+                else if (obj2 != null && obj != null && obj.naziv == "Prikazi sve")
+                {
+                    listaSadnja = new BindingList<SadnjaView>(db.SadnjaView.Where(s => s.id_materijal == obj2.id).ToList());
+                }
+
+                else if(obj != null && obj2 != null)
+                {
+                    listaSadnja = new BindingList<SadnjaView>(db.SadnjaView.Where(s => (s.id_materijal == obj2.id && s.id_povrsina == obj.id)).ToList());
                 }
 
             }
@@ -116,6 +127,11 @@ namespace PoljoAppVerzija2
         }
 
         private void izborPoljPovrsina_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            PrikaziSadnju();
+        }
+
+        private void izborSadnogMaterijala_SelectedIndexChanged(object sender, EventArgs e)
         {
             PrikaziSadnju();
         }
