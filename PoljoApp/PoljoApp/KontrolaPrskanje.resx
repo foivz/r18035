@@ -120,4 +120,20 @@
   <metadata name="prskanjeViewBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="ispisPomoc.Text" xml:space="preserve">
+    <value>1. Pregled: Pomoću padajućeg izbornika odaberite godinu za koju želite prikazati podatke.
+
+2. Izvještaj: Klikom na gumb 'Ispiši u PDF' otvara se novi prozor s izvještajem za tu godinu, 
+koji prikazuje podatke o svim izvršenim prskanjima.
+
+3. Unos: Novi zapis o prskanju se dodaje klikom na gumb 'Dodaj prskanje'.
+Potrebno je unijeti sve podatke i kliknuti na 'Spremi'.
+
+4. Ažuriranje: Za ažuriranje zapisa je potrebno označiti željeni redak u tablici te kliknuti 
+'Ažuriraj'. Daljnjji koraci su kao i kod unosa.
+
+5. Brisanje: Za brisanje zapisa je potrebno označiti željeni redak u tablici te kliknuti 'Izbriši'. 
+Zatim je potrebno potvrditi brisanje iz baze.
+</value>
+  </data>
 </root>

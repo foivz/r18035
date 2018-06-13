@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KontrolaPrskanje));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.prskanjeTab = new System.Windows.Forms.TabPage();
             this.izborGodine = new System.Windows.Forms.ComboBox();
@@ -36,10 +37,6 @@
             this.uiActionIzbrisi = new System.Windows.Forms.Button();
             this.uiActionAzuriraj = new System.Windows.Forms.Button();
             this.pregledPrskanja = new System.Windows.Forms.DataGridView();
-            this.prskanjeViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.uiActionNovo = new System.Windows.Forms.Button();
-            this.pomocTab = new System.Windows.Forms.TabPage();
-            this.ispisPomoc = new System.Windows.Forms.Label();
             this.datumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nazivDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.povrsinaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,6 +45,10 @@
             this.prezimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idzastitaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idpovrsinaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prskanjeViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.uiActionNovo = new System.Windows.Forms.Button();
+            this.pomocTab = new System.Windows.Forms.TabPage();
+            this.ispisPomoc = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.prskanjeTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pregledPrskanja)).BeginInit();
@@ -78,7 +79,7 @@
             this.prskanjeTab.Controls.Add(this.uiActionNovo);
             this.prskanjeTab.Location = new System.Drawing.Point(4, 22);
             this.prskanjeTab.Name = "prskanjeTab";
-            this.prskanjeTab.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.prskanjeTab.Padding = new System.Windows.Forms.Padding(3);
             this.prskanjeTab.Size = new System.Drawing.Size(466, 279);
             this.prskanjeTab.TabIndex = 1;
             this.prskanjeTab.Text = "Prskanje";
@@ -152,41 +153,6 @@
             this.pregledPrskanja.Size = new System.Drawing.Size(418, 179);
             this.pregledPrskanja.TabIndex = 5;
             // 
-            // prskanjeViewBindingSource
-            // 
-            this.prskanjeViewBindingSource.DataSource = typeof(PoljoAppVerzija2.prskanjeView);
-            // 
-            // uiActionNovo
-            // 
-            this.uiActionNovo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.uiActionNovo.Location = new System.Drawing.Point(341, 239);
-            this.uiActionNovo.Name = "uiActionNovo";
-            this.uiActionNovo.Size = new System.Drawing.Size(102, 34);
-            this.uiActionNovo.TabIndex = 4;
-            this.uiActionNovo.Text = "Dodaj prskanje";
-            this.uiActionNovo.UseVisualStyleBackColor = true;
-            this.uiActionNovo.Click += new System.EventHandler(this.UiActionNovo_Click);
-            // 
-            // pomocTab
-            // 
-            this.pomocTab.Controls.Add(this.ispisPomoc);
-            this.pomocTab.Location = new System.Drawing.Point(4, 22);
-            this.pomocTab.Name = "pomocTab";
-            this.pomocTab.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.pomocTab.Size = new System.Drawing.Size(466, 279);
-            this.pomocTab.TabIndex = 0;
-            this.pomocTab.Text = "Pomoć";
-            this.pomocTab.UseVisualStyleBackColor = true;
-            // 
-            // ispisPomoc
-            // 
-            this.ispisPomoc.AutoSize = true;
-            this.ispisPomoc.Location = new System.Drawing.Point(21, 19);
-            this.ispisPomoc.Name = "ispisPomoc";
-            this.ispisPomoc.Size = new System.Drawing.Size(85, 13);
-            this.ispisPomoc.TabIndex = 0;
-            this.ispisPomoc.Text = "Pomoć korisniku";
-            // 
             // datumDataGridViewTextBoxColumn
             // 
             this.datumDataGridViewTextBoxColumn.DataPropertyName = "datum";
@@ -244,6 +210,41 @@
             this.idpovrsinaDataGridViewTextBoxColumn.Name = "idpovrsinaDataGridViewTextBoxColumn";
             this.idpovrsinaDataGridViewTextBoxColumn.ReadOnly = true;
             this.idpovrsinaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // prskanjeViewBindingSource
+            // 
+            this.prskanjeViewBindingSource.DataSource = typeof(PoljoAppVerzija2.prskanjeView);
+            // 
+            // uiActionNovo
+            // 
+            this.uiActionNovo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.uiActionNovo.Location = new System.Drawing.Point(341, 239);
+            this.uiActionNovo.Name = "uiActionNovo";
+            this.uiActionNovo.Size = new System.Drawing.Size(102, 34);
+            this.uiActionNovo.TabIndex = 4;
+            this.uiActionNovo.Text = "Dodaj prskanje";
+            this.uiActionNovo.UseVisualStyleBackColor = true;
+            this.uiActionNovo.Click += new System.EventHandler(this.UiActionNovo_Click);
+            // 
+            // pomocTab
+            // 
+            this.pomocTab.Controls.Add(this.ispisPomoc);
+            this.pomocTab.Location = new System.Drawing.Point(4, 22);
+            this.pomocTab.Name = "pomocTab";
+            this.pomocTab.Padding = new System.Windows.Forms.Padding(3);
+            this.pomocTab.Size = new System.Drawing.Size(466, 279);
+            this.pomocTab.TabIndex = 0;
+            this.pomocTab.Text = "Pomoć";
+            this.pomocTab.UseVisualStyleBackColor = true;
+            // 
+            // ispisPomoc
+            // 
+            this.ispisPomoc.AutoSize = true;
+            this.ispisPomoc.Location = new System.Drawing.Point(21, 19);
+            this.ispisPomoc.Name = "ispisPomoc";
+            this.ispisPomoc.Size = new System.Drawing.Size(432, 169);
+            this.ispisPomoc.TabIndex = 0;
+            this.ispisPomoc.Text = resources.GetString("ispisPomoc.Text");
             // 
             // KontrolaPrskanje
             // 
