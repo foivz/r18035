@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KontrolaNavodnjavanje));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.navodnjavanjeTab = new System.Windows.Forms.TabPage();
             this.izborGodine = new System.Windows.Forms.ComboBox();
@@ -36,10 +37,6 @@
             this.uiActionIzbrisi = new System.Windows.Forms.Button();
             this.uiActionAzuiraj = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.navodnjavanjeViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.uiActionNovo = new System.Windows.Forms.Button();
-            this.pomocTab = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
             this.idpovrsinaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kolicinavodelitriDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,6 +44,10 @@
             this.nazivDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.povrsinanazivDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.povrsinam2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.navodnjavanjeViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.uiActionNovo = new System.Windows.Forms.Button();
+            this.pomocTab = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.navodnjavanjeTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -151,41 +152,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(418, 179);
             this.dataGridView1.TabIndex = 5;
             // 
-            // navodnjavanjeViewBindingSource
-            // 
-            this.navodnjavanjeViewBindingSource.DataSource = typeof(PoljoAppVerzija2.navodnjavanjeView);
-            // 
-            // uiActionNovo
-            // 
-            this.uiActionNovo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.uiActionNovo.Location = new System.Drawing.Point(341, 239);
-            this.uiActionNovo.Name = "uiActionNovo";
-            this.uiActionNovo.Size = new System.Drawing.Size(102, 34);
-            this.uiActionNovo.TabIndex = 4;
-            this.uiActionNovo.Text = "Dodaj navodnjavanje";
-            this.uiActionNovo.UseVisualStyleBackColor = true;
-            this.uiActionNovo.Click += new System.EventHandler(this.UiActionNovo_Click);
-            // 
-            // pomocTab
-            // 
-            this.pomocTab.Controls.Add(this.label1);
-            this.pomocTab.Location = new System.Drawing.Point(4, 22);
-            this.pomocTab.Name = "pomocTab";
-            this.pomocTab.Padding = new System.Windows.Forms.Padding(3);
-            this.pomocTab.Size = new System.Drawing.Size(466, 279);
-            this.pomocTab.TabIndex = 0;
-            this.pomocTab.Text = "Pomoć";
-            this.pomocTab.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Pomoć korisniku";
-            // 
             // idpovrsinaDataGridViewTextBoxColumn
             // 
             this.idpovrsinaDataGridViewTextBoxColumn.DataPropertyName = "id_povrsina";
@@ -236,6 +202,41 @@
             this.povrsinam2DataGridViewTextBoxColumn.HeaderText = "Veličina (m2)";
             this.povrsinam2DataGridViewTextBoxColumn.Name = "povrsinam2DataGridViewTextBoxColumn";
             this.povrsinam2DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // navodnjavanjeViewBindingSource
+            // 
+            this.navodnjavanjeViewBindingSource.DataSource = typeof(PoljoAppVerzija2.navodnjavanjeView);
+            // 
+            // uiActionNovo
+            // 
+            this.uiActionNovo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.uiActionNovo.Location = new System.Drawing.Point(341, 239);
+            this.uiActionNovo.Name = "uiActionNovo";
+            this.uiActionNovo.Size = new System.Drawing.Size(102, 34);
+            this.uiActionNovo.TabIndex = 4;
+            this.uiActionNovo.Text = "Dodaj navodnjavanje";
+            this.uiActionNovo.UseVisualStyleBackColor = true;
+            this.uiActionNovo.Click += new System.EventHandler(this.UiActionNovo_Click);
+            // 
+            // pomocTab
+            // 
+            this.pomocTab.Controls.Add(this.label1);
+            this.pomocTab.Location = new System.Drawing.Point(4, 22);
+            this.pomocTab.Name = "pomocTab";
+            this.pomocTab.Padding = new System.Windows.Forms.Padding(3);
+            this.pomocTab.Size = new System.Drawing.Size(466, 279);
+            this.pomocTab.TabIndex = 0;
+            this.pomocTab.Text = "Pomoć";
+            this.pomocTab.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(21, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(431, 169);
+            this.label1.TabIndex = 0;
+            this.label1.Text = resources.GetString("label1.Text");
             // 
             // KontrolaNavodnjavanje
             // 
