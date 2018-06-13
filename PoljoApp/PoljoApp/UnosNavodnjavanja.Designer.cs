@@ -35,12 +35,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.izborDatum = new System.Windows.Forms.DateTimePicker();
             this.izborVrsta = new System.Windows.Forms.ComboBox();
+            this.stanjeNavodnjavanjaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.unosKolicinaVode = new System.Windows.Forms.TextBox();
             this.uiActionSpremi = new System.Windows.Forms.Button();
             this.uiActionOdustani = new System.Windows.Forms.Button();
-            this.stanjeNavodnjavanjaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.poljpovrsinaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stanjeNavodnjavanjaBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -92,6 +92,10 @@
             this.izborVrsta.TabIndex = 4;
             this.izborVrsta.ValueMember = "Id";
             // 
+            // stanjeNavodnjavanjaBindingSource
+            // 
+            this.stanjeNavodnjavanjaBindingSource.DataSource = typeof(PoljoAppVerzija2.StanjeNavodnjavanja);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -107,7 +111,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(138, 13);
             this.label4.TabIndex = 6;
-            this.label4.Text = "Količina vode (u litrima):";
+            this.label4.Text = "Količina vode (u mm):";
             // 
             // unosKolicinaVode
             // 
@@ -136,10 +140,6 @@
             this.uiActionOdustani.Text = "Odustani";
             this.uiActionOdustani.UseVisualStyleBackColor = true;
             this.uiActionOdustani.Click += new System.EventHandler(this.UiActionOdustani_Click);
-            // 
-            // stanjeNavodnjavanjaBindingSource
-            // 
-            this.stanjeNavodnjavanjaBindingSource.DataSource = typeof(PoljoAppVerzija2.StanjeNavodnjavanja);
             // 
             // UnosNavodnjavanja
             // 

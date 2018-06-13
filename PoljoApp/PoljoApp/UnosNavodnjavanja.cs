@@ -32,7 +32,7 @@ namespace PoljoAppVerzija2
 
             izborDatum.Text = NavodnjavanjeZaIzmjenu.Datum.ToString();
             izborPovrsine.SelectedValue = NavodnjavanjeZaIzmjenu.IdPovrsina;
-            izborVrsta.SelectedValue = NavodnjavanjeZaIzmjenu.IdStanja;
+            izborVrsta.SelectedValue = NavodnjavanjeZaIzmjenu.IdStanja <= 2 ? NavodnjavanjeZaIzmjenu.IdStanja : 2;
             unosKolicinaVode.Text = NavodnjavanjeZaIzmjenu.KolicinaVode.ToString();
         }
 
