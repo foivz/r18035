@@ -299,7 +299,6 @@
         private System.Windows.Forms.ComboBox izborNamjenePovrsina;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.BindingSource namjenapovrsineBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn koordinateDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource poljpovrsinaBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nazivDataGridViewTextBoxColumn;

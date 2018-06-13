@@ -85,7 +85,7 @@
     <Compile Include="Admin\UnosDjelatnika.Designer.cs">
       <DependentUpon>UnosDjelatnika.cs</DependentUpon>
     </Compile>
-    <Compile Include="djelatnik.cs">
+    <Compile Include="Djelatnik.cs">
       <DependentUpon>PoljoAppModel.tt</DependentUpon>
     </Compile>
     <Compile Include="KontrolaNavodnjavanje.cs">
@@ -97,7 +97,7 @@
     <Compile Include="namjena_povrsine.cs">
       <DependentUpon>PoljoAppModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="navodnjavanje.cs">
+    <Compile Include="Navodnjavanje.cs">
       <DependentUpon>PoljoAppModel.tt</DependentUpon>
     </Compile>
     <Compile Include="NavodnjavanjeStatistikaForma.cs">
@@ -106,7 +106,7 @@
     <Compile Include="NavodnjavanjeStatistikaForma.Designer.cs">
       <DependentUpon>NavodnjavanjeStatistikaForma.cs</DependentUpon>
     </Compile>
-    <Compile Include="navodnjavanjeView.cs">
+    <Compile Include="NavodnjavanjeView.cs">
       <DependentUpon>PoljoAppModel.tt</DependentUpon>
     </Compile>
     <Compile Include="PoljoApp.cs">
@@ -165,7 +165,7 @@
     <Compile Include="KontrolaSadnja.Designer.cs">
       <DependentUpon>KontrolaSadnja.cs</DependentUpon>
     </Compile>
-    <Compile Include="prskanje.cs">
+    <Compile Include="Prskanje.cs">
       <DependentUpon>PoljoAppModel.tt</DependentUpon>
     </Compile>
     <Compile Include="PrskanjeReportForma.cs">
@@ -174,7 +174,7 @@
     <Compile Include="PrskanjeReportForma.Designer.cs">
       <DependentUpon>PrskanjeReportForma.cs</DependentUpon>
     </Compile>
-    <Compile Include="prskanjeView.cs">
+    <Compile Include="PrskanjeView.cs">
       <DependentUpon>PoljoAppModel.tt</DependentUpon>
     </Compile>
     <Compile Include="sadni_materijal.cs">
@@ -187,7 +187,7 @@
       <DependentUpon>PoljoAppModel.tt</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
-    <Compile Include="stanje_navodnjavanja.cs">
+    <Compile Include="StanjeNavodnjavanja.cs">
       <DependentUpon>PoljoAppModel.tt</DependentUpon>
     </Compile>
     <Compile Include="UnosNavodnjavanja.cs">
@@ -317,12 +317,16 @@
     </None>
     <None Include="polj_povrsina.datasource" />
     <None Include="Properties\DataSources\djelatnik.datasource" />
+    <None Include="Properties\DataSources\Djelatnik1.datasource" />
     <None Include="Properties\DataSources\navodnjavanjeView.datasource" />
+    <None Include="Properties\DataSources\NavodnjavanjeView1.datasource" />
     <None Include="Properties\DataSources\prskanje.datasource" />
     <None Include="Properties\DataSources\prskanjeView.datasource" />
+    <None Include="Properties\DataSources\PrskanjeView1.datasource" />
     <None Include="Properties\DataSources\sadni_materijal.datasource" />
     <None Include="Properties\DataSources\sadnja.datasource" />
     <None Include="Properties\DataSources\SadnjaView.datasource" />
+    <None Include="Properties\DataSources\StanjeNavodnjavanja.datasource" />
     <None Include="Properties\DataSources\stanje_navodnjavanja.datasource" />
     <None Include="Properties\DataSources\vrsta_sadnog_materijala.datasource" />
     <None Include="Properties\DataSources\vrsta_zastite.datasource" />

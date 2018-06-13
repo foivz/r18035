@@ -25,19 +25,19 @@ namespace PoljoAppVerzija2
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<djelatnik> djelatnik { get; set; }
         public DbSet<namjena_povrsine> namjena_povrsine { get; set; }
-        public DbSet<navodnjavanje> navodnjavanje { get; set; }
         public DbSet<polj_povrsina> polj_povrsina { get; set; }
-        public DbSet<prskanje> prskanje { get; set; }
         public DbSet<sadni_materijal> sadni_materijal { get; set; }
         public DbSet<sadnja> sadnja { get; set; }
-        public DbSet<stanje_navodnjavanja> stanje_navodnjavanja { get; set; }
         public DbSet<vrsta_sadnog_materijala> vrsta_sadnog_materijala { get; set; }
         public DbSet<vrsta_zastite> vrsta_zastite { get; set; }
         public DbSet<zastita> zastita { get; set; }
-        public DbSet<prskanjeView> prskanjeView { get; set; }
-        public DbSet<navodnjavanjeView> navodnjavanjeView { get; set; }
         public DbSet<SadnjaView> SadnjaView { get; set; }
+        public DbSet<Djelatnik> DjelatnikSet { get; set; }
+        public DbSet<Navodnjavanje> NavodnjavanjeSet { get; set; }
+        public DbSet<Prskanje> PrskanjeSet { get; set; }
+        public DbSet<StanjeNavodnjavanja> StanjeNavodnjavanja { get; set; }
+        public DbSet<NavodnjavanjeView> NavodnjavanjeViewSet { get; set; }
+        public DbSet<PrskanjeView> PrskanjeViewSet { get; set; }
     }
 }

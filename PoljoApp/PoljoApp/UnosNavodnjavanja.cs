@@ -12,7 +12,7 @@ namespace PoljoAppVerzija2
 {
     public partial class UnosNavodnjavanja : Form
     {
-        navodnjavanje NavodnjavanjeZaIzmjenu = null;
+        Navodnjavanje NavodnjavanjeZaIzmjenu = null;
 
         public UnosNavodnjavanja()
         {
@@ -22,7 +22,7 @@ namespace PoljoAppVerzija2
             DohvatiStanja();
         }
 
-        public UnosNavodnjavanja(navodnjavanje zaIzmjenu)
+        public UnosNavodnjavanja(Navodnjavanje zaIzmjenu)
         {
             InitializeComponent();
             this.NavodnjavanjeZaIzmjenu = zaIzmjenu;
@@ -30,10 +30,10 @@ namespace PoljoAppVerzija2
             DohvatiPovrsine();
             DohvatiStanja();
 
-            izborDatum.Text = NavodnjavanjeZaIzmjenu.datum.ToString();
-            izborPovrsine.SelectedValue = NavodnjavanjeZaIzmjenu.id_povrsina;
-            izborVrsta.SelectedValue = NavodnjavanjeZaIzmjenu.id_stanja;
-            unosKolicinaVode.Text = NavodnjavanjeZaIzmjenu.kolicina_vode_litri.ToString();
+            izborDatum.Text = NavodnjavanjeZaIzmjenu.Datum.ToString();
+            izborPovrsine.SelectedValue = NavodnjavanjeZaIzmjenu.IdPovrsina;
+            izborVrsta.SelectedValue = NavodnjavanjeZaIzmjenu.IdStanja;
+            unosKolicinaVode.Text = NavodnjavanjeZaIzmjenu.KolicinaVode.ToString();
         }
 
         private void DohvatiPovrsine()
@@ -48,12 +48,12 @@ namespace PoljoAppVerzija2
 
         private void DohvatiStanja()
         {
-            BindingList<stanje_navodnjavanja> listaStanja= null;
+            BindingList<StanjeNavodnjavanja> listaStanja= null;
             using (var db = new Entities())
             {
-                listaStanja = new BindingList<stanje_navodnjavanja>(db.stanje_navodnjavanja.Take(2).ToList());
+                listaStanja = new BindingList<StanjeNavodnjavanja>(db.StanjeNavodnjavanja.Take(2).ToList());
             }
-            stanjenavodnjavanjaBindingSource.DataSource = listaStanja;
+            stanjeNavodnjavanjaBindingSource.DataSource = listaStanja;
         }
 
         private void UnosNavodnjavanja_KeyUp(object sender, KeyEventArgs e)
@@ -74,14 +74,14 @@ namespace PoljoAppVerzija2
             {
                 using (var db = new Entities())
                 {
-                    navodnjavanje novo = new navodnjavanje()
+                    Navodnjavanje novo = new Navodnjavanje()
                     {
-                        id_povrsina = (int)izborPovrsine.SelectedValue,
-                        datum = izborDatum.Value,
-                        kolicina_vode_litri = int.Parse(unosKolicinaVode.Text),
-                        id_stanja = (int)izborVrsta.SelectedValue
+                        IdPovrsina = (int)izborPovrsine.SelectedValue,
+                        Datum = izborDatum.Value,
+                        KolicinaVode = int.Parse(unosKolicinaVode.Text),
+                        IdStanja = (int)izborVrsta.SelectedValue
                     };
-                    db.navodnjavanje.Add(novo);
+                    db.NavodnjavanjeSet.Add(novo);
                     db.SaveChanges();
                 }
                 Close();
@@ -90,11 +90,11 @@ namespace PoljoAppVerzija2
             {
                 using (var db = new Entities())
                 {
-                    db.navodnjavanje.Attach(NavodnjavanjeZaIzmjenu);
-                    NavodnjavanjeZaIzmjenu.id_povrsina = (int)izborPovrsine.SelectedValue;
-                    NavodnjavanjeZaIzmjenu.datum = izborDatum.Value;
-                    NavodnjavanjeZaIzmjenu.kolicina_vode_litri = decimal.Parse(unosKolicinaVode.Text);
-                    NavodnjavanjeZaIzmjenu.id_stanja = (int)izborVrsta.SelectedValue;
+                    db.NavodnjavanjeSet.Attach(NavodnjavanjeZaIzmjenu);
+                    NavodnjavanjeZaIzmjenu.IdPovrsina = (int)izborPovrsine.SelectedValue;
+                    NavodnjavanjeZaIzmjenu.Datum = izborDatum.Value;
+                    NavodnjavanjeZaIzmjenu.KolicinaVode = decimal.Parse(unosKolicinaVode.Text);
+                    NavodnjavanjeZaIzmjenu.IdStanja = (int)izborVrsta.SelectedValue;
 
                     db.SaveChanges();
                 }

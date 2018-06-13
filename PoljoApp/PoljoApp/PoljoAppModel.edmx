@@ -5,17 +5,17 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="DBPoljoApp.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="djelatnik">
+        <EntityType Name="Djelatnik">
           <Key>
-            <PropertyRef Name="id" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="ime" Type="varchar" MaxLength="45" Nullable="false" />
-          <Property Name="prezime" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="email" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="lozinka" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="broj_telefona" Type="varchar" MaxLength="45" />
-          <Property Name="admin" Type="int" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ime" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Prezime" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Lozinka" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="BrojTelefona" Type="varchar" MaxLength="45" />
+          <Property Name="Admin" Type="int" />
         </EntityType>
         <EntityType Name="namjena_povrsine">
           <Key>
@@ -24,15 +24,15 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="namjena" Type="varchar" MaxLength="100" Nullable="false" />
         </EntityType>
-        <EntityType Name="navodnjavanje">
+        <EntityType Name="Navodnjavanje">
           <Key>
-            <PropertyRef Name="id_povrsina" />
-            <PropertyRef Name="datum" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="id_povrsina" Type="int" Nullable="false" />
-          <Property Name="datum" Type="date" Nullable="false" />
-          <Property Name="kolicina_vode_litri" Type="decimal" Precision="10" Scale="2" />
-          <Property Name="id_stanja" Type="int" Nullable="false" />
+          <Property Name="IdPovrsina" Type="int" Nullable="false" />
+          <Property Name="Datum" Type="date" Nullable="false" />
+          <Property Name="KolicinaVode" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="IdStanja" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityType Name="polj_povrsina">
           <Key>
@@ -45,17 +45,16 @@
           <Property Name="x_koordinata" Type="decimal" Precision="6" Scale="3" Nullable="false" />
           <Property Name="y_koordinata" Type="decimal" Precision="6" Scale="3" Nullable="false" />
         </EntityType>
-        <EntityType Name="prskanje">
+        <EntityType Name="Prskanje">
           <Key>
-            <PropertyRef Name="id_povrsina" />
-            <PropertyRef Name="id_zastita" />
-            <PropertyRef Name="datum" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="id_povrsina" Type="int" Nullable="false" />
-          <Property Name="id_zastita" Type="int" Nullable="false" />
-          <Property Name="datum" Type="date" Nullable="false" />
-          <Property Name="opis" Type="varchar" MaxLength="45" />
-          <Property Name="id_djelatnik" Type="int" Nullable="false" />
+          <Property Name="IdPovrsina" Type="int" Nullable="false" />
+          <Property Name="IdZastita" Type="int" Nullable="false" />
+          <Property Name="Datum" Type="date" Nullable="false" />
+          <Property Name="Opis" Type="varchar" MaxLength="45" />
+          <Property Name="IdDjelatnik" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityType Name="sadni_materijal">
           <Key>
@@ -77,12 +76,12 @@
           <Property Name="datum_sadnje" Type="date" Nullable="false" />
           <Property Name="kolicina" Type="varchar" MaxLength="70" />
         </EntityType>
-        <EntityType Name="stanje_navodnjavanja">
+        <EntityType Name="StanjeNavodnjavanja">
           <Key>
-            <PropertyRef Name="id" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="naziv" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Naziv" Type="varchar" MaxLength="45" Nullable="false" />
         </EntityType>
         <EntityType Name="vrsta_sadnog_materijala">
           <Key>
@@ -108,41 +107,47 @@
           <Property Name="id_vrste_zastite" Type="int" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view '18035_DB.18035_DB.navodnjavanjeView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="navodnjavanjeView">
+warning 6002: The table/view '18035_DB.18035_DB.NavodnjavanjeView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="NavodnjavanjeView">
           <Key>
-            <PropertyRef Name="id_povrsina" />
-            <PropertyRef Name="datum" />
-            <PropertyRef Name="id_stanja" />
-            <PropertyRef Name="naziv" />
-            <PropertyRef Name="povrsina_naziv" />
-            <PropertyRef Name="povrsina_m2" />
+            <PropertyRef Name="Datum" />
+            <PropertyRef Name="Povrsina" />
+            <PropertyRef Name="PovrsinaM2" />
+            <PropertyRef Name="Naziv" />
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="IdPovrsina" />
+            <PropertyRef Name="IdStanja" />
           </Key>
-          <Property Name="id_povrsina" Type="int" Nullable="false" />
-          <Property Name="datum" Type="date" Nullable="false" />
-          <Property Name="kolicina_vode_litri" Type="decimal" Precision="10" Scale="2" />
-          <Property Name="id_stanja" Type="int" Nullable="false" />
-          <Property Name="naziv" Type="varchar" MaxLength="45" Nullable="false" />
-          <Property Name="povrsina_naziv" Type="varchar" MaxLength="45" Nullable="false" />
-          <Property Name="povrsina_m2" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Datum" Type="date" Nullable="false" />
+          <Property Name="Povrsina" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="PovrsinaM2" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Naziv" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="KolicinaVode" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="IdPovrsina" Type="int" Nullable="false" />
+          <Property Name="IdStanja" Type="int" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view '18035_DB.18035_DB.prskanjeView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="prskanjeView">
+warning 6002: The table/view '18035_DB.18035_DB.PrskanjeView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="PrskanjeView">
           <Key>
-            <PropertyRef Name="povrsina" />
-            <PropertyRef Name="datum" />
-            <PropertyRef Name="id_zastita" />
-            <PropertyRef Name="id_povrsina" />
+            <PropertyRef Name="Povrsina" />
+            <PropertyRef Name="Datum" />
+            <PropertyRef Name="IdZastita" />
+            <PropertyRef Name="IdPovrsina" />
+            <PropertyRef Name="Ime" />
+            <PropertyRef Name="Prezime" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="ime" Type="varchar" MaxLength="45" />
-          <Property Name="prezime" Type="nvarchar" MaxLength="50" />
-          <Property Name="naziv" Type="varchar" MaxLength="45" />
-          <Property Name="povrsina" Type="varchar" MaxLength="45" Nullable="false" />
-          <Property Name="datum" Type="date" Nullable="false" />
-          <Property Name="opis" Type="varchar" MaxLength="45" />
-          <Property Name="id_zastita" Type="int" Nullable="false" />
-          <Property Name="id_povrsina" Type="int" Nullable="false" />
+          <Property Name="Zastita" Type="varchar" MaxLength="45" />
+          <Property Name="Povrsina" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Datum" Type="date" Nullable="false" />
+          <Property Name="Opis" Type="varchar" MaxLength="45" />
+          <Property Name="IdZastita" Type="int" Nullable="false" />
+          <Property Name="IdPovrsina" Type="int" Nullable="false" />
+          <Property Name="Ime" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Prezime" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Id" Type="int" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view '18035_DB.18035_DB.SadnjaView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -165,25 +170,25 @@ warning 6002: The table/view '18035_DB.18035_DB.SadnjaView' does not have a prim
           <End Role="polj_povrsina" Type="Self.polj_povrsina" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="navodnjavanje" Type="Self.navodnjavanje" Multiplicity="*" />
+          <End Role="Navodnjavanje" Type="Self.Navodnjavanje" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="polj_povrsina">
               <PropertyRef Name="id" />
             </Principal>
-            <Dependent Role="navodnjavanje">
-              <PropertyRef Name="id_povrsina" />
+            <Dependent Role="Navodnjavanje">
+              <PropertyRef Name="IdPovrsina" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_navodnjavanje_vrsta_navodnjavanja1">
-          <End Role="stanje_navodnjavanja" Type="Self.stanje_navodnjavanja" Multiplicity="1" />
-          <End Role="navodnjavanje" Type="Self.navodnjavanje" Multiplicity="*" />
+          <End Role="StanjeNavodnjavanja" Type="Self.StanjeNavodnjavanja" Multiplicity="1" />
+          <End Role="Navodnjavanje" Type="Self.Navodnjavanje" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="stanje_navodnjavanja">
-              <PropertyRef Name="id" />
+            <Principal Role="StanjeNavodnjavanja">
+              <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="navodnjavanje">
-              <PropertyRef Name="id_stanja" />
+            <Dependent Role="Navodnjavanje">
+              <PropertyRef Name="IdStanja" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -212,14 +217,14 @@ warning 6002: The table/view '18035_DB.18035_DB.SadnjaView' does not have a prim
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_prskanje_korisnik1">
-          <End Role="djelatnik" Type="Self.djelatnik" Multiplicity="1" />
-          <End Role="prskanje" Type="Self.prskanje" Multiplicity="*" />
+          <End Role="Djelatnik" Type="Self.Djelatnik" Multiplicity="1" />
+          <End Role="Prskanje" Type="Self.Prskanje" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="djelatnik">
-              <PropertyRef Name="id" />
+            <Principal Role="Djelatnik">
+              <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="prskanje">
-              <PropertyRef Name="id_djelatnik" />
+            <Dependent Role="Prskanje">
+              <PropertyRef Name="IdDjelatnik" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -227,13 +232,13 @@ warning 6002: The table/view '18035_DB.18035_DB.SadnjaView' does not have a prim
           <End Role="polj_povrsina" Type="Self.polj_povrsina" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="prskanje" Type="Self.prskanje" Multiplicity="*" />
+          <End Role="Prskanje" Type="Self.Prskanje" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="polj_povrsina">
               <PropertyRef Name="id" />
             </Principal>
-            <Dependent Role="prskanje">
-              <PropertyRef Name="id_povrsina" />
+            <Dependent Role="Prskanje">
+              <PropertyRef Name="IdPovrsina" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -241,13 +246,13 @@ warning 6002: The table/view '18035_DB.18035_DB.SadnjaView' does not have a prim
           <End Role="zastita" Type="Self.zastita" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="prskanje" Type="Self.prskanje" Multiplicity="*" />
+          <End Role="Prskanje" Type="Self.Prskanje" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="zastita">
               <PropertyRef Name="id" />
             </Principal>
-            <Dependent Role="prskanje">
-              <PropertyRef Name="id_zastita" />
+            <Dependent Role="Prskanje">
+              <PropertyRef Name="IdZastita" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -288,39 +293,41 @@ warning 6002: The table/view '18035_DB.18035_DB.SadnjaView' does not have a prim
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="DBPoljoAppStoreContainer">
-          <EntitySet Name="djelatnik" EntityType="Self.djelatnik" Schema="18035_DB" store:Type="Tables" />
+          <EntitySet Name="Djelatnik" EntityType="Self.Djelatnik" Schema="18035_DB" store:Type="Tables" />
           <EntitySet Name="namjena_povrsine" EntityType="Self.namjena_povrsine" Schema="18035_DB" store:Type="Tables" />
-          <EntitySet Name="navodnjavanje" EntityType="Self.navodnjavanje" Schema="18035_DB" store:Type="Tables" />
+          <EntitySet Name="Navodnjavanje" EntityType="Self.Navodnjavanje" Schema="18035_DB" store:Type="Tables" />
           <EntitySet Name="polj_povrsina" EntityType="Self.polj_povrsina" Schema="18035_DB" store:Type="Tables" />
-          <EntitySet Name="prskanje" EntityType="Self.prskanje" Schema="18035_DB" store:Type="Tables" />
+          <EntitySet Name="Prskanje" EntityType="Self.Prskanje" Schema="18035_DB" store:Type="Tables" />
           <EntitySet Name="sadni_materijal" EntityType="Self.sadni_materijal" Schema="18035_DB" store:Type="Tables" />
           <EntitySet Name="sadnja" EntityType="Self.sadnja" Schema="18035_DB" store:Type="Tables" />
-          <EntitySet Name="stanje_navodnjavanja" EntityType="Self.stanje_navodnjavanja" Schema="18035_DB" store:Type="Tables" />
+          <EntitySet Name="StanjeNavodnjavanja" EntityType="Self.StanjeNavodnjavanja" Schema="18035_DB" store:Type="Tables" />
           <EntitySet Name="vrsta_sadnog_materijala" EntityType="Self.vrsta_sadnog_materijala" Schema="18035_DB" store:Type="Tables" />
           <EntitySet Name="vrsta_zastite" EntityType="Self.vrsta_zastite" Schema="18035_DB" store:Type="Tables" />
           <EntitySet Name="zastita" EntityType="Self.zastita" Schema="18035_DB" store:Type="Tables" />
-          <EntitySet Name="navodnjavanjeView" EntityType="Self.navodnjavanjeView" store:Type="Views" store:Schema="18035_DB">
+          <EntitySet Name="NavodnjavanjeView" EntityType="Self.NavodnjavanjeView" store:Type="Views" store:Schema="18035_DB">
             <DefiningQuery>SELECT 
-[navodnjavanjeView].[id_povrsina] AS [id_povrsina], 
-[navodnjavanjeView].[datum] AS [datum], 
-[navodnjavanjeView].[kolicina_vode_litri] AS [kolicina_vode_litri], 
-[navodnjavanjeView].[id_stanja] AS [id_stanja], 
-[navodnjavanjeView].[naziv] AS [naziv], 
-[navodnjavanjeView].[povrsina_naziv] AS [povrsina_naziv], 
-[navodnjavanjeView].[povrsina_m2] AS [povrsina_m2]
-FROM [18035_DB].[navodnjavanjeView] AS [navodnjavanjeView]</DefiningQuery>
+[NavodnjavanjeView].[Datum] AS [Datum], 
+[NavodnjavanjeView].[Povrsina] AS [Povrsina], 
+[NavodnjavanjeView].[PovrsinaM2] AS [PovrsinaM2], 
+[NavodnjavanjeView].[Naziv] AS [Naziv], 
+[NavodnjavanjeView].[KolicinaVode] AS [KolicinaVode], 
+[NavodnjavanjeView].[Id] AS [Id], 
+[NavodnjavanjeView].[IdPovrsina] AS [IdPovrsina], 
+[NavodnjavanjeView].[IdStanja] AS [IdStanja]
+FROM [18035_DB].[NavodnjavanjeView] AS [NavodnjavanjeView]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="prskanjeView" EntityType="Self.prskanjeView" store:Type="Views" store:Schema="18035_DB">
+          <EntitySet Name="PrskanjeView" EntityType="Self.PrskanjeView" store:Type="Views" store:Schema="18035_DB">
             <DefiningQuery>SELECT 
-[prskanjeView].[ime] AS [ime], 
-[prskanjeView].[prezime] AS [prezime], 
-[prskanjeView].[naziv] AS [naziv], 
-[prskanjeView].[povrsina] AS [povrsina], 
-[prskanjeView].[datum] AS [datum], 
-[prskanjeView].[opis] AS [opis], 
-[prskanjeView].[id_zastita] AS [id_zastita], 
-[prskanjeView].[id_povrsina] AS [id_povrsina]
-FROM [18035_DB].[prskanjeView] AS [prskanjeView]</DefiningQuery>
+[PrskanjeView].[Zastita] AS [Zastita], 
+[PrskanjeView].[Povrsina] AS [Povrsina], 
+[PrskanjeView].[Datum] AS [Datum], 
+[PrskanjeView].[Opis] AS [Opis], 
+[PrskanjeView].[IdZastita] AS [IdZastita], 
+[PrskanjeView].[IdPovrsina] AS [IdPovrsina], 
+[PrskanjeView].[Ime] AS [Ime], 
+[PrskanjeView].[Prezime] AS [Prezime], 
+[PrskanjeView].[Id] AS [Id]
+FROM [18035_DB].[PrskanjeView] AS [PrskanjeView]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="SadnjaView" EntityType="Self.SadnjaView" store:Type="Views" store:Schema="18035_DB">
             <DefiningQuery>SELECT 
@@ -335,11 +342,11 @@ FROM [18035_DB].[SadnjaView] AS [SadnjaView]</DefiningQuery>
           </EntitySet>
           <AssociationSet Name="fk_navodnjavanje_polj_povrsine1" Association="Self.fk_navodnjavanje_polj_povrsine1">
             <End Role="polj_povrsina" EntitySet="polj_povrsina" />
-            <End Role="navodnjavanje" EntitySet="navodnjavanje" />
+            <End Role="Navodnjavanje" EntitySet="Navodnjavanje" />
           </AssociationSet>
           <AssociationSet Name="fk_navodnjavanje_vrsta_navodnjavanja1" Association="Self.fk_navodnjavanje_vrsta_navodnjavanja1">
-            <End Role="stanje_navodnjavanja" EntitySet="stanje_navodnjavanja" />
-            <End Role="navodnjavanje" EntitySet="navodnjavanje" />
+            <End Role="StanjeNavodnjavanja" EntitySet="StanjeNavodnjavanja" />
+            <End Role="Navodnjavanje" EntitySet="Navodnjavanje" />
           </AssociationSet>
           <AssociationSet Name="fk_polj_povrsina_namjena_povrsine1" Association="Self.fk_polj_povrsina_namjena_povrsine1">
             <End Role="namjena_povrsine" EntitySet="namjena_povrsine" />
@@ -350,16 +357,16 @@ FROM [18035_DB].[SadnjaView] AS [SadnjaView]</DefiningQuery>
             <End Role="sadni_materijal" EntitySet="sadni_materijal" />
           </AssociationSet>
           <AssociationSet Name="fk_prskanje_korisnik1" Association="Self.fk_prskanje_korisnik1">
-            <End Role="djelatnik" EntitySet="djelatnik" />
-            <End Role="prskanje" EntitySet="prskanje" />
+            <End Role="Djelatnik" EntitySet="Djelatnik" />
+            <End Role="Prskanje" EntitySet="Prskanje" />
           </AssociationSet>
           <AssociationSet Name="fk_prskanje_polj_povrsine1" Association="Self.fk_prskanje_polj_povrsine1">
             <End Role="polj_povrsina" EntitySet="polj_povrsina" />
-            <End Role="prskanje" EntitySet="prskanje" />
+            <End Role="Prskanje" EntitySet="Prskanje" />
           </AssociationSet>
           <AssociationSet Name="fk_prskanje_zastita1" Association="Self.fk_prskanje_zastita1">
             <End Role="zastita" EntitySet="zastita" />
-            <End Role="prskanje" EntitySet="prskanje" />
+            <End Role="Prskanje" EntitySet="Prskanje" />
           </AssociationSet>
           <AssociationSet Name="fk_sadnja_polj_povrsine1" Association="Self.fk_sadnja_polj_povrsine1">
             <End Role="polj_povrsina" EntitySet="polj_povrsina" />
@@ -378,19 +385,6 @@ FROM [18035_DB].[SadnjaView] AS [SadnjaView]</DefiningQuery>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DBPoljoApp" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="djelatnik">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ime" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="prezime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="lozinka" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="broj_telefona" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="prskanje" Relationship="Self.fk_prskanje_korisnik1" FromRole="djelatnik" ToRole="prskanje" />
-          <Property Name="admin" Type="Int32" />
-        </EntityType>
         <EntityType Name="namjena_povrsine">
           <Key>
             <PropertyRef Name="id" />
@@ -398,18 +392,6 @@ FROM [18035_DB].[SadnjaView] AS [SadnjaView]</DefiningQuery>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="namjena" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="polj_povrsina" Relationship="Self.fk_polj_povrsina_namjena_povrsine1" FromRole="namjena_povrsine" ToRole="polj_povrsina" />
-        </EntityType>
-        <EntityType Name="navodnjavanje">
-          <Key>
-            <PropertyRef Name="id_povrsina" />
-            <PropertyRef Name="datum" />
-          </Key>
-          <Property Name="id_povrsina" Type="Int32" Nullable="false" />
-          <Property Name="datum" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="kolicina_vode_litri" Type="Decimal" Precision="10" Scale="2" />
-          <Property Name="id_stanja" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="polj_povrsina" Relationship="Self.fk_navodnjavanje_polj_povrsine1" FromRole="navodnjavanje" ToRole="polj_povrsina" />
-          <NavigationProperty Name="stanje_navodnjavanja" Relationship="Self.fk_navodnjavanje_vrsta_navodnjavanja1" FromRole="navodnjavanje" ToRole="stanje_navodnjavanja" />
         </EntityType>
         <EntityType Name="polj_povrsina">
           <Key>
@@ -420,26 +402,11 @@ FROM [18035_DB].[SadnjaView] AS [SadnjaView]</DefiningQuery>
           <Property Name="povrsina_m2" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="id_namjene" Type="Int32" Nullable="false" />
           <NavigationProperty Name="namjena_povrsine" Relationship="Self.fk_polj_povrsina_namjena_povrsine1" FromRole="polj_povrsina" ToRole="namjena_povrsine" />
-          <NavigationProperty Name="navodnjavanje" Relationship="Self.fk_navodnjavanje_polj_povrsine1" FromRole="polj_povrsina" ToRole="navodnjavanje" />
-          <NavigationProperty Name="prskanje" Relationship="Self.fk_prskanje_polj_povrsine1" FromRole="polj_povrsina" ToRole="prskanje" />
           <NavigationProperty Name="sadnja" Relationship="Self.fk_sadnja_polj_povrsine1" FromRole="polj_povrsina" ToRole="sadnja" />
           <Property Name="x_koordinata" Type="Decimal" Nullable="false" Precision="6" Scale="3" />
           <Property Name="y_koordinata" Type="Decimal" Nullable="false" Precision="6" Scale="3" />
-        </EntityType>
-        <EntityType Name="prskanje">
-          <Key>
-            <PropertyRef Name="id_povrsina" />
-            <PropertyRef Name="id_zastita" />
-            <PropertyRef Name="datum" />
-          </Key>
-          <Property Name="id_povrsina" Type="Int32" Nullable="false" />
-          <Property Name="id_zastita" Type="Int32" Nullable="false" />
-          <Property Name="datum" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="opis" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
-          <Property Name="id_djelatnik" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="djelatnik" Relationship="Self.fk_prskanje_korisnik1" FromRole="prskanje" ToRole="djelatnik" />
-          <NavigationProperty Name="polj_povrsina" Relationship="Self.fk_prskanje_polj_povrsine1" FromRole="prskanje" ToRole="polj_povrsina" />
-          <NavigationProperty Name="zastita" Relationship="Self.fk_prskanje_zastita1" FromRole="prskanje" ToRole="zastita" />
+          <NavigationProperty Name="Navodnjavanje" Relationship="DBPoljoApp.fk_navodnjavanje_polj_povrsine11" FromRole="polj_povrsina" ToRole="Navodnjavanje1" />
+          <NavigationProperty Name="Prskanje" Relationship="DBPoljoApp.fk_prskanje_polj_povrsine11" FromRole="polj_povrsina" ToRole="Prskanje1" />
         </EntityType>
         <EntityType Name="sadni_materijal">
           <Key>
@@ -465,14 +432,6 @@ FROM [18035_DB].[SadnjaView] AS [SadnjaView]</DefiningQuery>
           <NavigationProperty Name="polj_povrsina" Relationship="Self.fk_sadnja_polj_povrsine1" FromRole="sadnja" ToRole="polj_povrsina" />
           <NavigationProperty Name="sadni_materijal" Relationship="Self.fk_sadnja_proizvodi1" FromRole="sadnja" ToRole="sadni_materijal" />
         </EntityType>
-        <EntityType Name="stanje_navodnjavanja">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="naziv" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="navodnjavanje" Relationship="Self.fk_navodnjavanje_vrsta_navodnjavanja1" FromRole="stanje_navodnjavanja" ToRole="navodnjavanje" />
-        </EntityType>
         <EntityType Name="vrsta_sadnog_materijala">
           <Key>
             <PropertyRef Name="id" />
@@ -497,21 +456,9 @@ FROM [18035_DB].[SadnjaView] AS [SadnjaView]</DefiningQuery>
           <Property Name="naziv" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Name="koncentracija" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="id_vrste_zastite" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="prskanje" Relationship="Self.fk_prskanje_zastita1" FromRole="zastita" ToRole="prskanje" />
           <NavigationProperty Name="vrsta_zastite" Relationship="Self.fk_zastita_vrste_zastite1" FromRole="zastita" ToRole="vrsta_zastite" />
+          <NavigationProperty Name="Prskanje" Relationship="DBPoljoApp.fk_prskanje_zastita11" FromRole="zastita" ToRole="Prskanje1" />
         </EntityType>
-        <Association Name="fk_prskanje_korisnik1">
-          <End Role="djelatnik" Type="Self.djelatnik" Multiplicity="1" />
-          <End Role="prskanje" Type="Self.prskanje" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="djelatnik">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="prskanje">
-              <PropertyRef Name="id_djelatnik" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="fk_polj_povrsina_namjena_povrsine1">
           <End Role="namjena_povrsine" Type="Self.namjena_povrsine" Multiplicity="1" />
           <End Role="polj_povrsina" Type="Self.polj_povrsina" Multiplicity="*" />
@@ -524,46 +471,6 @@ FROM [18035_DB].[SadnjaView] AS [SadnjaView]</DefiningQuery>
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="fk_navodnjavanje_polj_povrsine1">
-          <End Role="polj_povrsina" Type="Self.polj_povrsina" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="navodnjavanje" Type="Self.navodnjavanje" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="polj_povrsina">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="navodnjavanje">
-              <PropertyRef Name="id_povrsina" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_navodnjavanje_vrsta_navodnjavanja1">
-          <End Role="stanje_navodnjavanja" Type="Self.stanje_navodnjavanja" Multiplicity="1" />
-          <End Role="navodnjavanje" Type="Self.navodnjavanje" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="stanje_navodnjavanja">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="navodnjavanje">
-              <PropertyRef Name="id_stanja" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_prskanje_polj_povrsine1">
-          <End Role="polj_povrsina" Type="Self.polj_povrsina" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="prskanje" Type="Self.prskanje" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="polj_povrsina">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="prskanje">
-              <PropertyRef Name="id_povrsina" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="fk_sadnja_polj_povrsine1">
           <End Role="polj_povrsina" Type="Self.polj_povrsina" Multiplicity="1" />
           <End Role="sadnja" Type="Self.sadnja" Multiplicity="*" />
@@ -573,20 +480,6 @@ FROM [18035_DB].[SadnjaView] AS [SadnjaView]</DefiningQuery>
             </Principal>
             <Dependent Role="sadnja">
               <PropertyRef Name="id_povrsina" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_prskanje_zastita1">
-          <End Role="zastita" Type="Self.zastita" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="prskanje" Type="Self.prskanje" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="zastita">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="prskanje">
-              <PropertyRef Name="id_zastita" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -627,44 +520,20 @@ FROM [18035_DB].[SadnjaView] AS [SadnjaView]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="djelatnik" EntityType="Self.djelatnik" />
           <EntitySet Name="namjena_povrsine" EntityType="Self.namjena_povrsine" />
-          <EntitySet Name="navodnjavanje" EntityType="Self.navodnjavanje" />
           <EntitySet Name="polj_povrsina" EntityType="Self.polj_povrsina" />
-          <EntitySet Name="prskanje" EntityType="Self.prskanje" />
           <EntitySet Name="sadni_materijal" EntityType="Self.sadni_materijal" />
           <EntitySet Name="sadnja" EntityType="Self.sadnja" />
-          <EntitySet Name="stanje_navodnjavanja" EntityType="Self.stanje_navodnjavanja" />
           <EntitySet Name="vrsta_sadnog_materijala" EntityType="Self.vrsta_sadnog_materijala" />
           <EntitySet Name="vrsta_zastite" EntityType="Self.vrsta_zastite" />
           <EntitySet Name="zastita" EntityType="Self.zastita" />
-          <AssociationSet Name="fk_prskanje_korisnik1" Association="Self.fk_prskanje_korisnik1">
-            <End Role="djelatnik" EntitySet="djelatnik" />
-            <End Role="prskanje" EntitySet="prskanje" />
-          </AssociationSet>
           <AssociationSet Name="fk_polj_povrsina_namjena_povrsine1" Association="Self.fk_polj_povrsina_namjena_povrsine1">
             <End Role="namjena_povrsine" EntitySet="namjena_povrsine" />
             <End Role="polj_povrsina" EntitySet="polj_povrsina" />
           </AssociationSet>
-          <AssociationSet Name="fk_navodnjavanje_polj_povrsine1" Association="Self.fk_navodnjavanje_polj_povrsine1">
-            <End Role="polj_povrsina" EntitySet="polj_povrsina" />
-            <End Role="navodnjavanje" EntitySet="navodnjavanje" />
-          </AssociationSet>
-          <AssociationSet Name="fk_navodnjavanje_vrsta_navodnjavanja1" Association="Self.fk_navodnjavanje_vrsta_navodnjavanja1">
-            <End Role="stanje_navodnjavanja" EntitySet="stanje_navodnjavanja" />
-            <End Role="navodnjavanje" EntitySet="navodnjavanje" />
-          </AssociationSet>
-          <AssociationSet Name="fk_prskanje_polj_povrsine1" Association="Self.fk_prskanje_polj_povrsine1">
-            <End Role="polj_povrsina" EntitySet="polj_povrsina" />
-            <End Role="prskanje" EntitySet="prskanje" />
-          </AssociationSet>
           <AssociationSet Name="fk_sadnja_polj_povrsine1" Association="Self.fk_sadnja_polj_povrsine1">
             <End Role="polj_povrsina" EntitySet="polj_povrsina" />
             <End Role="sadnja" EntitySet="sadnja" />
-          </AssociationSet>
-          <AssociationSet Name="fk_prskanje_zastita1" Association="Self.fk_prskanje_zastita1">
-            <End Role="zastita" EntitySet="zastita" />
-            <End Role="prskanje" EntitySet="prskanje" />
           </AssociationSet>
           <AssociationSet Name="fk_proizvodi_vrste_proizvoda1" Association="Self.fk_proizvodi_vrste_proizvoda1">
             <End Role="vrsta_sadnog_materijala" EntitySet="vrsta_sadnog_materijala" />
@@ -678,43 +547,34 @@ FROM [18035_DB].[SadnjaView] AS [SadnjaView]</DefiningQuery>
             <End Role="vrsta_zastite" EntitySet="vrsta_zastite" />
             <End Role="zastita" EntitySet="zastita" />
           </AssociationSet>
-          <EntitySet Name="prskanjeView" EntityType="DBPoljoApp.prskanjeView" />
-          <EntitySet Name="navodnjavanjeView" EntityType="DBPoljoApp.navodnjavanjeView" />
           <EntitySet Name="SadnjaView" EntityType="DBPoljoApp.SadnjaView" />
+          <EntitySet Name="DjelatnikSet" EntityType="DBPoljoApp.Djelatnik" />
+          <EntitySet Name="NavodnjavanjeSet" EntityType="DBPoljoApp.Navodnjavanje" />
+          <EntitySet Name="PrskanjeSet" EntityType="DBPoljoApp.Prskanje" />
+          <EntitySet Name="StanjeNavodnjavanja" EntityType="DBPoljoApp.StanjeNavodnjavanja" />
+          <EntitySet Name="NavodnjavanjeViewSet" EntityType="DBPoljoApp.NavodnjavanjeView" />
+          <EntitySet Name="PrskanjeViewSet" EntityType="DBPoljoApp.PrskanjeView" />
+          <AssociationSet Name="fk_prskanje_korisnik11" Association="DBPoljoApp.fk_prskanje_korisnik11">
+            <End Role="Djelatnik1" EntitySet="DjelatnikSet" />
+            <End Role="Prskanje1" EntitySet="PrskanjeSet" />
+          </AssociationSet>
+          <AssociationSet Name="fk_navodnjavanje_polj_povrsine11" Association="DBPoljoApp.fk_navodnjavanje_polj_povrsine11">
+            <End Role="polj_povrsina" EntitySet="polj_povrsina" />
+            <End Role="Navodnjavanje1" EntitySet="NavodnjavanjeSet" />
+          </AssociationSet>
+          <AssociationSet Name="fk_navodnjavanje_vrsta_navodnjavanja11" Association="DBPoljoApp.fk_navodnjavanje_vrsta_navodnjavanja11">
+            <End Role="StanjeNavodnjavanja" EntitySet="StanjeNavodnjavanja" />
+            <End Role="Navodnjavanje1" EntitySet="NavodnjavanjeSet" />
+          </AssociationSet>
+          <AssociationSet Name="fk_prskanje_polj_povrsine11" Association="DBPoljoApp.fk_prskanje_polj_povrsine11">
+            <End Role="polj_povrsina" EntitySet="polj_povrsina" />
+            <End Role="Prskanje1" EntitySet="PrskanjeSet" />
+          </AssociationSet>
+          <AssociationSet Name="fk_prskanje_zastita11" Association="DBPoljoApp.fk_prskanje_zastita11">
+            <End Role="zastita" EntitySet="zastita" />
+            <End Role="Prskanje1" EntitySet="PrskanjeSet" />
+          </AssociationSet>
         </EntityContainer>
-        <EntityType Name="prskanjeView">
-          <Key>
-            <PropertyRef Name="povrsina" />
-            <PropertyRef Name="datum" />
-            <PropertyRef Name="id_zastita" />
-            <PropertyRef Name="id_povrsina" />
-          </Key>
-          <Property Name="ime" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
-          <Property Name="prezime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="naziv" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
-          <Property Name="povrsina" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
-          <Property Name="datum" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="opis" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
-          <Property Name="id_zastita" Type="Int32" Nullable="false" />
-          <Property Name="id_povrsina" Type="Int32" Nullable="false" />
-        </EntityType>
-        <EntityType Name="navodnjavanjeView">
-          <Key>
-            <PropertyRef Name="id_povrsina" />
-            <PropertyRef Name="datum" />
-            <PropertyRef Name="id_stanja" />
-            <PropertyRef Name="naziv" />
-            <PropertyRef Name="povrsina_naziv" />
-            <PropertyRef Name="povrsina_m2" />
-          </Key>
-          <Property Name="id_povrsina" Type="Int32" Nullable="false" />
-          <Property Name="datum" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="kolicina_vode_litri" Type="Decimal" Precision="10" Scale="2" />
-          <Property Name="id_stanja" Type="Int32" Nullable="false" />
-          <Property Name="naziv" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
-          <Property Name="povrsina_naziv" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
-          <Property Name="povrsina_m2" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
-        </EntityType>
         <EntityType Name="SadnjaView">
           <Key>
             <PropertyRef Name="id_povrsina" />
@@ -730,40 +590,169 @@ FROM [18035_DB].[SadnjaView] AS [SadnjaView]</DefiningQuery>
           <Property Name="naziv_materijal" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Name="jedinicna_mjera" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
         </EntityType>
+        <EntityType Name="Djelatnik">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ime" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="Prezime" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Lozinka" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="BrojTelefona" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="Admin" Type="Int32" />
+          <NavigationProperty Name="Prskanje" Relationship="DBPoljoApp.fk_prskanje_korisnik11" FromRole="Djelatnik1" ToRole="Prskanje1" />
+        </EntityType>
+        <EntityType Name="Navodnjavanje">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="IdPovrsina" Type="Int32" Nullable="false" />
+          <Property Name="Datum" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="KolicinaVode" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="IdStanja" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="polj_povrsina" Relationship="DBPoljoApp.fk_navodnjavanje_polj_povrsine11" FromRole="Navodnjavanje1" ToRole="polj_povrsina" />
+          <NavigationProperty Name="StanjeNavodnjavanja" Relationship="DBPoljoApp.fk_navodnjavanje_vrsta_navodnjavanja11" FromRole="Navodnjavanje1" ToRole="StanjeNavodnjavanja" />
+        </EntityType>
+        <EntityType Name="Prskanje">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="IdPovrsina" Type="Int32" Nullable="false" />
+          <Property Name="IdZastita" Type="Int32" Nullable="false" />
+          <Property Name="Datum" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Opis" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="IdDjelatnik" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Djelatnik" Relationship="DBPoljoApp.fk_prskanje_korisnik11" FromRole="Prskanje1" ToRole="Djelatnik1" />
+          <NavigationProperty Name="polj_povrsina" Relationship="DBPoljoApp.fk_prskanje_polj_povrsine11" FromRole="Prskanje1" ToRole="polj_povrsina" />
+          <NavigationProperty Name="zastita" Relationship="DBPoljoApp.fk_prskanje_zastita11" FromRole="Prskanje1" ToRole="zastita" />
+        </EntityType>
+        <EntityType Name="StanjeNavodnjavanja">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Naziv" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Navodnjavanje" Relationship="DBPoljoApp.fk_navodnjavanje_vrsta_navodnjavanja11" FromRole="StanjeNavodnjavanja" ToRole="Navodnjavanje1" />
+        </EntityType>
+        <EntityType Name="NavodnjavanjeView">
+          <Key>
+            <PropertyRef Name="Datum" />
+            <PropertyRef Name="Povrsina" />
+            <PropertyRef Name="PovrsinaM2" />
+            <PropertyRef Name="Naziv" />
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="IdPovrsina" />
+            <PropertyRef Name="IdStanja" />
+          </Key>
+          <Property Name="Datum" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Povrsina" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="PovrsinaM2" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="Naziv" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="KolicinaVode" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="IdPovrsina" Type="Int32" Nullable="false" />
+          <Property Name="IdStanja" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PrskanjeView">
+          <Key>
+            <PropertyRef Name="Povrsina" />
+            <PropertyRef Name="Datum" />
+            <PropertyRef Name="IdZastita" />
+            <PropertyRef Name="IdPovrsina" />
+            <PropertyRef Name="Ime" />
+            <PropertyRef Name="Prezime" />
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Zastita" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="Povrsina" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="Datum" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Opis" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="IdZastita" Type="Int32" Nullable="false" />
+          <Property Name="IdPovrsina" Type="Int32" Nullable="false" />
+          <Property Name="Ime" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="Prezime" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="fk_prskanje_korisnik11">
+          <End Type="DBPoljoApp.Djelatnik" Role="Djelatnik1" Multiplicity="1" />
+          <End Type="DBPoljoApp.Prskanje" Role="Prskanje1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Djelatnik1">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Prskanje1">
+              <PropertyRef Name="IdDjelatnik" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_navodnjavanje_polj_povrsine11">
+          <End Type="DBPoljoApp.polj_povrsina" Role="polj_povrsina" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="DBPoljoApp.Navodnjavanje" Role="Navodnjavanje1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="polj_povrsina">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Navodnjavanje1">
+              <PropertyRef Name="IdPovrsina" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_navodnjavanje_vrsta_navodnjavanja11">
+          <End Type="DBPoljoApp.StanjeNavodnjavanja" Role="StanjeNavodnjavanja" Multiplicity="1" />
+          <End Type="DBPoljoApp.Navodnjavanje" Role="Navodnjavanje1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StanjeNavodnjavanja">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Navodnjavanje1">
+              <PropertyRef Name="IdStanja" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_prskanje_polj_povrsine11">
+          <End Type="DBPoljoApp.polj_povrsina" Role="polj_povrsina" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="DBPoljoApp.Prskanje" Role="Prskanje1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="polj_povrsina">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Prskanje1">
+              <PropertyRef Name="IdPovrsina" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_prskanje_zastita11">
+          <End Type="DBPoljoApp.zastita" Role="zastita" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="DBPoljoApp.Prskanje" Role="Prskanje1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="zastita">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Prskanje1">
+              <PropertyRef Name="IdZastita" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="DBPoljoAppStoreContainer" CdmEntityContainer="Entities">
-          <EntitySetMapping Name="djelatnik">
-            <EntityTypeMapping TypeName="DBPoljoApp.djelatnik">
-              <MappingFragment StoreEntitySet="djelatnik">
-                <ScalarProperty Name="admin" ColumnName="admin" />
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="ime" ColumnName="ime" />
-                <ScalarProperty Name="prezime" ColumnName="prezime" />
-                <ScalarProperty Name="email" ColumnName="email" />
-                <ScalarProperty Name="lozinka" ColumnName="lozinka" />
-                <ScalarProperty Name="broj_telefona" ColumnName="broj_telefona" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="namjena_povrsine">
             <EntityTypeMapping TypeName="DBPoljoApp.namjena_povrsine">
               <MappingFragment StoreEntitySet="namjena_povrsine">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="namjena" ColumnName="namjena" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="navodnjavanje">
-            <EntityTypeMapping TypeName="DBPoljoApp.navodnjavanje">
-              <MappingFragment StoreEntitySet="navodnjavanje">
-                <ScalarProperty Name="id_povrsina" ColumnName="id_povrsina" />
-                <ScalarProperty Name="datum" ColumnName="datum" />
-                <ScalarProperty Name="kolicina_vode_litri" ColumnName="kolicina_vode_litri" />
-                <ScalarProperty Name="id_stanja" ColumnName="id_stanja" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -776,17 +765,6 @@ FROM [18035_DB].[SadnjaView] AS [SadnjaView]</DefiningQuery>
                 <ScalarProperty Name="naziv" ColumnName="naziv" />
                 <ScalarProperty Name="povrsina_m2" ColumnName="povrsina_m2" />
                 <ScalarProperty Name="id_namjene" ColumnName="id_namjene" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="prskanje">
-            <EntityTypeMapping TypeName="DBPoljoApp.prskanje">
-              <MappingFragment StoreEntitySet="prskanje">
-                <ScalarProperty Name="id_povrsina" ColumnName="id_povrsina" />
-                <ScalarProperty Name="id_zastita" ColumnName="id_zastita" />
-                <ScalarProperty Name="datum" ColumnName="datum" />
-                <ScalarProperty Name="opis" ColumnName="opis" />
-                <ScalarProperty Name="id_djelatnik" ColumnName="id_djelatnik" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -807,14 +785,6 @@ FROM [18035_DB].[SadnjaView] AS [SadnjaView]</DefiningQuery>
                 <ScalarProperty Name="id_materijal" ColumnName="id_materijal" />
                 <ScalarProperty Name="datum_sadnje" ColumnName="datum_sadnje" />
                 <ScalarProperty Name="kolicina" ColumnName="kolicina" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="stanje_navodnjavanja">
-            <EntityTypeMapping TypeName="DBPoljoApp.stanje_navodnjavanja">
-              <MappingFragment StoreEntitySet="stanje_navodnjavanja">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="naziv" ColumnName="naziv" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -844,33 +814,6 @@ FROM [18035_DB].[SadnjaView] AS [SadnjaView]</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="prskanjeView">
-            <EntityTypeMapping TypeName="DBPoljoApp.prskanjeView">
-              <MappingFragment StoreEntitySet="prskanjeView">
-                <ScalarProperty Name="id_povrsina" ColumnName="id_povrsina" />
-                <ScalarProperty Name="id_zastita" ColumnName="id_zastita" />
-                <ScalarProperty Name="opis" ColumnName="opis" />
-                <ScalarProperty Name="datum" ColumnName="datum" />
-                <ScalarProperty Name="povrsina" ColumnName="povrsina" />
-                <ScalarProperty Name="naziv" ColumnName="naziv" />
-                <ScalarProperty Name="prezime" ColumnName="prezime" />
-                <ScalarProperty Name="ime" ColumnName="ime" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="navodnjavanjeView">
-            <EntityTypeMapping TypeName="DBPoljoApp.navodnjavanjeView">
-              <MappingFragment StoreEntitySet="navodnjavanjeView">
-                <ScalarProperty Name="povrsina_m2" ColumnName="povrsina_m2" />
-                <ScalarProperty Name="povrsina_naziv" ColumnName="povrsina_naziv" />
-                <ScalarProperty Name="naziv" ColumnName="naziv" />
-                <ScalarProperty Name="id_stanja" ColumnName="id_stanja" />
-                <ScalarProperty Name="kolicina_vode_litri" ColumnName="kolicina_vode_litri" />
-                <ScalarProperty Name="datum" ColumnName="datum" />
-                <ScalarProperty Name="id_povrsina" ColumnName="id_povrsina" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="SadnjaView">
             <EntityTypeMapping TypeName="DBPoljoApp.SadnjaView">
               <MappingFragment StoreEntitySet="SadnjaView">
@@ -881,6 +824,79 @@ FROM [18035_DB].[SadnjaView] AS [SadnjaView]</DefiningQuery>
                 <ScalarProperty Name="datum_sadnje" ColumnName="datum_sadnje" />
                 <ScalarProperty Name="id_materijal" ColumnName="id_materijal" />
                 <ScalarProperty Name="id_povrsina" ColumnName="id_povrsina" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DjelatnikSet">
+            <EntityTypeMapping TypeName="DBPoljoApp.Djelatnik">
+              <MappingFragment StoreEntitySet="Djelatnik">
+                <ScalarProperty Name="Admin" ColumnName="Admin" />
+                <ScalarProperty Name="BrojTelefona" ColumnName="BrojTelefona" />
+                <ScalarProperty Name="Lozinka" ColumnName="Lozinka" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Prezime" ColumnName="Prezime" />
+                <ScalarProperty Name="Ime" ColumnName="Ime" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NavodnjavanjeSet">
+            <EntityTypeMapping TypeName="DBPoljoApp.Navodnjavanje">
+              <MappingFragment StoreEntitySet="Navodnjavanje">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdStanja" ColumnName="IdStanja" />
+                <ScalarProperty Name="KolicinaVode" ColumnName="KolicinaVode" />
+                <ScalarProperty Name="Datum" ColumnName="Datum" />
+                <ScalarProperty Name="IdPovrsina" ColumnName="IdPovrsina" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PrskanjeSet">
+            <EntityTypeMapping TypeName="DBPoljoApp.Prskanje">
+              <MappingFragment StoreEntitySet="Prskanje">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdDjelatnik" ColumnName="IdDjelatnik" />
+                <ScalarProperty Name="Opis" ColumnName="Opis" />
+                <ScalarProperty Name="Datum" ColumnName="Datum" />
+                <ScalarProperty Name="IdZastita" ColumnName="IdZastita" />
+                <ScalarProperty Name="IdPovrsina" ColumnName="IdPovrsina" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StanjeNavodnjavanja">
+            <EntityTypeMapping TypeName="DBPoljoApp.StanjeNavodnjavanja">
+              <MappingFragment StoreEntitySet="StanjeNavodnjavanja">
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NavodnjavanjeViewSet">
+            <EntityTypeMapping TypeName="DBPoljoApp.NavodnjavanjeView">
+              <MappingFragment StoreEntitySet="NavodnjavanjeView">
+                <ScalarProperty Name="IdStanja" ColumnName="IdStanja" />
+                <ScalarProperty Name="IdPovrsina" ColumnName="IdPovrsina" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="KolicinaVode" ColumnName="KolicinaVode" />
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+                <ScalarProperty Name="PovrsinaM2" ColumnName="PovrsinaM2" />
+                <ScalarProperty Name="Povrsina" ColumnName="Povrsina" />
+                <ScalarProperty Name="Datum" ColumnName="Datum" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PrskanjeViewSet">
+            <EntityTypeMapping TypeName="DBPoljoApp.PrskanjeView">
+              <MappingFragment StoreEntitySet="PrskanjeView">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Prezime" ColumnName="Prezime" />
+                <ScalarProperty Name="Ime" ColumnName="Ime" />
+                <ScalarProperty Name="IdPovrsina" ColumnName="IdPovrsina" />
+                <ScalarProperty Name="IdZastita" ColumnName="IdZastita" />
+                <ScalarProperty Name="Opis" ColumnName="Opis" />
+                <ScalarProperty Name="Datum" ColumnName="Datum" />
+                <ScalarProperty Name="Povrsina" ColumnName="Povrsina" />
+                <ScalarProperty Name="Zastita" ColumnName="Zastita" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

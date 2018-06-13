@@ -12,7 +12,7 @@ namespace PoljoAppVerzija2
 {
     public partial class UnosPrskanja : Form
     {
-        prskanje PrskanjeZaIzmjenu = null;
+        Prskanje PrskanjeZaIzmjenu = null;
 
         public UnosPrskanja()
         {
@@ -22,7 +22,7 @@ namespace PoljoAppVerzija2
             DohvatiDjelatnike();
         }
 
-        public UnosPrskanja(prskanje prskanje)
+        public UnosPrskanja(Prskanje prskanje)
         {
             InitializeComponent();
 
@@ -32,11 +32,11 @@ namespace PoljoAppVerzija2
 
             PrskanjeZaIzmjenu = prskanje;
 
-            izborDatum.Text = PrskanjeZaIzmjenu.datum.ToString();
-            unosOpis.Text = PrskanjeZaIzmjenu.opis;
-            izborDjelatnik.SelectedValue = PrskanjeZaIzmjenu.id_djelatnik;
-            izborPovrsine.SelectedValue = PrskanjeZaIzmjenu.id_povrsina;
-            izborZastita.SelectedValue = PrskanjeZaIzmjenu.id_zastita;
+            izborDatum.Text = PrskanjeZaIzmjenu.Datum.ToString();
+            unosOpis.Text = PrskanjeZaIzmjenu.Opis;
+            izborDjelatnik.SelectedValue = PrskanjeZaIzmjenu.IdDjelatnik;
+            izborPovrsine.SelectedValue = PrskanjeZaIzmjenu.IdPovrsina;
+            izborZastita.SelectedValue = PrskanjeZaIzmjenu.IdZastita;
         }
 
         private void DohvatiPovrsine()
@@ -61,10 +61,10 @@ namespace PoljoAppVerzija2
 
         private void DohvatiDjelatnike()
         {
-            BindingList<djelatnik> listaDjelatnika = null;
+            BindingList<Djelatnik> listaDjelatnika = null;
             using (var db = new Entities())
             {
-                listaDjelatnika = new BindingList<djelatnik>(db.djelatnik.ToList());
+                listaDjelatnika = new BindingList<Djelatnik>(db.DjelatnikSet.ToList());
             }
             djelatnikBindingSource.DataSource = listaDjelatnika;
         }
@@ -89,15 +89,15 @@ namespace PoljoAppVerzija2
             {
                 using (var db = new Entities())
                 {
-                    prskanje novo = new prskanje()
+                    Prskanje novo = new Prskanje()
                     {
-                        id_djelatnik = (int)izborDjelatnik.SelectedValue,
-                        id_povrsina = (int)izborPovrsine.SelectedValue,
-                        id_zastita = (int)izborZastita.SelectedValue,
-                        datum = izborDatum.Value,
-                        opis = unosOpis.Text
+                        IdDjelatnik = (int)izborDjelatnik.SelectedValue,
+                        IdPovrsina = (int)izborPovrsine.SelectedValue,
+                        IdZastita = (int)izborZastita.SelectedValue,
+                        Datum = izborDatum.Value,
+                        Opis = unosOpis.Text
                     };
-                    db.prskanje.Add(novo);
+                    db.PrskanjeSet.Add(novo);
                     db.SaveChanges();
                 }
                 Close();
@@ -106,12 +106,12 @@ namespace PoljoAppVerzija2
             {
                 using (var db = new Entities())
                 {
-                    db.prskanje.Attach(PrskanjeZaIzmjenu);
-                    PrskanjeZaIzmjenu.id_djelatnik = (int) izborDjelatnik.SelectedValue;
-                    PrskanjeZaIzmjenu.id_zastita = (int) izborZastita.SelectedValue;
-                    PrskanjeZaIzmjenu.id_povrsina = (int) izborPovrsine.SelectedValue;
-                    PrskanjeZaIzmjenu.datum = izborDatum.Value;
-                    PrskanjeZaIzmjenu.opis = unosOpis.Text;
+                    db.PrskanjeSet.Attach(PrskanjeZaIzmjenu);
+                    PrskanjeZaIzmjenu.IdDjelatnik = (int) izborDjelatnik.SelectedValue;
+                    PrskanjeZaIzmjenu.IdZastita = (int) izborZastita.SelectedValue;
+                    PrskanjeZaIzmjenu.IdPovrsina = (int) izborPovrsine.SelectedValue;
+                    PrskanjeZaIzmjenu.Datum = izborDatum.Value;
+                    PrskanjeZaIzmjenu.Opis = unosOpis.Text;
 
                     db.SaveChanges();
                 }

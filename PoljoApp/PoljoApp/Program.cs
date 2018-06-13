@@ -17,7 +17,7 @@ namespace PoljoAppVerzija2
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //PoljoApp(new djelatnik() {admin = 1 })
-            Application.Run(new PoljoApp(new djelatnik() { admin = 1 }));
+            Application.Run(new PoljoApp(new Djelatnik() { Admin = 1 }));
         }
     }
 }

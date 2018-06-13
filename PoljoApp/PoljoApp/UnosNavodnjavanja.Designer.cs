@@ -35,14 +35,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.izborDatum = new System.Windows.Forms.DateTimePicker();
             this.izborVrsta = new System.Windows.Forms.ComboBox();
-            this.stanjenavodnjavanjaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.unosKolicinaVode = new System.Windows.Forms.TextBox();
             this.uiActionSpremi = new System.Windows.Forms.Button();
             this.uiActionOdustani = new System.Windows.Forms.Button();
+            this.stanjeNavodnjavanjaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.poljpovrsinaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stanjenavodnjavanjaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stanjeNavodnjavanjaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // izborPovrsine
@@ -55,10 +55,6 @@
             this.izborPovrsine.Size = new System.Drawing.Size(156, 21);
             this.izborPovrsine.TabIndex = 0;
             this.izborPovrsine.ValueMember = "id";
-            // 
-            // poljpovrsinaBindingSource
-            // 
-            this.poljpovrsinaBindingSource.DataSource = typeof(PoljoAppVerzija2.polj_povrsina);
             // 
             // label1
             // 
@@ -87,18 +83,14 @@
             // 
             // izborVrsta
             // 
-            this.izborVrsta.DataSource = this.stanjenavodnjavanjaBindingSource;
-            this.izborVrsta.DisplayMember = "naziv";
+            this.izborVrsta.DataSource = this.stanjeNavodnjavanjaBindingSource;
+            this.izborVrsta.DisplayMember = "Naziv";
             this.izborVrsta.FormattingEnabled = true;
             this.izborVrsta.Location = new System.Drawing.Point(104, 46);
             this.izborVrsta.Name = "izborVrsta";
             this.izborVrsta.Size = new System.Drawing.Size(156, 21);
             this.izborVrsta.TabIndex = 4;
-            this.izborVrsta.ValueMember = "id";
-            // 
-            // stanjenavodnjavanjaBindingSource
-            // 
-            this.stanjenavodnjavanjaBindingSource.DataSource = typeof(PoljoAppVerzija2.stanje_navodnjavanja);
+            this.izborVrsta.ValueMember = "Id";
             // 
             // label3
             // 
@@ -145,6 +137,10 @@
             this.uiActionOdustani.UseVisualStyleBackColor = true;
             this.uiActionOdustani.Click += new System.EventHandler(this.UiActionOdustani_Click);
             // 
+            // stanjeNavodnjavanjaBindingSource
+            // 
+            this.stanjeNavodnjavanjaBindingSource.DataSource = typeof(PoljoAppVerzija2.StanjeNavodnjavanja);
+            // 
             // UnosNavodnjavanja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -165,7 +161,7 @@
             this.Text = "Unos navodnjavanja";
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.UnosNavodnjavanja_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.poljpovrsinaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stanjenavodnjavanjaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stanjeNavodnjavanjaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -184,6 +180,6 @@
         private System.Windows.Forms.Button uiActionSpremi;
         private System.Windows.Forms.Button uiActionOdustani;
         private System.Windows.Forms.BindingSource poljpovrsinaBindingSource;
-        private System.Windows.Forms.BindingSource stanjenavodnjavanjaBindingSource;
+        private System.Windows.Forms.BindingSource stanjeNavodnjavanjaBindingSource;
     }
 }

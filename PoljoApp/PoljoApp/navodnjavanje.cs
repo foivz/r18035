@@ -12,14 +12,15 @@ namespace PoljoAppVerzija2
     using System;
     using System.Collections.Generic;
     
-    public partial class navodnjavanje
+    public partial class Navodnjavanje
     {
-        public int id_povrsina { get; set; }
-        public System.DateTime datum { get; set; }
-        public Nullable<decimal> kolicina_vode_litri { get; set; }
-        public int id_stanja { get; set; }
+        public int IdPovrsina { get; set; }
+        public System.DateTime Datum { get; set; }
+        public Nullable<decimal> KolicinaVode { get; set; }
+        public int IdStanja { get; set; }
+        public int Id { get; set; }
     
         public virtual polj_povrsina polj_povrsina { get; set; }
-        public virtual stanje_navodnjavanja stanje_navodnjavanja { get; set; }
+        public virtual StanjeNavodnjavanja StanjeNavodnjavanja { get; set; }
     }
 }

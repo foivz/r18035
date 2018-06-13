@@ -16,7 +16,7 @@ namespace PoljoAppVerzija2
     {
         public zastita()
         {
-            this.prskanje = new HashSet<prskanje>();
+            this.Prskanje = new HashSet<Prskanje>();
         }
     
         public int id { get; set; }
@@ -24,7 +24,7 @@ namespace PoljoAppVerzija2
         public string koncentracija { get; set; }
         public int id_vrste_zastite { get; set; }
     
-        public virtual ICollection<prskanje> prskanje { get; set; }
         public virtual vrsta_zastite vrsta_zastite { get; set; }
+        public virtual ICollection<Prskanje> Prskanje { get; set; }
     }
 }

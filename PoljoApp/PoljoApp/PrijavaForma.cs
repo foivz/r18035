@@ -36,12 +36,13 @@ namespace PoljoAppVerzija2
         private void IzvrsiPrijavu(string email, string lozinka)
         {
             using (var db = new Entities()) {
-                djelatnik korisnik = db.djelatnik.Where(k => k.email == email && k.lozinka == lozinka).FirstOrDefault();
+                Djelatnik korisnik = db.DjelatnikSet.Where(k => k.Email == email && k.Lozinka == lozinka).FirstOrDefault();
 
                 if (korisnik != null) {
+                    this.Hide();
                     PoljoApp app = new PoljoApp(korisnik);
-                    this.Close();
-                    app.Show();
+                    app.FormClosed += (s, args) => this.Close();
+                    app.ShowDialog();
                 }
                 else {
                     MessageBox.Show("Neuspješna prijava!");

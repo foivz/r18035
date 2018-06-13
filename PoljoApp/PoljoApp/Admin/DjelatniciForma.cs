@@ -27,9 +27,9 @@ namespace PoljoAppVerzija2.Admin
 
         private void PrikaziDjelatnike()
         {
-            BindingList<djelatnik> listaDjelatnika = null;
+            BindingList<Djelatnik> listaDjelatnika = null;
             using (var db = new Entities()) {
-                listaDjelatnika = new BindingList<djelatnik>(db.djelatnik.ToList());
+                listaDjelatnika = new BindingList<Djelatnik>(db.DjelatnikSet.ToList());
             }
             djelatnikBindingSource.DataSource = listaDjelatnika;
         }
@@ -38,7 +38,7 @@ namespace PoljoAppVerzija2.Admin
         {
             if(djelatnikBindingSource.Current != null)
             {
-                UnosDjelatnika unos = new UnosDjelatnika(djelatnikBindingSource.Current as djelatnik);
+                UnosDjelatnika unos = new UnosDjelatnika(djelatnikBindingSource.Current as Djelatnik);
                 unos.ShowDialog();
                 PrikaziDjelatnike();
             }

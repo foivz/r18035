@@ -31,24 +31,24 @@ namespace PoljoAppVerzija2
         {
             int godina = int.Parse(izborGodine.Text);
 
-            BindingList<navodnjavanjeView> listaNavodnjavanja = null;
+            BindingList<NavodnjavanjeView> listaNavodnjavanja = null;
             using (var db = new Entities())
             {
-                listaNavodnjavanja = new BindingList<navodnjavanjeView>(db.navodnjavanjeView.Where(n=>n.id_stanja<3 && n.datum.Year == godina).ToList());
+                listaNavodnjavanja = new BindingList<NavodnjavanjeView>(db.NavodnjavanjeViewSet.Where(n=>n.IdStanja<3 && n.Datum.Year == godina).ToList());
             }
             navodnjavanjeViewBindingSource.DataSource = listaNavodnjavanja;
         }
 
         private void UiActionIzbrisi_Click(object sender, EventArgs e)
         {
-            navodnjavanje zaBrisanje = DohvatiOznacenoNavodnjavanje();
+            Navodnjavanje zaBrisanje = DohvatiOznacenoNavodnjavanje();
 
             if (MessageBox.Show("Jeste li ste sigurni da želite obrisati navodnjavanje?", "Upozorenje!", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
             {
                 using (var db = new Entities())
                 {
-                    db.navodnjavanje.Attach(zaBrisanje);
-                    db.navodnjavanje.Remove(zaBrisanje);
+                    db.NavodnjavanjeSet.Attach(zaBrisanje);
+                    db.NavodnjavanjeSet.Remove(zaBrisanje);
                     db.SaveChanges();
                 }
 
@@ -56,20 +56,20 @@ namespace PoljoAppVerzija2
             PrikaziNavodnjavanje();
         }
 
-        private navodnjavanje DohvatiOznacenoNavodnjavanje()
+        private Navodnjavanje DohvatiOznacenoNavodnjavanje()
         {
-            navodnjavanjeView oznaceno = navodnjavanjeViewBindingSource.Current as navodnjavanjeView;
-            navodnjavanje zaIzmjenu;
+            NavodnjavanjeView oznaceno = navodnjavanjeViewBindingSource.Current as NavodnjavanjeView;
+            Navodnjavanje zaIzmjenu;
             using (var db = new Entities())
             {
-                zaIzmjenu = db.navodnjavanje.Where(n => n.datum == oznaceno.datum && n.id_povrsina == oznaceno.id_povrsina).FirstOrDefault();
+                zaIzmjenu = db.NavodnjavanjeSet.Where(n => n.Datum == oznaceno.Datum && n.IdPovrsina == oznaceno.IdPovrsina).FirstOrDefault();
             }
             return zaIzmjenu;
         }
 
         private void UiActionAzuiraj_Click(object sender, EventArgs e)
         {
-            navodnjavanje zaIzmjenu = DohvatiOznacenoNavodnjavanje();
+            Navodnjavanje zaIzmjenu = DohvatiOznacenoNavodnjavanje();
             UnosNavodnjavanja azuriraj = new UnosNavodnjavanja(zaIzmjenu);
             azuriraj.ShowDialog();
             PrikaziNavodnjavanje();
@@ -80,7 +80,7 @@ namespace PoljoAppVerzija2
             List<int> listaGodina = null;
             using (var db = new Entities())
             {
-                listaGodina = new List<int>(db.navodnjavanje.Select(p => p.datum.Year).Distinct());
+                listaGodina = new List<int>(db.NavodnjavanjeSet.Select(p => p.Datum.Year).Distinct());
             }
 
             foreach (var datum in listaGodina)

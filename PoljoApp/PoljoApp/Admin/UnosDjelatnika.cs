@@ -12,7 +12,7 @@ namespace PoljoAppVerzija2.Admin
 {
     public partial class UnosDjelatnika : Form
     {
-        djelatnik DjelatnikZaIzmjenu = null;
+        Djelatnik DjelatnikZaIzmjenu = null;
 
         public UnosDjelatnika()
         {
@@ -20,17 +20,17 @@ namespace PoljoAppVerzija2.Admin
             ispisID.Text = "ID: new";
         }
 
-        public UnosDjelatnika(djelatnik azuriraj)
+        public UnosDjelatnika(Djelatnik azuriraj)
         {
             InitializeComponent();
             DjelatnikZaIzmjenu = azuriraj;
 
-            unosEmail.Text = DjelatnikZaIzmjenu.email;
-            unosLozinka.Text = DjelatnikZaIzmjenu.lozinka;
-            unosIme.Text = DjelatnikZaIzmjenu.ime;
-            unosPrezime.Text = DjelatnikZaIzmjenu.prezime;
-            unosTelefon.Text = DjelatnikZaIzmjenu.broj_telefona;
-            ispisID.Text = "ID:" + DjelatnikZaIzmjenu.id;
+            unosEmail.Text = DjelatnikZaIzmjenu.Email;
+            unosLozinka.Text = DjelatnikZaIzmjenu.Lozinka;
+            unosIme.Text = DjelatnikZaIzmjenu.Ime;
+            unosPrezime.Text = DjelatnikZaIzmjenu.Prezime;
+            unosTelefon.Text = DjelatnikZaIzmjenu.BrojTelefona;
+            ispisID.Text = "ID:" + DjelatnikZaIzmjenu.Id;
         }
 
         private void UiActionOdustani_Click(object sender, EventArgs e)
@@ -59,15 +59,15 @@ namespace PoljoAppVerzija2.Admin
             {
                 using (var db = new Entities())
                 {
-                    djelatnik novi = new djelatnik()
+                    Djelatnik novi = new Djelatnik()
                     {
-                        ime = unosIme.Text,
-                        prezime = unosPrezime.Text,
-                        email = unosEmail.Text,
-                        lozinka = unosLozinka.Text,
-                        broj_telefona = unosTelefon.Text
+                        Ime = unosIme.Text,
+                        Prezime = unosPrezime.Text,
+                        Email = unosEmail.Text,
+                        Lozinka = unosLozinka.Text,
+                        BrojTelefona = unosTelefon.Text
                     };
-                    db.djelatnik.Add(novi);
+                    db.DjelatnikSet.Add(novi);
                     db.SaveChanges();
                 }
                 Close();
@@ -75,12 +75,12 @@ namespace PoljoAppVerzija2.Admin
             else {
                 using (var db = new Entities())
                 {
-                    db.djelatnik.Attach(DjelatnikZaIzmjenu);
-                    DjelatnikZaIzmjenu.ime = unosIme.Text;
-                    DjelatnikZaIzmjenu.prezime = unosPrezime.Text;
-                    DjelatnikZaIzmjenu.email = unosEmail.Text;
-                    DjelatnikZaIzmjenu.lozinka = unosLozinka.Text;
-                    DjelatnikZaIzmjenu.broj_telefona = unosTelefon.Text;
+                    db.DjelatnikSet.Attach(DjelatnikZaIzmjenu);
+                    DjelatnikZaIzmjenu.Ime = unosIme.Text;
+                    DjelatnikZaIzmjenu.Prezime = unosPrezime.Text;
+                    DjelatnikZaIzmjenu.Email = unosEmail.Text;
+                    DjelatnikZaIzmjenu.Lozinka = unosLozinka.Text;
+                    DjelatnikZaIzmjenu.BrojTelefona = unosTelefon.Text;
                     db.SaveChanges();
                 }
                 Close();

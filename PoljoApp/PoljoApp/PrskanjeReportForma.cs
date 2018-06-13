@@ -28,10 +28,10 @@ namespace PoljoAppVerzija2
 
         private void PrikaziReport()
         {
-            BindingList<prskanjeView> listaPrskanja = null;
+            BindingList<PrskanjeView> listaPrskanja = null;
             using (var db = new Entities())
             {
-                listaPrskanja = new BindingList<prskanjeView>(db.prskanjeView.Where(p => p.datum.Year == Godina).ToList());
+                listaPrskanja = new BindingList<PrskanjeView>(db.PrskanjeViewSet.Where(p => p.Datum.Year == Godina).ToList());
             }
             prskanjeViewBindingSource.DataSource = listaPrskanja;
         }

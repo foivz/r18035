@@ -37,7 +37,7 @@
             // 
             // prskanjeViewBindingSource
             // 
-            this.prskanjeViewBindingSource.DataSource = typeof(PoljoAppVerzija2.prskanjeView);
+            this.prskanjeViewBindingSource.DataSource = typeof(PoljoAppVerzija2.PrskanjeView);
             // 
             // prskanjeReport
             // 

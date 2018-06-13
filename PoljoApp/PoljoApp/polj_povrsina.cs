@@ -16,9 +16,9 @@ namespace PoljoAppVerzija2
     {
         public polj_povrsina()
         {
-            this.navodnjavanje = new HashSet<navodnjavanje>();
-            this.prskanje = new HashSet<prskanje>();
             this.sadnja = new HashSet<sadnja>();
+            this.Navodnjavanje = new HashSet<Navodnjavanje>();
+            this.Prskanje = new HashSet<Prskanje>();
         }
     
         public int id { get; set; }
@@ -29,8 +29,8 @@ namespace PoljoAppVerzija2
         public decimal y_koordinata { get; set; }
     
         public virtual namjena_povrsine namjena_povrsine { get; set; }
-        public virtual ICollection<navodnjavanje> navodnjavanje { get; set; }
-        public virtual ICollection<prskanje> prskanje { get; set; }
         public virtual ICollection<sadnja> sadnja { get; set; }
+        public virtual ICollection<Navodnjavanje> Navodnjavanje { get; set; }
+        public virtual ICollection<Prskanje> Prskanje { get; set; }
     }
 }

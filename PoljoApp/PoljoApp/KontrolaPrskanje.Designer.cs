@@ -37,23 +37,24 @@
             this.uiActionIzbrisi = new System.Windows.Forms.Button();
             this.uiActionAzuriraj = new System.Windows.Forms.Button();
             this.pregledPrskanja = new System.Windows.Forms.DataGridView();
-            this.datumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nazivDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.povrsinaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.opisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.imeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prezimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idzastitaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idpovrsinaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prskanjeViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.uiActionNovo = new System.Windows.Forms.Button();
             this.pomocTab = new System.Windows.Forms.TabPage();
             this.ispisPomoc = new System.Windows.Forms.Label();
+            this.prskanjeViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.datumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.zastitaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.povrsinaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.opisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idZastitaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idPovrsinaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prezimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.prskanjeTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pregledPrskanja)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.prskanjeViewBindingSource)).BeginInit();
             this.pomocTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.prskanjeViewBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -137,13 +138,14 @@
             this.pregledPrskanja.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.pregledPrskanja.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.datumDataGridViewTextBoxColumn,
-            this.nazivDataGridViewTextBoxColumn,
+            this.zastitaDataGridViewTextBoxColumn,
             this.povrsinaDataGridViewTextBoxColumn,
             this.opisDataGridViewTextBoxColumn,
+            this.idZastitaDataGridViewTextBoxColumn,
+            this.idPovrsinaDataGridViewTextBoxColumn,
             this.imeDataGridViewTextBoxColumn,
             this.prezimeDataGridViewTextBoxColumn,
-            this.idzastitaDataGridViewTextBoxColumn,
-            this.idpovrsinaDataGridViewTextBoxColumn});
+            this.idDataGridViewTextBoxColumn});
             this.pregledPrskanja.DataSource = this.prskanjeViewBindingSource;
             this.pregledPrskanja.Location = new System.Drawing.Point(25, 54);
             this.pregledPrskanja.MultiSelect = false;
@@ -152,68 +154,6 @@
             this.pregledPrskanja.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.pregledPrskanja.Size = new System.Drawing.Size(418, 179);
             this.pregledPrskanja.TabIndex = 5;
-            // 
-            // datumDataGridViewTextBoxColumn
-            // 
-            this.datumDataGridViewTextBoxColumn.DataPropertyName = "datum";
-            this.datumDataGridViewTextBoxColumn.HeaderText = "Datum";
-            this.datumDataGridViewTextBoxColumn.Name = "datumDataGridViewTextBoxColumn";
-            this.datumDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nazivDataGridViewTextBoxColumn
-            // 
-            this.nazivDataGridViewTextBoxColumn.DataPropertyName = "naziv";
-            this.nazivDataGridViewTextBoxColumn.HeaderText = "Korištena zaštita";
-            this.nazivDataGridViewTextBoxColumn.Name = "nazivDataGridViewTextBoxColumn";
-            this.nazivDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // povrsinaDataGridViewTextBoxColumn
-            // 
-            this.povrsinaDataGridViewTextBoxColumn.DataPropertyName = "povrsina";
-            this.povrsinaDataGridViewTextBoxColumn.HeaderText = "Tretirana površina";
-            this.povrsinaDataGridViewTextBoxColumn.Name = "povrsinaDataGridViewTextBoxColumn";
-            this.povrsinaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // opisDataGridViewTextBoxColumn
-            // 
-            this.opisDataGridViewTextBoxColumn.DataPropertyName = "opis";
-            this.opisDataGridViewTextBoxColumn.HeaderText = "Opis";
-            this.opisDataGridViewTextBoxColumn.Name = "opisDataGridViewTextBoxColumn";
-            this.opisDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // imeDataGridViewTextBoxColumn
-            // 
-            this.imeDataGridViewTextBoxColumn.DataPropertyName = "ime";
-            this.imeDataGridViewTextBoxColumn.HeaderText = "Ime";
-            this.imeDataGridViewTextBoxColumn.Name = "imeDataGridViewTextBoxColumn";
-            this.imeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // prezimeDataGridViewTextBoxColumn
-            // 
-            this.prezimeDataGridViewTextBoxColumn.DataPropertyName = "prezime";
-            this.prezimeDataGridViewTextBoxColumn.HeaderText = "Prezime";
-            this.prezimeDataGridViewTextBoxColumn.Name = "prezimeDataGridViewTextBoxColumn";
-            this.prezimeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // idzastitaDataGridViewTextBoxColumn
-            // 
-            this.idzastitaDataGridViewTextBoxColumn.DataPropertyName = "id_zastita";
-            this.idzastitaDataGridViewTextBoxColumn.HeaderText = "id_zastita";
-            this.idzastitaDataGridViewTextBoxColumn.Name = "idzastitaDataGridViewTextBoxColumn";
-            this.idzastitaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idzastitaDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // idpovrsinaDataGridViewTextBoxColumn
-            // 
-            this.idpovrsinaDataGridViewTextBoxColumn.DataPropertyName = "id_povrsina";
-            this.idpovrsinaDataGridViewTextBoxColumn.HeaderText = "id_povrsina";
-            this.idpovrsinaDataGridViewTextBoxColumn.Name = "idpovrsinaDataGridViewTextBoxColumn";
-            this.idpovrsinaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idpovrsinaDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // prskanjeViewBindingSource
-            // 
-            this.prskanjeViewBindingSource.DataSource = typeof(PoljoAppVerzija2.prskanjeView);
             // 
             // uiActionNovo
             // 
@@ -246,6 +186,76 @@
             this.ispisPomoc.TabIndex = 0;
             this.ispisPomoc.Text = resources.GetString("ispisPomoc.Text");
             // 
+            // prskanjeViewBindingSource
+            // 
+            this.prskanjeViewBindingSource.DataSource = typeof(PoljoAppVerzija2.PrskanjeView);
+            // 
+            // datumDataGridViewTextBoxColumn
+            // 
+            this.datumDataGridViewTextBoxColumn.DataPropertyName = "Datum";
+            this.datumDataGridViewTextBoxColumn.HeaderText = "Datum";
+            this.datumDataGridViewTextBoxColumn.Name = "datumDataGridViewTextBoxColumn";
+            this.datumDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // zastitaDataGridViewTextBoxColumn
+            // 
+            this.zastitaDataGridViewTextBoxColumn.DataPropertyName = "Zastita";
+            this.zastitaDataGridViewTextBoxColumn.HeaderText = "Korištena zaštita";
+            this.zastitaDataGridViewTextBoxColumn.Name = "zastitaDataGridViewTextBoxColumn";
+            this.zastitaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // povrsinaDataGridViewTextBoxColumn
+            // 
+            this.povrsinaDataGridViewTextBoxColumn.DataPropertyName = "Povrsina";
+            this.povrsinaDataGridViewTextBoxColumn.HeaderText = "Tretirana površina";
+            this.povrsinaDataGridViewTextBoxColumn.Name = "povrsinaDataGridViewTextBoxColumn";
+            this.povrsinaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // opisDataGridViewTextBoxColumn
+            // 
+            this.opisDataGridViewTextBoxColumn.DataPropertyName = "Opis";
+            this.opisDataGridViewTextBoxColumn.HeaderText = "Opis";
+            this.opisDataGridViewTextBoxColumn.Name = "opisDataGridViewTextBoxColumn";
+            this.opisDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // idZastitaDataGridViewTextBoxColumn
+            // 
+            this.idZastitaDataGridViewTextBoxColumn.DataPropertyName = "IdZastita";
+            this.idZastitaDataGridViewTextBoxColumn.HeaderText = "IdZastita";
+            this.idZastitaDataGridViewTextBoxColumn.Name = "idZastitaDataGridViewTextBoxColumn";
+            this.idZastitaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idZastitaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // idPovrsinaDataGridViewTextBoxColumn
+            // 
+            this.idPovrsinaDataGridViewTextBoxColumn.DataPropertyName = "IdPovrsina";
+            this.idPovrsinaDataGridViewTextBoxColumn.HeaderText = "IdPovrsina";
+            this.idPovrsinaDataGridViewTextBoxColumn.Name = "idPovrsinaDataGridViewTextBoxColumn";
+            this.idPovrsinaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idPovrsinaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // imeDataGridViewTextBoxColumn
+            // 
+            this.imeDataGridViewTextBoxColumn.DataPropertyName = "Ime";
+            this.imeDataGridViewTextBoxColumn.HeaderText = "Ime";
+            this.imeDataGridViewTextBoxColumn.Name = "imeDataGridViewTextBoxColumn";
+            this.imeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // prezimeDataGridViewTextBoxColumn
+            // 
+            this.prezimeDataGridViewTextBoxColumn.DataPropertyName = "Prezime";
+            this.prezimeDataGridViewTextBoxColumn.HeaderText = "Prezime";
+            this.prezimeDataGridViewTextBoxColumn.Name = "prezimeDataGridViewTextBoxColumn";
+            this.prezimeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            // 
             // KontrolaPrskanje
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -257,9 +267,9 @@
             this.tabControl1.ResumeLayout(false);
             this.prskanjeTab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pregledPrskanja)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.prskanjeViewBindingSource)).EndInit();
             this.pomocTab.ResumeLayout(false);
             this.pomocTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.prskanjeViewBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -278,12 +288,13 @@
         private System.Windows.Forms.ComboBox izborGodine;
         private System.Windows.Forms.BindingSource prskanjeViewBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn datumDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nazivDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn zastitaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn povrsinaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn opisDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idZastitaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idPovrsinaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn imeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn prezimeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idzastitaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idpovrsinaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
     }
 }

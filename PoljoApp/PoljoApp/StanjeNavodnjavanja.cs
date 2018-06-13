@@ -12,16 +12,16 @@ namespace PoljoAppVerzija2
     using System;
     using System.Collections.Generic;
     
-    public partial class stanje_navodnjavanja
+    public partial class StanjeNavodnjavanja
     {
-        public stanje_navodnjavanja()
+        public StanjeNavodnjavanja()
         {
-            this.navodnjavanje = new HashSet<navodnjavanje>();
+            this.Navodnjavanje = new HashSet<Navodnjavanje>();
         }
     
-        public int id { get; set; }
-        public string naziv { get; set; }
+        public int Id { get; set; }
+        public string Naziv { get; set; }
     
-        public virtual ICollection<navodnjavanje> navodnjavanje { get; set; }
+        public virtual ICollection<Navodnjavanje> Navodnjavanje { get; set; }
     }
 }

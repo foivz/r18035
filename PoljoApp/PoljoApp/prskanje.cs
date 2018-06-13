@@ -12,15 +12,16 @@ namespace PoljoAppVerzija2
     using System;
     using System.Collections.Generic;
     
-    public partial class prskanje
+    public partial class Prskanje
     {
-        public int id_povrsina { get; set; }
-        public int id_zastita { get; set; }
-        public System.DateTime datum { get; set; }
-        public string opis { get; set; }
-        public int id_djelatnik { get; set; }
+        public int IdPovrsina { get; set; }
+        public int IdZastita { get; set; }
+        public System.DateTime Datum { get; set; }
+        public string Opis { get; set; }
+        public int IdDjelatnik { get; set; }
+        public int Id { get; set; }
     
-        public virtual djelatnik djelatnik { get; set; }
+        public virtual Djelatnik Djelatnik { get; set; }
         public virtual polj_povrsina polj_povrsina { get; set; }
         public virtual zastita zastita { get; set; }
     }

@@ -6,7 +6,7 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.87041cm</Width>
+              <Width>2.5cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>2.88396cm</Width>
@@ -30,21 +30,21 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox1">
+                    <Textbox Name="Textbox2">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Tretirana površina</Value>
+                              <Value>Povrsina</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox1</rd:DefaultName>
+                      <rd:DefaultName>Textbox2</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -215,21 +215,21 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="povrsina">
+                    <Textbox Name="Povrsina">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!povrsina.Value</Value>
+                              <Value>=Fields!Povrsina.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>povrsina</rd:DefaultName>
+                      <rd:DefaultName>Povrsina</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -245,21 +245,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="naziv">
+                    <Textbox Name="Zastita">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!naziv.Value</Value>
+                              <Value>=Fields!Zastita.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>naziv</rd:DefaultName>
+                      <rd:DefaultName>Zastita</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -275,21 +275,23 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="datum">
+                    <Textbox Name="Datum">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!datum.Value</Value>
-                              <Style />
+                              <Value>=Fields!Datum.Value</Value>
+                              <Style>
+                                <Format>dd.MM.yyyy.</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>datum</rd:DefaultName>
+                      <rd:DefaultName>Datum</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -305,21 +307,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="opis">
+                    <Textbox Name="Opis">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!opis.Value</Value>
+                              <Value>=Fields!Opis.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>opis</rd:DefaultName>
+                      <rd:DefaultName>Opis</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -335,21 +337,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="ime">
+                    <Textbox Name="Ime">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!ime.Value</Value>
+                              <Value>=Fields!Ime.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>ime</rd:DefaultName>
+                      <rd:DefaultName>Ime</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -365,21 +367,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="prezime">
+                    <Textbox Name="Prezime">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!prezime.Value</Value>
+                              <Value>=Fields!Prezime.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>prezime</rd:DefaultName>
+                      <rd:DefaultName>Prezime</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -421,7 +423,7 @@
         <Top>0.17639cm</Top>
         <Left>0.47307cm</Left>
         <Height>1.2cm</Height>
-        <Width>14.71084cm</Width>
+        <Width>14.34043cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -432,7 +434,7 @@
     <Height>0.99539in</Height>
     <Style />
   </Body>
-  <Width>6.45175in</Width>
+  <Width>6.96217in</Width>
   <Page>
     <PageHeader>
       <Height>2.54cm</Height>
@@ -690,43 +692,47 @@
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="datum">
-          <DataField>datum</DataField>
+        <Field Name="Datum">
+          <DataField>Datum</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
-        <Field Name="id_povrsina">
-          <DataField>id_povrsina</DataField>
+        <Field Name="Id">
+          <DataField>Id</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="id_zastita">
-          <DataField>id_zastita</DataField>
+        <Field Name="IdPovrsina">
+          <DataField>IdPovrsina</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="ime">
-          <DataField>ime</DataField>
+        <Field Name="IdZastita">
+          <DataField>IdZastita</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Ime">
+          <DataField>Ime</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="naziv">
-          <DataField>naziv</DataField>
+        <Field Name="Opis">
+          <DataField>Opis</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="opis">
-          <DataField>opis</DataField>
+        <Field Name="Povrsina">
+          <DataField>Povrsina</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="povrsina">
-          <DataField>povrsina</DataField>
+        <Field Name="Prezime">
+          <DataField>Prezime</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="prezime">
-          <DataField>prezime</DataField>
+        <Field Name="Zastita">
+          <DataField>Zastita</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>PoljoAppVerzija2</rd:DataSetName>
-        <rd:TableName>prskanjeView</rd:TableName>
-        <rd:ObjectDataSourceType>PoljoAppVerzija2.prskanjeView, PoljoAppVerzija2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+        <rd:TableName>PrskanjeView</rd:TableName>
+        <rd:ObjectDataSourceType>PoljoAppVerzija2.PrskanjeView, PoljoAppVerzija2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>

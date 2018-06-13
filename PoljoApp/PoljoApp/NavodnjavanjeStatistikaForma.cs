@@ -28,22 +28,22 @@ namespace PoljoAppVerzija2
         {
             using (var db = new Entities())
             {
-                var upitNavodnjavanje = from n in db.navodnjavanjeView
-                                        where n.id_stanja == 1 && n.datum.Year == GodinaZaPregled
-                                        group n by n.datum.Month into g
+                var upitNavodnjavanje = from n in db.NavodnjavanjeViewSet
+                                        where n.IdStanja == 1 && n.Datum.Year == GodinaZaPregled
+                                        group n by n.Datum.Month into g
                                         select new
                                         {
                                             Mjesec = g.Key,
-                                            Suma = g.Sum(n => n.kolicina_vode_litri)
+                                            Suma = g.Sum(n => n.KolicinaVode)
                                         };
 
-                var upitOborine = from n in db.navodnjavanjeView
-                                  where n.id_stanja == 2 && n.datum.Year == GodinaZaPregled
-                                  group n by n.datum.Month into g
+                var upitOborine = from n in db.NavodnjavanjeViewSet
+                                  where n.IdStanja == 2 && n.Datum.Year == GodinaZaPregled
+                                  group n by n.Datum.Month into g
                                   select new
                                   {
                                       Mjesec = g.Key,
-                                      Suma = g.Sum(n => n.kolicina_vode_litri)
+                                      Suma = g.Sum(n => n.KolicinaVode)
                                   };
 
                 Dictionary<int, decimal?> navodnjavanjeDictionary = upitNavodnjavanje.ToDictionary(keySelector: u => u.Mjesec, elementSelector: u => u.Suma);

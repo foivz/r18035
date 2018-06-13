@@ -34,7 +34,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.izborDjelatnik = new System.Windows.Forms.ComboBox();
-            this.djelatnikBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.izborDatum = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -44,9 +43,10 @@
             this.zastitaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label5 = new System.Windows.Forms.Label();
             this.unosOpis = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.djelatnikBindingSource)).BeginInit();
+            this.djelatnikBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.poljpovrsinaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zastitaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.djelatnikBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // uiActionOdustani
@@ -90,17 +90,13 @@
             // izborDjelatnik
             // 
             this.izborDjelatnik.DataSource = this.djelatnikBindingSource;
-            this.izborDjelatnik.DisplayMember = "ime";
+            this.izborDjelatnik.DisplayMember = "Ime";
             this.izborDjelatnik.FormattingEnabled = true;
             this.izborDjelatnik.Location = new System.Drawing.Point(106, 46);
             this.izborDjelatnik.Name = "izborDjelatnik";
             this.izborDjelatnik.Size = new System.Drawing.Size(156, 21);
             this.izborDjelatnik.TabIndex = 14;
-            this.izborDjelatnik.ValueMember = "id";
-            // 
-            // djelatnikBindingSource
-            // 
-            this.djelatnikBindingSource.DataSource = typeof(PoljoAppVerzija2.djelatnik);
+            this.izborDjelatnik.ValueMember = "Id";
             // 
             // izborDatum
             // 
@@ -138,10 +134,6 @@
             this.izborPovrsine.TabIndex = 10;
             this.izborPovrsine.ValueMember = "id";
             // 
-            // poljpovrsinaBindingSource
-            // 
-            this.poljpovrsinaBindingSource.DataSource = typeof(PoljoAppVerzija2.polj_povrsina);
-            // 
             // izborZastita
             // 
             this.izborZastita.DataSource = this.zastitaBindingSource;
@@ -152,10 +144,6 @@
             this.izborZastita.Size = new System.Drawing.Size(156, 21);
             this.izborZastita.TabIndex = 20;
             this.izborZastita.ValueMember = "id";
-            // 
-            // zastitaBindingSource
-            // 
-            this.zastitaBindingSource.DataSource = typeof(PoljoAppVerzija2.zastita);
             // 
             // label5
             // 
@@ -173,6 +161,10 @@
             this.unosOpis.Name = "unosOpis";
             this.unosOpis.Size = new System.Drawing.Size(350, 73);
             this.unosOpis.TabIndex = 22;
+            // 
+            // djelatnikBindingSource
+            // 
+            this.djelatnikBindingSource.DataSource = typeof(PoljoAppVerzija2.Djelatnik);
             // 
             // UnosPrskanja
             // 
@@ -195,9 +187,9 @@
             this.Name = "UnosPrskanja";
             this.Text = "Unos prskanja";
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.UnosPrskanja_KeyUp);
-            ((System.ComponentModel.ISupportInitialize)(this.djelatnikBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.poljpovrsinaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.zastitaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.djelatnikBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -217,8 +209,8 @@
         private System.Windows.Forms.ComboBox izborZastita;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox unosOpis;
-        private System.Windows.Forms.BindingSource djelatnikBindingSource;
         private System.Windows.Forms.BindingSource poljpovrsinaBindingSource;
         private System.Windows.Forms.BindingSource zastitaBindingSource;
+        private System.Windows.Forms.BindingSource djelatnikBindingSource;
     }
 }

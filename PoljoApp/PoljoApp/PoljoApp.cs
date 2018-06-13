@@ -4,23 +4,25 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace PoljoAppVerzija2
 {
     public partial class PoljoApp : Form
     {
-        private djelatnik Korisnik;
+        private Djelatnik Korisnik;
 
-        public PoljoApp(djelatnik prijava)
+        public PoljoApp(Djelatnik prijava)
         {
             InitializeComponent();
             uiProizvodi.BringToFront();
 
             Korisnik = prijava;
-            if (Korisnik.admin == 1) uiUpravljanje.Visible = true;
+            if (Korisnik.Admin == 1) uiUpravljanje.Visible = true;
         }
 
         private void UiActionOpenSadnja_Click(object sender, EventArgs e)
@@ -57,7 +59,7 @@ namespace PoljoAppVerzija2
         {
             this.Hide();
             PrijavaForma prijava = new PrijavaForma();
-            prijava.Activated += (s,args) => this.Close();
+            prijava.FormClosed += (s,args) => this.Close();
             prijava.ShowDialog();
         }
 

@@ -12,21 +12,21 @@ namespace PoljoAppVerzija2
     using System;
     using System.Collections.Generic;
     
-    public partial class djelatnik
+    public partial class Djelatnik
     {
-        public djelatnik()
+        public Djelatnik()
         {
-            this.prskanje = new HashSet<prskanje>();
+            this.Prskanje = new HashSet<Prskanje>();
         }
     
-        public int id { get; set; }
-        public string ime { get; set; }
-        public string prezime { get; set; }
-        public string email { get; set; }
-        public string lozinka { get; set; }
-        public string broj_telefona { get; set; }
-        public Nullable<int> admin { get; set; }
+        public int Id { get; set; }
+        public string Ime { get; set; }
+        public string Prezime { get; set; }
+        public string Email { get; set; }
+        public string Lozinka { get; set; }
+        public string BrojTelefona { get; set; }
+        public Nullable<int> Admin { get; set; }
     
-        public virtual ICollection<prskanje> prskanje { get; set; }
+        public virtual ICollection<Prskanje> Prskanje { get; set; }
     }
 }

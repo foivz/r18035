@@ -35,16 +35,16 @@ namespace PoljoAppVerzija2
         {
             int godina = int.Parse(izborGodine.Text);
 
-            BindingList<prskanjeView> listaPrskanja = null;
+            BindingList<PrskanjeView> listaPrskanja = null;
             using (var db = new Entities()) {
-                listaPrskanja = new BindingList<prskanjeView>(db.prskanjeView.Where(p=>p.datum.Year==godina).ToList());
+                listaPrskanja = new BindingList<PrskanjeView>(db.PrskanjeViewSet.Where(p=>p.Datum.Year==godina).ToList());
             }
             prskanjeViewBindingSource.DataSource = listaPrskanja;
         }
 
         private void UiActionAzuriraj_Click(object sender, EventArgs e)
         {
-            prskanje zaIzmjenu = DohvatiOznacenoPrskanje();
+            Prskanje zaIzmjenu = DohvatiOznacenoPrskanje();
 
             UnosPrskanja azuriraj = new UnosPrskanja(zaIzmjenu);
             azuriraj.ShowDialog();
@@ -52,13 +52,13 @@ namespace PoljoAppVerzija2
 
         }
 
-        private prskanje DohvatiOznacenoPrskanje()
+        private Prskanje DohvatiOznacenoPrskanje()
         {
-            prskanjeView oznaceno = prskanjeViewBindingSource.Current as prskanjeView;
-            prskanje zaIzmjenu;
+            PrskanjeView oznaceno = prskanjeViewBindingSource.Current as PrskanjeView;
+            Prskanje zaIzmjenu;
             using (var db = new Entities())
             {
-                zaIzmjenu = db.prskanje.Where(p => p.datum == oznaceno.datum && p.id_povrsina == oznaceno.id_povrsina && p.id_zastita == oznaceno.id_zastita).FirstOrDefault();
+                zaIzmjenu = db.PrskanjeSet.Where(p => p.Id == oznaceno.Id).FirstOrDefault();
             }
             return zaIzmjenu;
         }
@@ -67,7 +67,7 @@ namespace PoljoAppVerzija2
         {
             List<int> listaGodina = null;
             using (var db = new Entities()) {
-                listaGodina = new List<int>(db.prskanje.Select(p=>p.datum.Year).Distinct());
+                listaGodina = new List<int>(db.PrskanjeSet.Select(p=>p.Datum.Year).Distinct());
             }
 
             foreach (var datum in listaGodina)
@@ -85,14 +85,14 @@ namespace PoljoAppVerzija2
 
         private void UiActionIzbrisi_Click(object sender, EventArgs e)
         {
-            prskanje zaBrisanje = DohvatiOznacenoPrskanje();
+            Prskanje zaBrisanje = DohvatiOznacenoPrskanje();
 
             if (MessageBox.Show("Jeste li ste sigurni da želite obrisati prskanje?", "Upozorenje!", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
             {
                 using (var db = new Entities())
                 {
-                    db.prskanje.Attach(zaBrisanje);
-                    db.prskanje.Remove(zaBrisanje);
+                    db.PrskanjeSet.Attach(zaBrisanje);
+                    db.PrskanjeSet.Remove(zaBrisanje);
                     db.SaveChanges();
                 }
                 
