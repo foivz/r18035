@@ -16,7 +16,6 @@ namespace PoljoAppVerzija2
         public KontrolaPrskanje()
         {
             InitializeComponent();
-            DohvatiGodine();
         }
 
         private void UiActionNovo_Click(object sender, EventArgs e)
@@ -28,6 +27,7 @@ namespace PoljoAppVerzija2
 
         private void KontrolaPrskanje_Load(object sender, EventArgs e)
         {
+            DohvatiGodine();
             PrikaziPrskanja();
         }
 

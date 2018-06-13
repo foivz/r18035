@@ -30,9 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.pregledDjelatnika = new System.Windows.Forms.DataGridView();
-            this.uiActionAzuriraj = new System.Windows.Forms.Button();
-            this.uiActionUnos = new System.Windows.Forms.Button();
-            this.djelatnikBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,6 +38,9 @@
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.djelatnikBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.uiActionAzuriraj = new System.Windows.Forms.Button();
+            this.uiActionUnos = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pregledDjelatnika)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.djelatnikBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -70,31 +70,6 @@
             this.pregledDjelatnika.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.pregledDjelatnika.Size = new System.Drawing.Size(588, 265);
             this.pregledDjelatnika.TabIndex = 0;
-            // 
-            // uiActionAzuriraj
-            // 
-            this.uiActionAzuriraj.Location = new System.Drawing.Point(12, 18);
-            this.uiActionAzuriraj.Name = "uiActionAzuriraj";
-            this.uiActionAzuriraj.Size = new System.Drawing.Size(102, 34);
-            this.uiActionAzuriraj.TabIndex = 9;
-            this.uiActionAzuriraj.Text = "Ažuriraj";
-            this.uiActionAzuriraj.UseVisualStyleBackColor = true;
-            this.uiActionAzuriraj.Click += new System.EventHandler(this.UiActionAzuriraj_Click);
-            // 
-            // uiActionUnos
-            // 
-            this.uiActionUnos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.uiActionUnos.Location = new System.Drawing.Point(498, 18);
-            this.uiActionUnos.Name = "uiActionUnos";
-            this.uiActionUnos.Size = new System.Drawing.Size(102, 34);
-            this.uiActionUnos.TabIndex = 10;
-            this.uiActionUnos.Text = "Unos djelatnika";
-            this.uiActionUnos.UseVisualStyleBackColor = true;
-            this.uiActionUnos.Click += new System.EventHandler(this.UiActionUnos_Click);
-            // 
-            // djelatnikBindingSource
-            // 
-            this.djelatnikBindingSource.DataSource = typeof(PoljoAppVerzija2.Djelatnik);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -146,6 +121,31 @@
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.Visible = false;
             // 
+            // djelatnikBindingSource
+            // 
+            this.djelatnikBindingSource.DataSource = typeof(PoljoAppVerzija2.Djelatnik);
+            // 
+            // uiActionAzuriraj
+            // 
+            this.uiActionAzuriraj.Location = new System.Drawing.Point(12, 18);
+            this.uiActionAzuriraj.Name = "uiActionAzuriraj";
+            this.uiActionAzuriraj.Size = new System.Drawing.Size(102, 34);
+            this.uiActionAzuriraj.TabIndex = 9;
+            this.uiActionAzuriraj.Text = "Ažuriraj";
+            this.uiActionAzuriraj.UseVisualStyleBackColor = true;
+            this.uiActionAzuriraj.Click += new System.EventHandler(this.UiActionAzuriraj_Click);
+            // 
+            // uiActionUnos
+            // 
+            this.uiActionUnos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.uiActionUnos.Location = new System.Drawing.Point(498, 18);
+            this.uiActionUnos.Name = "uiActionUnos";
+            this.uiActionUnos.Size = new System.Drawing.Size(102, 34);
+            this.uiActionUnos.TabIndex = 10;
+            this.uiActionUnos.Text = "Unos djelatnika";
+            this.uiActionUnos.UseVisualStyleBackColor = true;
+            this.uiActionUnos.Click += new System.EventHandler(this.UiActionUnos_Click);
+            // 
             // DjelatniciForma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -157,6 +157,7 @@
             this.Name = "DjelatniciForma";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Djelatnici";
+            this.Load += new System.EventHandler(this.DjelatniciForma_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pregledDjelatnika)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.djelatnikBindingSource)).EndInit();
             this.ResumeLayout(false);

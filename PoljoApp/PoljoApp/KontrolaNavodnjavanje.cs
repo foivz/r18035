@@ -15,9 +15,6 @@ namespace PoljoAppVerzija2
         public KontrolaNavodnjavanje()
         {
             InitializeComponent();
-
-            DohvatiGodine();
-            PrikaziNavodnjavanje();
         }
 
         private void UiActionNovo_Click(object sender, EventArgs e)
@@ -100,5 +97,13 @@ namespace PoljoAppVerzija2
         {
             PrikaziNavodnjavanje();
         }
+
+        private void KontrolaNavodnjavanje_Load(object sender, EventArgs e)
+        {
+            DohvatiGodine();
+            PrikaziNavodnjavanje();
+            PrikaziOborine();
+        }
+
     }
 }

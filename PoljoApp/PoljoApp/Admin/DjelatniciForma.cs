@@ -15,7 +15,6 @@ namespace PoljoAppVerzija2.Admin
         public DjelatniciForma()
         {
             InitializeComponent();
-            PrikaziDjelatnike();
         }
 
         private void UiActionUnos_Click(object sender, EventArgs e)
@@ -42,6 +41,11 @@ namespace PoljoAppVerzija2.Admin
                 unos.ShowDialog();
                 PrikaziDjelatnike();
             }
+        }
+
+        private void DjelatniciForma_Load(object sender, EventArgs e)
+        {
+            PrikaziDjelatnike();
         }
     }
 }
