@@ -42,13 +42,15 @@
             this.uiOdjava = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.uiProizvodi = new PoljoAppVerzija2.KontrolaProizvodi();
-            this.uiSadnja = new PoljoAppVerzija2.KontrolaSadnja();
-            this.uiPrskanje = new PoljoAppVerzija2.KontrolaPrskanje();
-            this.uiNavodnjavanje = new PoljoAppVerzija2.KontrolaNavodnjavanje();
             this.uiZastita = new PoljoAppVerzija2.KontrolaZastita();
             this.uiPovrsine = new PoljoAppVerzija2.KontrolaPovrsine();
+            this.uiNavodnjavanje = new PoljoAppVerzija2.KontrolaNavodnjavanje();
+            this.uiPrskanje = new PoljoAppVerzija2.KontrolaPrskanje();
+            this.izborDohvacanje = new System.Windows.Forms.CheckBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // uiActionOpenProizvodi
@@ -222,41 +224,8 @@
             this.uiProizvodi.Location = new System.Drawing.Point(217, 101);
             this.uiProizvodi.Margin = new System.Windows.Forms.Padding(4);
             this.uiProizvodi.Name = "uiProizvodi";
-            this.uiProizvodi.Size = new System.Drawing.Size(680, 418);
+            this.uiProizvodi.Size = new System.Drawing.Size(680, 442);
             this.uiProizvodi.TabIndex = 15;
-            // 
-            // uiSadnja
-            // 
-            this.uiSadnja.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.uiSadnja.Location = new System.Drawing.Point(217, 101);
-            this.uiSadnja.Margin = new System.Windows.Forms.Padding(5);
-            this.uiSadnja.Name = "uiSadnja";
-            this.uiSadnja.Size = new System.Drawing.Size(680, 418);
-            this.uiSadnja.TabIndex = 10;
-            // 
-            // uiPrskanje
-            // 
-            this.uiPrskanje.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.uiPrskanje.Location = new System.Drawing.Point(217, 101);
-            this.uiPrskanje.Margin = new System.Windows.Forms.Padding(4);
-            this.uiPrskanje.Name = "uiPrskanje";
-            this.uiPrskanje.Size = new System.Drawing.Size(680, 418);
-            this.uiPrskanje.TabIndex = 13;
-            // 
-            // uiNavodnjavanje
-            // 
-            this.uiNavodnjavanje.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.uiNavodnjavanje.Location = new System.Drawing.Point(217, 101);
-            this.uiNavodnjavanje.Margin = new System.Windows.Forms.Padding(4);
-            this.uiNavodnjavanje.Name = "uiNavodnjavanje";
-            this.uiNavodnjavanje.Size = new System.Drawing.Size(680, 418);
-            this.uiNavodnjavanje.TabIndex = 11;
             // 
             // uiZastita
             // 
@@ -266,7 +235,7 @@
             this.uiZastita.Location = new System.Drawing.Point(217, 101);
             this.uiZastita.Margin = new System.Windows.Forms.Padding(4);
             this.uiZastita.Name = "uiZastita";
-            this.uiZastita.Size = new System.Drawing.Size(680, 418);
+            this.uiZastita.Size = new System.Drawing.Size(680, 442);
             this.uiZastita.TabIndex = 17;
             // 
             // uiPovrsine
@@ -277,13 +246,57 @@
             this.uiPovrsine.Location = new System.Drawing.Point(217, 101);
             this.uiPovrsine.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.uiPovrsine.Name = "uiPovrsine";
-            this.uiPovrsine.Size = new System.Drawing.Size(680, 418);
+            this.uiPovrsine.Size = new System.Drawing.Size(680, 442);
             this.uiPovrsine.TabIndex = 16;
+            // 
+            // uiNavodnjavanje
+            // 
+            this.uiNavodnjavanje.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.uiNavodnjavanje.Location = new System.Drawing.Point(217, 101);
+            this.uiNavodnjavanje.Name = "uiNavodnjavanje";
+            this.uiNavodnjavanje.Size = new System.Drawing.Size(680, 442);
+            this.uiNavodnjavanje.TabIndex = 0;
+            // 
+            // uiPrskanje
+            // 
+            this.uiPrskanje.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.uiPrskanje.Location = new System.Drawing.Point(217, 101);
+            this.uiPrskanje.Name = "uiPrskanje";
+            this.uiPrskanje.Size = new System.Drawing.Size(680, 442);
+            this.uiPrskanje.TabIndex = 0;
+            // 
+            // izborDohvacanje
+            // 
+            this.izborDohvacanje.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.izborDohvacanje.AutoSize = true;
+            this.izborDohvacanje.Location = new System.Drawing.Point(18, 471);
+            this.izborDohvacanje.Name = "izborDohvacanje";
+            this.izborDohvacanje.Size = new System.Drawing.Size(161, 17);
+            this.izborDohvacanje.TabIndex = 19;
+            this.izborDohvacanje.Text = "Isključi dohvaćanje vremena";
+            this.izborDohvacanje.UseVisualStyleBackColor = true;
+            this.izborDohvacanje.CheckedChanged += new System.EventHandler(this.IzborDohvacanje_CheckedChanged);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.pictureBox3.Image = global::PoljoAppVerzija2.Properties.Resources.rain;
+            this.pictureBox3.Location = new System.Drawing.Point(65, 481);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(76, 62);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 21;
+            this.pictureBox3.TabStop = false;
             // 
             // PoljoApp
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(915, 537);
+            this.ClientSize = new System.Drawing.Size(915, 561);
+            this.Controls.Add(this.izborDohvacanje);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -293,12 +306,12 @@
             this.Controls.Add(this.uiActionOpenPovrsine);
             this.Controls.Add(this.uiActionOpenZastita);
             this.Controls.Add(this.uiActionOpenProizvodi);
-            this.Controls.Add(this.uiPrskanje);
-            this.Controls.Add(this.uiNavodnjavanje);
             this.Controls.Add(this.uiZastita);
             this.Controls.Add(this.uiPovrsine);
             this.Controls.Add(this.uiProizvodi);
-            this.Controls.Add(this.uiSadnja);
+            this.Controls.Add(this.uiNavodnjavanje);
+            this.Controls.Add(this.uiPrskanje);
+            this.Controls.Add(this.pictureBox3);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "PoljoApp";
             this.Text = "PoljoApp";
@@ -306,6 +319,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -332,6 +346,8 @@
         private KontrolaPovrsine uiPovrsine;
         private KontrolaZastita uiZastita;
         private System.Windows.Forms.Button uiUpravljanje;
+        private System.Windows.Forms.CheckBox izborDohvacanje;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }
 
