@@ -322,6 +322,7 @@
             this.Controls.Add(this.uiProizvodi);
             this.Controls.Add(this.uiNavodnjavanje);
             this.Controls.Add(this.uiPrskanje);
+            this.Controls.Add(this.uiSadnja);
             this.Controls.Add(this.pictureBox3);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "PoljoApp";

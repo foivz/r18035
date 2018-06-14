@@ -32,7 +32,7 @@ namespace PoljoAppVerzija2
             {
                listaPoljPovrsina = new BindingList<polj_povrsina> (db.polj_povrsina.ToList());
             }
-            listaPoljPovrsina.Insert(0,new polj_povrsina() { naziv = "Prikazi sve" });
+            listaPoljPovrsina.Insert(0,new polj_povrsina() { naziv = "Prikaži sve" });
             poljpovrsinaBindingSource.DataSource = listaPoljPovrsina;
         }
 
@@ -44,7 +44,7 @@ namespace PoljoAppVerzija2
             {
                 listaSadnogMaterijala = new BindingList<sadni_materijal>(db.sadni_materijal.ToList());
             }
-            listaSadnogMaterijala.Insert(0,new sadni_materijal() { naziv = "Prikazi sve" });
+            listaSadnogMaterijala.Insert(0,new sadni_materijal() { naziv = "Prikaži sve" });
             sadnimaterijalBindingSource.DataSource = listaSadnogMaterijala;
         }
 
@@ -56,17 +56,17 @@ namespace PoljoAppVerzija2
             {
                 var obj = izborPoljPovrsina.SelectedItem as polj_povrsina;
                 var obj2 = izborSadnogMaterijala.SelectedItem as sadni_materijal;
-                if(obj!=null && obj.naziv=="Prikazi sve"  && obj2!=null && obj2.naziv=="Prikazi sve")
+                if(obj!=null && obj.naziv=="Prikaži sve"  && obj2!=null && obj2.naziv=="Prikaži sve")
                 {
                     listaSadnja = new BindingList<SadnjaView>(db.SadnjaView.ToList());
                 }
 
-                else if (obj != null && obj2!= null && obj2.naziv=="Prikazi sve")
+                else if (obj != null && obj2!= null && obj2.naziv=="Prikaži sve")
                 {
                     listaSadnja = new BindingList<SadnjaView>(db.SadnjaView.Where(s=>s.id_povrsina==obj.id).ToList());
                 }
 
-                else if (obj2 != null && obj != null && obj.naziv == "Prikazi sve")
+                else if (obj2 != null && obj != null && obj.naziv == "Prikaži sve")
                 {
                     listaSadnja = new BindingList<SadnjaView>(db.SadnjaView.Where(s => s.id_materijal == obj2.id).ToList());
                 }
@@ -91,7 +91,7 @@ namespace PoljoAppVerzija2
         {
             sadnja zaBrisanje = DohvatiOznacenuSadnju();
 
-            if (MessageBox.Show("Jeste li ste sigurni da želite obrisati sadnju?", "Upozorenje!", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+            if (MessageBox.Show("Jeste li sigurni da želite obrisati sadnju?", "Upozorenje!", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
             {
                 using (var db = new Entities())
                 {

@@ -33,7 +33,6 @@
             this.povrsineTab = new System.Windows.Forms.TabPage();
             this.izborNamjenePovrsina = new System.Windows.Forms.ComboBox();
             this.namjenapovrsineBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.button4 = new System.Windows.Forms.Button();
             this.uiActionIzbrisi = new System.Windows.Forms.Button();
             this.uiActionAzuriraj = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -42,8 +41,6 @@
             this.povrsinam2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idnamjeneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.namjenapovrsineDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.navodnjavanjeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prskanjeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sadnjaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.poljpovrsinaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.uiActionDodajPovrsinu = new System.Windows.Forms.Button();
@@ -74,7 +71,6 @@
             // povrsineTab
             // 
             this.povrsineTab.Controls.Add(this.izborNamjenePovrsina);
-            this.povrsineTab.Controls.Add(this.button4);
             this.povrsineTab.Controls.Add(this.uiActionIzbrisi);
             this.povrsineTab.Controls.Add(this.uiActionAzuriraj);
             this.povrsineTab.Controls.Add(this.dataGridView1);
@@ -104,16 +100,6 @@
             // namjenapovrsineBindingSource
             // 
             this.namjenapovrsineBindingSource.DataSource = typeof(PoljoAppVerzija2.namjena_povrsine);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(204, 17);
-            this.button4.Margin = new System.Windows.Forms.Padding(4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(136, 42);
-            this.button4.TabIndex = 8;
-            this.button4.Text = "Sortiraj";
-            this.button4.UseVisualStyleBackColor = true;
             // 
             // uiActionIzbrisi
             // 
@@ -154,8 +140,6 @@
             this.povrsinam2DataGridViewTextBoxColumn,
             this.idnamjeneDataGridViewTextBoxColumn,
             this.namjenapovrsineDataGridViewTextBoxColumn,
-            this.navodnjavanjeDataGridViewTextBoxColumn,
-            this.prskanjeDataGridViewTextBoxColumn,
             this.sadnjaDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.poljpovrsinaBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(33, 66);
@@ -203,22 +187,6 @@
             this.namjenapovrsineDataGridViewTextBoxColumn.Name = "namjenapovrsineDataGridViewTextBoxColumn";
             this.namjenapovrsineDataGridViewTextBoxColumn.ReadOnly = true;
             this.namjenapovrsineDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // navodnjavanjeDataGridViewTextBoxColumn
-            // 
-            this.navodnjavanjeDataGridViewTextBoxColumn.DataPropertyName = "navodnjavanje";
-            this.navodnjavanjeDataGridViewTextBoxColumn.HeaderText = "navodnjavanje";
-            this.navodnjavanjeDataGridViewTextBoxColumn.Name = "navodnjavanjeDataGridViewTextBoxColumn";
-            this.navodnjavanjeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.navodnjavanjeDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // prskanjeDataGridViewTextBoxColumn
-            // 
-            this.prskanjeDataGridViewTextBoxColumn.DataPropertyName = "prskanje";
-            this.prskanjeDataGridViewTextBoxColumn.HeaderText = "prskanje";
-            this.prskanjeDataGridViewTextBoxColumn.Name = "prskanjeDataGridViewTextBoxColumn";
-            this.prskanjeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.prskanjeDataGridViewTextBoxColumn.Visible = false;
             // 
             // sadnjaDataGridViewTextBoxColumn
             // 
@@ -297,7 +265,6 @@
         private System.Windows.Forms.TabPage pomocTab;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox izborNamjenePovrsina;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.BindingSource namjenapovrsineBindingSource;
         private System.Windows.Forms.BindingSource poljpovrsinaBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;

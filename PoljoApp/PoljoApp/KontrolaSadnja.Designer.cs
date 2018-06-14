@@ -35,7 +35,6 @@
             this.sadnimaterijalBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.izborPoljPovrsina = new System.Windows.Forms.ComboBox();
             this.poljpovrsinaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.button4 = new System.Windows.Forms.Button();
             this.uiActionIzbrisiSadnju = new System.Windows.Forms.Button();
             this.uiActionAzurirajSadnju = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -79,7 +78,6 @@
             // 
             this.sadnjaTab.Controls.Add(this.izborSadnogMaterijala);
             this.sadnjaTab.Controls.Add(this.izborPoljPovrsina);
-            this.sadnjaTab.Controls.Add(this.button4);
             this.sadnjaTab.Controls.Add(this.uiActionIzbrisiSadnju);
             this.sadnjaTab.Controls.Add(this.uiActionAzurirajSadnju);
             this.sadnjaTab.Controls.Add(this.dataGridView1);
@@ -126,16 +124,6 @@
             // poljpovrsinaBindingSource
             // 
             this.poljpovrsinaBindingSource.DataSource = typeof(PoljoAppVerzija2.polj_povrsina);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(394, 17);
-            this.button4.Margin = new System.Windows.Forms.Padding(4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(136, 42);
-            this.button4.TabIndex = 8;
-            this.button4.Text = "Sortiraj";
-            this.button4.UseVisualStyleBackColor = true;
             // 
             // uiActionIzbrisiSadnju
             // 
@@ -299,7 +287,6 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage sadnjaTab;
         private System.Windows.Forms.ComboBox izborPoljPovrsina;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button uiActionIzbrisiSadnju;
         private System.Windows.Forms.Button uiActionAzurirajSadnju;
         private System.Windows.Forms.DataGridView dataGridView1;

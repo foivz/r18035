@@ -42,7 +42,7 @@ namespace PoljoAppVerzija2
             {
                 listaNamjenaPovrsina = new BindingList<namjena_povrsine>(db.namjena_povrsine.ToList());
             }
-            listaNamjenaPovrsina.Insert(0,new namjena_povrsine() { namjena = "Prikazi sve" });
+            listaNamjenaPovrsina.Insert(0,new namjena_povrsine() { namjena = "Prikaži sve" });
             namjenapovrsineBindingSource.DataSource = listaNamjenaPovrsina;
         }
 
@@ -59,7 +59,7 @@ namespace PoljoAppVerzija2
             {
                 var obj = izborNamjenePovrsina.SelectedItem as namjena_povrsine;
 
-                if (obj != null && obj.namjena == "Prikazi sve")
+                if (obj != null && obj.namjena == "Prikaži sve")
                     listaPovrsina = new BindingList<polj_povrsina>(db.polj_povrsina.ToList());
 
                 else if (obj != null)
