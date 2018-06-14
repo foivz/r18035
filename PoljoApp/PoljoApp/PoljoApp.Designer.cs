@@ -46,6 +46,7 @@
             this.uiPovrsine = new PoljoAppVerzija2.KontrolaPovrsine();
             this.uiNavodnjavanje = new PoljoAppVerzija2.KontrolaNavodnjavanje();
             this.uiPrskanje = new PoljoAppVerzija2.KontrolaPrskanje();
+            this.uiSadnja = new PoljoAppVerzija2.KontrolaSadnja();
             this.izborDohvacanje = new System.Windows.Forms.CheckBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
@@ -267,7 +268,17 @@
             this.uiPrskanje.Location = new System.Drawing.Point(217, 101);
             this.uiPrskanje.Name = "uiPrskanje";
             this.uiPrskanje.Size = new System.Drawing.Size(680, 442);
-            this.uiPrskanje.TabIndex = 0;
+            this.uiPrskanje.TabIndex = 17;
+            // 
+            // uiSadnja
+            // 
+            this.uiSadnja.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.uiSadnja.Location = new System.Drawing.Point(217, 101);
+            this.uiSadnja.Name = "uiSadnja";
+            this.uiSadnja.Size = new System.Drawing.Size(680, 442);
+            this.uiSadnja.TabIndex = 18;
             // 
             // izborDohvacanje
             // 
