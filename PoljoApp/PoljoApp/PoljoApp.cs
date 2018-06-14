@@ -41,19 +41,16 @@ namespace PoljoAppVerzija2
 
         private void UiActionOpenSadnja_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("bok, ja sam: " + uiSadnja.ToString());
             uiSadnja.BringToFront();
         }
 
         private void UiActionOpenPovrsine_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("bok, ja sam: " + uiPovrsine.ToString());
             uiPovrsine.BringToFront();
         }
 
         private void UiActionNavodnjavanje_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("bok, ja sam: " + uiNavodnjavanje.ToString());
             uiNavodnjavanje.BringToFront();
         }
 

@@ -15,9 +15,6 @@ namespace PoljoAppVerzija2
         public KontrolaSadnja()
         {
             InitializeComponent();
-            PrikaziVrsteSadnihMaterijala();
-            PrikaziPoljoprivrednePovršine();
-            PrikaziSadnju();
         }
 
         private void UiDodajSadnju_Click(object sender, EventArgs e)
