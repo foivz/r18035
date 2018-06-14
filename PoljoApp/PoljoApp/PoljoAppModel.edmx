@@ -67,14 +67,13 @@
         </EntityType>
         <EntityType Name="sadnja">
           <Key>
-            <PropertyRef Name="id_povrsina" />
-            <PropertyRef Name="id_materijal" />
-            <PropertyRef Name="datum_sadnje" />
+            <PropertyRef Name="Id" />
           </Key>
           <Property Name="id_povrsina" Type="int" Nullable="false" />
           <Property Name="id_materijal" Type="int" Nullable="false" />
           <Property Name="datum_sadnje" Type="date" Nullable="false" />
           <Property Name="kolicina" Type="varchar" MaxLength="70" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityType Name="StanjeNavodnjavanja">
           <Key>
@@ -157,6 +156,7 @@ warning 6002: The table/view '18035_DB.18035_DB.SadnjaView' does not have a prim
             <PropertyRef Name="id_materijal" />
             <PropertyRef Name="datum_sadnje" />
             <PropertyRef Name="naziv" />
+            <PropertyRef Name="Id" />
           </Key>
           <Property Name="id_povrsina" Type="int" Nullable="false" />
           <Property Name="id_materijal" Type="int" Nullable="false" />
@@ -165,6 +165,7 @@ warning 6002: The table/view '18035_DB.18035_DB.SadnjaView' does not have a prim
           <Property Name="naziv" Type="varchar" MaxLength="45" Nullable="false" />
           <Property Name="naziv_materijal" Type="varchar" MaxLength="45" />
           <Property Name="jedinicna_mjera" Type="varchar" MaxLength="45" />
+          <Property Name="Id" Type="int" Nullable="false" />
         </EntityType>
         <Association Name="fk_navodnjavanje_polj_povrsine1">
           <End Role="polj_povrsina" Type="Self.polj_povrsina" Multiplicity="1">
@@ -337,7 +338,8 @@ FROM [18035_DB].[PrskanjeView] AS [PrskanjeView]</DefiningQuery>
 [SadnjaView].[kolicina] AS [kolicina], 
 [SadnjaView].[naziv] AS [naziv], 
 [SadnjaView].[naziv_materijal] AS [naziv_materijal], 
-[SadnjaView].[jedinicna_mjera] AS [jedinicna_mjera]
+[SadnjaView].[jedinicna_mjera] AS [jedinicna_mjera], 
+[SadnjaView].[Id] AS [Id]
 FROM [18035_DB].[SadnjaView] AS [SadnjaView]</DefiningQuery>
           </EntitySet>
           <AssociationSet Name="fk_navodnjavanje_polj_povrsine1" Association="Self.fk_navodnjavanje_polj_povrsine1">
@@ -421,9 +423,7 @@ FROM [18035_DB].[SadnjaView] AS [SadnjaView]</DefiningQuery>
         </EntityType>
         <EntityType Name="sadnja">
           <Key>
-            <PropertyRef Name="id_povrsina" />
-            <PropertyRef Name="id_materijal" />
-            <PropertyRef Name="datum_sadnje" />
+            <PropertyRef Name="Id" />
           </Key>
           <Property Name="id_povrsina" Type="Int32" Nullable="false" />
           <Property Name="id_materijal" Type="Int32" Nullable="false" />
@@ -431,6 +431,7 @@ FROM [18035_DB].[SadnjaView] AS [SadnjaView]</DefiningQuery>
           <Property Name="kolicina" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="polj_povrsina" Relationship="Self.fk_sadnja_polj_povrsine1" FromRole="sadnja" ToRole="polj_povrsina" />
           <NavigationProperty Name="sadni_materijal" Relationship="Self.fk_sadnja_proizvodi1" FromRole="sadnja" ToRole="sadni_materijal" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
         <EntityType Name="vrsta_sadnog_materijala">
           <Key>
@@ -581,6 +582,7 @@ FROM [18035_DB].[SadnjaView] AS [SadnjaView]</DefiningQuery>
             <PropertyRef Name="id_materijal" />
             <PropertyRef Name="datum_sadnje" />
             <PropertyRef Name="naziv" />
+            <PropertyRef Name="Id" />
           </Key>
           <Property Name="id_povrsina" Type="Int32" Nullable="false" />
           <Property Name="id_materijal" Type="Int32" Nullable="false" />
@@ -589,6 +591,7 @@ FROM [18035_DB].[SadnjaView] AS [SadnjaView]</DefiningQuery>
           <Property Name="naziv" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Name="naziv_materijal" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Name="jedinicna_mjera" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Djelatnik">
           <Key>
@@ -781,6 +784,7 @@ FROM [18035_DB].[SadnjaView] AS [SadnjaView]</DefiningQuery>
           <EntitySetMapping Name="sadnja">
             <EntityTypeMapping TypeName="DBPoljoApp.sadnja">
               <MappingFragment StoreEntitySet="sadnja">
+                <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="id_povrsina" ColumnName="id_povrsina" />
                 <ScalarProperty Name="id_materijal" ColumnName="id_materijal" />
                 <ScalarProperty Name="datum_sadnje" ColumnName="datum_sadnje" />
@@ -817,6 +821,7 @@ FROM [18035_DB].[SadnjaView] AS [SadnjaView]</DefiningQuery>
           <EntitySetMapping Name="SadnjaView">
             <EntityTypeMapping TypeName="DBPoljoApp.SadnjaView">
               <MappingFragment StoreEntitySet="SadnjaView">
+                <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="jedinicna_mjera" ColumnName="jedinicna_mjera" />
                 <ScalarProperty Name="naziv_materijal" ColumnName="naziv_materijal" />
                 <ScalarProperty Name="naziv" ColumnName="naziv" />

@@ -67,7 +67,7 @@ namespace PoljoAppVerzija2
 
                     db.polj_povrsina.Attach(povrsinaZaIzmjenu);
                     povrsinaZaIzmjenu.naziv = uiUnosNaziva.Text;
-                    povrsinaZaIzmjenu.povrsina_m2 = int.Parse(uiUnosPovrsine.Text);
+                    povrsinaZaIzmjenu.povrsina_m2 = decimal.Parse(uiUnosPovrsine.Text);
                     povrsinaZaIzmjenu.id_namjene = (int)uiOdabirNamjene.SelectedValue;
                     povrsinaZaIzmjenu.x_koordinata = decimal.Parse(uiUnosKoordinateX.Text);
                     povrsinaZaIzmjenu.y_koordinata = decimal.Parse(uiUnosKoordinateY.Text);

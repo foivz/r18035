@@ -45,19 +45,17 @@
             this.nazivDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nazivmaterijalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.jedinicnamjeraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sadnjaViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.uiActionDodajSadnju = new System.Windows.Forms.Button();
             this.pomocTab = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
-            this.sadnjaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sadnjaViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1.SuspendLayout();
             this.sadnjaTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sadnimaterijalBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.poljpovrsinaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sadnjaViewBindingSource)).BeginInit();
             this.pomocTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sadnjaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sadnjaViewBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -218,10 +216,6 @@
             this.jedinicnamjeraDataGridViewTextBoxColumn.HeaderText = "jedinicna_mjera";
             this.jedinicnamjeraDataGridViewTextBoxColumn.Name = "jedinicnamjeraDataGridViewTextBoxColumn";
             // 
-            // sadnjaViewBindingSource
-            // 
-            this.sadnjaViewBindingSource.DataSource = typeof(PoljoAppVerzija2.SadnjaView);
-            // 
             // uiActionDodajSadnju
             // 
             this.uiActionDodajSadnju.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -256,9 +250,9 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Pomoć korisniku";
             // 
-            // sadnjaBindingSource
+            // sadnjaViewBindingSource
             // 
-            this.sadnjaBindingSource.DataSource = typeof(PoljoAppVerzija2.sadnja);
+            this.sadnjaViewBindingSource.DataSource = typeof(PoljoAppVerzija2.SadnjaView);
             // 
             // KontrolaSadnja
             // 
@@ -274,10 +268,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.sadnimaterijalBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.poljpovrsinaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sadnjaViewBindingSource)).EndInit();
             this.pomocTab.ResumeLayout(false);
             this.pomocTab.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sadnjaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sadnjaViewBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -296,7 +289,6 @@
         private System.Windows.Forms.ComboBox izborSadnogMaterijala;
         private System.Windows.Forms.BindingSource sadnimaterijalBindingSource;
         private System.Windows.Forms.BindingSource poljpovrsinaBindingSource;
-        private System.Windows.Forms.BindingSource sadnjaBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn idpovrsinaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idmaterijalDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn datumsadnjeDataGridViewTextBoxColumn;

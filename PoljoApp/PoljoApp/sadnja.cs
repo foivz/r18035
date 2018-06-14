@@ -18,6 +18,7 @@ namespace PoljoAppVerzija2
         public int id_materijal { get; set; }
         public System.DateTime datum_sadnje { get; set; }
         public string kolicina { get; set; }
+        public int Id { get; set; }
     
         public virtual polj_povrsina polj_povrsina { get; set; }
         public virtual sadni_materijal sadni_materijal { get; set; }

@@ -24,9 +24,6 @@ namespace PoljoAppVerzija2
             datum.Text = sadnjaZaIzmjenu.datum_sadnje.ToString();
             izborPovrsine.SelectedValue = sadnjaZaIzmjenu.id_povrsina;
             izborProizvodaZaSadnju.SelectedValue = sadnjaZaIzmjenu.id_materijal;
-            datum.Enabled = false;
-            izborProizvodaZaSadnju.Enabled = false;
-            izborPovrsine.Enabled = false;
             
         }
         public UnosSadnje()

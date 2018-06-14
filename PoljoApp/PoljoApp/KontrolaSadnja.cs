@@ -109,9 +109,7 @@ namespace PoljoAppVerzija2
             sadnja sadnjaZaIzmjenu;
             using (var db=new Entities())
             {
-                sadnjaZaIzmjenu = db.sadnja.Where(s => s.datum_sadnje == oznacenaSadnja.datum_sadnje 
-                && s.id_materijal == oznacenaSadnja.id_materijal 
-                && s.id_povrsina == oznacenaSadnja.id_povrsina).FirstOrDefault();
+                sadnjaZaIzmjenu = db.sadnja.Where(s => s.Id == oznacenaSadnja.Id).FirstOrDefault();
             }
             return sadnjaZaIzmjenu;
         }

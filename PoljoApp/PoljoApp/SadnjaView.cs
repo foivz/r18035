@@ -21,5 +21,6 @@ namespace PoljoAppVerzija2
         public string naziv { get; set; }
         public string naziv_materijal { get; set; }
         public string jedinicna_mjera { get; set; }
+        public int Id { get; set; }
     }
 }
