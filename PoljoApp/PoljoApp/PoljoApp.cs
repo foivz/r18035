@@ -25,8 +25,10 @@ namespace PoljoAppVerzija2
             Korisnik = prijava;
             if (Korisnik.Admin == 1) uiUpravljanje.Visible = true;
 
-            OborineTimer = new Timer();
-            OborineTimer.Interval = this.Interval * 60 * 1000;
+            OborineTimer = new Timer
+            {
+                Interval = this.Interval * 60 * 1000
+            };
             OborineTimer.Tick += OborineTimer_Tick;
             OborineTimer.Start();
 
