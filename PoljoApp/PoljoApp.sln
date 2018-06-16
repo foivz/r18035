@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoljoApp", "PoljoApp\PoljoApp.csproj", "{73816D99-171C-4B1E-A0DD-93EE4082596F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoljoAppModel", "PoljoAppModel\PoljoAppModel.csproj", "{46546B1A-CB5D-4AD4-9D29-B30336292B31}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLayer", "DataLayer\DataLayer.csproj", "{689D259F-515A-42EC-807E-8974BC1ECDC6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{73816D99-171C-4B1E-A0DD-93EE4082596F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73816D99-171C-4B1E-A0DD-93EE4082596F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73816D99-171C-4B1E-A0DD-93EE4082596F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46546B1A-CB5D-4AD4-9D29-B30336292B31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46546B1A-CB5D-4AD4-9D29-B30336292B31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46546B1A-CB5D-4AD4-9D29-B30336292B31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46546B1A-CB5D-4AD4-9D29-B30336292B31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{689D259F-515A-42EC-807E-8974BC1ECDC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{689D259F-515A-42EC-807E-8974BC1ECDC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{689D259F-515A-42EC-807E-8974BC1ECDC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{689D259F-515A-42EC-807E-8974BC1ECDC6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
