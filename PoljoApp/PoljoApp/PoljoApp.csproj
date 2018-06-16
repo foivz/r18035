@@ -376,5 +376,15 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLayer\BusinessLayer.csproj">
+      <Project>{e343ebc4-ca2c-42cc-ac80-0bd048eb0ca8}</Project>
+      <Name>BusinessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PoljoAppModel\PoljoAppModel.csproj">
+      <Project>{46546b1a-cb5d-4ad4-9d29-b30336292b31}</Project>
+      <Name>PoljoAppModel</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
