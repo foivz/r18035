@@ -18,11 +18,19 @@ namespace DataLayer
             }
         }
 
-        public List<NavodnjavanjeView> DohvatiNavodnjavanje()
+        public List<NavodnjavanjeView> DohvatiNavodnjavanje(int godina)
         {
             using (var db = new Entities())
             {
-                return db.NavodnjavanjeView.ToList();
+                return db.NavodnjavanjeView.Where(n => n.IdStanja < 3 && n.Datum.Year == godina).ToList();
+            }
+        }
+
+        public List<NavodnjavanjeView> DohvatiOborine()
+        {
+            using (var db = new Entities())
+            {
+                return db.NavodnjavanjeView.Where(n => n.IdStanja == 3).ToList();
             }
         }
 
@@ -40,6 +48,16 @@ namespace DataLayer
             {
                 db.Navodnjavanje.Attach(zaBrisanje);
                 db.Navodnjavanje.Remove(zaBrisanje);
+                db.SaveChanges();
+            }
+        }
+
+        public void OdbijOborinu(Navodnjavanje zaIzmjenu)
+        {
+            using (var db = new Entities())
+            {
+                db.Navodnjavanje.Attach(zaIzmjenu);
+                zaIzmjenu.IdStanja = 4;
                 db.SaveChanges();
             }
         }
