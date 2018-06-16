@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BusinessLayer;
+using PoljoAppModel;
 
 namespace PoljoAppVerzija2
 {
     public partial class UnosNavodnjavanja : Form
     {
-        Navodnjavanje NavodnjavanjeZaIzmjenu = null;
+        PoljoAppModel.Navodnjavanje NavodnjavanjeZaIzmjenu = null;
 
         public UnosNavodnjavanja()
         {
@@ -22,7 +24,7 @@ namespace PoljoAppVerzija2
             DohvatiStanja();
         }
 
-        public UnosNavodnjavanja(Navodnjavanje zaIzmjenu)
+        public UnosNavodnjavanja(PoljoAppModel.Navodnjavanje zaIzmjenu)
         {
             InitializeComponent();
             this.NavodnjavanjeZaIzmjenu = zaIzmjenu;
@@ -72,32 +74,25 @@ namespace PoljoAppVerzija2
         {
             if (this.NavodnjavanjeZaIzmjenu == null)
             {
-                using (var db = new Entities())
+                PoljoAppModel.Navodnjavanje novo = new PoljoAppModel.Navodnjavanje()
                 {
-                    Navodnjavanje novo = new Navodnjavanje()
-                    {
-                        IdPovrsina = (int)izborPovrsine.SelectedValue,
-                        Datum = izborDatum.Value,
-                        KolicinaVode = int.Parse(unosKolicinaVode.Text),
-                        IdStanja = (int)izborVrsta.SelectedValue
-                    };
-                    db.NavodnjavanjeSet.Add(novo);
-                    db.SaveChanges();
-                }
+                    IdPovrsina = (int)izborPovrsine.SelectedValue,
+                    Datum = izborDatum.Value,
+                    KolicinaVode = int.Parse(unosKolicinaVode.Text),
+                    IdStanja = (int)izborVrsta.SelectedValue
+                };
+                NavodnjavanjeUsluge.Spremi(novo);
                 Close();
             }
             else
-            {
-                using (var db = new Entities())
-                {
-                    db.NavodnjavanjeSet.Attach(NavodnjavanjeZaIzmjenu);
-                    NavodnjavanjeZaIzmjenu.IdPovrsina = (int)izborPovrsine.SelectedValue;
-                    NavodnjavanjeZaIzmjenu.Datum = izborDatum.Value;
-                    NavodnjavanjeZaIzmjenu.KolicinaVode = decimal.Parse(unosKolicinaVode.Text);
-                    NavodnjavanjeZaIzmjenu.IdStanja = (int)izborVrsta.SelectedValue;
+            {                
+                NavodnjavanjeZaIzmjenu.IdPovrsina = (int)izborPovrsine.SelectedValue;
+                NavodnjavanjeZaIzmjenu.Datum = izborDatum.Value;
+                NavodnjavanjeZaIzmjenu.KolicinaVode = decimal.Parse(unosKolicinaVode.Text);
+                NavodnjavanjeZaIzmjenu.IdStanja = (int)izborVrsta.SelectedValue;
 
-                    db.SaveChanges();
-                }
+                NavodnjavanjeUsluge.Azuriraj(NavodnjavanjeZaIzmjenu); 
+                
                 Close();
             }
         }

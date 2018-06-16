@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PoljoAppModel;
+using BusinessLayer;
 
 namespace PoljoAppVerzija2
 {
@@ -27,56 +29,34 @@ namespace PoljoAppVerzija2
         private void PrikaziNavodnjavanje()
         {
             int godina = int.Parse(izborGodine.Text);
-
-            BindingList<NavodnjavanjeView> listaNavodnjavanja = null;
-            using (var db = new Entities())
-            {
-                listaNavodnjavanja = new BindingList<NavodnjavanjeView>(db.NavodnjavanjeViewSet.Where(n=>n.IdStanja<3 && n.Datum.Year == godina).ToList());
-            }
-            navodnjavanjeViewBindingSource.DataSource = listaNavodnjavanja;
+            navodnjavanjeViewBindingSource.DataSource = NavodnjavanjeUsluge.DohvatiSve(godina);
         }
 
         private void PrikaziOborine()
         {
-            BindingList<NavodnjavanjeView> listaOborina = null;
-            using (var db = new Entities())
-            {
-                listaOborina = new BindingList<NavodnjavanjeView>(db.NavodnjavanjeViewSet.Where(n => n.IdStanja == 3).ToList());
-            }
-            oborineBindingSource.DataSource = listaOborina;
+            oborineBindingSource.DataSource = NavodnjavanjeUsluge.DohvatiOborine();
         }
 
         private void UiActionIzbrisi_Click(object sender, EventArgs e)
         {
-            Navodnjavanje zaBrisanje = DohvatiOznacenoNavodnjavanje(navodnjavanjeViewBindingSource);
+            PoljoAppModel.Navodnjavanje zaBrisanje = DohvatiOznacenoNavodnjavanje(navodnjavanjeViewBindingSource);
 
             if (MessageBox.Show("Jeste li ste sigurni da želite obrisati navodnjavanje?", "Upozorenje!", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
             {
-                using (var db = new Entities())
-                {
-                    db.NavodnjavanjeSet.Attach(zaBrisanje);
-                    db.NavodnjavanjeSet.Remove(zaBrisanje);
-                    db.SaveChanges();
-                }
-
+                NavodnjavanjeUsluge.Izbrisi(zaBrisanje);
             }
             PrikaziNavodnjavanje();
         }
 
-        private Navodnjavanje DohvatiOznacenoNavodnjavanje(BindingSource bs)
+        private PoljoAppModel.Navodnjavanje DohvatiOznacenoNavodnjavanje(BindingSource bs)
         {
-            NavodnjavanjeView oznaceno = bs.Current as NavodnjavanjeView;
-            Navodnjavanje zaIzmjenu;
-            using (var db = new Entities())
-            {
-                zaIzmjenu = db.NavodnjavanjeSet.Where(n => n.Datum == oznaceno.Datum && n.IdPovrsina == oznaceno.IdPovrsina).FirstOrDefault();
-            }
-            return zaIzmjenu;
+            PoljoAppModel.NavodnjavanjeView oznaceno = bs.Current as PoljoAppModel.NavodnjavanjeView;
+            return NavodnjavanjeUsluge.DohvatiPoIdu(oznaceno.Id);
         }
 
         private void UiActionAzuiraj_Click(object sender, EventArgs e)
         {
-            Navodnjavanje zaIzmjenu = DohvatiOznacenoNavodnjavanje(navodnjavanjeViewBindingSource);
+            PoljoAppModel.Navodnjavanje zaIzmjenu = DohvatiOznacenoNavodnjavanje(navodnjavanjeViewBindingSource);
             UnosNavodnjavanja azuriraj = new UnosNavodnjavanja(zaIzmjenu);
             azuriraj.ShowDialog();
             PrikaziNavodnjavanje();
@@ -117,7 +97,7 @@ namespace PoljoAppVerzija2
 
         private void UiActionUnesi_Click(object sender, EventArgs e)
         {
-            Navodnjavanje zaIzmjenu = DohvatiOznacenoNavodnjavanje(oborineBindingSource);
+            PoljoAppModel.Navodnjavanje zaIzmjenu = DohvatiOznacenoNavodnjavanje(oborineBindingSource);
             UnosNavodnjavanja azuriraj = new UnosNavodnjavanja(zaIzmjenu);
             azuriraj.ShowDialog();
             PrikaziNavodnjavanje();
@@ -125,12 +105,8 @@ namespace PoljoAppVerzija2
 
         private void UiActionOdbij_Click(object sender, EventArgs e)
         {
-            Navodnjavanje zaIzmjenu = DohvatiOznacenoNavodnjavanje(oborineBindingSource);
-            using (var db = new Entities()) {
-                db.NavodnjavanjeSet.Attach(zaIzmjenu);
-                zaIzmjenu.IdStanja = 4;
-                db.SaveChanges();
-            }
+            PoljoAppModel.Navodnjavanje zaIzmjenu = DohvatiOznacenoNavodnjavanje(oborineBindingSource);
+            NavodnjavanjeUsluge.OdbijOborinu(zaIzmjenu);
             PrikaziOborine();
         }
 
