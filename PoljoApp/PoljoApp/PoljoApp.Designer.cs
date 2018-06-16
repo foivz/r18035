@@ -245,7 +245,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.uiPovrsine.Location = new System.Drawing.Point(217, 101);
-            this.uiPovrsine.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.uiPovrsine.Margin = new System.Windows.Forms.Padding(4);
             this.uiPovrsine.Name = "uiPovrsine";
             this.uiPovrsine.Size = new System.Drawing.Size(680, 442);
             this.uiPovrsine.TabIndex = 16;
@@ -256,6 +256,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.uiNavodnjavanje.Location = new System.Drawing.Point(217, 101);
+            this.uiNavodnjavanje.Margin = new System.Windows.Forms.Padding(4);
             this.uiNavodnjavanje.Name = "uiNavodnjavanje";
             this.uiNavodnjavanje.Size = new System.Drawing.Size(680, 442);
             this.uiNavodnjavanje.TabIndex = 0;
@@ -266,16 +267,18 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.uiPrskanje.Location = new System.Drawing.Point(217, 101);
+            this.uiPrskanje.Margin = new System.Windows.Forms.Padding(4);
             this.uiPrskanje.Name = "uiPrskanje";
             this.uiPrskanje.Size = new System.Drawing.Size(680, 442);
             this.uiPrskanje.TabIndex = 17;
             // 
             // uiSadnja
             // 
-            this.uiSadnja.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.uiSadnja.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.uiSadnja.Location = new System.Drawing.Point(217, 101);
+            this.uiSadnja.Margin = new System.Windows.Forms.Padding(4);
             this.uiSadnja.Name = "uiSadnja";
             this.uiSadnja.Size = new System.Drawing.Size(680, 442);
             this.uiSadnja.TabIndex = 18;
@@ -317,17 +320,12 @@
             this.Controls.Add(this.uiActionOpenPovrsine);
             this.Controls.Add(this.uiActionOpenZastita);
             this.Controls.Add(this.uiActionOpenProizvodi);
-            this.Controls.Add(this.uiZastita);
-            this.Controls.Add(this.uiPovrsine);
-            this.Controls.Add(this.uiProizvodi);
-            this.Controls.Add(this.uiNavodnjavanje);
-            this.Controls.Add(this.uiPrskanje);
-            this.Controls.Add(this.uiSadnja);
             this.Controls.Add(this.pictureBox3);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PoljoApp";
             this.Text = "PoljoApp";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.PoljoApp_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

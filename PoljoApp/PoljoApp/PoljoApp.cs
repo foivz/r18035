@@ -21,7 +21,6 @@ namespace PoljoAppVerzija2
         public PoljoApp(Djelatnik prijava)
         {
             InitializeComponent();
-            uiProizvodi.BringToFront();
 
             Korisnik = prijava;
             if (Korisnik.Admin == 1) uiUpravljanje.Visible = true;
@@ -153,6 +152,19 @@ namespace PoljoAppVerzija2
                 OborineTimer.Stop();
             }
             else OborineTimer.Start();
+        }
+
+        private void PoljoApp_Load(object sender, EventArgs e)
+        {
+            this.Controls.Add(this.uiZastita);
+            this.Controls.Add(this.uiPovrsine);
+            this.Controls.Add(this.uiProizvodi);
+            this.Controls.Add(this.uiNavodnjavanje);
+            this.Controls.Add(this.uiPrskanje);
+            this.Controls.Add(this.uiSadnja);
+
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            uiProizvodi.BringToFront();
         }
     }
 }
