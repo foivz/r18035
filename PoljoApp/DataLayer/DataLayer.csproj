@@ -47,6 +47,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DjelatniciRepozitorij.cs" />
+    <Compile Include="IDjelatniciRepozitorij.cs" />
     <Compile Include="INavodnjavanjeRepozitorij.cs" />
     <Compile Include="IPrskanjeRepozitorij.cs" />
     <Compile Include="NavodnjavanjeRepozitorij.cs" />
