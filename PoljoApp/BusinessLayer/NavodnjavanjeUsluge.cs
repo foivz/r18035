@@ -51,5 +51,15 @@ namespace BusinessLayer
         {
             Repozitorij.OdbijOborinu(zaIzmjenu);
         }
+
+        public static List<int> DohvatiGodine()
+        {
+            return Repozitorij.DohvatiGodine();
+        }
+
+        public static string DohvatiVrijeme()
+        {
+            return Repozitorij.DohvatiVrijeme();
+        }
     }
 }

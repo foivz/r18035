@@ -41,6 +41,7 @@
             this.djelatnikBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.uiActionAzuriraj = new System.Windows.Forms.Button();
             this.uiActionUnos = new System.Windows.Forms.Button();
+            this.uiActionIzbrisi = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pregledDjelatnika)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.djelatnikBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -127,7 +128,7 @@
             // 
             // uiActionAzuriraj
             // 
-            this.uiActionAzuriraj.Location = new System.Drawing.Point(12, 18);
+            this.uiActionAzuriraj.Location = new System.Drawing.Point(120, 12);
             this.uiActionAzuriraj.Name = "uiActionAzuriraj";
             this.uiActionAzuriraj.Size = new System.Drawing.Size(102, 34);
             this.uiActionAzuriraj.TabIndex = 9;
@@ -138,7 +139,7 @@
             // uiActionUnos
             // 
             this.uiActionUnos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.uiActionUnos.Location = new System.Drawing.Point(498, 18);
+            this.uiActionUnos.Location = new System.Drawing.Point(12, 12);
             this.uiActionUnos.Name = "uiActionUnos";
             this.uiActionUnos.Size = new System.Drawing.Size(102, 34);
             this.uiActionUnos.TabIndex = 10;
@@ -146,11 +147,22 @@
             this.uiActionUnos.UseVisualStyleBackColor = true;
             this.uiActionUnos.Click += new System.EventHandler(this.UiActionUnos_Click);
             // 
+            // uiActionIzbrisi
+            // 
+            this.uiActionIzbrisi.Location = new System.Drawing.Point(498, 12);
+            this.uiActionIzbrisi.Name = "uiActionIzbrisi";
+            this.uiActionIzbrisi.Size = new System.Drawing.Size(102, 34);
+            this.uiActionIzbrisi.TabIndex = 11;
+            this.uiActionIzbrisi.Text = "Izbriši";
+            this.uiActionIzbrisi.UseVisualStyleBackColor = true;
+            this.uiActionIzbrisi.Click += new System.EventHandler(this.UiActionIzbrisi_Click);
+            // 
             // DjelatniciForma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(612, 335);
+            this.Controls.Add(this.uiActionIzbrisi);
             this.Controls.Add(this.uiActionUnos);
             this.Controls.Add(this.uiActionAzuriraj);
             this.Controls.Add(this.pregledDjelatnika);
@@ -178,5 +190,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.Button uiActionIzbrisi;
     }
 }

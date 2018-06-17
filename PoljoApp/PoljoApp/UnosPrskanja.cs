@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PoljoAppModel;
+using BusinessLayer;
 
 namespace PoljoAppVerzija2
 {
     public partial class UnosPrskanja : Form
     {
-        Prskanje PrskanjeZaIzmjenu = null;
+        PoljoAppModel.Prskanje PrskanjeZaIzmjenu = null;
 
         public UnosPrskanja()
         {
@@ -22,7 +24,7 @@ namespace PoljoAppVerzija2
             DohvatiDjelatnike();
         }
 
-        public UnosPrskanja(Prskanje prskanje)
+        public UnosPrskanja(PoljoAppModel.Prskanje prskanje)
         {
             InitializeComponent();
 
@@ -87,34 +89,27 @@ namespace PoljoAppVerzija2
         {
             if (this.PrskanjeZaIzmjenu == null)
             {
-                using (var db = new Entities())
+                PoljoAppModel.Prskanje novo = new PoljoAppModel.Prskanje()
                 {
-                    Prskanje novo = new Prskanje()
-                    {
-                        IdDjelatnik = (int)izborDjelatnik.SelectedValue,
-                        IdPovrsina = (int)izborPovrsine.SelectedValue,
-                        IdZastita = (int)izborZastita.SelectedValue,
-                        Datum = izborDatum.Value,
-                        Opis = unosOpis.Text
-                    };
-                    db.PrskanjeSet.Add(novo);
-                    db.SaveChanges();
-                }
+                    IdDjelatnik = (int)izborDjelatnik.SelectedValue,
+                    IdPovrsina = (int)izborPovrsine.SelectedValue,
+                    IdZastita = (int)izborZastita.SelectedValue,
+                    Datum = izborDatum.Value,
+                    Opis = unosOpis.Text
+                };
+
+                PrskanjeUsluge.Spremi(novo);
                 Close();
             }
             else
             {
-                using (var db = new Entities())
-                {
-                    db.PrskanjeSet.Attach(PrskanjeZaIzmjenu);
-                    PrskanjeZaIzmjenu.IdDjelatnik = (int) izborDjelatnik.SelectedValue;
-                    PrskanjeZaIzmjenu.IdZastita = (int) izborZastita.SelectedValue;
-                    PrskanjeZaIzmjenu.IdPovrsina = (int) izborPovrsine.SelectedValue;
-                    PrskanjeZaIzmjenu.Datum = izborDatum.Value;
-                    PrskanjeZaIzmjenu.Opis = unosOpis.Text;
+                PrskanjeZaIzmjenu.IdDjelatnik = (int) izborDjelatnik.SelectedValue;
+                PrskanjeZaIzmjenu.IdZastita = (int) izborZastita.SelectedValue;
+                PrskanjeZaIzmjenu.IdPovrsina = (int) izborPovrsine.SelectedValue;
+                PrskanjeZaIzmjenu.Datum = izborDatum.Value;
+                PrskanjeZaIzmjenu.Opis = unosOpis.Text;
 
-                    db.SaveChanges();
-                }
+                PrskanjeUsluge.Azuriraj(PrskanjeZaIzmjenu);
                 Close();
             }
         }

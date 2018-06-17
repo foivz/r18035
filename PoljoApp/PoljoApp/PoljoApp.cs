@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
+using BusinessLayer;
 
 namespace PoljoAppVerzija2
 {
@@ -84,65 +85,18 @@ namespace PoljoAppVerzija2
             pregledDjelatnika.ShowDialog();
         }
 
-        private async void DohvatiVrijeme()
+        private void DohvatiVrijeme()
         {
-            string apiKey = "a5854ea27e328a268708472920747b11";
-            decimal lan, lon;
-            string tekst = "";
+            string tekst = NavodnjavanjeUsluge.DohvatiVrijeme();
 
-            using(var db = new Entities())
+            if(tekst != "")
             {
-                foreach (var pov in db.polj_povrsina)
+                if (MessageBox.Show("Pada kiša na:\r\n" + tekst + "Želite li pregledati i spremiti zapise?", "It's raining!", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
                 {
-                    lan = pov.x_koordinata;
-                    lon = pov.y_koordinata;
+                    TabControl tab = uiNavodnjavanje.Controls.Find("navodnjavanjeTabs", false).First() as TabControl;
+                    tab.SelectedIndex = 1;
 
-                    string url = "http://api.openweathermap.org/data/2.5/weather?lat=" + lan + "&lon=" + lon + "&appid=" + apiKey + "&mode=xml";
-
-                    var xml = await new WebClient().DownloadStringTaskAsync(new Uri(url));
-
-                    XmlDocument doc = new XmlDocument();
-                    doc.LoadXml(xml);
-
-                    string vrijemeIdString = doc.DocumentElement.SelectSingleNode("weather").Attributes["number"].Value;
-                    int vrijemeId = int.Parse(vrijemeIdString);
-                    Console.WriteLine(vrijemeIdString);
-                    if (vrijemeId>=500 && vrijemeId<600)
-                    {
-                        tekst += pov.naziv + "\r\n";
-                        SpremiOborine(pov);
-                    }                    
-                }
-
-                if(tekst != "")
-                {
-                    if (MessageBox.Show("Pada kiša na:\r\n" + tekst + "Želite li pregledati i spremiti zapise?", "It's raining!", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
-                    {
-                        TabControl tab = uiNavodnjavanje.Controls.Find("navodnjavanjeTabs", false).First() as TabControl;
-                        tab.SelectedIndex = 1;
-
-                        uiNavodnjavanje.BringToFront();
-                    }
-                }
-            }
-        }
-
-        private void SpremiOborine(polj_povrsina pov)
-        {
-            DateTime datum = DateTime.Now.Date;
-
-            using(var db = new Entities()) {
-                Navodnjavanje navodnjavanje = db.NavodnjavanjeSet.Where(n => n.Datum == datum && n.IdPovrsina == pov.id && n.IdStanja >= 2 && n.IdStanja <=3).FirstOrDefault();
-                if (navodnjavanje == null)
-                {
-                    Navodnjavanje novo = new Navodnjavanje()
-                    {
-                        IdPovrsina = pov.id,
-                        Datum = datum,
-                        IdStanja = 3
-                    };
-                    db.NavodnjavanjeSet.Add(novo);
-                    db.SaveChanges();
+                    uiNavodnjavanje.BringToFront();
                 }
             }
         }

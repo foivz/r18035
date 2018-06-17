@@ -64,11 +64,7 @@ namespace PoljoAppVerzija2
 
         private void DohvatiGodine()
         {
-            List<int> listaGodina = null;
-            using (var db = new Entities())
-            {
-                listaGodina = new List<int>(db.NavodnjavanjeSet.Select(p => p.Datum.Year).Distinct());
-            }
+            List<int> listaGodina = NavodnjavanjeUsluge.DohvatiGodine();
 
             foreach (var datum in listaGodina)
             {

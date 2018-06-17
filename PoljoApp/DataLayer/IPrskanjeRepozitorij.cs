@@ -9,7 +9,9 @@ namespace DataLayer
 {
     public interface IPrskanjeRepozitorij
     {
-        List<PrskanjeView> DohvatiPrskanje();
+        List<PrskanjeView> DohvatiPrskanje(int godina);
+
+        List<int> DohvatiGodine();
 
         Prskanje DohvatiPoIdu(int id);
 

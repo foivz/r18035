@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PoljoAppModel;
+using BusinessLayer;
 
 namespace PoljoAppVerzija2.Admin
 {
     public partial class UnosDjelatnika : Form
     {
-        Djelatnik DjelatnikZaIzmjenu = null;
+        PoljoAppModel.Djelatnik DjelatnikZaIzmjenu = null;
 
         public UnosDjelatnika()
         {
@@ -20,7 +22,7 @@ namespace PoljoAppVerzija2.Admin
             ispisID.Text = "ID: new";
         }
 
-        public UnosDjelatnika(Djelatnik azuriraj)
+        public UnosDjelatnika(PoljoAppModel.Djelatnik azuriraj)
         {
             InitializeComponent();
             DjelatnikZaIzmjenu = azuriraj;
@@ -57,32 +59,27 @@ namespace PoljoAppVerzija2.Admin
         {
             if (this.DjelatnikZaIzmjenu == null)
             {
-                using (var db = new Entities())
+                PoljoAppModel.Djelatnik novi = new PoljoAppModel.Djelatnik()
                 {
-                    Djelatnik novi = new Djelatnik()
-                    {
-                        Ime = unosIme.Text,
-                        Prezime = unosPrezime.Text,
-                        Email = unosEmail.Text,
-                        Lozinka = unosLozinka.Text,
-                        BrojTelefona = unosTelefon.Text
-                    };
-                    db.DjelatnikSet.Add(novi);
-                    db.SaveChanges();
-                }
+                    Ime = unosIme.Text,
+                    Prezime = unosPrezime.Text,
+                    Email = unosEmail.Text,
+                    Lozinka = unosLozinka.Text,
+                    BrojTelefona = unosTelefon.Text
+                };
+
+                DjelatniciUsluge.Spremi(novi);
                 Close();
             }
-            else {
-                using (var db = new Entities())
-                {
-                    db.DjelatnikSet.Attach(DjelatnikZaIzmjenu);
-                    DjelatnikZaIzmjenu.Ime = unosIme.Text;
-                    DjelatnikZaIzmjenu.Prezime = unosPrezime.Text;
-                    DjelatnikZaIzmjenu.Email = unosEmail.Text;
-                    DjelatnikZaIzmjenu.Lozinka = unosLozinka.Text;
-                    DjelatnikZaIzmjenu.BrojTelefona = unosTelefon.Text;
-                    db.SaveChanges();
-                }
+            else
+            {
+                DjelatnikZaIzmjenu.Ime = unosIme.Text;
+                DjelatnikZaIzmjenu.Prezime = unosPrezime.Text;
+                DjelatnikZaIzmjenu.Email = unosEmail.Text;
+                DjelatnikZaIzmjenu.Lozinka = unosLozinka.Text;
+                DjelatnikZaIzmjenu.BrojTelefona = unosTelefon.Text;
+
+                DjelatniciUsluge.Azuriraj(DjelatnikZaIzmjenu);
                 Close();
             }
             
