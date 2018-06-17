@@ -40,8 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DjelatniciUsluge.cs" />
     <Compile Include="NavodnjavanjeUsluge.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PrskanjeUsluge.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataLayer\DataLayer.csproj">
