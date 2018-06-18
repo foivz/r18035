@@ -18,5 +18,7 @@ namespace DataLayer
         void Azuriraj(Djelatnik zaIzmjenu);
 
         void Izbrisi(Djelatnik zaBrisanje);
+
+        Djelatnik Prijava(string email, string lozinka);
     }
 }

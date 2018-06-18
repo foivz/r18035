@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using PoljoAppModel;
 using DataLayer;
+using System.Text.RegularExpressions;
 
 namespace BusinessLayer
 {
@@ -40,6 +41,21 @@ namespace BusinessLayer
         public static void Izbrisi(Djelatnik zaBrisanje)
         {
             Repozitorij.Izbrisi(zaBrisanje);
+        }
+
+        public static Djelatnik Prijava(string email, string lozinka)
+        {
+            return Repozitorij.Prijava(email, lozinka);
+        }
+
+        public static MatchCollection ProvjeriRegex(string tekst, string uzorak)
+        {
+            MatchCollection pogotci;
+
+            Regex regex = new Regex(uzorak);
+            pogotci = regex.Matches(tekst);
+
+            return pogotci;
         }
     }
 }

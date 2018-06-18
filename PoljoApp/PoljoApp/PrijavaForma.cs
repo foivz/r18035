@@ -8,6 +8,8 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BusinessLayer;
+using PoljoAppModel;
 
 namespace PoljoAppVerzija2
 {
@@ -35,20 +37,17 @@ namespace PoljoAppVerzija2
 
         private void IzvrsiPrijavu(string email, string lozinka)
         {
-            using (var db = new Entities()) {
-                Djelatnik korisnik = db.DjelatnikSet.Where(k => k.Email == email && k.Lozinka == lozinka).FirstOrDefault();
-
-                if (korisnik != null) {
-                    this.Hide();
-                    PoljoApp app = new PoljoApp(korisnik);
-                    app.FormClosed += (s, args) => this.Close();
-                    app.ShowDialog();
-                }
-                else {
-                    MessageBox.Show("Neuspješna prijava!");
-                }
-            }
+            PoljoAppModel.Djelatnik korisnik = DjelatniciUsluge.Prijava(email, lozinka);
             
+            if (korisnik != null) {
+                this.Hide();
+                PoljoApp app = new PoljoApp(korisnik);
+                app.FormClosed += (s, args) => this.Close();
+                app.ShowDialog();
+            }
+            else {
+                MessageBox.Show("Neuspješna prijava!");
+            }
         }
 
         private void UnosEmail_Leave(object sender, EventArgs e)
@@ -56,7 +55,7 @@ namespace PoljoAppVerzija2
             string uzorak = @"^[a-zA-Z0-9]{1,}\.?[a-zA-Z0-9]{0,}@[a-zA-Z0-9]{1,}\.[a-zA-Z]{2,}$";
             string email = unosEmail.Text;
 
-            MatchCollection pogotci = ProvjeriRegex(email, uzorak);
+            MatchCollection pogotci = DjelatniciUsluge.ProvjeriRegex(email, uzorak);
 
             if (pogotci.Count < 1)
             {
@@ -70,7 +69,7 @@ namespace PoljoAppVerzija2
             string uzorak = @"[a-zA-Z0-9.]{1,}";
             string lozinka = unosLozinka.Text;
 
-            MatchCollection pogotci = ProvjeriRegex(lozinka, uzorak);
+            MatchCollection pogotci = DjelatniciUsluge.ProvjeriRegex(lozinka, uzorak);
 
             if (pogotci.Count < 1 || lozinka.Length < 5)
             {
@@ -78,15 +77,6 @@ namespace PoljoAppVerzija2
             }
             else unosLozinka.BackColor = Color.White;
         }
-
-        private MatchCollection ProvjeriRegex(string tekst, string uzorak)
-        {
-            MatchCollection pogotci;
-
-            Regex regex = new Regex(uzorak);
-            pogotci = regex.Matches(tekst);
-
-            return pogotci;
-        }
+        
     }
 }

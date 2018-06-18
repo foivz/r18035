@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PoljoAppModel;
 
 namespace PoljoAppVerzija2
 {
@@ -17,7 +18,7 @@ namespace PoljoAppVerzija2
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //PoljoApp(new djelatnik() {admin = 1 })
-            Application.Run(new PoljoApp(new Djelatnik() { Admin = 1 }));
+            Application.Run(new PoljoApp(new PoljoAppModel.Djelatnik() { Admin = 1 }));
         }
     }
 }

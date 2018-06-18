@@ -49,6 +49,23 @@ namespace DataLayer
             }
         }
 
+        public Djelatnik Prijava(string email, string lozinka)
+        {
+            using (var db = new Entities())
+            {
+                Djelatnik korisnik = db.Djelatnik.Where(k => k.Email == email && k.Lozinka == lozinka).FirstOrDefault();
+
+                if (korisnik != null)
+                {
+                    return korisnik;
+                }
+                else
+                {
+                    return null; 
+                }
+            }
+        }
+
         public Djelatnik Spremi(Djelatnik novo)
         {
             using (var db = new Entities())

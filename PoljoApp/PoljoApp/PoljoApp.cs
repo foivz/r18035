@@ -10,16 +10,17 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 using BusinessLayer;
+using PoljoAppModel;
 
 namespace PoljoAppVerzija2
 {
     public partial class PoljoApp : Form
     {
-        private Djelatnik Korisnik;
+        private PoljoAppModel.Djelatnik Korisnik;
         private Timer OborineTimer;
         private int Interval = 10;
 
-        public PoljoApp(Djelatnik prijava)
+        public PoljoApp(PoljoAppModel.Djelatnik prijava)
         {
             InitializeComponent();
 
