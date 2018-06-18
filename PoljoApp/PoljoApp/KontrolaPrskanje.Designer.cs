@@ -37,6 +37,9 @@
             this.uiActionIzbrisi = new System.Windows.Forms.Button();
             this.uiActionAzuriraj = new System.Windows.Forms.Button();
             this.pregledPrskanja = new System.Windows.Forms.DataGridView();
+            this.uiActionNovo = new System.Windows.Forms.Button();
+            this.pomocTab = new System.Windows.Forms.TabPage();
+            this.ispisPomoc = new System.Windows.Forms.Label();
             this.datumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.zastitaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.povrsinaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,14 +50,11 @@
             this.prezimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prskanjeViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.uiActionNovo = new System.Windows.Forms.Button();
-            this.pomocTab = new System.Windows.Forms.TabPage();
-            this.ispisPomoc = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.prskanjeTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pregledPrskanja)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.prskanjeViewBindingSource)).BeginInit();
             this.pomocTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.prskanjeViewBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -155,6 +155,38 @@
             this.pregledPrskanja.Size = new System.Drawing.Size(418, 179);
             this.pregledPrskanja.TabIndex = 5;
             // 
+            // uiActionNovo
+            // 
+            this.uiActionNovo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.uiActionNovo.Location = new System.Drawing.Point(341, 239);
+            this.uiActionNovo.Name = "uiActionNovo";
+            this.uiActionNovo.Size = new System.Drawing.Size(102, 34);
+            this.uiActionNovo.TabIndex = 4;
+            this.uiActionNovo.Text = "Dodaj prskanje";
+            this.uiActionNovo.UseVisualStyleBackColor = true;
+            this.uiActionNovo.Click += new System.EventHandler(this.UiActionNovo_Click);
+            // 
+            // pomocTab
+            // 
+            this.pomocTab.AutoScroll = true;
+            this.pomocTab.Controls.Add(this.ispisPomoc);
+            this.pomocTab.Location = new System.Drawing.Point(4, 22);
+            this.pomocTab.Name = "pomocTab";
+            this.pomocTab.Padding = new System.Windows.Forms.Padding(3);
+            this.pomocTab.Size = new System.Drawing.Size(466, 279);
+            this.pomocTab.TabIndex = 0;
+            this.pomocTab.Text = "Pomoć";
+            this.pomocTab.UseVisualStyleBackColor = true;
+            // 
+            // ispisPomoc
+            // 
+            this.ispisPomoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ispisPomoc.Location = new System.Drawing.Point(6, 19);
+            this.ispisPomoc.Name = "ispisPomoc";
+            this.ispisPomoc.Size = new System.Drawing.Size(460, 273);
+            this.ispisPomoc.TabIndex = 0;
+            this.ispisPomoc.Text = resources.GetString("ispisPomoc.Text");
+            // 
             // datumDataGridViewTextBoxColumn
             // 
             this.datumDataGridViewTextBoxColumn.DataPropertyName = "Datum";
@@ -225,37 +257,6 @@
             // 
             this.prskanjeViewBindingSource.DataSource = typeof(PoljoAppVerzija2.PrskanjeView);
             // 
-            // uiActionNovo
-            // 
-            this.uiActionNovo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.uiActionNovo.Location = new System.Drawing.Point(341, 239);
-            this.uiActionNovo.Name = "uiActionNovo";
-            this.uiActionNovo.Size = new System.Drawing.Size(102, 34);
-            this.uiActionNovo.TabIndex = 4;
-            this.uiActionNovo.Text = "Dodaj prskanje";
-            this.uiActionNovo.UseVisualStyleBackColor = true;
-            this.uiActionNovo.Click += new System.EventHandler(this.UiActionNovo_Click);
-            // 
-            // pomocTab
-            // 
-            this.pomocTab.Controls.Add(this.ispisPomoc);
-            this.pomocTab.Location = new System.Drawing.Point(4, 22);
-            this.pomocTab.Name = "pomocTab";
-            this.pomocTab.Padding = new System.Windows.Forms.Padding(3);
-            this.pomocTab.Size = new System.Drawing.Size(466, 279);
-            this.pomocTab.TabIndex = 0;
-            this.pomocTab.Text = "Pomoć";
-            this.pomocTab.UseVisualStyleBackColor = true;
-            // 
-            // ispisPomoc
-            // 
-            this.ispisPomoc.AutoSize = true;
-            this.ispisPomoc.Location = new System.Drawing.Point(21, 19);
-            this.ispisPomoc.Name = "ispisPomoc";
-            this.ispisPomoc.Size = new System.Drawing.Size(432, 169);
-            this.ispisPomoc.TabIndex = 0;
-            this.ispisPomoc.Text = resources.GetString("ispisPomoc.Text");
-            // 
             // KontrolaPrskanje
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -267,9 +268,8 @@
             this.tabControl1.ResumeLayout(false);
             this.prskanjeTab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pregledPrskanja)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.prskanjeViewBindingSource)).EndInit();
             this.pomocTab.ResumeLayout(false);
-            this.pomocTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.prskanjeViewBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

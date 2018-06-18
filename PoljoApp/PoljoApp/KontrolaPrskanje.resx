@@ -123,17 +123,13 @@
   <data name="ispisPomoc.Text" xml:space="preserve">
     <value>1. Pregled: Pomoću padajućeg izbornika odaberite godinu za koju želite prikazati podatke.
 
-2. Izvještaj: Klikom na gumb 'Ispiši u PDF' otvara se novi prozor s izvještajem za tu godinu, 
-koji prikazuje podatke o svim izvršenim prskanjima.
+2. Izvještaj: Klikom na gumb 'Ispiši u PDF' otvara se novi prozor s izvještajem za tu godinu, koji prikazuje podatke o svim izvršenim prskanjima.
 
-3. Unos: Novi zapis o prskanju se dodaje klikom na gumb 'Dodaj prskanje'.
-Potrebno je unijeti sve podatke i kliknuti na 'Spremi'.
+3. Unos: Novi zapis o prskanju se dodaje klikom na gumb 'Dodaj prskanje'. Potrebno je unijeti sve podatke i kliknuti na 'Spremi'.
 
-4. Ažuriranje: Za ažuriranje zapisa je potrebno označiti željeni redak u tablici te kliknuti 
-'Ažuriraj'. Daljnjji koraci su kao i kod unosa.
+4. Ažuriranje: Za ažuriranje zapisa je potrebno označiti željeni redak u tablici te kliknuti 'Ažuriraj'. Daljnjji koraci su kao i kod unosa.
 
-5. Brisanje: Za brisanje zapisa je potrebno označiti željeni redak u tablici te kliknuti 'Izbriši'. 
-Zatim je potrebno potvrditi brisanje iz baze.
+5. Brisanje: Za brisanje zapisa je potrebno označiti željeni redak u tablici te kliknuti 'Izbriši'. Zatim je potrebno potvrditi brisanje iz baze.
 </value>
   </data>
 </root>

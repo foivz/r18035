@@ -123,34 +123,34 @@
   <metadata name="oborineBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>231, 26</value>
   </metadata>
-  <data name="label1.Text" xml:space="preserve">
+  <data name="ispisPomoc.Text" xml:space="preserve">
     <value>Navodnjavanje:
 
 1. Pregled: Pomoću padajućeg izbornika odaberite godinu za koju želite prikazati podatke.
 
-2. Statistika: Klikom na gumb 'Statistika' otvara se novi prozor s grafom za tu godinu, a 
-prikazuje podatke o potrošnji vode po mjesecima ovisno o vrsti navodnjavanja.
+2. Statistika: Klikom na gumb 'Statistika' otvara se novi prozor s grafom za tu godinu, a prikazuje podatke o potrošnji vode po mjesecima ovisno o vrsti navodnjavanja.
 
-3. Unos: Novi zapis o navodnjavanju se dodaje klikom na gumb 'Dodaj navodnjavanje'. 
-Potrebno je unijeti sve podatke i kliknuti na 'Spremi'.
+3. Unos: Novi zapis o navodnjavanju se dodaje klikom na gumb 'Dodaj navodnjavanje'. Potrebno je unijeti sve podatke i kliknuti na 'Spremi'.
 
-4. Ažuriranje: Za ažuriranje zapisa je potrebno označiti željeni redak u tablici te kliknuti 
-'Ažuriraj'. Daljnjji koraci su kao i kod unosa.
+4. Ažuriranje: Za ažuriranje zapisa je potrebno označiti željeni redak u tablici te kliknuti 'Ažuriraj'. Daljnjji koraci su kao i kod unosa.
 
-5. Brisanje: Za brisanje zapisa je potrebno označiti željeni redak u tablici te kliknuti 'Izbriši'. 
-Zatim je potrebno potvrditi brisanje iz baze.
+5. Brisanje: Za brisanje zapisa je potrebno označiti željeni redak u tablici te kliknuti 'Izbriši'. Zatim je potrebno potvrditi brisanje iz baze.
 
 Oborine:
 
-Podaci o vremenu se dohvaćaju svakih 10 minuta, te je tu funckionalnost moguće 
-isključiti pomoću checkboxa koji se nalazi na glavnom prozoru dolje lijevo.
+Podaci o vremenu se dohvaćaju svakih 10 minuta, te je tu funckionalnost moguće isključiti pomoću checkboxa koji se nalazi na glavnom prozoru dolje lijevo.
 
-1. Unos: Pomoću gumba 'Unesi' se zapis sprema u bazu, a pritom je potrebno unijeti 
-količinu vode.
+1. Unos: Pomoću gumba 'Unesi' se zapis sprema u bazu, a pritom je potrebno unijeti količinu vode.
 
 2. Brisanje: Klikom na gumb 'Obriši' odbija se dohvaćeni zapis o kiši.
 
-</value>
+ggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg
+gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg
+ggggggggggggggggggggggggggggggggggggggggggggggggg
+gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg
+gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg
+gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg
+ggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg</value>
   </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>55</value>

@@ -321,8 +321,8 @@
             this.Controls.Add(this.uiActionOpenZastita);
             this.Controls.Add(this.uiActionOpenProizvodi);
             this.Controls.Add(this.pictureBox3);
-            
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MinimumSize = new System.Drawing.Size(931, 600);
             this.Name = "PoljoApp";
             this.Text = "PoljoApp";
             this.Load += new System.EventHandler(this.PoljoApp_Load);
