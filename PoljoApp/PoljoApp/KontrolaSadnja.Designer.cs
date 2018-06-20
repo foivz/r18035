@@ -38,24 +38,24 @@
             this.uiActionIzbrisiSadnju = new System.Windows.Forms.Button();
             this.uiActionAzurirajSadnju = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idpovrsinaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idmaterijalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.datumsadnjeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kolicinaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nazivDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nazivmaterijalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jedinicnamjeraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sadnjaViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.uiActionDodajSadnju = new System.Windows.Forms.Button();
             this.pomocTab = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
-            this.sadnjaViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.datumsadnjeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nazivDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nazivmaterijalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kolicinaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jedinicnamjeraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idpovrsinaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idmaterijalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.sadnjaTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sadnimaterijalBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.poljpovrsinaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.pomocTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sadnjaViewBindingSource)).BeginInit();
+            this.pomocTab.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -155,15 +155,16 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idpovrsinaDataGridViewTextBoxColumn,
-            this.idmaterijalDataGridViewTextBoxColumn,
             this.datumsadnjeDataGridViewTextBoxColumn,
-            this.kolicinaDataGridViewTextBoxColumn,
             this.nazivDataGridViewTextBoxColumn,
             this.nazivmaterijalDataGridViewTextBoxColumn,
-            this.jedinicnamjeraDataGridViewTextBoxColumn});
+            this.kolicinaDataGridViewTextBoxColumn,
+            this.jedinicnamjeraDataGridViewTextBoxColumn,
+            this.idpovrsinaDataGridViewTextBoxColumn,
+            this.idmaterijalDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.sadnjaViewBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(33, 66);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
@@ -174,47 +175,9 @@
             this.dataGridView1.Size = new System.Drawing.Size(557, 220);
             this.dataGridView1.TabIndex = 5;
             // 
-            // idpovrsinaDataGridViewTextBoxColumn
+            // sadnjaViewBindingSource
             // 
-            this.idpovrsinaDataGridViewTextBoxColumn.DataPropertyName = "id_povrsina";
-            this.idpovrsinaDataGridViewTextBoxColumn.HeaderText = "id_povrsina";
-            this.idpovrsinaDataGridViewTextBoxColumn.Name = "idpovrsinaDataGridViewTextBoxColumn";
-            // 
-            // idmaterijalDataGridViewTextBoxColumn
-            // 
-            this.idmaterijalDataGridViewTextBoxColumn.DataPropertyName = "id_materijal";
-            this.idmaterijalDataGridViewTextBoxColumn.HeaderText = "id_materijal";
-            this.idmaterijalDataGridViewTextBoxColumn.Name = "idmaterijalDataGridViewTextBoxColumn";
-            // 
-            // datumsadnjeDataGridViewTextBoxColumn
-            // 
-            this.datumsadnjeDataGridViewTextBoxColumn.DataPropertyName = "datum_sadnje";
-            this.datumsadnjeDataGridViewTextBoxColumn.HeaderText = "datum_sadnje";
-            this.datumsadnjeDataGridViewTextBoxColumn.Name = "datumsadnjeDataGridViewTextBoxColumn";
-            // 
-            // kolicinaDataGridViewTextBoxColumn
-            // 
-            this.kolicinaDataGridViewTextBoxColumn.DataPropertyName = "kolicina";
-            this.kolicinaDataGridViewTextBoxColumn.HeaderText = "kolicina";
-            this.kolicinaDataGridViewTextBoxColumn.Name = "kolicinaDataGridViewTextBoxColumn";
-            // 
-            // nazivDataGridViewTextBoxColumn
-            // 
-            this.nazivDataGridViewTextBoxColumn.DataPropertyName = "naziv";
-            this.nazivDataGridViewTextBoxColumn.HeaderText = "naziv";
-            this.nazivDataGridViewTextBoxColumn.Name = "nazivDataGridViewTextBoxColumn";
-            // 
-            // nazivmaterijalDataGridViewTextBoxColumn
-            // 
-            this.nazivmaterijalDataGridViewTextBoxColumn.DataPropertyName = "naziv_materijal";
-            this.nazivmaterijalDataGridViewTextBoxColumn.HeaderText = "naziv_materijal";
-            this.nazivmaterijalDataGridViewTextBoxColumn.Name = "nazivmaterijalDataGridViewTextBoxColumn";
-            // 
-            // jedinicnamjeraDataGridViewTextBoxColumn
-            // 
-            this.jedinicnamjeraDataGridViewTextBoxColumn.DataPropertyName = "jedinicna_mjera";
-            this.jedinicnamjeraDataGridViewTextBoxColumn.HeaderText = "jedinicna_mjera";
-            this.jedinicnamjeraDataGridViewTextBoxColumn.Name = "jedinicnamjeraDataGridViewTextBoxColumn";
+            this.sadnjaViewBindingSource.DataSource = typeof(PoljoAppVerzija2.SadnjaView);
             // 
             // uiActionDodajSadnju
             // 
@@ -250,9 +213,49 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Pomoć korisniku";
             // 
-            // sadnjaViewBindingSource
+            // datumsadnjeDataGridViewTextBoxColumn
             // 
-            this.sadnjaViewBindingSource.DataSource = typeof(PoljoAppVerzija2.SadnjaView);
+            this.datumsadnjeDataGridViewTextBoxColumn.DataPropertyName = "datum_sadnje";
+            this.datumsadnjeDataGridViewTextBoxColumn.HeaderText = "datum_sadnje";
+            this.datumsadnjeDataGridViewTextBoxColumn.Name = "datumsadnjeDataGridViewTextBoxColumn";
+            // 
+            // nazivDataGridViewTextBoxColumn
+            // 
+            this.nazivDataGridViewTextBoxColumn.DataPropertyName = "naziv";
+            this.nazivDataGridViewTextBoxColumn.HeaderText = "naziv";
+            this.nazivDataGridViewTextBoxColumn.Name = "nazivDataGridViewTextBoxColumn";
+            // 
+            // nazivmaterijalDataGridViewTextBoxColumn
+            // 
+            this.nazivmaterijalDataGridViewTextBoxColumn.DataPropertyName = "naziv_materijal";
+            this.nazivmaterijalDataGridViewTextBoxColumn.HeaderText = "naziv_materijal";
+            this.nazivmaterijalDataGridViewTextBoxColumn.Name = "nazivmaterijalDataGridViewTextBoxColumn";
+            // 
+            // kolicinaDataGridViewTextBoxColumn
+            // 
+            this.kolicinaDataGridViewTextBoxColumn.DataPropertyName = "kolicina";
+            this.kolicinaDataGridViewTextBoxColumn.HeaderText = "kolicina";
+            this.kolicinaDataGridViewTextBoxColumn.Name = "kolicinaDataGridViewTextBoxColumn";
+            // 
+            // jedinicnamjeraDataGridViewTextBoxColumn
+            // 
+            this.jedinicnamjeraDataGridViewTextBoxColumn.DataPropertyName = "jedinicna_mjera";
+            this.jedinicnamjeraDataGridViewTextBoxColumn.HeaderText = "jedinicna_mjera";
+            this.jedinicnamjeraDataGridViewTextBoxColumn.Name = "jedinicnamjeraDataGridViewTextBoxColumn";
+            // 
+            // idpovrsinaDataGridViewTextBoxColumn
+            // 
+            this.idpovrsinaDataGridViewTextBoxColumn.DataPropertyName = "id_povrsina";
+            this.idpovrsinaDataGridViewTextBoxColumn.HeaderText = "id_povrsina";
+            this.idpovrsinaDataGridViewTextBoxColumn.Name = "idpovrsinaDataGridViewTextBoxColumn";
+            this.idpovrsinaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // idmaterijalDataGridViewTextBoxColumn
+            // 
+            this.idmaterijalDataGridViewTextBoxColumn.DataPropertyName = "id_materijal";
+            this.idmaterijalDataGridViewTextBoxColumn.HeaderText = "id_materijal";
+            this.idmaterijalDataGridViewTextBoxColumn.Name = "idmaterijalDataGridViewTextBoxColumn";
+            this.idmaterijalDataGridViewTextBoxColumn.Visible = false;
             // 
             // KontrolaSadnja
             // 
@@ -268,9 +271,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.sadnimaterijalBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.poljpovrsinaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sadnjaViewBindingSource)).EndInit();
             this.pomocTab.ResumeLayout(false);
             this.pomocTab.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sadnjaViewBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -289,13 +292,13 @@
         private System.Windows.Forms.ComboBox izborSadnogMaterijala;
         private System.Windows.Forms.BindingSource sadnimaterijalBindingSource;
         private System.Windows.Forms.BindingSource poljpovrsinaBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idpovrsinaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idmaterijalDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource sadnjaViewBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn datumsadnjeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn kolicinaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nazivDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nazivmaterijalDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kolicinaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn jedinicnamjeraDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource sadnjaViewBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idpovrsinaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idmaterijalDataGridViewTextBoxColumn;
     }
 }
