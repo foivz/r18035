@@ -49,7 +49,6 @@ namespace PoljoAppVerzija2
             //Prikazi izbor mjernih jedinica za izbor u comboboxu
             uiActionOdabirJednicineMjere.Items.Add("Komad");
             uiActionOdabirJednicineMjere.Items.Add("Kilogram");
-            uiActionOdabirJednicineMjere.Items.Add("Tona");
         }
 
         private void uiActionSpremi_Click(object sender, EventArgs e)
