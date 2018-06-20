@@ -170,6 +170,7 @@
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(557, 220);
@@ -218,36 +219,42 @@
             this.datumsadnjeDataGridViewTextBoxColumn.DataPropertyName = "datum_sadnje";
             this.datumsadnjeDataGridViewTextBoxColumn.HeaderText = "datum_sadnje";
             this.datumsadnjeDataGridViewTextBoxColumn.Name = "datumsadnjeDataGridViewTextBoxColumn";
+            this.datumsadnjeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // nazivDataGridViewTextBoxColumn
             // 
             this.nazivDataGridViewTextBoxColumn.DataPropertyName = "naziv";
             this.nazivDataGridViewTextBoxColumn.HeaderText = "naziv";
             this.nazivDataGridViewTextBoxColumn.Name = "nazivDataGridViewTextBoxColumn";
+            this.nazivDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // nazivmaterijalDataGridViewTextBoxColumn
             // 
             this.nazivmaterijalDataGridViewTextBoxColumn.DataPropertyName = "naziv_materijal";
             this.nazivmaterijalDataGridViewTextBoxColumn.HeaderText = "naziv_materijal";
             this.nazivmaterijalDataGridViewTextBoxColumn.Name = "nazivmaterijalDataGridViewTextBoxColumn";
+            this.nazivmaterijalDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // kolicinaDataGridViewTextBoxColumn
             // 
             this.kolicinaDataGridViewTextBoxColumn.DataPropertyName = "kolicina";
             this.kolicinaDataGridViewTextBoxColumn.HeaderText = "kolicina";
             this.kolicinaDataGridViewTextBoxColumn.Name = "kolicinaDataGridViewTextBoxColumn";
+            this.kolicinaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // jedinicnamjeraDataGridViewTextBoxColumn
             // 
             this.jedinicnamjeraDataGridViewTextBoxColumn.DataPropertyName = "jedinicna_mjera";
             this.jedinicnamjeraDataGridViewTextBoxColumn.HeaderText = "jedinicna_mjera";
             this.jedinicnamjeraDataGridViewTextBoxColumn.Name = "jedinicnamjeraDataGridViewTextBoxColumn";
+            this.jedinicnamjeraDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // idpovrsinaDataGridViewTextBoxColumn
             // 
             this.idpovrsinaDataGridViewTextBoxColumn.DataPropertyName = "id_povrsina";
             this.idpovrsinaDataGridViewTextBoxColumn.HeaderText = "id_povrsina";
             this.idpovrsinaDataGridViewTextBoxColumn.Name = "idpovrsinaDataGridViewTextBoxColumn";
+            this.idpovrsinaDataGridViewTextBoxColumn.ReadOnly = true;
             this.idpovrsinaDataGridViewTextBoxColumn.Visible = false;
             // 
             // idmaterijalDataGridViewTextBoxColumn
@@ -255,6 +262,7 @@
             this.idmaterijalDataGridViewTextBoxColumn.DataPropertyName = "id_materijal";
             this.idmaterijalDataGridViewTextBoxColumn.HeaderText = "id_materijal";
             this.idmaterijalDataGridViewTextBoxColumn.Name = "idmaterijalDataGridViewTextBoxColumn";
+            this.idmaterijalDataGridViewTextBoxColumn.ReadOnly = true;
             this.idmaterijalDataGridViewTextBoxColumn.Visible = false;
             // 
             // KontrolaSadnja

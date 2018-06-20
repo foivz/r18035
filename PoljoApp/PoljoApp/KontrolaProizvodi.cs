@@ -37,9 +37,10 @@ namespace PoljoAppVerzija2
             using (var db = new Entities())
             {
                 listaVrstaSadnogMaterijala = new BindingList<vrsta_sadnog_materijala>(db.vrsta_sadnog_materijala.ToList());
+                listaVrstaSadnogMaterijala.Insert(0, new vrsta_sadnog_materijala() { naziv = "Prikaži sve" });
+                vrstasadnogmaterijalaBindingSource.DataSource = listaVrstaSadnogMaterijala;
             }
-            listaVrstaSadnogMaterijala.Insert(0, new vrsta_sadnog_materijala() { naziv = "Prikaži sve" });
-            vrstasadnogmaterijalaBindingSource.DataSource = listaVrstaSadnogMaterijala;
+            
         }
 
         private void PrikaziSadniMaterijal()
