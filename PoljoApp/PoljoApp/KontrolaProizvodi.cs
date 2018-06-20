@@ -38,7 +38,7 @@ namespace PoljoAppVerzija2
             {
                 listaVrstaSadnogMaterijala = new BindingList<vrsta_sadnog_materijala>(db.vrsta_sadnog_materijala.ToList());
             }
-            listaVrstaSadnogMaterijala.Insert(0, new vrsta_sadnog_materijala() { naziv = "Prikazi sve" });
+            listaVrstaSadnogMaterijala.Insert(0, new vrsta_sadnog_materijala() { naziv = "Prikaži sve" });
             vrstasadnogmaterijalaBindingSource.DataSource = listaVrstaSadnogMaterijala;
         }
 
@@ -50,7 +50,7 @@ namespace PoljoAppVerzija2
             {
                 var obj = cmbIzborVrsteSadnogMaterijala.SelectedItem as vrsta_sadnog_materijala;
 
-                if (obj != null && obj.naziv == "Prikazi sve")
+                if (obj != null && obj.naziv == "Prikaži sve")
                     listaProizvoda = new BindingList<sadni_materijal>(db.sadni_materijal.ToList());
 
                 else if (obj != null)

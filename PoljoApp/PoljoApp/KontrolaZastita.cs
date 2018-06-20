@@ -36,7 +36,7 @@ namespace PoljoAppVerzija2
             {
                 listaVrstaZastite = new BindingList<vrsta_zastite>(db.vrsta_zastite.ToList());
             }
-            listaVrstaZastite.Insert(0, new vrsta_zastite() { naziv = "Prikazi sve" });
+            listaVrstaZastite.Insert(0, new vrsta_zastite() { naziv = "Prikaži sve" });
             vrstazastiteBindingSource.DataSource = listaVrstaZastite;
         }
 
@@ -54,7 +54,7 @@ namespace PoljoAppVerzija2
             {
                 var obj = uiIzborVrsteZastite.SelectedItem as vrsta_zastite;
 
-                if (obj != null && obj.naziv == "Prikazi sve")
+                if (obj != null && obj.naziv == "Prikaži sve")
                     listaZastita = new BindingList<zastita>(db.zastita.ToList());
 
                 else if (obj != null)
