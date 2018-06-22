@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataLayer;
+using System.Security.Cryptography;
 
 namespace PoljoAppVerzija2.Admin
 {
@@ -26,8 +27,9 @@ namespace PoljoAppVerzija2.Admin
             InitializeComponent();
             DjelatnikZaIzmjenu = azuriraj;
 
+            unosLozinka.Enabled = false;
+            vidljivostLozinke.Visible = false;
             unosEmail.Text = DjelatnikZaIzmjenu.Email;
-            unosLozinka.Text = DjelatnikZaIzmjenu.Lozinka;
             unosIme.Text = DjelatnikZaIzmjenu.Ime;
             unosPrezime.Text = DjelatnikZaIzmjenu.Prezime;
             unosTelefon.Text = DjelatnikZaIzmjenu.BrojTelefona;
@@ -58,15 +60,16 @@ namespace PoljoAppVerzija2.Admin
         {
             if (this.DjelatnikZaIzmjenu == null)
             {
+                MD5 md5Hash = MD5.Create();
                 DataLayer.Djelatnik novi = new DataLayer.Djelatnik()
                 {
                     Ime = unosIme.Text,
                     Prezime = unosPrezime.Text,
                     Email = unosEmail.Text,
-                    Lozinka = unosLozinka.Text,
+                    Lozinka = Usluge.NapraviHash(unosLozinka.Text),
                     BrojTelefona = unosTelefon.Text
                 };
-
+                md5Hash.Clear();
                 DjelatniciRepozitorij.Spremi(novi);
                 Close();
             }

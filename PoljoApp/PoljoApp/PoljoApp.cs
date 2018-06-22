@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 using DataLayer;
+using System.Security.Cryptography;
 
 namespace PoljoAppVerzija2
 {
@@ -32,8 +33,6 @@ namespace PoljoAppVerzija2
             };
             OborineTimer.Tick += OborineTimer_Tick;
             OborineTimer.Start();
-
-            DohvatiVrijeme();
         }
 
         private void OborineTimer_Tick(object sender, EventArgs e)

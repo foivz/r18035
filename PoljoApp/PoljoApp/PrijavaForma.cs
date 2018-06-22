@@ -36,7 +36,8 @@ namespace PoljoAppVerzija2
 
         private void IzvrsiPrijavu(string email, string lozinka)
         {
-            DataLayer.Djelatnik korisnik = DjelatniciRepozitorij.Prijava(email, lozinka);
+            string lozinkaHash = Usluge.NapraviHash(lozinka);
+            DataLayer.Djelatnik korisnik = DjelatniciRepozitorij.Prijava(email, lozinkaHash);
             
             if (korisnik != null) {
                 this.Hide();
