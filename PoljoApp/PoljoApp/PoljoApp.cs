@@ -13,12 +13,19 @@ using DataLayer;
 
 namespace PoljoAppVerzija2
 {
+    /// <summary>
+    /// Glavna forma pomoću koje se koriste ostale funkcionalnosti
+    /// </summary>
     public partial class PoljoApp : Form
     {
         private DataLayer.Djelatnik Korisnik;
         private Timer OborineTimer;
         private int Interval = 10;
 
+        /// <summary>
+        /// Bilježi prijavljenog korisnika i pokreće timer za dohvaćanje vremena
+        /// </summary>
+        /// <param name="prijava"></param>
         public PoljoApp(DataLayer.Djelatnik prijava)
         {
             InitializeComponent();
@@ -34,6 +41,11 @@ namespace PoljoAppVerzija2
             OborineTimer.Start();
         }
 
+        /// <summary>
+        /// Svakih 10 minuta se dohvaćaju podaci o vremenu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OborineTimer_Tick(object sender, EventArgs e)
         {
             DohvatiVrijeme();
@@ -69,6 +81,11 @@ namespace PoljoAppVerzija2
             uiZastita.BringToFront();
         }
 
+        /// <summary>
+        /// Zatvara glavni prozor i otvara formu za prijavu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UiOdjava_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -77,12 +94,20 @@ namespace PoljoAppVerzija2
             prijava.ShowDialog();
         }
 
+        /// <summary>
+        /// Administratoru omogućuje otvaranje forme za CRUD operacije nad djelatnicima
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UiUpravljanje_Click(object sender, EventArgs e)
         {
             Admin.DjelatniciForma pregledDjelatnika = new Admin.DjelatniciForma();
             pregledDjelatnika.ShowDialog();
         }
 
+        /// <summary>
+        /// Obaviještava korisnika gdje trenutno pada kiša
+        /// </summary>
         private void DohvatiVrijeme()
         {
             string tekst = NavodnjavanjeRepozitorij.DohvatiVrijeme();
@@ -99,6 +124,11 @@ namespace PoljoAppVerzija2
             }
         }
 
+        /// <summary>
+        /// Pokreće ili zaustavlja timer omoću kojeg se dohvaća vrijeme
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void IzborDohvacanje_CheckedChanged(object sender, EventArgs e)
         {
             if (izborDohvacanje.Checked)
@@ -108,6 +138,11 @@ namespace PoljoAppVerzija2
             else OborineTimer.Start();
         }
 
+        /// <summary>
+        /// Dodaje kontrole na formu i maksimizira prikaz
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void PoljoApp_Load(object sender, EventArgs e)
         {
             this.Controls.Add(this.uiZastita);

@@ -12,6 +12,9 @@ using DataLayer;
 
 namespace PoljoAppVerzija2
 {
+    /// <summary>
+    /// Svojim metodama omogućuje prijavu korisnika u aplikaciju
+    /// </summary>
     public partial class PrijavaForma : Form
     {
         public PrijavaForma()
@@ -19,6 +22,11 @@ namespace PoljoAppVerzija2
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Dohvaća ulazne vrijednosti za prijavu te ju izvršava
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UiActionPrijava_Click(object sender, EventArgs e)
         {
             string email = unosEmail.Text;
@@ -29,11 +37,21 @@ namespace PoljoAppVerzija2
             else MessageBox.Show("Niste unijeli obje vrijednosti!");
         }
 
+        /// <summary>
+        /// Zatvara formu za prijavu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UiActionOdustani_Click(object sender, EventArgs e)
         {
             Close();
         }
 
+        /// <summary>
+        /// Prijavljuje korisnika u aplikaciju
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="lozinka"></param>
         private void IzvrsiPrijavu(string email, string lozinka)
         {
             string lozinkaHash = Kriptiranje.NapraviHash(lozinka);
@@ -50,6 +68,11 @@ namespace PoljoAppVerzija2
             }
         }
 
+        /// <summary>
+        /// Obaviještava korisnika o pogreškama prilikom unosa email-a
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UnosEmail_Leave(object sender, EventArgs e)
         {
             string uzorak = @"^[a-zA-Z0-9]{1,}\.?[a-zA-Z0-9]{0,}@[a-zA-Z0-9]{1,}\.[a-zA-Z]{2,}$";
@@ -64,6 +87,11 @@ namespace PoljoAppVerzija2
             else unosEmail.BackColor = Color.White;
         }
 
+        /// <summary>
+        /// Obaviještava korisnika prilikom unosa lozinke
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UnosLozinka_Leave(object sender, EventArgs e)
         {
             string uzorak = @"[a-zA-Z0-9.]{1,}";

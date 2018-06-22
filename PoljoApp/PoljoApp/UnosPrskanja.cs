@@ -11,10 +11,16 @@ using DataLayer;
 
 namespace PoljoAppVerzija2
 {
+    /// <summary>
+    /// Omogućuje unos i ažuriranje podataka o prskanju
+    /// </summary>
     public partial class UnosPrskanja : Form
     {
         DataLayer.Prskanje PrskanjeZaIzmjenu = null;
 
+        /// <summary>
+        /// Inicijalizira komponentu i dohvaća početne podatke
+        /// </summary>
         public UnosPrskanja()
         {
             InitializeComponent();
@@ -22,7 +28,10 @@ namespace PoljoAppVerzija2
             DohvatiZastitu();
             DohvatiDjelatnike();
         }
-
+        /// <summary>
+        /// Inicijalizira komponentu i postavlja početne vrijednosti ovisno o ulaznom parametru
+        /// </summary>
+        /// <param name="prskanje">Zapis tipa prskanje</param>
         public UnosPrskanja(DataLayer.Prskanje prskanje)
         {
             InitializeComponent();
@@ -40,6 +49,9 @@ namespace PoljoAppVerzija2
             izborZastita.SelectedValue = PrskanjeZaIzmjenu.IdZastita;
         }
 
+        /// <summary>
+        /// Puni combobox podacima o površinama
+        /// </summary>
         private void DohvatiPovrsine()
         {
             BindingList<PoljPovrsina> listaPovrsina = null;
@@ -49,7 +61,9 @@ namespace PoljoAppVerzija2
             }
             poljpovrsinaBindingSource.DataSource = listaPovrsina;
         }
-
+        /// <summary>
+        /// Puni combobox podacima o zaštiti
+        /// </summary>
         private void DohvatiZastitu()
         {
             BindingList<zastita> listaZastite = null;
@@ -59,7 +73,9 @@ namespace PoljoAppVerzija2
             }
             zastitaBindingSource.DataSource = listaZastite;
         }
-
+        /// <summary>
+        /// Puni combobox podacima o djelatnicima
+        /// </summary>
         private void DohvatiDjelatnike()
         {
             BindingList<Djelatnik> listaDjelatnika = null;
@@ -69,12 +85,20 @@ namespace PoljoAppVerzija2
             }
             djelatnikBindingSource.DataSource = listaDjelatnika;
         }
-
+        /// <summary>
+        /// Zatvara formu za unos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UiActionOdustani_Click(object sender, EventArgs e)
         {
             Close();
         }
-
+        /// <summary>
+        /// Omogućuje gumb za spremanje ukoliko su sve vrijednosti kontrola unešene
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UnosPrskanja_KeyUp(object sender, KeyEventArgs e)
         {
             if (unosOpis.Text != "")
@@ -83,7 +107,11 @@ namespace PoljoAppVerzija2
             }
             else uiActionSpremi.Enabled = false;
         }
-
+        /// <summary>
+        /// Sprema i ažurira zapis o prskanju u bazi
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UiActionSpremi_Click(object sender, EventArgs e)
         {
             if (this.PrskanjeZaIzmjenu == null)

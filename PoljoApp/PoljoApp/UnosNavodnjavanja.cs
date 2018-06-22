@@ -11,10 +11,16 @@ using DataLayer;
 
 namespace PoljoAppVerzija2
 {
+    /// <summary>
+    /// Omogućuje unos i ažuriranje podataka o prskanju
+    /// </summary>
     public partial class UnosNavodnjavanja : Form
     {
         DataLayer.Navodnjavanje NavodnjavanjeZaIzmjenu = null;
 
+        /// <summary>
+        /// Inicijalizira komponentu i dohvaća početne podatke
+        /// </summary>
         public UnosNavodnjavanja()
         {
             InitializeComponent();
@@ -23,6 +29,10 @@ namespace PoljoAppVerzija2
             DohvatiStanja();
         }
 
+        /// <summary>
+        /// Inicijalizira komponentu i postavlja početne vrijednosti kontrola prema ulaznom parametru
+        /// </summary>
+        /// <param name="zaIzmjenu">Zapis tipa Navodnjavanje</param>
         public UnosNavodnjavanja(DataLayer.Navodnjavanje zaIzmjenu)
         {
             InitializeComponent();
@@ -37,6 +47,9 @@ namespace PoljoAppVerzija2
             unosKolicinaVode.Text = NavodnjavanjeZaIzmjenu.KolicinaVode.ToString();
         }
 
+        /// <summary>
+        /// Puni combobox poljoprivrednim površinama
+        /// </summary>
         private void DohvatiPovrsine()
         {
             BindingList<PoljPovrsina> listaPovrsina = null;
@@ -47,6 +60,9 @@ namespace PoljoAppVerzija2
             poljpovrsinaBindingSource.DataSource = listaPovrsina;
         }
 
+        /// <summary>
+        /// Puni combobox stanjima navodnjavanja
+        /// </summary>
         private void DohvatiStanja()
         {
             BindingList<StanjeNavodnjavanja> listaStanja= null;
@@ -57,18 +73,31 @@ namespace PoljoAppVerzija2
             stanjeNavodnjavanjaBindingSource.DataSource = listaStanja;
         }
 
+        /// <summary>
+        /// Omogućuje gumb za spremanje ako su svi podaci na formi ispunjeni
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UnosNavodnjavanja_KeyUp(object sender, KeyEventArgs e)
         {
             if (unosKolicinaVode.Text != "")
                 uiActionSpremi.Enabled = true;
             else uiActionSpremi.Enabled = false;
         }
-
+        /// <summary>
+        /// Zatvara formu za unos prskanja
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UiActionOdustani_Click(object sender, EventArgs e)
         {
             Close();
         }
-
+        /// <summary>
+        /// Sprema i ažurira podatke o prskanju u bazi
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UiActionSpremi_Click(object sender, EventArgs e)
         {
             if (this.NavodnjavanjeZaIzmjenu == null)

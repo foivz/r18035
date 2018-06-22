@@ -12,16 +12,26 @@ using System.Security.Cryptography;
 
 namespace PoljoAppVerzija2.Admin
 {
+    /// <summary>
+    /// Služi za unos i ažuriranje podataka o djelatnicima
+    /// </summary>
     public partial class UnosDjelatnika : Form
     {
         DataLayer.Djelatnik DjelatnikZaIzmjenu = null;
 
+        /// <summary>
+        /// Inicijalizira komponentu prilikom unosa novog djelatnika
+        /// </summary>
         public UnosDjelatnika()
         {
             InitializeComponent();
             ispisID.Text = "ID: new";
         }
 
+        /// <summary>
+        /// Inicijalizira komponentu i postavlja početne vrijednosti kontrola prema ulaznom parametru
+        /// </summary>
+        /// <param name="azuriraj"></param>
         public UnosDjelatnika(DataLayer.Djelatnik azuriraj)
         {
             InitializeComponent();
@@ -36,11 +46,22 @@ namespace PoljoAppVerzija2.Admin
             ispisID.Text = "ID:" + DjelatnikZaIzmjenu.Id;
         }
 
+
+        /// <summary>
+        /// Zatvara formu za unos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UiActionOdustani_Click(object sender, EventArgs e)
         {
             Close();
         }
 
+        /// <summary>
+        /// Prikazuje ili sakriva lozinku na formi
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void VidljivostLozinke_CheckedChanged(object sender, EventArgs e)
         {
             if (vidljivostLozinke.Checked) {
@@ -48,6 +69,11 @@ namespace PoljoAppVerzija2.Admin
             } else unosLozinka.UseSystemPasswordChar = true;
         }
 
+        /// <summary>
+        /// Ako su unesene sve vrijednosti na formi, omogućuje se gumb za spremanje 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UnosDjelatnika_KeyUp(object sender, KeyEventArgs e)
         {
             if (unosEmail.Text != "" && unosLozinka.Text != "" && unosIme.Text != "" && unosPrezime.Text!="" && unosTelefon.Text != "")
@@ -56,11 +82,15 @@ namespace PoljoAppVerzija2.Admin
             }
         }
 
+        /// <summary>
+        /// Sprema ili ažurira zapis o djelatniku u bazi
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UiActionSpremi_Click(object sender, EventArgs e)
         {
             if (this.DjelatnikZaIzmjenu == null)
             {
-                MD5 md5Hash = MD5.Create();
                 DataLayer.Djelatnik novi = new DataLayer.Djelatnik()
                 {
                     Ime = unosIme.Text,
@@ -69,7 +99,7 @@ namespace PoljoAppVerzija2.Admin
                     Lozinka = Kriptiranje.NapraviHash(unosLozinka.Text),
                     BrojTelefona = unosTelefon.Text
                 };
-                md5Hash.Clear();
+                
                 DjelatniciRepozitorij.Spremi(novi);
                 Close();
             }

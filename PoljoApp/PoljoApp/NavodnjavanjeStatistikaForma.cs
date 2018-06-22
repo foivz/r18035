@@ -12,10 +12,17 @@ using DataLayer;
 
 namespace PoljoAppVerzija2
 {
+    /// <summary>
+    /// Prikazuje graf količine navodnjavanja za neku godinu
+    /// </summary>
     public partial class NavodnjavanjeStatistikaForma : Form
     {
         int GodinaZaPregled;
 
+        /// <summary>
+        /// Inicijalizira komponentu i crta graf
+        /// </summary>
+        /// <param name="godina"></param>
         public NavodnjavanjeStatistikaForma(int godina)
         {
             InitializeComponent();
@@ -25,6 +32,9 @@ namespace PoljoAppVerzija2
             PopuniGraf();
         }
 
+        /// <summary>
+        /// Dohvaća podatke o navodnjavanjima i oborinama pomoću kojih se crta graf
+        /// </summary>
         private void PopuniGraf()
         {
             using (var db = new PoljoAppEntities())
