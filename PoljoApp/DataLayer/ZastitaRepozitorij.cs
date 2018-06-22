@@ -6,8 +6,15 @@ using System.Threading.Tasks;
 
 namespace DataLayer
 {
+    /// <summary>
+    /// Klasa sadrži potrebne metode za rad s podacima zaštite
+    /// </summary>
     public static class ZastitaRepozitorij
     {
+        /// <summary>
+        /// Dohvaća podatke vrsta zaštita iz baze
+        /// </summary>
+        /// <returns>Lista vrsta zaštita</returns>
         public static List<vrsta_zastite> DohvatiVrsteZastita()
         {
             using (var db = new PoljoAppEntities())
@@ -16,7 +23,11 @@ namespace DataLayer
                 return listaVrstaZastite;
             }
         }
-
+        /// <summary>
+        /// DOhvaća podatke zaštita iz baze ovisno o vrsti zaštite
+        /// </summary>
+        /// <param name="vrstaZastite"></param>
+        /// <returns></returns>
         public static List<ZastitaView> DohvatiZastite(string vrstaZastite)
         {
             using (var db = new PoljoAppEntities())
@@ -31,7 +42,10 @@ namespace DataLayer
                 }
             }
         }
-
+        /// <summary>
+        /// Dodaje prosljeđenu novu zaštitu u bazu
+        /// </summary>
+        /// <param name="novaZastita"></param>
         public static void Spremi(zastita novaZastita)
         {
             using (var db = new PoljoAppEntities())
@@ -40,7 +54,10 @@ namespace DataLayer
                 db.SaveChanges();
             }
         }
-
+        /// <summary>
+        /// Mijenja podatke prosljeđene zaštite u bazi podataka
+        /// </summary>
+        /// <param name="zastitaZaIzmjenu"></param>
         public static void Azuriraj(zastita zastitaZaIzmjenu)
         {
             using (var db = new PoljoAppEntities())
@@ -52,7 +69,10 @@ namespace DataLayer
                 db.SaveChanges();
             }
         }
-
+        /// <summary>
+        /// Briše prosljeđenu zaštitu iz baze podataka
+        /// </summary>
+        /// <param name="zastitaZaBrisanje"></param>
         public static void Izbrisi(zastita zastitaZaBrisanje)
         {
             using (var db = new PoljoAppEntities())
@@ -62,7 +82,11 @@ namespace DataLayer
                 db.SaveChanges();
             }
         }
-
+        /// <summary>
+        /// Dohvaća zaštitu iz baze podataka prema ID-u
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public static zastita DohvatiZastituPoIDu(int id)
         {
             using (var db = new PoljoAppEntities())

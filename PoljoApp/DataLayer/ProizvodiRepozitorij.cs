@@ -6,8 +6,15 @@ using System.Threading.Tasks;
 
 namespace DataLayer
 {
+    /// <summary>
+    /// Klasa sadrži potrebne metode za rad s podacima proizvoda
+    /// </summary>
     public static class ProizvodiRepozitorij
     {
+        /// <summary>
+        /// Dohvaća vrste sadnog materijala
+        /// </summary>
+        /// <returns>Lista vrsta sadnog materijala</returns>
         public static List<VrstaSadnogMaterijala> DohvatiVrsteSadnogMaterijala()
         {
             using (var db = new PoljoAppEntities())
@@ -17,6 +24,11 @@ namespace DataLayer
             }
         }
 
+        /// <summary>
+        /// Dohvaća sve proizvode iz baze na temelju vrste sadnog materijala (proizvoda)
+        /// </summary>
+        /// <param name="vrsta"></param>
+        /// <returns>Lista proizvoda</returns>
         public static List<SadniMaterijalView> DohvatiSadniMaterijal(string vrsta)
         {
             using (var db = new PoljoAppEntities())
@@ -32,6 +44,10 @@ namespace DataLayer
             }
         }
 
+        /// <summary>
+        /// Unosi novi proizvod u bazu podataka
+        /// </summary>
+        /// <param name="noviSadniMaterijal"></param>
         public static void Spremi(SadniMaterijal noviSadniMaterijal)
         {
             using (var db = new PoljoAppEntities())
@@ -41,6 +57,10 @@ namespace DataLayer
             }
         }
 
+        /// <summary>
+        /// Ažurira podatke prosljeđenog proizvoda u bazi podataka
+        /// </summary>
+        /// <param name="sadniMaterijalZaIzmjenu"></param>
         public static void Azuriraj(SadniMaterijal sadniMaterijalZaIzmjenu)
         {
             using (var db = new PoljoAppEntities())
@@ -52,7 +72,10 @@ namespace DataLayer
                 db.SaveChanges();
             }
         }
-
+        /// <summary>
+        /// Briše prosljeđeni proizvod u bazi podataka
+        /// </summary>
+        /// <param name="sadniMaterijalZaBrisanje"></param>
         public static void Izbrisi(SadniMaterijal sadniMaterijalZaBrisanje)
         {
             using (var db = new PoljoAppEntities())
@@ -62,7 +85,11 @@ namespace DataLayer
                 db.SaveChanges();
             }
         }
-
+        /// <summary>
+        /// Dohvaća proizvod iz baze podataka prema ID-u
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>Proizvod</returns>
         public static SadniMaterijal DohvatiMaterijalPoIDu(int id)
         {
             using (var db = new PoljoAppEntities())

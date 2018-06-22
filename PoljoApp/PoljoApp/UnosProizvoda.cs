@@ -11,12 +11,18 @@ using DataLayer;
 
 namespace PoljoAppVerzija2
 {
+    /// <summary>
+    /// Forma za unos i ažuriranje podataka proizvoda
+    /// </summary>
     public partial class UnosProizvoda : Form
     {
         SadniMaterijal materijalZaIzmjenu = null;
+        /// <summary>
+        /// Inicijalizira formu UnosProizvoda uz prosljeđeni proizvod za izmjenu
+        /// </summary>
+        /// <param name="materijal"></param>
         public UnosProizvoda(SadniMaterijal materijal)
         {
-            //Konstruktor za slučaj izmjene proizvoda
             InitializeComponent();
             PrikaziVrsteSadnogMaterijala();
             PrikaziMjerneJedinice();
@@ -26,29 +32,38 @@ namespace PoljoAppVerzija2
             uiActionOdabirJednicineMjere.Text = materijalZaIzmjenu.jedinicna_mjera;
             uiActionOdabirVrste.SelectedValue = materijalZaIzmjenu.id_vrste_materijala;
         }
+        /// <summary>
+        /// Otvara formu UnosProizvoda za slučaj kad se unosi novi proizvod
+        /// </summary>
         public UnosProizvoda()
         {
-            //Konstruktor za slučaj unosa novog proizvoda
             InitializeComponent();
             PrikaziVrsteSadnogMaterijala();
             PrikaziMjerneJedinice();
         }
-
+        /// <summary>
+        /// Prikazuje vrste sadnog materijala za izbor u comboboxu
+        /// </summary>
         private void PrikaziVrsteSadnogMaterijala()
         {
-            //Prikazi vrste sadnog materijala za izbor u comboboxu
             List<VrstaSadnogMaterijala> listaVrstaSadnogMaterijala = ProizvodiRepozitorij.DohvatiVrsteSadnogMaterijala();
             vrstasadnogmaterijalaBindingSource.DataSource = listaVrstaSadnogMaterijala;
              
         }
-
+        /// <summary>
+        /// Prikazuje mjerne jedinice u comboboxu
+        /// </summary>
         private void PrikaziMjerneJedinice()
         {
-            //Prikazi izbor mjernih jedinica za izbor u comboboxu
             uiActionOdabirJednicineMjere.Items.Add("Komad");
             uiActionOdabirJednicineMjere.Items.Add("Kilogram");
         }
-
+        /// <summary>
+        /// U slučaju novog proizvoda podatke sprema u novi objekt i sprema ga u bazu,
+        /// u slučaju ažuriranja proizvoda mijenja mu podatke na one unesene u formu i sprema u bazu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void uiActionSpremi_Click(object sender, EventArgs e)
         {
             if (this.materijalZaIzmjenu == null)

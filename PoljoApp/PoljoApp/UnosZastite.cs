@@ -11,19 +11,26 @@ using DataLayer;
 
 namespace PoljoAppVerzija2
 {
+    /// <summary>
+    /// Forma za unos i ažuriranje podataka zaštite
+    /// </summary>
     public partial class UnosZastite : Form
     {
         zastita zastitaZaIzmjenu = null;
+        /// <summary>
+        /// Inicijalizira formu za slučaj unosa nove zastite
+        /// </summary>
         public UnosZastite()
         {
-            //Konstruktor za slučaj unosa nove zastite
             InitializeComponent();
             PrikaziVrsteZastita();
         }
-
+        /// <summary>
+        /// Inicijalizira formu i prosljeđuje zaštitu za ažuriranje
+        /// </summary>
+        /// <param name="zastita"></param>
         public UnosZastite(zastita zastita)
         {
-            //KOnstruktor za slučaj ažuriranja zaštite
             InitializeComponent();
             PrikaziVrsteZastita();
 
@@ -32,12 +39,16 @@ namespace PoljoAppVerzija2
             uiUnosKoncentracije.Text = zastitaZaIzmjenu.koncentracija;
             uiActionOdabirVrste.SelectedValue = zastitaZaIzmjenu.id_vrste_zastite;
         }
-
+        /// <summary>
+        /// U slučaju unosa nove zaštite, kreira novi objekt sa unesenim podacima i šalje ga u DataLayer za spremanje u bazu,
+        /// u slučaju ažuriranja zaštite mijenja podatke prosljeđene zaštite u nove unesene vrijednosti i prosljeđuje u DataLayer za ažuriranje u bazi
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void uiActionSpremi_Click(object sender, EventArgs e)
         {
             if (this.zastitaZaIzmjenu == null)
             {
-                //Kreiramo novi objekt zaštite sa unesenim podacima i šaljemo ga u DataLayer za spremanje u bazu
                 zastita novaZastita = new zastita()
                 {
                     naziv = uiUnosNaziva.Text,
@@ -49,8 +60,6 @@ namespace PoljoAppVerzija2
             }
             else
             {
-                //Ažuriraj materijal za izmjenu s novim unesenim vrijednostima i prosljedi u DataLayer za ažuriranje objekta
-
                 zastitaZaIzmjenu.naziv = uiUnosNaziva.Text;
                 zastitaZaIzmjenu.koncentracija = uiUnosKoncentracije.Text;
                 zastitaZaIzmjenu.id_vrste_zastite = (int)uiActionOdabirVrste.SelectedValue;Close();
@@ -58,10 +67,11 @@ namespace PoljoAppVerzija2
                 this.Close();
             }
         }
-
+        /// <summary>
+        /// Dohvaća vrste zaštita za prikaz u comboboxu
+        /// </summary>
         private void PrikaziVrsteZastita()
         {
-            //Prikazi vrste zastita za izbor u comboboxu
             List<vrsta_zastite> listaVrsteZastite = ZastitaRepozitorij.DohvatiVrsteZastita();
             vrstazastiteBindingSource.DataSource = listaVrsteZastite;
         }

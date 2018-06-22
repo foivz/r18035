@@ -11,13 +11,20 @@ using DataLayer;
 
 namespace PoljoAppVerzija2
 {
+    /// <summary>
+    /// Omogućuje prikaz i rad s podacima zaštite
+    /// </summary>
     public partial class KontrolaZastita : UserControl
     {
         public KontrolaZastita()
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Otvara formu UnosZastite za dodavanje nove zaštite
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ActionDodajZastitu_Click(object sender, EventArgs e)
         {
             UnosZastite unosZastite = new UnosZastite();
@@ -29,10 +36,11 @@ namespace PoljoAppVerzija2
         {
             PrikaziZastite();
         }
-
+        /// <summary>
+        /// Dodaje podatke o vrstama zaštita iz baze u combobox, uz još opciju "Prikaži sve"
+        /// </summary>
         private void PrikaziVrsteZastita()
         {
-            //Prikazi vrste zastita u comboboxu koji sluzi za sortiranje glavnog prikaza zaštita
             List<vrsta_zastite> listaVrstaZastite = ZastitaRepozitorij.DohvatiVrsteZastita();
             listaVrstaZastite.Insert(0, new vrsta_zastite() { naziv = "Prikaži sve" });
 
@@ -48,16 +56,21 @@ namespace PoljoAppVerzija2
             PrikaziVrsteZastita();
             PrikaziZastite();
         }
-
+        /// <summary>
+        /// Osvježava prikaz podataka zaštita ovisno o odabranoj vrsti zaštite
+        /// </summary>
         private void PrikaziZastite()
         {
             string odabranaVrsta = uiIzborVrsteZastite.Text;
             zastitaViewBindingSource.DataSource = ZastitaRepozitorij.DohvatiZastite(odabranaVrsta);
         }
-
+        /// <summary>
+        /// Otvara formu UnosZaštite kojoj prosljeđuje odabranu zaštitu za ažuriranje
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void uiActionAzuriraj_Click(object sender, EventArgs e)
         {
-            //Ažuriraj odabranu zastitu
             zastita odabranaZastita = DohvatiOznacenuZastitu();
             if (odabranaZastita != null)
             {
@@ -67,10 +80,13 @@ namespace PoljoAppVerzija2
             }
             
         }
-
+        /// <summary>
+        /// Briše zaštitu odabranu na DataGridViewu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void uiActionIzbrisi_Click(object sender, EventArgs e)
         {
-            //Izbrisi zastitu odabranu na prikazu
             zastita odabranaZastita = DohvatiOznacenuZastitu();
             if (odabranaZastita != null)
             {
@@ -82,7 +98,10 @@ namespace PoljoAppVerzija2
                 }
             }
         }
-
+        /// <summary>
+        /// Dohvaća zaštitu označenu na DataGridViewu pomoću ID-a
+        /// </summary>
+        /// <returns></returns>
         private zastita DohvatiOznacenuZastitu()
         {
             ZastitaView oznacena = zastitaViewBindingSource.Current as ZastitaView;
