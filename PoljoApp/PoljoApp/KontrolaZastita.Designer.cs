@@ -32,25 +32,24 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.sadnjaTab = new System.Windows.Forms.TabPage();
             this.uiIzborVrsteZastite = new System.Windows.Forms.ComboBox();
-            this.vrstazastiteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.uiActionIzbrisi = new System.Windows.Forms.Button();
             this.uiActionAzuriraj = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nazivDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.koncentracijaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idvrstezastiteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vrstazastiteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.zastitaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Vrsta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.zastitaViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ActionDodajZastitu = new System.Windows.Forms.Button();
             this.pomocTab = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
+            this.vrstazastiteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1.SuspendLayout();
             this.sadnjaTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.vrstazastiteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.zastitaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zastitaViewBindingSource)).BeginInit();
             this.pomocTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.vrstazastiteBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -90,10 +89,6 @@
             this.uiIzborVrsteZastite.TabIndex = 9;
             this.uiIzborVrsteZastite.SelectedIndexChanged += new System.EventHandler(this.uiIzborVrsteZastite_SelectedIndexChanged);
             // 
-            // vrstazastiteBindingSource
-            // 
-            this.vrstazastiteBindingSource.DataSource = typeof(DataLayer.vrsta_zastite);
-            // 
             // uiActionIzbrisi
             // 
             this.uiActionIzbrisi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -130,9 +125,8 @@
             this.idDataGridViewTextBoxColumn,
             this.nazivDataGridViewTextBoxColumn,
             this.koncentracijaDataGridViewTextBoxColumn,
-            this.idvrstezastiteDataGridViewTextBoxColumn,
-            this.vrstazastiteDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.zastitaBindingSource;
+            this.Vrsta});
+            this.dataGridView1.DataSource = this.zastitaViewBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(25, 54);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
@@ -159,22 +153,15 @@
             this.koncentracijaDataGridViewTextBoxColumn.HeaderText = "Koncentracija";
             this.koncentracijaDataGridViewTextBoxColumn.Name = "koncentracijaDataGridViewTextBoxColumn";
             // 
-            // idvrstezastiteDataGridViewTextBoxColumn
+            // Vrsta
             // 
-            this.idvrstezastiteDataGridViewTextBoxColumn.DataPropertyName = "id_vrste_zastite";
-            this.idvrstezastiteDataGridViewTextBoxColumn.HeaderText = "ID Vrste zaštite";
-            this.idvrstezastiteDataGridViewTextBoxColumn.Name = "idvrstezastiteDataGridViewTextBoxColumn";
+            this.Vrsta.DataPropertyName = "Vrsta";
+            this.Vrsta.HeaderText = "Vrsta zaštite";
+            this.Vrsta.Name = "Vrsta";
             // 
-            // vrstazastiteDataGridViewTextBoxColumn
+            // zastitaViewBindingSource
             // 
-            this.vrstazastiteDataGridViewTextBoxColumn.DataPropertyName = "vrsta_zastite";
-            this.vrstazastiteDataGridViewTextBoxColumn.HeaderText = "vrsta_zastite";
-            this.vrstazastiteDataGridViewTextBoxColumn.Name = "vrstazastiteDataGridViewTextBoxColumn";
-            this.vrstazastiteDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // zastitaBindingSource
-            // 
-            this.zastitaBindingSource.DataSource = typeof(DataLayer.zastita);
+            this.zastitaViewBindingSource.DataSource = typeof(DataLayer.ZastitaView);
             // 
             // ActionDodajZastitu
             // 
@@ -207,6 +194,10 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Pomoć korisniku";
             // 
+            // vrstazastiteBindingSource
+            // 
+            this.vrstazastiteBindingSource.DataSource = typeof(DataLayer.vrsta_zastite);
+            // 
             // KontrolaZastita
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -217,11 +208,11 @@
             this.Load += new System.EventHandler(this.KontrolaZastita_Load);
             this.tabControl1.ResumeLayout(false);
             this.sadnjaTab.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.vrstazastiteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.zastitaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zastitaViewBindingSource)).EndInit();
             this.pomocTab.ResumeLayout(false);
             this.pomocTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.vrstazastiteBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -239,11 +230,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.BindingSource vrstazastiteBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn prskanjeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource zastitaBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nazivDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn koncentracijaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idvrstezastiteDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn vrstazastiteDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Vrsta;
+        private System.Windows.Forms.BindingSource zastitaViewBindingSource;
     }
 }

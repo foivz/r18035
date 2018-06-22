@@ -17,17 +17,17 @@ namespace DataLayer
             }
         }
 
-        public static List<SadniMaterijal> DohvatiSadniMaterijal(string vrsta)
+        public static List<SadniMaterijalView> DohvatiSadniMaterijal(string vrsta)
         {
             using (var db = new PoljoAppEntities())
             {
                 if (vrsta == "Prikaži sve")
                 {
-                    return db.sadni_materijal.ToList();
+                    return db.SadniMaterijalView.ToList();
                 }
                 else
                 {
-                    return db.sadni_materijal.Where(n => n.vrsta_sadnog_materijala.naziv == vrsta).ToList();
+                    return db.SadniMaterijalView.Where(n => n.naziv == vrsta).ToList();
                 }
             }
         }
@@ -60,6 +60,14 @@ namespace DataLayer
                 db.sadni_materijal.Attach(sadniMaterijalZaBrisanje);
                 db.sadni_materijal.Remove(sadniMaterijalZaBrisanje);
                 db.SaveChanges();
+            }
+        }
+
+        public static SadniMaterijal DohvatiMaterijalPoIDu(int id)
+        {
+            using (var db = new PoljoAppEntities())
+            {
+                return db.sadni_materijal.Find(id);
             }
         }
     }

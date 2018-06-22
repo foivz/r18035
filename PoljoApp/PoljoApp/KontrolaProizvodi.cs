@@ -47,7 +47,7 @@ namespace PoljoAppVerzija2
         private void PrikaziSadniMaterijal()
         {
             string odabranaVrstaSadnogMaterijala = cmbIzborVrsteSadnogMaterijala.Text;
-            sadnimaterijalBindingSource.DataSource = ProizvodiRepozitorij.DohvatiSadniMaterijal(odabranaVrstaSadnogMaterijala);
+            sadniMaterijalViewBindingSource.DataSource = ProizvodiRepozitorij.DohvatiSadniMaterijal(odabranaVrstaSadnogMaterijala);
         }
 
         private void cmbIzborVrsteSadnogMaterijala_SelectedIndexChanged(object sender, EventArgs e)
@@ -58,7 +58,7 @@ namespace PoljoAppVerzija2
         private void uiAzurirajProizvod_Click(object sender, EventArgs e)
         {
             //Ažuriranje odabranog proizvoda
-            SadniMaterijal odabraniProizvod = sadnimaterijalBindingSource.Current as SadniMaterijal;
+            SadniMaterijal odabraniProizvod = DohvatiOznaceniMaterijal();
             if (odabraniProizvod != null)
             {
                 UnosProizvoda forma = new UnosProizvoda(odabraniProizvod);
@@ -70,7 +70,7 @@ namespace PoljoAppVerzija2
         private void uiIzbrisiProizvod_Click(object sender, EventArgs e)
         {
             //Brisanje odabranog proizvoda
-            SadniMaterijal odabraniProizvod = sadnimaterijalBindingSource.Current as SadniMaterijal;
+            SadniMaterijal odabraniProizvod = DohvatiOznaceniMaterijal();
             if (odabraniProizvod != null)
             {
                 if (MessageBox.Show("Želte li izbrisati proizvod?", "Pitanje", MessageBoxButtons.YesNo,
@@ -80,6 +80,12 @@ namespace PoljoAppVerzija2
                     PrikaziSadniMaterijal();
                 }
             }
+        }
+
+        private SadniMaterijal DohvatiOznaceniMaterijal()
+        {
+            SadniMaterijalView oznaceni = sadniMaterijalViewBindingSource.Current as SadniMaterijalView;
+            return ProizvodiRepozitorij.DohvatiMaterijalPoIDu(oznaceni.id);
         }
     }
 }

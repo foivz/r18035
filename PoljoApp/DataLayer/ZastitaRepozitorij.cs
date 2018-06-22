@@ -17,17 +17,17 @@ namespace DataLayer
             }
         }
 
-        public static List<zastita> DohvatiZastite(string vrstaZastite)
+        public static List<ZastitaView> DohvatiZastite(string vrstaZastite)
         {
             using (var db = new PoljoAppEntities())
             {
                 if (vrstaZastite == "Prikaži sve")
                 {
-                    return db.zastita.ToList();
+                    return db.ZastitaView.ToList();
                 }
                 else
                 {
-                    return db.zastita.Where(n => n.vrsta_zastite.naziv == vrstaZastite).ToList();
+                    return db.ZastitaView.Where(n => n.Vrsta == vrstaZastite).ToList();
                 }
             }
         }
@@ -60,6 +60,14 @@ namespace DataLayer
                 db.zastita.Attach(zastitaZaBrisanje);
                 db.zastita.Remove(zastitaZaBrisanje);
                 db.SaveChanges();
+            }
+        }
+
+        public static zastita DohvatiZastituPoIDu(int id)
+        {
+            using (var db = new PoljoAppEntities())
+            {
+                return db.zastita.Find(id);
             }
         }
     }

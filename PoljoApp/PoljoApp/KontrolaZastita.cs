@@ -52,13 +52,13 @@ namespace PoljoAppVerzija2
         private void PrikaziZastite()
         {
             string odabranaVrsta = uiIzborVrsteZastite.Text;
-            zastitaBindingSource.DataSource = ZastitaRepozitorij.DohvatiZastite(odabranaVrsta);
+            zastitaViewBindingSource.DataSource = ZastitaRepozitorij.DohvatiZastite(odabranaVrsta);
         }
 
         private void uiActionAzuriraj_Click(object sender, EventArgs e)
         {
             //Ažuriraj odabranu zastitu
-            zastita odabranaZastita = zastitaBindingSource.Current as zastita;
+            zastita odabranaZastita = DohvatiOznacenuZastitu();
             if (odabranaZastita != null)
             {
                 UnosZastite unosZastite = new UnosZastite(odabranaZastita);
@@ -71,7 +71,7 @@ namespace PoljoAppVerzija2
         private void uiActionIzbrisi_Click(object sender, EventArgs e)
         {
             //Izbrisi zastitu odabranu na prikazu
-            zastita odabranaZastita = zastitaBindingSource.Current as zastita;
+            zastita odabranaZastita = DohvatiOznacenuZastitu();
             if (odabranaZastita != null)
             {
                 if (MessageBox.Show("Želte li izbrisati zaštitu?", "Pitanje", MessageBoxButtons.YesNo,
@@ -81,6 +81,12 @@ namespace PoljoAppVerzija2
                     PrikaziZastite();
                 }
             }
+        }
+
+        private zastita DohvatiOznacenuZastitu()
+        {
+            ZastitaView oznacena = zastitaViewBindingSource.Current as ZastitaView;
+            return ZastitaRepozitorij.DohvatiZastituPoIDu(oznacena.id);
         }
     }
 }
