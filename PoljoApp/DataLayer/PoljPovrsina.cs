@@ -7,18 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PoljoAppVerzija2
+namespace DataLayer
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class polj_povrsina
+    public partial class PoljPovrsina
     {
-        public polj_povrsina()
+        public PoljPovrsina()
         {
-            this.sadnja = new HashSet<sadnja>();
             this.Navodnjavanje = new HashSet<Navodnjavanje>();
             this.Prskanje = new HashSet<Prskanje>();
+            this.sadnja = new HashSet<Sadnja>();
         }
     
         public int id { get; set; }
@@ -28,9 +28,9 @@ namespace PoljoAppVerzija2
         public decimal x_koordinata { get; set; }
         public decimal y_koordinata { get; set; }
     
-        public virtual namjena_povrsine namjena_povrsine { get; set; }
-        public virtual ICollection<sadnja> sadnja { get; set; }
+        public virtual NamjenaPovrsine namjena_povrsine { get; set; }
         public virtual ICollection<Navodnjavanje> Navodnjavanje { get; set; }
         public virtual ICollection<Prskanje> Prskanje { get; set; }
+        public virtual ICollection<Sadnja> sadnja { get; set; }
     }
 }

@@ -5,15 +5,14 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
-using PoljoAppModel;
 
 namespace DataLayer
 {
-    public class NavodnjavanjeRepozitorij : INavodnjavanjeRepozitorij
+    public static class NavodnjavanjeRepozitorij
     {
-        public void Azuriraj(Navodnjavanje zaIzmjenu)
+        public static void Azuriraj(Navodnjavanje zaIzmjenu)
         {
-            using (var db = new Entities())
+            using (var db = new PoljoAppEntities())
             {
                 Navodnjavanje mijenjaj = db.Navodnjavanje.Find(zaIzmjenu.Id);
                 mijenjaj.IdPovrsina = zaIzmjenu.IdPovrsina;
@@ -24,45 +23,45 @@ namespace DataLayer
             }
         }
 
-        public List<int> DohvatiGodine()
+        public static List<int> DohvatiGodine()
         {
-            using (var db = new Entities())
+            using (var db = new PoljoAppEntities())
             {
                 return db.Navodnjavanje.Select(p => p.Datum.Year).Distinct().ToList();
             }
         }
 
-        public List<NavodnjavanjeView> DohvatiNavodnjavanje(int godina)
+        public static List<NavodnjavanjeView> DohvatiNavodnjavanje(int godina)
         {
-            using (var db = new Entities())
+            using (var db = new PoljoAppEntities())
             {
                 return db.NavodnjavanjeView.Where(n => n.IdStanja < 3 && n.Datum.Year == godina).ToList();
             }
         }
 
-        public List<NavodnjavanjeView> DohvatiOborine()
+        public static List<NavodnjavanjeView> DohvatiOborine()
         {
-            using (var db = new Entities())
+            using (var db = new PoljoAppEntities())
             {
                 return db.NavodnjavanjeView.Where(n => n.IdStanja == 3).ToList();
             }
         }
 
-        public Navodnjavanje DohvatiPoIdu(int id)
+        public static Navodnjavanje DohvatiPoIdu(int id)
         {
-            using (var db = new Entities())
+            using (var db = new PoljoAppEntities())
             {
                 return db.Navodnjavanje.Find(id);
             }
         }
 
-        public string DohvatiVrijeme()
+        public static string DohvatiVrijeme()
         {
             string apiKey = "a5854ea27e328a268708472920747b11";
             decimal lan, lon;
             string tekst = "";
 
-            using (var db = new Entities())
+            using (var db = new PoljoAppEntities())
             {
                 foreach (var pov in db.polj_povrsina)
                 {
@@ -90,9 +89,9 @@ namespace DataLayer
             return tekst;
         }
 
-        public void Izbrisi(Navodnjavanje zaBrisanje)
+        public static void Izbrisi(Navodnjavanje zaBrisanje)
         {
-            using (var db = new Entities())
+            using (var db = new PoljoAppEntities())
             {
                 db.Navodnjavanje.Attach(zaBrisanje);
                 db.Navodnjavanje.Remove(zaBrisanje);
@@ -100,9 +99,9 @@ namespace DataLayer
             }
         }
 
-        public void OdbijOborinu(Navodnjavanje zaIzmjenu)
+        public static void OdbijOborinu(Navodnjavanje zaIzmjenu)
         {
-            using (var db = new Entities())
+            using (var db = new PoljoAppEntities())
             {
                 db.Navodnjavanje.Attach(zaIzmjenu);
                 zaIzmjenu.IdStanja = 4;
@@ -110,9 +109,9 @@ namespace DataLayer
             }
         }
 
-        public Navodnjavanje Spremi(Navodnjavanje novo)
+        public static Navodnjavanje Spremi(Navodnjavanje novo)
         {
-            using (var db = new Entities())
+            using (var db = new PoljoAppEntities())
             {
                 db.Navodnjavanje.Add(novo);
                 db.SaveChanges();
@@ -120,11 +119,11 @@ namespace DataLayer
             }
         }
 
-        public void SpremiOborine(polj_povrsina povrsina)
+        public static void SpremiOborine(PoljPovrsina povrsina)
         {
             DateTime datum = DateTime.Now.Date;
 
-            using (var db = new Entities())
+            using (var db = new PoljoAppEntities())
             {
                 Navodnjavanje navodnjavanje = db.Navodnjavanje.Where(n => n.Datum == datum && n.IdPovrsina == povrsina.id && n.IdStanja >= 2 && n.IdStanja <= 3).FirstOrDefault();
                 if (navodnjavanje == null)

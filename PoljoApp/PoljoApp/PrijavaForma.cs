@@ -8,8 +8,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BusinessLayer;
-using PoljoAppModel;
+using DataLayer;
 
 namespace PoljoAppVerzija2
 {
@@ -37,7 +36,7 @@ namespace PoljoAppVerzija2
 
         private void IzvrsiPrijavu(string email, string lozinka)
         {
-            PoljoAppModel.Djelatnik korisnik = DjelatniciUsluge.Prijava(email, lozinka);
+            DataLayer.Djelatnik korisnik = DjelatniciRepozitorij.Prijava(email, lozinka);
             
             if (korisnik != null) {
                 this.Hide();
@@ -55,7 +54,7 @@ namespace PoljoAppVerzija2
             string uzorak = @"^[a-zA-Z0-9]{1,}\.?[a-zA-Z0-9]{0,}@[a-zA-Z0-9]{1,}\.[a-zA-Z]{2,}$";
             string email = unosEmail.Text;
 
-            MatchCollection pogotci = DjelatniciUsluge.ProvjeriRegex(email, uzorak);
+            MatchCollection pogotci = Usluge.ProvjeriRegex(email, uzorak);
 
             if (pogotci.Count < 1)
             {
@@ -69,7 +68,7 @@ namespace PoljoAppVerzija2
             string uzorak = @"[a-zA-Z0-9.]{1,}";
             string lozinka = unosLozinka.Text;
 
-            MatchCollection pogotci = DjelatniciUsluge.ProvjeriRegex(lozinka, uzorak);
+            MatchCollection pogotci = Usluge.ProvjeriRegex(lozinka, uzorak);
 
             if (pogotci.Count < 1 || lozinka.Length < 5)
             {

@@ -96,7 +96,7 @@
             // 
             // vrstasadnogmaterijalaBindingSource
             // 
-            this.vrstasadnogmaterijalaBindingSource.DataSource = typeof(PoljoAppVerzija2.vrsta_sadnog_materijala);
+            this.vrstasadnogmaterijalaBindingSource.DataSource = typeof(DataLayer.VrstaSadnogMaterijala);
             // 
             // uiIzbrisiProizvod
             // 
@@ -193,7 +193,7 @@
             // 
             // sadnimaterijalBindingSource
             // 
-            this.sadnimaterijalBindingSource.DataSource = typeof(PoljoAppVerzija2.sadni_materijal);
+            this.sadnimaterijalBindingSource.DataSource = typeof(DataLayer.SadniMaterijal);
             // 
             // uiDodajProizvod
             // 

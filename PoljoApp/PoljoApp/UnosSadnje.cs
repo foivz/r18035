@@ -7,13 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DataLayer;
 
 namespace PoljoAppVerzija2
 {
     public partial class UnosSadnje : Form
     {
-        private sadnja sadnjaZaIzmjenu= null;
-        public UnosSadnje(sadnja sadnja )
+        private Sadnja sadnjaZaIzmjenu= null;
+        public UnosSadnje(Sadnja sadnja )
         {
             InitializeComponent();
             PrikaziPoljoprivrednePovršine();
@@ -37,20 +38,20 @@ namespace PoljoAppVerzija2
         private void PrikaziPoljoprivrednePovršine()
         {
             //Prikaz poljoprivrednih povrsina u combo boxu
-            BindingList<polj_povrsina> listaPoljPovrsina = null;
-            using (var db = new Entities())
+            BindingList<PoljPovrsina> listaPoljPovrsina = null;
+            using (var db = new PoljoAppEntities())
             {
-                listaPoljPovrsina = new BindingList<polj_povrsina>(db.polj_povrsina.ToList());
+                listaPoljPovrsina = new BindingList<PoljPovrsina>(db.polj_povrsina.ToList());
             }
             poljpovrsinaBindingSource.DataSource = listaPoljPovrsina;
         }
         private void PrikaziVrsteSadnihMaterijala()
         {
             //Prikaz vrsta sadnog materijala u combo boxu
-            BindingList<sadni_materijal> listaSadnogMaterijala = null;
-            using (var db = new Entities())
+            BindingList<SadniMaterijal> listaSadnogMaterijala = null;
+            using (var db = new PoljoAppEntities())
             {
-                listaSadnogMaterijala = new BindingList<sadni_materijal>(db.sadni_materijal.ToList());
+                listaSadnogMaterijala = new BindingList<SadniMaterijal>(db.sadni_materijal.ToList());
             }
             sadnimaterijalBindingSource.DataSource = listaSadnogMaterijala;
             izborProizvodaZaSadnju.SelectedIndex = 1;
@@ -67,9 +68,9 @@ namespace PoljoAppVerzija2
         {
             if (this.sadnjaZaIzmjenu == null)
             {
-                using (var db = new Entities())
+                using (var db = new PoljoAppEntities())
                 {
-                    sadnja novaSadnja = new sadnja()
+                    Sadnja novaSadnja = new Sadnja()
                     {
                         kolicina = uiUnosKolicine.Text.ToString(),
                         id_materijal = (int)izborProizvodaZaSadnju.SelectedValue,
@@ -85,7 +86,7 @@ namespace PoljoAppVerzija2
             }
             else
             {
-                using (var db= new Entities())
+                using (var db= new PoljoAppEntities())
                 {
                     db.sadnja.Attach(sadnjaZaIzmjenu);
                     sadnjaZaIzmjenu.id_materijal = (int)izborProizvodaZaSadnju.SelectedValue;
@@ -106,7 +107,7 @@ namespace PoljoAppVerzija2
 
         private void izborProizvodaZaSadnju_SelectedIndexChanged(object sender, EventArgs e)
         {
-            sadni_materijal oznaceno = izborProizvodaZaSadnju.SelectedItem as sadni_materijal;
+            SadniMaterijal oznaceno = izborProizvodaZaSadnju.SelectedItem as SadniMaterijal;
 
             if(oznaceno!=null)uiLabelaMjernaJedinica.Text = oznaceno.jedinicna_mjera;
         }

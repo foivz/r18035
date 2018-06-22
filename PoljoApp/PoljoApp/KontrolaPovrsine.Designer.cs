@@ -101,7 +101,7 @@
             // 
             // namjenapovrsineBindingSource
             // 
-            this.namjenapovrsineBindingSource.DataSource = typeof(PoljoAppVerzija2.namjena_povrsine);
+            this.namjenapovrsineBindingSource.DataSource = typeof(DataLayer.NamjenaPovrsine);
             // 
             // uiActionIzbrisi
             // 
@@ -159,7 +159,7 @@
             // 
             // poljpovrsinaBindingSource
             // 
-            this.poljpovrsinaBindingSource.DataSource = typeof(PoljoAppVerzija2.polj_povrsina);
+            this.poljpovrsinaBindingSource.DataSource = typeof(DataLayer.PoljPovrsina);
             // 
             // uiActionDodajPovrsinu
             // 

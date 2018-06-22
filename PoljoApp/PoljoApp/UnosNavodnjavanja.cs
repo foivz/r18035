@@ -7,14 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BusinessLayer;
-using PoljoAppModel;
+using DataLayer;
 
 namespace PoljoAppVerzija2
 {
     public partial class UnosNavodnjavanja : Form
     {
-        PoljoAppModel.Navodnjavanje NavodnjavanjeZaIzmjenu = null;
+        DataLayer.Navodnjavanje NavodnjavanjeZaIzmjenu = null;
 
         public UnosNavodnjavanja()
         {
@@ -24,7 +23,7 @@ namespace PoljoAppVerzija2
             DohvatiStanja();
         }
 
-        public UnosNavodnjavanja(PoljoAppModel.Navodnjavanje zaIzmjenu)
+        public UnosNavodnjavanja(DataLayer.Navodnjavanje zaIzmjenu)
         {
             InitializeComponent();
             this.NavodnjavanjeZaIzmjenu = zaIzmjenu;
@@ -40,10 +39,10 @@ namespace PoljoAppVerzija2
 
         private void DohvatiPovrsine()
         {
-            BindingList<polj_povrsina> listaPovrsina = null;
-            using (var db = new Entities())
+            BindingList<PoljPovrsina> listaPovrsina = null;
+            using (var db = new PoljoAppEntities())
             {
-                listaPovrsina = new BindingList<polj_povrsina>(db.polj_povrsina.ToList());
+                listaPovrsina = new BindingList<PoljPovrsina>(db.polj_povrsina.ToList());
             }
             poljpovrsinaBindingSource.DataSource = listaPovrsina;
         }
@@ -51,7 +50,7 @@ namespace PoljoAppVerzija2
         private void DohvatiStanja()
         {
             BindingList<StanjeNavodnjavanja> listaStanja= null;
-            using (var db = new Entities())
+            using (var db = new PoljoAppEntities())
             {
                 listaStanja = new BindingList<StanjeNavodnjavanja>(db.StanjeNavodnjavanja.Take(2).ToList());
             }
@@ -74,14 +73,14 @@ namespace PoljoAppVerzija2
         {
             if (this.NavodnjavanjeZaIzmjenu == null)
             {
-                PoljoAppModel.Navodnjavanje novo = new PoljoAppModel.Navodnjavanje()
+                DataLayer.Navodnjavanje novo = new DataLayer.Navodnjavanje()
                 {
                     IdPovrsina = (int)izborPovrsine.SelectedValue,
                     Datum = izborDatum.Value,
                     KolicinaVode = int.Parse(unosKolicinaVode.Text),
                     IdStanja = (int)izborVrsta.SelectedValue
                 };
-                NavodnjavanjeUsluge.Spremi(novo);
+                NavodnjavanjeRepozitorij.Spremi(novo);
                 Close();
             }
             else
@@ -91,7 +90,7 @@ namespace PoljoAppVerzija2
                 NavodnjavanjeZaIzmjenu.KolicinaVode = decimal.Parse(unosKolicinaVode.Text);
                 NavodnjavanjeZaIzmjenu.IdStanja = (int)izborVrsta.SelectedValue;
 
-                NavodnjavanjeUsluge.Azuriraj(NavodnjavanjeZaIzmjenu); 
+                NavodnjavanjeRepozitorij.Azuriraj(NavodnjavanjeZaIzmjenu); 
                 
                 Close();
             }

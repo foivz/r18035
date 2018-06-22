@@ -164,7 +164,7 @@
             // 
             // djelatnikBindingSource
             // 
-            this.djelatnikBindingSource.DataSource = typeof(PoljoAppVerzija2.Djelatnik);
+            this.djelatnikBindingSource.DataSource = typeof(DataLayer.Djelatnik);
             // 
             // UnosPrskanja
             // 

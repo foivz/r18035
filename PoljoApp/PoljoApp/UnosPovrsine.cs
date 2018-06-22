@@ -7,13 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DataLayer;
 
 namespace PoljoAppVerzija2
 {
     public partial class UnosPovrsine : Form
     {
-        private polj_povrsina povrsinaZaIzmjenu = null;
-        public UnosPovrsine(polj_povrsina poljPovrsina)
+        private PoljPovrsina povrsinaZaIzmjenu = null;
+        public UnosPovrsine(PoljPovrsina poljPovrsina)
         {
             InitializeComponent();
             PrikaziNamjenePovrsina();
@@ -31,10 +32,10 @@ namespace PoljoAppVerzija2
         }
         private void PrikaziNamjenePovrsina()
         {
-            BindingList<namjena_povrsine> listaNamjenaPovrsina = null;
-            using (var db = new Entities())
+            BindingList<NamjenaPovrsine> listaNamjenaPovrsina = null;
+            using (var db = new PoljoAppEntities())
             {
-                listaNamjenaPovrsina = new BindingList<namjena_povrsine>(db.namjena_povrsine.ToList());
+                listaNamjenaPovrsina = new BindingList<NamjenaPovrsine>(db.namjena_povrsine.ToList());
             }
             namjenapovrsineBindingSource.DataSource = listaNamjenaPovrsina;
         }
@@ -43,10 +44,10 @@ namespace PoljoAppVerzija2
         {
             if (this.povrsinaZaIzmjenu == null)
             {
-                using (var db = new Entities())
+                using (var db = new PoljoAppEntities())
                 {
 
-                    polj_povrsina novaPoljPovrsina = new polj_povrsina()
+                    PoljPovrsina novaPoljPovrsina = new PoljPovrsina()
                     {
                         naziv = uiUnosNaziva.Text,
                         povrsina_m2 = int.Parse(uiUnosPovrsine.Text),
@@ -62,7 +63,7 @@ namespace PoljoAppVerzija2
             }
             else
             {
-                using (var db = new Entities())
+                using (var db = new PoljoAppEntities())
                 {
 
                     db.polj_povrsina.Attach(povrsinaZaIzmjenu);

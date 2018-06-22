@@ -7,13 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DataLayer;
 
 namespace PoljoAppVerzija2
 {
     public partial class UnosProizvoda : Form
     {
-        sadni_materijal materijalZaIzmjenu = null;
-        public UnosProizvoda(sadni_materijal materijal)
+        SadniMaterijal materijalZaIzmjenu = null;
+        public UnosProizvoda(SadniMaterijal materijal)
         {
             //Konstruktor za slučaj izmjene proizvoda
             InitializeComponent();
@@ -36,10 +37,10 @@ namespace PoljoAppVerzija2
         private void PrikaziVrsteSadnogMaterijala()
         {
             //Prikazi vrste sadnog materijala za izbor u comboboxu
-            BindingList<vrsta_sadnog_materijala> listaVrstaSadnogMaterijala = null;
-            using (var db = new Entities())
+            BindingList<VrstaSadnogMaterijala> listaVrstaSadnogMaterijala = null;
+            using (var db = new PoljoAppEntities())
             {
-                listaVrstaSadnogMaterijala = new BindingList<vrsta_sadnog_materijala>(db.vrsta_sadnog_materijala.ToList());
+                listaVrstaSadnogMaterijala = new BindingList<VrstaSadnogMaterijala>(db.vrsta_sadnog_materijala.ToList());
             }
             vrstasadnogmaterijalaBindingSource.DataSource = listaVrstaSadnogMaterijala;
         }
@@ -56,9 +57,9 @@ namespace PoljoAppVerzija2
             if (this.materijalZaIzmjenu == null)
             {
                 //Dodajemo novi proizvod s unesenim podacima u bazu
-                 using (var db = new Entities())
+                 using (var db = new PoljoAppEntities())
                 {
-                    sadni_materijal noviMaterijal = new sadni_materijal()
+                    SadniMaterijal noviMaterijal = new SadniMaterijal()
                     {
                         naziv = uiUnosNaziva.Text,
                         jedinicna_mjera = uiActionOdabirJednicineMjere.Text,
@@ -72,7 +73,7 @@ namespace PoljoAppVerzija2
             else
             {
                 //Mjenjamo podatke prenesenog objekta proizvoda
-                using (var db = new Entities())
+                using (var db = new PoljoAppEntities())
                 {
                     db.sadni_materijal.Attach(materijalZaIzmjenu);
                     materijalZaIzmjenu.naziv = uiUnosNaziva.Text;

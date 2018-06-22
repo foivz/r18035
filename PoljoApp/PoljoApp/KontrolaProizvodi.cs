@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DataLayer;
 
 namespace PoljoAppVerzija2
 {
@@ -33,11 +34,11 @@ namespace PoljoAppVerzija2
         private void PrikaziVrsteSadnogMaterijala()
         {
             //Prikazi vrste sadnog materijala u comboboxu koji sluzi za sortiranje glavnog prikaza
-            BindingList<vrsta_sadnog_materijala> listaVrstaSadnogMaterijala = null;
-            using (var db = new Entities())
+            BindingList<VrstaSadnogMaterijala> listaVrstaSadnogMaterijala = null;
+            using (var db = new PoljoAppEntities())
             {
-                listaVrstaSadnogMaterijala = new BindingList<vrsta_sadnog_materijala>(db.vrsta_sadnog_materijala.ToList());
-                listaVrstaSadnogMaterijala.Insert(0, new vrsta_sadnog_materijala() { naziv = "Prikaži sve" });
+                listaVrstaSadnogMaterijala = new BindingList<VrstaSadnogMaterijala>(db.vrsta_sadnog_materijala.ToList());
+                listaVrstaSadnogMaterijala.Insert(0, new VrstaSadnogMaterijala() { naziv = "Prikaži sve" });
                 vrstasadnogmaterijalaBindingSource.DataSource = listaVrstaSadnogMaterijala;
             }
             
@@ -46,18 +47,18 @@ namespace PoljoAppVerzija2
         private void PrikaziSadniMaterijal()
         {
             //Prikazi sadni materijal čija vrsta odgovara onoj odabranoj u comboboxu
-            BindingList<sadni_materijal> listaProizvoda = null;
-            using (var db = new Entities())
+            BindingList<SadniMaterijal> listaProizvoda = null;
+            using (var db = new PoljoAppEntities())
             {
-                var obj = cmbIzborVrsteSadnogMaterijala.SelectedItem as vrsta_sadnog_materijala;
+                var obj = cmbIzborVrsteSadnogMaterijala.SelectedItem as VrstaSadnogMaterijala;
 
                 if (obj != null && obj.naziv == "Prikaži sve")
-                    listaProizvoda = new BindingList<sadni_materijal>(db.sadni_materijal.ToList());
+                    listaProizvoda = new BindingList<SadniMaterijal>(db.sadni_materijal.ToList());
 
                 else if (obj != null)
                 {
                     db.vrsta_sadnog_materijala.Attach(obj);
-                    listaProizvoda = new BindingList<sadni_materijal>(obj.sadni_materijal.ToList());
+                    listaProizvoda = new BindingList<SadniMaterijal>(obj.sadni_materijal.ToList());
                 }
             }
             sadnimaterijalBindingSource.DataSource = listaProizvoda;
@@ -71,7 +72,7 @@ namespace PoljoAppVerzija2
         private void uiAzurirajProizvod_Click(object sender, EventArgs e)
         {
             //Ažuriranje odabranog proizvoda
-            sadni_materijal odabraniProizvod = sadnimaterijalBindingSource.Current as sadni_materijal;
+            SadniMaterijal odabraniProizvod = sadnimaterijalBindingSource.Current as SadniMaterijal;
             if (odabraniProizvod != null)
             {
                 UnosProizvoda forma = new UnosProizvoda(odabraniProizvod);
@@ -83,14 +84,14 @@ namespace PoljoAppVerzija2
         private void uiIzbrisiProizvod_Click(object sender, EventArgs e)
         {
             //Brisanje odabranog proizvoda
-            sadni_materijal odabraniProizvod = sadnimaterijalBindingSource.Current as sadni_materijal;
+            SadniMaterijal odabraniProizvod = sadnimaterijalBindingSource.Current as SadniMaterijal;
             if (odabraniProizvod != null)
             {
                 if (MessageBox.Show("Želte li izbrisati proizvod?", "Pitanje",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
                 {
-                    using (var db = new Entities())
+                    using (var db = new PoljoAppEntities())
                     {
                         db.sadni_materijal.Attach(odabraniProizvod);
                         db.sadni_materijal.Remove(odabraniProizvod);

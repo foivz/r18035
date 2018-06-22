@@ -95,7 +95,7 @@
             // 
             // vrstazastiteBindingSource
             // 
-            this.vrstazastiteBindingSource.DataSource = typeof(PoljoAppVerzija2.vrsta_zastite);
+            this.vrstazastiteBindingSource.DataSource = typeof(DataLayer.vrsta_zastite);
             // 
             // uiActionIzbrisi
             // 
@@ -177,7 +177,7 @@
             // 
             // zastitaBindingSource
             // 
-            this.zastitaBindingSource.DataSource = typeof(PoljoAppVerzija2.zastita);
+            this.zastitaBindingSource.DataSource = typeof(DataLayer.zastita);
             // 
             // ActionDodajZastitu
             // 

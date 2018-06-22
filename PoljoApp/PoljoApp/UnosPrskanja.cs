@@ -7,14 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using PoljoAppModel;
-using BusinessLayer;
+using DataLayer;
 
 namespace PoljoAppVerzija2
 {
     public partial class UnosPrskanja : Form
     {
-        PoljoAppModel.Prskanje PrskanjeZaIzmjenu = null;
+        DataLayer.Prskanje PrskanjeZaIzmjenu = null;
 
         public UnosPrskanja()
         {
@@ -24,7 +23,7 @@ namespace PoljoAppVerzija2
             DohvatiDjelatnike();
         }
 
-        public UnosPrskanja(PoljoAppModel.Prskanje prskanje)
+        public UnosPrskanja(DataLayer.Prskanje prskanje)
         {
             InitializeComponent();
 
@@ -43,10 +42,10 @@ namespace PoljoAppVerzija2
 
         private void DohvatiPovrsine()
         {
-            BindingList<polj_povrsina> listaPovrsina = null;
-            using (var db = new Entities())
+            BindingList<PoljPovrsina> listaPovrsina = null;
+            using (var db = new PoljoAppEntities())
             {
-                listaPovrsina = new BindingList<polj_povrsina>(db.polj_povrsina.ToList());
+                listaPovrsina = new BindingList<PoljPovrsina>(db.polj_povrsina.ToList());
             }
             poljpovrsinaBindingSource.DataSource = listaPovrsina;
         }
@@ -54,7 +53,7 @@ namespace PoljoAppVerzija2
         private void DohvatiZastitu()
         {
             BindingList<zastita> listaZastite = null;
-            using (var db = new Entities())
+            using (var db = new PoljoAppEntities())
             {
                 listaZastite = new BindingList<zastita>(db.zastita.ToList());
             }
@@ -64,9 +63,9 @@ namespace PoljoAppVerzija2
         private void DohvatiDjelatnike()
         {
             BindingList<Djelatnik> listaDjelatnika = null;
-            using (var db = new Entities())
+            using (var db = new PoljoAppEntities())
             {
-                listaDjelatnika = new BindingList<Djelatnik>(db.DjelatnikSet.ToList());
+                listaDjelatnika = new BindingList<Djelatnik>(db.Djelatnik.ToList());
             }
             djelatnikBindingSource.DataSource = listaDjelatnika;
         }
@@ -89,7 +88,7 @@ namespace PoljoAppVerzija2
         {
             if (this.PrskanjeZaIzmjenu == null)
             {
-                PoljoAppModel.Prskanje novo = new PoljoAppModel.Prskanje()
+                DataLayer.Prskanje novo = new DataLayer.Prskanje()
                 {
                     IdDjelatnik = (int)izborDjelatnik.SelectedValue,
                     IdPovrsina = (int)izborPovrsine.SelectedValue,
@@ -98,7 +97,7 @@ namespace PoljoAppVerzija2
                     Opis = unosOpis.Text
                 };
 
-                PrskanjeUsluge.Spremi(novo);
+                PrskanjeRepozitorij.Spremi(novo);
                 Close();
             }
             else
@@ -109,7 +108,7 @@ namespace PoljoAppVerzija2
                 PrskanjeZaIzmjenu.Datum = izborDatum.Value;
                 PrskanjeZaIzmjenu.Opis = unosOpis.Text;
 
-                PrskanjeUsluge.Azuriraj(PrskanjeZaIzmjenu);
+                PrskanjeRepozitorij.Azuriraj(PrskanjeZaIzmjenu);
                 Close();
             }
         }

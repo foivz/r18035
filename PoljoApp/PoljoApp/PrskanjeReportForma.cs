@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DataLayer;
 
 namespace PoljoAppVerzija2
 {
@@ -29,9 +30,9 @@ namespace PoljoAppVerzija2
         private void PrikaziReport()
         {
             BindingList<PrskanjeView> listaPrskanja = null;
-            using (var db = new Entities())
+            using (var db = new PoljoAppEntities())
             {
-                listaPrskanja = new BindingList<PrskanjeView>(db.PrskanjeViewSet.Where(p => p.Datum.Year == Godina).ToList());
+                listaPrskanja = new BindingList<PrskanjeView>(db.PrskanjeView.Where(p => p.Datum.Year == Godina).ToList());
             }
             prskanjeViewBindingSource.DataSource = listaPrskanja;
         }

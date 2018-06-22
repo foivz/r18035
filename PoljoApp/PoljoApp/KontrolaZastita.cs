@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DataLayer;
 
 namespace PoljoAppVerzija2
 {
@@ -32,7 +33,7 @@ namespace PoljoAppVerzija2
         {
             //Prikazi vrste zastita u comboboxu koji sluzi za sortiranje glavnog prikaza zaštita
             BindingList<vrsta_zastite> listaVrstaZastite = null;
-            using (var db = new Entities())
+            using (var db = new PoljoAppEntities())
             {
                 listaVrstaZastite = new BindingList<vrsta_zastite>(db.vrsta_zastite.ToList());
             }
@@ -50,7 +51,7 @@ namespace PoljoAppVerzija2
         {
             //Prikazi zastite cija vrsta odgovara onoj odabranoj u comboboxu
             BindingList<zastita> listaZastita = null;
-            using (var db = new Entities())
+            using (var db = new PoljoAppEntities())
             {
                 var obj = uiIzborVrsteZastite.SelectedItem as vrsta_zastite;
 
@@ -89,7 +90,7 @@ namespace PoljoAppVerzija2
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
                 {
-                    using (var db = new Entities())
+                    using (var db = new PoljoAppEntities())
                     {
                         db.zastita.Attach(odabranaZastita);
                         db.zastita.Remove(odabranaZastita);

@@ -48,7 +48,7 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
@@ -56,7 +56,11 @@
       <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -66,18 +70,103 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DjelatniciRepozitorij.cs" />
-    <Compile Include="IDjelatniciRepozitorij.cs" />
-    <Compile Include="INavodnjavanjeRepozitorij.cs" />
-    <Compile Include="IPrskanjeRepozitorij.cs" />
+    <Compile Include="Djelatnik.cs">
+      <DependentUpon>PoljoAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NamjenaPovrsine.cs">
+      <DependentUpon>PoljoAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Navodnjavanje.cs">
+      <DependentUpon>PoljoAppModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="NavodnjavanjeRepozitorij.cs" />
+    <Compile Include="NavodnjavanjeView.cs">
+      <DependentUpon>PoljoAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PoljoAppModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PoljoAppModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PoljoAppModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PoljoAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PoljoAppModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PoljoAppModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="PoljPovrsina.cs">
+      <DependentUpon>PoljoAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PoljPovrsinaView.cs">
+      <DependentUpon>PoljoAppModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Prskanje.cs">
+      <DependentUpon>PoljoAppModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="PrskanjeRepozitorij.cs" />
+    <Compile Include="PrskanjeView.cs">
+      <DependentUpon>PoljoAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SadniMaterijal.cs">
+      <DependentUpon>PoljoAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SadniMaterijalView.cs">
+      <DependentUpon>PoljoAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sadnja.cs">
+      <DependentUpon>PoljoAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SadnjaView.cs">
+      <DependentUpon>PoljoAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StanjeNavodnjavanja.cs">
+      <DependentUpon>PoljoAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VrstaSadnogMaterijala.cs">
+      <DependentUpon>PoljoAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vrsta_zastite.cs">
+      <DependentUpon>PoljoAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="zastita.cs">
+      <DependentUpon>PoljoAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ZastitaView.cs">
+      <DependentUpon>PoljoAppModel.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PoljoAppModel\PoljoAppModel.csproj">
-      <Project>{46546b1a-cb5d-4ad4-9d29-b30336292b31}</Project>
-      <Name>PoljoAppModel</Name>
-    </ProjectReference>
+    <EntityDeploy Include="PoljoAppModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PoljoAppModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="packages.config" />
+    <None Include="PoljoAppModel.edmx.diagram">
+      <DependentUpon>PoljoAppModel.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PoljoAppModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>PoljoAppModel.Context.cs</LastGenOutput>
+      <DependentUpon>PoljoAppModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="PoljoAppModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PoljoAppModel.edmx</DependentUpon>
+      <LastGenOutput>PoljoAppModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

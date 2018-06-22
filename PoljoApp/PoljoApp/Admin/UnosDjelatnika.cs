@@ -7,14 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using PoljoAppModel;
-using BusinessLayer;
+using DataLayer;
 
 namespace PoljoAppVerzija2.Admin
 {
     public partial class UnosDjelatnika : Form
     {
-        PoljoAppModel.Djelatnik DjelatnikZaIzmjenu = null;
+        DataLayer.Djelatnik DjelatnikZaIzmjenu = null;
 
         public UnosDjelatnika()
         {
@@ -22,7 +21,7 @@ namespace PoljoAppVerzija2.Admin
             ispisID.Text = "ID: new";
         }
 
-        public UnosDjelatnika(PoljoAppModel.Djelatnik azuriraj)
+        public UnosDjelatnika(DataLayer.Djelatnik azuriraj)
         {
             InitializeComponent();
             DjelatnikZaIzmjenu = azuriraj;
@@ -59,7 +58,7 @@ namespace PoljoAppVerzija2.Admin
         {
             if (this.DjelatnikZaIzmjenu == null)
             {
-                PoljoAppModel.Djelatnik novi = new PoljoAppModel.Djelatnik()
+                DataLayer.Djelatnik novi = new DataLayer.Djelatnik()
                 {
                     Ime = unosIme.Text,
                     Prezime = unosPrezime.Text,
@@ -68,7 +67,7 @@ namespace PoljoAppVerzija2.Admin
                     BrojTelefona = unosTelefon.Text
                 };
 
-                DjelatniciUsluge.Spremi(novi);
+                DjelatniciRepozitorij.Spremi(novi);
                 Close();
             }
             else
@@ -79,7 +78,7 @@ namespace PoljoAppVerzija2.Admin
                 DjelatnikZaIzmjenu.Lozinka = unosLozinka.Text;
                 DjelatnikZaIzmjenu.BrojTelefona = unosTelefon.Text;
 
-                DjelatniciUsluge.Azuriraj(DjelatnikZaIzmjenu);
+                DjelatniciRepozitorij.Azuriraj(DjelatnikZaIzmjenu);
                 Close();
             }
             

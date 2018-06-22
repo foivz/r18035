@@ -96,7 +96,7 @@
             // 
             // vrstasadnogmaterijalaBindingSource
             // 
-            this.vrstasadnogmaterijalaBindingSource.DataSource = typeof(PoljoAppVerzija2.vrsta_sadnog_materijala);
+            this.vrstasadnogmaterijalaBindingSource.DataSource = typeof(DataLayer.VrstaSadnogMaterijala);
             // 
             // uiActionOdustani
             // 

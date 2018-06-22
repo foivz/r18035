@@ -94,7 +94,7 @@
             // 
             // stanjeNavodnjavanjaBindingSource
             // 
-            this.stanjeNavodnjavanjaBindingSource.DataSource = typeof(PoljoAppVerzija2.StanjeNavodnjavanja);
+            this.stanjeNavodnjavanjaBindingSource.DataSource = typeof(DataLayer.StanjeNavodnjavanja);
             // 
             // label3
             // 

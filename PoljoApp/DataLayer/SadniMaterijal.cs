@@ -7,21 +7,24 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PoljoAppVerzija2
+namespace DataLayer
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class vrsta_zastite
+    public partial class SadniMaterijal
     {
-        public vrsta_zastite()
+        public SadniMaterijal()
         {
-            this.zastita = new HashSet<zastita>();
+            this.sadnja = new HashSet<Sadnja>();
         }
     
         public int id { get; set; }
         public string naziv { get; set; }
+        public string jedinicna_mjera { get; set; }
+        public int id_vrste_materijala { get; set; }
     
-        public virtual ICollection<zastita> zastita { get; set; }
+        public virtual VrstaSadnogMaterijala vrsta_sadnog_materijala { get; set; }
+        public virtual ICollection<Sadnja> sadnja { get; set; }
     }
 }

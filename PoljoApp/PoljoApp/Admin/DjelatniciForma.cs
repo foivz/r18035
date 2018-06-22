@@ -7,8 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using PoljoAppModel;
-using BusinessLayer;
+using DataLayer;
 
 namespace PoljoAppVerzija2.Admin
 {
@@ -28,14 +27,14 @@ namespace PoljoAppVerzija2.Admin
 
         private void PrikaziDjelatnike()
         {
-            djelatnikBindingSource.DataSource = DjelatniciUsluge.DohvatiSve();
+            djelatnikBindingSource.DataSource = DjelatniciRepozitorij.DohvatiSve();
         }
 
         private void UiActionAzuriraj_Click(object sender, EventArgs e)
         {
             if(djelatnikBindingSource.Current != null)
             {
-                UnosDjelatnika unos = new UnosDjelatnika(djelatnikBindingSource.Current as PoljoAppModel.Djelatnik);
+                UnosDjelatnika unos = new UnosDjelatnika(djelatnikBindingSource.Current as DataLayer.Djelatnik);
                 unos.ShowDialog();
                 PrikaziDjelatnike();
             }
@@ -48,11 +47,11 @@ namespace PoljoAppVerzija2.Admin
 
         private void UiActionIzbrisi_Click(object sender, EventArgs e)
         {
-            PoljoAppModel.Djelatnik zaBrisanje = djelatnikBindingSource.Current as PoljoAppModel.Djelatnik;
+            DataLayer.Djelatnik zaBrisanje = djelatnikBindingSource.Current as DataLayer.Djelatnik;
             
             if (MessageBox.Show("Jeste li ste sigurni da želite obrisati djelatnika?", "Upozorenje!", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
             {
-                DjelatniciUsluge.Izbrisi(zaBrisanje);
+                DjelatniciRepozitorij.Izbrisi(zaBrisanje);
             }
         }
     }

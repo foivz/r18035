@@ -3,15 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PoljoAppModel;
 
 namespace DataLayer
 {
-    public class DjelatniciRepozitorij : IDjelatniciRepozitorij
+    public static class DjelatniciRepozitorij
     {
-        public void Azuriraj(Djelatnik zaIzmjenu)
+        public static void Azuriraj(Djelatnik zaIzmjenu)
         {
-            using (var db = new Entities())
+            using (var db = new PoljoAppEntities())
             {
                 Djelatnik mijenjaj = db.Djelatnik.Find(zaIzmjenu.Id);
                 mijenjaj.Ime = zaIzmjenu.Ime;
@@ -23,25 +22,25 @@ namespace DataLayer
             }
         }
 
-        public Djelatnik DohvatiPoIdu(int id)
+        public static Djelatnik DohvatiPoIdu(int id)
         {
-            using (var db = new Entities())
+            using (var db = new PoljoAppEntities())
             {
                 return db.Djelatnik.Find(id);
             }
         }
 
-        public List<Djelatnik> DohvatiSve()
+        public static List<Djelatnik> DohvatiSve()
         {
-            using (var db = new Entities())
+            using (var db = new PoljoAppEntities())
             {
                 return db.Djelatnik.ToList();
             }
         }
 
-        public void Izbrisi(Djelatnik zaBrisanje)
+        public static void Izbrisi(Djelatnik zaBrisanje)
         {
-            using (var db = new Entities())
+            using (var db = new PoljoAppEntities())
             {
                 db.Djelatnik.Attach(zaBrisanje);
                 db.Djelatnik.Remove(zaBrisanje);
@@ -49,9 +48,9 @@ namespace DataLayer
             }
         }
 
-        public Djelatnik Prijava(string email, string lozinka)
+        public static Djelatnik Prijava(string email, string lozinka)
         {
-            using (var db = new Entities())
+            using (var db = new PoljoAppEntities())
             {
                 Djelatnik korisnik = db.Djelatnik.Where(k => k.Email == email && k.Lozinka == lozinka).FirstOrDefault();
 
@@ -66,9 +65,9 @@ namespace DataLayer
             }
         }
 
-        public Djelatnik Spremi(Djelatnik novo)
+        public static Djelatnik Spremi(Djelatnik novo)
         {
-            using (var db = new Entities())
+            using (var db = new PoljoAppEntities())
             {
                 db.Djelatnik.Add(novo);
                 db.SaveChanges();

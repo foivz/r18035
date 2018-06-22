@@ -127,7 +127,7 @@
             // 
             // namjenapovrsineBindingSource
             // 
-            this.namjenapovrsineBindingSource.DataSource = typeof(PoljoAppVerzija2.namjena_povrsine);
+            this.namjenapovrsineBindingSource.DataSource = typeof(DataLayer.NamjenaPovrsine);
             // 
             // label4
             // 

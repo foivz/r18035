@@ -84,7 +84,7 @@
             // 
             // sadnimaterijalBindingSource
             // 
-            this.sadnimaterijalBindingSource.DataSource = typeof(PoljoAppVerzija2.sadni_materijal);
+            this.sadnimaterijalBindingSource.DataSource = typeof(DataLayer.SadniMaterijal);
             // 
             // uiUnosKolicine
             // 
@@ -149,7 +149,7 @@
             // 
             // poljpovrsinaBindingSource
             // 
-            this.poljpovrsinaBindingSource.DataSource = typeof(PoljoAppVerzija2.polj_povrsina);
+            this.poljpovrsinaBindingSource.DataSource = typeof(DataLayer.PoljPovrsina);
             // 
             // datum
             // 

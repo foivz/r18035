@@ -8,8 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Collections.Specialized;
-using PoljoAppModel;
-using BusinessLayer;
+using DataLayer;
 
 namespace PoljoAppVerzija2
 {
@@ -36,12 +35,12 @@ namespace PoljoAppVerzija2
         private void PrikaziPrskanja()
         {
             int godina = int.Parse(izborGodine.Text);
-            prskanjeViewBindingSource.DataSource = PrskanjeUsluge.DohvatiSve(godina);
+            prskanjeViewBindingSource.DataSource = PrskanjeRepozitorij.DohvatiPrskanje(godina);
         }
 
         private void UiActionAzuriraj_Click(object sender, EventArgs e)
         {
-            PoljoAppModel.Prskanje zaIzmjenu = DohvatiOznacenoPrskanje();
+            DataLayer.Prskanje zaIzmjenu = DohvatiOznacenoPrskanje();
 
             UnosPrskanja azuriraj = new UnosPrskanja(zaIzmjenu);
             azuriraj.ShowDialog();
@@ -49,15 +48,15 @@ namespace PoljoAppVerzija2
             PrikaziPrskanja();
         }
 
-        private PoljoAppModel.Prskanje DohvatiOznacenoPrskanje()
+        private DataLayer.Prskanje DohvatiOznacenoPrskanje()
         {
-            PoljoAppModel.PrskanjeView oznaceno = prskanjeViewBindingSource.Current as PoljoAppModel.PrskanjeView;
-            return PrskanjeUsluge.DohvatiPoIdu(oznaceno.Id);
+            DataLayer.PrskanjeView oznaceno = prskanjeViewBindingSource.Current as DataLayer.PrskanjeView;
+            return PrskanjeRepozitorij.DohvatiPoIdu(oznaceno.Id);
         }
 
         private void DohvatiGodine()
         {
-            List<int> listaGodina = PrskanjeUsluge.DohvatiGodine();
+            List<int> listaGodina = PrskanjeRepozitorij.DohvatiGodine();
 
             foreach (var datum in listaGodina)
             {
@@ -74,11 +73,11 @@ namespace PoljoAppVerzija2
 
         private void UiActionIzbrisi_Click(object sender, EventArgs e)
         {
-            PoljoAppModel.Prskanje zaBrisanje = DohvatiOznacenoPrskanje();
+            DataLayer.Prskanje zaBrisanje = DohvatiOznacenoPrskanje();
 
             if (MessageBox.Show("Jeste li ste sigurni da želite obrisati prskanje?", "Upozorenje!", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
             {
-                PrskanjeUsluge.Izbrisi(zaBrisanje);
+                PrskanjeRepozitorij.Izbrisi(zaBrisanje);
             }
             PrikaziPrskanja();
         }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DataLayer;
 
 namespace PoljoAppVerzija2
 {
@@ -27,24 +28,24 @@ namespace PoljoAppVerzija2
         private void PrikaziPoljoprivrednePovršine()
         {
             //Prikaz poljoprivrednih povrsina u combo boxu
-            BindingList<polj_povrsina> listaPoljPovrsina = null;
-            using (var db= new Entities())
+            BindingList<PoljPovrsina> listaPoljPovrsina = null;
+            using (var db= new PoljoAppEntities())
             {
-               listaPoljPovrsina = new BindingList<polj_povrsina> (db.polj_povrsina.ToList());
+               listaPoljPovrsina = new BindingList<PoljPovrsina> (db.polj_povrsina.ToList());
             }
-            listaPoljPovrsina.Insert(0,new polj_povrsina() { naziv = "Prikaži sve" });
+            listaPoljPovrsina.Insert(0,new PoljPovrsina() { naziv = "Prikaži sve" });
             poljpovrsinaBindingSource.DataSource = listaPoljPovrsina;
         }
 
         private void PrikaziVrsteSadnihMaterijala()
         {
             //Prikaz vrsta sadnog materijala u combo boxu
-            BindingList<sadni_materijal> listaSadnogMaterijala = null;
-            using (var db = new Entities())
+            BindingList<SadniMaterijal> listaSadnogMaterijala = null;
+            using (var db = new PoljoAppEntities())
             {
-                listaSadnogMaterijala = new BindingList<sadni_materijal>(db.sadni_materijal.ToList());
+                listaSadnogMaterijala = new BindingList<SadniMaterijal>(db.sadni_materijal.ToList());
             }
-            listaSadnogMaterijala.Insert(0,new sadni_materijal() { naziv = "Prikaži sve" });
+            listaSadnogMaterijala.Insert(0,new SadniMaterijal() { naziv = "Prikaži sve" });
             sadnimaterijalBindingSource.DataSource = listaSadnogMaterijala;
         }
 
@@ -52,10 +53,10 @@ namespace PoljoAppVerzija2
         {
             //Prikaz sadnja
             BindingList<SadnjaView> listaSadnja = null;
-            using (var db= new Entities())
+            using (var db= new PoljoAppEntities())
             {
-                var obj = izborPoljPovrsina.SelectedItem as polj_povrsina;
-                var obj2 = izborSadnogMaterijala.SelectedItem as sadni_materijal;
+                var obj = izborPoljPovrsina.SelectedItem as PoljPovrsina;
+                var obj2 = izborSadnogMaterijala.SelectedItem as SadniMaterijal;
                 if(obj!=null && obj.naziv=="Prikaži sve"  && obj2!=null && obj2.naziv=="Prikaži sve")
                 {
                     listaSadnja = new BindingList<SadnjaView>(db.SadnjaView.ToList());
@@ -81,7 +82,7 @@ namespace PoljoAppVerzija2
         }
         private void uiActionAzurirajSadnju_Click(object sender, EventArgs e)
         {
-            sadnja zaIzmjenu = DohvatiOznacenuSadnju();
+            Sadnja zaIzmjenu = DohvatiOznacenuSadnju();
             UnosSadnje azuriraj = new UnosSadnje(zaIzmjenu);
             azuriraj.ShowDialog();
             PrikaziSadnju();
@@ -89,11 +90,11 @@ namespace PoljoAppVerzija2
 
         private void uiActionIzbrisiSadnju_Click(object sender, EventArgs e)
         {
-            sadnja zaBrisanje = DohvatiOznacenuSadnju();
+            Sadnja zaBrisanje = DohvatiOznacenuSadnju();
 
             if (MessageBox.Show("Jeste li sigurni da želite obrisati sadnju?", "Upozorenje!", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
             {
-                using (var db = new Entities())
+                using (var db = new PoljoAppEntities())
                 {
                     db.sadnja.Attach(zaBrisanje);
                     db.sadnja.Remove(zaBrisanje);
@@ -103,11 +104,11 @@ namespace PoljoAppVerzija2
             }
             PrikaziSadnju();
         }
-        private sadnja DohvatiOznacenuSadnju()
+        private Sadnja DohvatiOznacenuSadnju()
         {
             SadnjaView oznacenaSadnja = sadnjaViewBindingSource.Current as SadnjaView;
-            sadnja sadnjaZaIzmjenu;
-            using (var db=new Entities())
+            Sadnja sadnjaZaIzmjenu;
+            using (var db=new PoljoAppEntities())
             {
                 sadnjaZaIzmjenu = db.sadnja.Where(s => s.Id == oznacenaSadnja.Id).FirstOrDefault();
             }

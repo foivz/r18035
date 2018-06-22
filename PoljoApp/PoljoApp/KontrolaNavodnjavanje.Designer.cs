@@ -235,7 +235,7 @@
             // 
             // navodnjavanjeViewBindingSource
             // 
-            this.navodnjavanjeViewBindingSource.DataSource = typeof(PoljoAppVerzija2.NavodnjavanjeView);
+            this.navodnjavanjeViewBindingSource.DataSource = typeof(DataLayer.NavodnjavanjeView);
             // 
             // uiActionNovo
             // 
@@ -384,7 +384,7 @@
             // 
             // oborineBindingSource
             // 
-            this.oborineBindingSource.DataSource = typeof(PoljoAppVerzija2.NavodnjavanjeView);
+            this.oborineBindingSource.DataSource = typeof(DataLayer.NavodnjavanjeView);
             // 
             // pomocTab
             // 

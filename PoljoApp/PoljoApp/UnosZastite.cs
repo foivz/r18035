@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DataLayer;
 
 namespace PoljoAppVerzija2
 {
@@ -36,7 +37,7 @@ namespace PoljoAppVerzija2
             if (this.zastitaZaIzmjenu == null)
             {
                 //Dodajemo novi proizvod s unesenim podacima u bazu
-                using (var db = new Entities())
+                using (var db = new PoljoAppEntities())
                 {
                     zastita novaZastita = new zastita()
                     {
@@ -52,7 +53,7 @@ namespace PoljoAppVerzija2
             else
             {
                 //Mjenjamo podatke prenesenog objekta zastite
-                using (var db = new Entities())
+                using (var db = new PoljoAppEntities())
                 {
                     db.zastita.Attach(zastitaZaIzmjenu);
                     zastitaZaIzmjenu.naziv = uiUnosNaziva.Text;
@@ -68,7 +69,7 @@ namespace PoljoAppVerzija2
         {
             //Prikazi vrste zastita za izbor u comboboxu
             BindingList<vrsta_zastite> listaVrsteZastite = null;
-            using (var db = new Entities())
+            using (var db = new PoljoAppEntities())
             {
                 listaVrsteZastite = new BindingList<vrsta_zastite>(db.vrsta_zastite.ToList());
             }

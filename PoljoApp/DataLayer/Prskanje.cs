@@ -7,20 +7,22 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PoljoAppVerzija2
+namespace DataLayer
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class SadnjaView
+    public partial class Prskanje
     {
-        public int id_povrsina { get; set; }
-        public int id_materijal { get; set; }
-        public System.DateTime datum_sadnje { get; set; }
-        public string kolicina { get; set; }
-        public string naziv { get; set; }
-        public string naziv_materijal { get; set; }
-        public string jedinicna_mjera { get; set; }
+        public int IdPovrsina { get; set; }
+        public int IdZastita { get; set; }
+        public System.DateTime Datum { get; set; }
+        public string Opis { get; set; }
+        public int IdDjelatnik { get; set; }
         public int Id { get; set; }
+    
+        public virtual Djelatnik Djelatnik { get; set; }
+        public virtual PoljPovrsina polj_povrsina { get; set; }
+        public virtual zastita zastita { get; set; }
     }
 }

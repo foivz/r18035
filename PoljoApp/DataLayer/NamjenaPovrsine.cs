@@ -7,22 +7,21 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PoljoAppVerzija2
+namespace DataLayer
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Prskanje
+    public partial class NamjenaPovrsine
     {
-        public int IdPovrsina { get; set; }
-        public int IdZastita { get; set; }
-        public System.DateTime Datum { get; set; }
-        public string Opis { get; set; }
-        public int IdDjelatnik { get; set; }
-        public int Id { get; set; }
+        public NamjenaPovrsine()
+        {
+            this.polj_povrsina = new HashSet<PoljPovrsina>();
+        }
     
-        public virtual Djelatnik Djelatnik { get; set; }
-        public virtual polj_povrsina polj_povrsina { get; set; }
-        public virtual zastita zastita { get; set; }
+        public int id { get; set; }
+        public string namjena { get; set; }
+    
+        public virtual ICollection<PoljPovrsina> polj_povrsina { get; set; }
     }
 }

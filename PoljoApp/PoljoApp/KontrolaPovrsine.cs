@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DataLayer;
 
 namespace PoljoAppVerzija2
 {
@@ -37,12 +38,12 @@ namespace PoljoAppVerzija2
         private void PrikaziNamjenePovrsina()
         {
             //Prikaz namjene površina
-            BindingList<namjena_povrsine> listaNamjenaPovrsina = null;
-            using (var db = new Entities())
+            BindingList<NamjenaPovrsine> listaNamjenaPovrsina = null;
+            using (var db = new PoljoAppEntities())
             {
-                listaNamjenaPovrsina = new BindingList<namjena_povrsine>(db.namjena_povrsine.ToList());
+                listaNamjenaPovrsina = new BindingList<NamjenaPovrsine>(db.namjena_povrsine.ToList());
             }
-            listaNamjenaPovrsina.Insert(0,new namjena_povrsine() { namjena = "Prikaži sve" });
+            listaNamjenaPovrsina.Insert(0,new NamjenaPovrsine() { namjena = "Prikaži sve" });
             namjenapovrsineBindingSource.DataSource = listaNamjenaPovrsina;
         }
 
@@ -54,18 +55,18 @@ namespace PoljoAppVerzija2
         public void PrikaziPovrsine()
         {
             //Prikaz površina
-            BindingList<polj_povrsina> listaPovrsina = null;
-            using (var db = new Entities())
+            BindingList<PoljPovrsina> listaPovrsina = null;
+            using (var db = new PoljoAppEntities())
             {
-                var obj = izborNamjenePovrsina.SelectedItem as namjena_povrsine;
+                var obj = izborNamjenePovrsina.SelectedItem as NamjenaPovrsine;
 
                 if (obj != null && obj.namjena == "Prikaži sve")
-                    listaPovrsina = new BindingList<polj_povrsina>(db.polj_povrsina.ToList());
+                    listaPovrsina = new BindingList<PoljPovrsina>(db.polj_povrsina.ToList());
 
                 else if (obj != null)
                 {
                     db.namjena_povrsine.Attach(obj);
-                    listaPovrsina = new BindingList<polj_povrsina>(obj.polj_povrsina.ToList());
+                    listaPovrsina = new BindingList<PoljPovrsina>(obj.polj_povrsina.ToList());
                 }
             }
             poljpovrsinaBindingSource.DataSource = listaPovrsina;
@@ -74,7 +75,7 @@ namespace PoljoAppVerzija2
         private void uiActionAzuriraj_Click(object sender, EventArgs e)
         {
             //Ažuriranje postojećih površina
-            polj_povrsina odabranaPovršina = poljpovrsinaBindingSource.Current as polj_povrsina;
+            PoljPovrsina odabranaPovršina = poljpovrsinaBindingSource.Current as PoljPovrsina;
             if (odabranaPovršina != null)
             {
                 UnosPovrsine formaUnosPovrsine = new UnosPovrsine(odabranaPovršina);
@@ -86,14 +87,14 @@ namespace PoljoAppVerzija2
         private void uiActionIzbrisi_Click_1(object sender, EventArgs e)
         {
             //Brisanje površine
-            polj_povrsina odabranaPovrsina = poljpovrsinaBindingSource.Current as polj_povrsina;
+            PoljPovrsina odabranaPovrsina = poljpovrsinaBindingSource.Current as PoljPovrsina;
             if (odabranaPovrsina != null)
             {
                 if (MessageBox.Show("Želte li izbrisati površinu?", "Pitanje",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
                 {
-                    using (var db = new Entities())
+                    using (var db = new PoljoAppEntities())
                     {
                         db.polj_povrsina.Attach(odabranaPovrsina);
                         db.polj_povrsina.Remove(odabranaPovrsina);

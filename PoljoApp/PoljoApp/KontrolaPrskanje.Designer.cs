@@ -224,7 +224,7 @@
             // 
             // prskanjeViewBindingSource
             // 
-            this.prskanjeViewBindingSource.DataSource = typeof(PoljoAppVerzija2.PrskanjeView);
+            this.prskanjeViewBindingSource.DataSource = typeof(DataLayer.PrskanjeView);
             // 
             // uiActionNovo
             // 

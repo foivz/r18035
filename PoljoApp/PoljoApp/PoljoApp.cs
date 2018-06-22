@@ -9,18 +9,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
-using BusinessLayer;
-using PoljoAppModel;
+using DataLayer;
 
 namespace PoljoAppVerzija2
 {
     public partial class PoljoApp : Form
     {
-        private PoljoAppModel.Djelatnik Korisnik;
+        private DataLayer.Djelatnik Korisnik;
         private Timer OborineTimer;
         private int Interval = 10;
 
-        public PoljoApp(PoljoAppModel.Djelatnik prijava)
+        public PoljoApp(DataLayer.Djelatnik prijava)
         {
             InitializeComponent();
 
@@ -88,7 +87,7 @@ namespace PoljoAppVerzija2
 
         private void DohvatiVrijeme()
         {
-            string tekst = NavodnjavanjeUsluge.DohvatiVrijeme();
+            string tekst = NavodnjavanjeRepozitorij.DohvatiVrijeme();
 
             if(tekst != "")
             {

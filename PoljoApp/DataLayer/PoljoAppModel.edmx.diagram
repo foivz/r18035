@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4a482d7f421d4b8880c18bf7948825d1" Name="Diagram1">
+        <EntityTypeShape EntityType="DBModel.Djelatnik" Width="1.5" PointX="6" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.NamjenaPovrsine" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Navodnjavanje" Width="1.5" PointX="5.25" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.PoljPovrsina" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Prskanje" Width="1.5" PointX="8.25" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.SadniMaterijal" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Sadnja" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.StanjeNavodnjavanja" Width="1.5" PointX="3" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.VrstaSadnogMaterijala" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.vrsta_zastite" Width="1.5" PointX="3.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.zastita" Width="1.5" PointX="6" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.NavodnjavanjeView" Width="1.5" PointX="7.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.PoljPovrsinaView" Width="1.5" PointX="8.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.PrskanjeView" Width="1.5" PointX="9.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.SadniMaterijalView" Width="1.5" PointX="10.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.SadnjaView" Width="1.5" PointX="10.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.ZastitaView" Width="1.5" PointX="11.75" PointY="0.875" IsExpanded="true" />
+        <AssociationConnector Association="DBModel.fk_prskanje_korisnik1" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.fk_polj_povrsina_namjena_povrsine1" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.fk_navodnjavanje_polj_povrsine1" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.fk_navodnjavanje_vrsta_navodnjavanja1" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.fk_prskanje_polj_povrsine1" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.fk_sadnja_polj_povrsine1" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.fk_prskanje_zastita1" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.fk_proizvodi_vrste_proizvoda1" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.fk_sadnja_proizvodi1" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.fk_zastita_vrste_zastite1" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

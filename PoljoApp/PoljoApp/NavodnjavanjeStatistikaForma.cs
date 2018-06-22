@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using DataLayer;
 
 namespace PoljoAppVerzija2
 {
@@ -26,9 +27,9 @@ namespace PoljoAppVerzija2
 
         private void PopuniGraf()
         {
-            using (var db = new Entities())
+            using (var db = new PoljoAppEntities())
             {
-                var upitNavodnjavanje = from n in db.NavodnjavanjeViewSet
+                var upitNavodnjavanje = from n in db.NavodnjavanjeView
                                         where n.IdStanja == 1 && n.Datum.Year == GodinaZaPregled
                                         group n by n.Datum.Month into g
                                         select new
@@ -37,7 +38,7 @@ namespace PoljoAppVerzija2
                                             Suma = g.Sum(n => n.KolicinaVode)
                                         };
 
-                var upitOborine = from n in db.NavodnjavanjeViewSet
+                var upitOborine = from n in db.NavodnjavanjeView
                                   where n.IdStanja == 2 && n.Datum.Year == GodinaZaPregled
                                   group n by n.Datum.Month into g
                                   select new

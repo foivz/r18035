@@ -104,7 +104,7 @@
             // 
             // sadnimaterijalBindingSource
             // 
-            this.sadnimaterijalBindingSource.DataSource = typeof(PoljoAppVerzija2.sadni_materijal);
+            this.sadnimaterijalBindingSource.DataSource = typeof(DataLayer.SadniMaterijal);
             // 
             // izborPoljPovrsina
             // 
@@ -121,7 +121,7 @@
             // 
             // poljpovrsinaBindingSource
             // 
-            this.poljpovrsinaBindingSource.DataSource = typeof(PoljoAppVerzija2.polj_povrsina);
+            this.poljpovrsinaBindingSource.DataSource = typeof(DataLayer.PoljPovrsina);
             // 
             // uiActionIzbrisiSadnju
             // 
@@ -178,7 +178,7 @@
             // 
             // sadnjaViewBindingSource
             // 
-            this.sadnjaViewBindingSource.DataSource = typeof(PoljoAppVerzija2.SadnjaView);
+            this.sadnjaViewBindingSource.DataSource = typeof(DataLayer.SadnjaView);
             // 
             // uiActionDodajSadnju
             // 
