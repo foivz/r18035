@@ -46,8 +46,8 @@ namespace PoljoAppVerzija2
         }
         private void PrikaziSadniMaterijal()
         {
-            string OdabranaVrstaSadnogMaterijala = cmbIzborVrsteSadnogMaterijala.Text;
-            sadnimaterijalBindingSource.DataSource = ProizvodiRepozitorij.DohvatiSadniMaterijal(OdabranaVrstaSadnogMaterijala);
+            string odabranaVrstaSadnogMaterijala = cmbIzborVrsteSadnogMaterijala.Text;
+            sadnimaterijalBindingSource.DataSource = ProizvodiRepozitorij.DohvatiSadniMaterijal(odabranaVrstaSadnogMaterijala);
         }
 
         private void cmbIzborVrsteSadnogMaterijala_SelectedIndexChanged(object sender, EventArgs e)
@@ -73,16 +73,10 @@ namespace PoljoAppVerzija2
             SadniMaterijal odabraniProizvod = sadnimaterijalBindingSource.Current as SadniMaterijal;
             if (odabraniProizvod != null)
             {
-                if (MessageBox.Show("Želte li izbrisati proizvod?", "Pitanje",
-                MessageBoxButtons.YesNo,
+                if (MessageBox.Show("Želte li izbrisati proizvod?", "Pitanje", MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
                 {
-                    using (var db = new PoljoAppEntities())
-                    {
-                        db.sadni_materijal.Attach(odabraniProizvod);
-                        db.sadni_materijal.Remove(odabraniProizvod);
-                        db.SaveChanges();
-                    }
+                    ProizvodiRepozitorij.Izbrisi(odabraniProizvod);
                     PrikaziSadniMaterijal();
                 }
             }

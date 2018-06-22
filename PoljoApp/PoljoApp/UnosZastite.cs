@@ -23,6 +23,7 @@ namespace PoljoAppVerzija2
 
         public UnosZastite(zastita zastita)
         {
+            //KOnstruktor za slučaj ažuriranja zaštite
             InitializeComponent();
             PrikaziVrsteZastita();
 
@@ -36,43 +37,32 @@ namespace PoljoAppVerzija2
         {
             if (this.zastitaZaIzmjenu == null)
             {
-                //Dodajemo novi proizvod s unesenim podacima u bazu
-                using (var db = new PoljoAppEntities())
+                //Kreiramo novi objekt zaštite sa unesenim podacima i šaljemo ga u DataLayer za spremanje u bazu
+                zastita novaZastita = new zastita()
                 {
-                    zastita novaZastita = new zastita()
-                    {
-                        naziv = uiUnosNaziva.Text,
-                        koncentracija = uiUnosKoncentracije.Text,
-                        id_vrste_zastite = (int)uiActionOdabirVrste.SelectedValue
-                    };
-                    db.zastita.Add(novaZastita);
-                    db.SaveChanges();
-                }
-                Close();
+                    naziv = uiUnosNaziva.Text,
+                    koncentracija = uiUnosKoncentracije.Text,
+                    id_vrste_zastite = (int)uiActionOdabirVrste.SelectedValue
+                };
+                ZastitaRepozitorij.Spremi(novaZastita);
+                this.Close();
             }
             else
             {
-                //Mjenjamo podatke prenesenog objekta zastite
-                using (var db = new PoljoAppEntities())
-                {
-                    db.zastita.Attach(zastitaZaIzmjenu);
-                    zastitaZaIzmjenu.naziv = uiUnosNaziva.Text;
-                    zastitaZaIzmjenu.koncentracija = uiUnosKoncentracije.Text;
-                    zastitaZaIzmjenu.id_vrste_zastite = (int)uiActionOdabirVrste.SelectedValue;
-                    db.SaveChanges();
-                }
-                Close();
+                //Ažuriraj materijal za izmjenu s novim unesenim vrijednostima i prosljedi u DataLayer za ažuriranje objekta
+
+                zastitaZaIzmjenu.naziv = uiUnosNaziva.Text;
+                zastitaZaIzmjenu.koncentracija = uiUnosKoncentracije.Text;
+                zastitaZaIzmjenu.id_vrste_zastite = (int)uiActionOdabirVrste.SelectedValue;Close();
+                ZastitaRepozitorij.Azuriraj(zastitaZaIzmjenu);
+                this.Close();
             }
         }
 
         private void PrikaziVrsteZastita()
         {
             //Prikazi vrste zastita za izbor u comboboxu
-            BindingList<vrsta_zastite> listaVrsteZastite = null;
-            using (var db = new PoljoAppEntities())
-            {
-                listaVrsteZastite = new BindingList<vrsta_zastite>(db.vrsta_zastite.ToList());
-            }
+            List<vrsta_zastite> listaVrsteZastite = ZastitaRepozitorij.DohvatiVrsteZastita();
             vrstazastiteBindingSource.DataSource = listaVrsteZastite;
         }
 

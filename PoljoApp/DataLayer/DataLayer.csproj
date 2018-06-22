@@ -137,6 +137,7 @@
     <Compile Include="zastita.cs">
       <DependentUpon>PoljoAppModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="ZastitaRepozitorij.cs" />
     <Compile Include="ZastitaView.cs">
       <DependentUpon>PoljoAppModel.tt</DependentUpon>
     </Compile>

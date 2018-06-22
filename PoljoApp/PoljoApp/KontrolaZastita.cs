@@ -22,6 +22,7 @@ namespace PoljoAppVerzija2
         {
             UnosZastite unosZastite = new UnosZastite();
             unosZastite.ShowDialog();
+            PrikaziZastite();
         }
 
         private void uiIzborVrsteZastite_SelectedIndexChanged(object sender, EventArgs e)
@@ -32,13 +33,14 @@ namespace PoljoAppVerzija2
         private void PrikaziVrsteZastita()
         {
             //Prikazi vrste zastita u comboboxu koji sluzi za sortiranje glavnog prikaza zaštita
-            BindingList<vrsta_zastite> listaVrstaZastite = null;
-            using (var db = new PoljoAppEntities())
-            {
-                listaVrstaZastite = new BindingList<vrsta_zastite>(db.vrsta_zastite.ToList());
-            }
+            List<vrsta_zastite> listaVrstaZastite = ZastitaRepozitorij.DohvatiVrsteZastita();
             listaVrstaZastite.Insert(0, new vrsta_zastite() { naziv = "Prikaži sve" });
-            vrstazastiteBindingSource.DataSource = listaVrstaZastite;
+
+            foreach (var vrsta in listaVrstaZastite)
+            {
+                uiIzborVrsteZastite.Items.Add(vrsta.naziv);
+            }
+            uiIzborVrsteZastite.SelectedIndex = 0;
         }
 
         private void KontrolaZastita_Load(object sender, EventArgs e)
@@ -49,22 +51,8 @@ namespace PoljoAppVerzija2
 
         private void PrikaziZastite()
         {
-            //Prikazi zastite cija vrsta odgovara onoj odabranoj u comboboxu
-            BindingList<zastita> listaZastita = null;
-            using (var db = new PoljoAppEntities())
-            {
-                var obj = uiIzborVrsteZastite.SelectedItem as vrsta_zastite;
-
-                if (obj != null && obj.naziv == "Prikaži sve")
-                    listaZastita = new BindingList<zastita>(db.zastita.ToList());
-
-                else if (obj != null)
-                {
-                    db.vrsta_zastite.Attach(obj);
-                    listaZastita = new BindingList<zastita>(obj.zastita.ToList());
-                }
-            }
-            zastitaBindingSource.DataSource = listaZastita;
+            string odabranaVrsta = uiIzborVrsteZastite.Text;
+            zastitaBindingSource.DataSource = ZastitaRepozitorij.DohvatiZastite(odabranaVrsta);
         }
 
         private void uiActionAzuriraj_Click(object sender, EventArgs e)
@@ -86,16 +74,10 @@ namespace PoljoAppVerzija2
             zastita odabranaZastita = zastitaBindingSource.Current as zastita;
             if (odabranaZastita != null)
             {
-                if (MessageBox.Show("Želte li izbrisati zaštitu?", "Pitanje",
-                MessageBoxButtons.YesNo,
+                if (MessageBox.Show("Želte li izbrisati zaštitu?", "Pitanje", MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
                 {
-                    using (var db = new PoljoAppEntities())
-                    {
-                        db.zastita.Attach(odabranaZastita);
-                        db.zastita.Remove(odabranaZastita);
-                        db.SaveChanges();
-                    }
+                    ZastitaRepozitorij.Izbrisi(odabranaZastita);
                     PrikaziZastite();
                 }
             }

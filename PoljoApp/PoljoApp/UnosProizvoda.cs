@@ -37,12 +37,8 @@ namespace PoljoAppVerzija2
         private void PrikaziVrsteSadnogMaterijala()
         {
             //Prikazi vrste sadnog materijala za izbor u comboboxu
-             BindingList<VrstaSadnogMaterijala> listaVrstaSadnogMaterijala = null;
-             using (var db = new PoljoAppEntities())
-             {
-                 listaVrstaSadnogMaterijala = new BindingList<VrstaSadnogMaterijala>(db.vrsta_sadnog_materijala.ToList());
-             }
-             vrstasadnogmaterijalaBindingSource.DataSource = listaVrstaSadnogMaterijala;
+            List<VrstaSadnogMaterijala> listaVrstaSadnogMaterijala = ProizvodiRepozitorij.DohvatiVrsteSadnogMaterijala();
+            vrstasadnogmaterijalaBindingSource.DataSource = listaVrstaSadnogMaterijala;
              
         }
 

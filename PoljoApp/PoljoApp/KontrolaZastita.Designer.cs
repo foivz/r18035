@@ -83,14 +83,11 @@
             // 
             // uiIzborVrsteZastite
             // 
-            this.uiIzborVrsteZastite.DataSource = this.vrstazastiteBindingSource;
-            this.uiIzborVrsteZastite.DisplayMember = "naziv";
             this.uiIzborVrsteZastite.FormattingEnabled = true;
             this.uiIzborVrsteZastite.Location = new System.Drawing.Point(26, 22);
             this.uiIzborVrsteZastite.Name = "uiIzborVrsteZastite";
             this.uiIzborVrsteZastite.Size = new System.Drawing.Size(121, 21);
             this.uiIzborVrsteZastite.TabIndex = 9;
-            this.uiIzborVrsteZastite.ValueMember = "id";
             this.uiIzborVrsteZastite.SelectedIndexChanged += new System.EventHandler(this.uiIzborVrsteZastite_SelectedIndexChanged);
             // 
             // vrstazastiteBindingSource

@@ -52,5 +52,15 @@ namespace DataLayer
                 db.SaveChanges();
             }
         }
+
+        public static void Izbrisi(SadniMaterijal sadniMaterijalZaBrisanje)
+        {
+            using (var db = new PoljoAppEntities())
+            {
+                db.sadni_materijal.Attach(sadniMaterijalZaBrisanje);
+                db.sadni_materijal.Remove(sadniMaterijalZaBrisanje);
+                db.SaveChanges();
+            }
+        }
     }
 }
