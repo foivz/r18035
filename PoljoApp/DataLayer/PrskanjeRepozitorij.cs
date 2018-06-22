@@ -6,8 +6,15 @@ using System.Threading.Tasks;
 
 namespace DataLayer
 {
+    /// <summary>
+    /// Klasa sadrži potrebne metode za CRUD operacije nad tablicom Prskanje u bazi
+    /// </summary>
     public static class PrskanjeRepozitorij
     {
+        /// <summary>
+        /// Ažurira proslijeđeni zapis u bazi
+        /// </summary>
+        /// <param name="zaIzmjenu"></param>
         public static void Azuriraj(Prskanje zaIzmjenu)
         {
             using (var db = new PoljoAppEntities())
@@ -22,6 +29,10 @@ namespace DataLayer
             }
         }
 
+        /// <summary>
+        /// Dohvaća jedinstvene godine za koje postoje zapisi o prskanju
+        /// </summary>
+        /// <returns>Lista godina</returns>
         public static List<int> DohvatiGodine()
         {
             using (var db = new PoljoAppEntities())
@@ -30,6 +41,11 @@ namespace DataLayer
             }
         }
 
+        /// <summary>
+        /// Na temelju id-a traži zapis o prskanju
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>Zapis o prskanju</returns>
         public static Prskanje DohvatiPoIdu(int id)
         {
             using (var db = new PoljoAppEntities())
@@ -38,6 +54,11 @@ namespace DataLayer
             }
         }
 
+        /// <summary>
+        /// Dohvaća sve zapise o prskanju iz baze ovisno o proslijeđenoj godini
+        /// </summary>
+        /// <param name="godina"></param>
+        /// <returns>Lista prskanja</returns>
         public static List<PrskanjeView> DohvatiPrskanje(int godina)
         {
             using (var db = new PoljoAppEntities())
@@ -46,6 +67,10 @@ namespace DataLayer
             }
         }
 
+        /// <summary>
+        /// Briše proslijeđeno prskanje iz baze
+        /// </summary>
+        /// <param name="zaBrisanje"></param>
         public static void Izbrisi(Prskanje zaBrisanje)
         {
             using (var db = new PoljoAppEntities())
@@ -56,6 +81,11 @@ namespace DataLayer
             }
         }
 
+        /// <summary>
+        /// Sprema proslijeđeno prskanje u bazu
+        /// </summary>
+        /// <param name="novo"></param>
+        /// <returns>Spremljeno prskanje</returns>
         public static Prskanje Spremi(Prskanje novo)
         {
             using (var db = new PoljoAppEntities())
