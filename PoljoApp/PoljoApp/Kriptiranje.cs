@@ -9,18 +9,16 @@ using System
 
 namespace PoljoAppVerzija2
 {
-    public static class Usluge
+    /// <summary>
+    /// Zadužena je za kriptiranje teksta tipa string
+    /// </summary>
+    public static class Kriptiranje
     {
-        public static MatchCollection ProvjeriRegex(string tekst, string uzorak)
-        {
-            MatchCollection pogotci;
-
-            Regex regex = new Regex(uzorak);
-            pogotci = regex.Matches(tekst);
-
-            return pogotci;
-        }
-
+        /// <summary>
+        /// Kriptira ulazni string
+        /// </summary>
+        /// <param name="tekst"></param>
+        /// <returns>Kriptirani string</returns>
         public static string NapraviHash(string tekst)
         {
             using(MD5 md5Hash = MD5.Create()) { 
@@ -38,25 +36,5 @@ namespace PoljoAppVerzija2
                 return sBuilder.ToString();
             }
         }
-        
-        public static bool ProvjeriHash(string tekst, string hash)
-        {
-            using (MD5 md5Hash = MD5.Create())
-            {
-                string hashTeksta = NapraviHash(tekst);
-
-                StringComparer comparer = StringComparer.OrdinalIgnoreCase;
-
-                if (0 == comparer.Compare(hashTeksta, hash))
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-        }
-
     }
 }

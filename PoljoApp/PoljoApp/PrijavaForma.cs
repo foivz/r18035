@@ -36,7 +36,7 @@ namespace PoljoAppVerzija2
 
         private void IzvrsiPrijavu(string email, string lozinka)
         {
-            string lozinkaHash = Usluge.NapraviHash(lozinka);
+            string lozinkaHash = Kriptiranje.NapraviHash(lozinka);
             DataLayer.Djelatnik korisnik = DjelatniciRepozitorij.Prijava(email, lozinkaHash);
             
             if (korisnik != null) {
@@ -55,7 +55,7 @@ namespace PoljoAppVerzija2
             string uzorak = @"^[a-zA-Z0-9]{1,}\.?[a-zA-Z0-9]{0,}@[a-zA-Z0-9]{1,}\.[a-zA-Z]{2,}$";
             string email = unosEmail.Text;
 
-            MatchCollection pogotci = Usluge.ProvjeriRegex(email, uzorak);
+            MatchCollection pogotci = Validacija.ProvjeriRegex(email, uzorak);
 
             if (pogotci.Count < 1)
             {
@@ -69,7 +69,7 @@ namespace PoljoAppVerzija2
             string uzorak = @"[a-zA-Z0-9.]{1,}";
             string lozinka = unosLozinka.Text;
 
-            MatchCollection pogotci = Usluge.ProvjeriRegex(lozinka, uzorak);
+            MatchCollection pogotci = Validacija.ProvjeriRegex(lozinka, uzorak);
 
             if (pogotci.Count < 1 || lozinka.Length < 5)
             {

@@ -10,7 +10,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 using DataLayer;
-using System.Security.Cryptography;
 
 namespace PoljoAppVerzija2
 {

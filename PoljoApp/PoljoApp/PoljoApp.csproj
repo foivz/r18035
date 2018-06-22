@@ -204,7 +204,8 @@
     <Compile Include="KontrolaZastita.Designer.cs">
       <DependentUpon>KontrolaZastita.cs</DependentUpon>
     </Compile>
-    <Compile Include="Usluge.cs" />
+    <Compile Include="Kriptiranje.cs" />
+    <Compile Include="Validacija.cs" />
     <EmbeddedResource Include="Admin\DjelatniciForma.resx">
       <DependentUpon>DjelatniciForma.cs</DependentUpon>
     </EmbeddedResource>

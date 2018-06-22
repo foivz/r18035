@@ -66,7 +66,7 @@ namespace PoljoAppVerzija2.Admin
                     Ime = unosIme.Text,
                     Prezime = unosPrezime.Text,
                     Email = unosEmail.Text,
-                    Lozinka = Usluge.NapraviHash(unosLozinka.Text),
+                    Lozinka = Kriptiranje.NapraviHash(unosLozinka.Text),
                     BrojTelefona = unosTelefon.Text
                 };
                 md5Hash.Clear();
