@@ -37,12 +37,13 @@ namespace PoljoAppVerzija2
         private void PrikaziVrsteSadnogMaterijala()
         {
             //Prikazi vrste sadnog materijala za izbor u comboboxu
-            BindingList<VrstaSadnogMaterijala> listaVrstaSadnogMaterijala = null;
-            using (var db = new PoljoAppEntities())
-            {
-                listaVrstaSadnogMaterijala = new BindingList<VrstaSadnogMaterijala>(db.vrsta_sadnog_materijala.ToList());
-            }
-            vrstasadnogmaterijalaBindingSource.DataSource = listaVrstaSadnogMaterijala;
+             BindingList<VrstaSadnogMaterijala> listaVrstaSadnogMaterijala = null;
+             using (var db = new PoljoAppEntities())
+             {
+                 listaVrstaSadnogMaterijala = new BindingList<VrstaSadnogMaterijala>(db.vrsta_sadnog_materijala.ToList());
+             }
+             vrstasadnogmaterijalaBindingSource.DataSource = listaVrstaSadnogMaterijala;
+             
         }
 
         private void PrikaziMjerneJedinice()
@@ -56,31 +57,24 @@ namespace PoljoAppVerzija2
         {
             if (this.materijalZaIzmjenu == null)
             {
-                //Dodajemo novi proizvod s unesenim podacima u bazu
-                 using (var db = new PoljoAppEntities())
-                {
+                //Kreirajnovi objekt sadnog materijala i prosljedi u DataLayer za spremanje novog objekta
                     SadniMaterijal noviMaterijal = new SadniMaterijal()
                     {
                         naziv = uiUnosNaziva.Text,
                         jedinicna_mjera = uiActionOdabirJednicineMjere.Text,
                         id_vrste_materijala = (int)uiActionOdabirVrste.SelectedValue
-                };
-                    db.sadni_materijal.Add(noviMaterijal);
-                    db.SaveChanges();
-                }
-                Close();
+                    };
+                    ProizvodiRepozitorij.Spremi(noviMaterijal);
+                    Close();
             }
             else
             {
-                //Mjenjamo podatke prenesenog objekta proizvoda
-                using (var db = new PoljoAppEntities())
-                {
-                    db.sadni_materijal.Attach(materijalZaIzmjenu);
-                    materijalZaIzmjenu.naziv = uiUnosNaziva.Text;
-                    materijalZaIzmjenu.jedinicna_mjera = uiActionOdabirJednicineMjere.Text;
-                    materijalZaIzmjenu.id_vrste_materijala = (int)uiActionOdabirVrste.SelectedValue;
-                    db.SaveChanges();
-                }
+                //Ažuriraj materijal za izmjenu s novim unesenim vrijednostima i prosljedi u DataLayer za ažuriranje objekta
+               
+                materijalZaIzmjenu.naziv = uiUnosNaziva.Text;
+                materijalZaIzmjenu.jedinicna_mjera = uiActionOdabirJednicineMjere.Text;
+                materijalZaIzmjenu.id_vrste_materijala = (int)uiActionOdabirVrste.SelectedValue;
+                ProizvodiRepozitorij.Azuriraj(materijalZaIzmjenu);
                 Close();
             }
         }

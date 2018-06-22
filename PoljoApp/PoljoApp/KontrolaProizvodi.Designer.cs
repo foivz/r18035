@@ -84,14 +84,11 @@
             // 
             // cmbIzborVrsteSadnogMaterijala
             // 
-            this.cmbIzborVrsteSadnogMaterijala.DataSource = this.vrstasadnogmaterijalaBindingSource;
-            this.cmbIzborVrsteSadnogMaterijala.DisplayMember = "naziv";
             this.cmbIzborVrsteSadnogMaterijala.FormattingEnabled = true;
             this.cmbIzborVrsteSadnogMaterijala.Location = new System.Drawing.Point(26, 22);
             this.cmbIzborVrsteSadnogMaterijala.Name = "cmbIzborVrsteSadnogMaterijala";
             this.cmbIzborVrsteSadnogMaterijala.Size = new System.Drawing.Size(121, 21);
             this.cmbIzborVrsteSadnogMaterijala.TabIndex = 9;
-            this.cmbIzborVrsteSadnogMaterijala.ValueMember = "id";
             this.cmbIzborVrsteSadnogMaterijala.SelectedIndexChanged += new System.EventHandler(this.cmbIzborVrsteSadnogMaterijala_SelectedIndexChanged);
             // 
             // vrstasadnogmaterijalaBindingSource

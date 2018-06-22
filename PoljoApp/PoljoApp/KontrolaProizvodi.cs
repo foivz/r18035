@@ -31,37 +31,23 @@ namespace PoljoAppVerzija2
             PrikaziSadniMaterijal();
         }
 
+        
         private void PrikaziVrsteSadnogMaterijala()
         {
-            //Prikazi vrste sadnog materijala u comboboxu koji sluzi za sortiranje glavnog prikaza
-            BindingList<VrstaSadnogMaterijala> listaVrstaSadnogMaterijala = null;
-            using (var db = new PoljoAppEntities())
-            {
-                listaVrstaSadnogMaterijala = new BindingList<VrstaSadnogMaterijala>(db.vrsta_sadnog_materijala.ToList());
-                listaVrstaSadnogMaterijala.Insert(0, new VrstaSadnogMaterijala() { naziv = "Prikaži sve" });
-                vrstasadnogmaterijalaBindingSource.DataSource = listaVrstaSadnogMaterijala;
-            }
-            
-        }
+            List<VrstaSadnogMaterijala> listaVrstaSadnogMaterijala = ProizvodiRepozitorij.DohvatiVrsteSadnogMaterijala();
+            listaVrstaSadnogMaterijala.Insert(0, new VrstaSadnogMaterijala() { naziv = "Prikaži sve" });
 
+            foreach (var vrsta in listaVrstaSadnogMaterijala)
+            {
+                cmbIzborVrsteSadnogMaterijala.Items.Add(vrsta.naziv);
+            }
+            cmbIzborVrsteSadnogMaterijala.SelectedIndex = 0;
+
+        }
         private void PrikaziSadniMaterijal()
         {
-            //Prikazi sadni materijal čija vrsta odgovara onoj odabranoj u comboboxu
-            BindingList<SadniMaterijal> listaProizvoda = null;
-            using (var db = new PoljoAppEntities())
-            {
-                var obj = cmbIzborVrsteSadnogMaterijala.SelectedItem as VrstaSadnogMaterijala;
-
-                if (obj != null && obj.naziv == "Prikaži sve")
-                    listaProizvoda = new BindingList<SadniMaterijal>(db.sadni_materijal.ToList());
-
-                else if (obj != null)
-                {
-                    db.vrsta_sadnog_materijala.Attach(obj);
-                    listaProizvoda = new BindingList<SadniMaterijal>(obj.sadni_materijal.ToList());
-                }
-            }
-            sadnimaterijalBindingSource.DataSource = listaProizvoda;
+            string OdabranaVrstaSadnogMaterijala = cmbIzborVrsteSadnogMaterijala.Text;
+            sadnimaterijalBindingSource.DataSource = ProizvodiRepozitorij.DohvatiSadniMaterijal(OdabranaVrstaSadnogMaterijala);
         }
 
         private void cmbIzborVrsteSadnogMaterijala_SelectedIndexChanged(object sender, EventArgs e)
