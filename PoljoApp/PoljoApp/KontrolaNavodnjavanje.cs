@@ -172,5 +172,10 @@ namespace PoljoAppVerzija2
             PrikaziNavodnjavanje();
             PrikaziOborine();
         }
+
+        public void OtvoriPomoc()
+        {
+            navodnjavanjeTabs.SelectedTab = pomocTab;
+        }
     }
 }

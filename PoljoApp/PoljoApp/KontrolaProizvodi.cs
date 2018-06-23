@@ -112,5 +112,9 @@ namespace PoljoAppVerzija2
             return ProizvodiRepozitorij.DohvatiMaterijalPoIDu(oznaceni.id);
         }
 
+        public void OtvoriPomoc()
+        {
+            tabControl1.SelectedTab = pomocTab;
+        }
     }
 }
