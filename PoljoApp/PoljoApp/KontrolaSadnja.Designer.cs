@@ -91,15 +91,12 @@
             // 
             // izborSadnogMaterijala
             // 
-            this.izborSadnogMaterijala.DataSource = this.sadnimaterijalBindingSource;
-            this.izborSadnogMaterijala.DisplayMember = "naziv";
             this.izborSadnogMaterijala.FormattingEnabled = true;
             this.izborSadnogMaterijala.Location = new System.Drawing.Point(204, 27);
             this.izborSadnogMaterijala.Margin = new System.Windows.Forms.Padding(4);
             this.izborSadnogMaterijala.Name = "izborSadnogMaterijala";
             this.izborSadnogMaterijala.Size = new System.Drawing.Size(160, 24);
             this.izborSadnogMaterijala.TabIndex = 10;
-            this.izborSadnogMaterijala.ValueMember = "id";
             this.izborSadnogMaterijala.SelectedIndexChanged += new System.EventHandler(this.izborSadnogMaterijala_SelectedIndexChanged);
             // 
             // sadnimaterijalBindingSource
@@ -108,15 +105,12 @@
             // 
             // izborPoljPovrsina
             // 
-            this.izborPoljPovrsina.DataSource = this.poljpovrsinaBindingSource;
-            this.izborPoljPovrsina.DisplayMember = "naziv";
             this.izborPoljPovrsina.FormattingEnabled = true;
             this.izborPoljPovrsina.Location = new System.Drawing.Point(33, 27);
             this.izborPoljPovrsina.Margin = new System.Windows.Forms.Padding(4);
             this.izborPoljPovrsina.Name = "izborPoljPovrsina";
             this.izborPoljPovrsina.Size = new System.Drawing.Size(160, 24);
             this.izborPoljPovrsina.TabIndex = 9;
-            this.izborPoljPovrsina.ValueMember = "id";
             this.izborPoljPovrsina.SelectedIndexChanged += new System.EventHandler(this.izborPoljPovrsina_SelectedIndexChanged);
             // 
             // poljpovrsinaBindingSource

@@ -23,7 +23,7 @@ namespace PoljoAppVerzija2
 
 
         /// <summary>
-        /// Otvara formu za unos nove površine i osvježava tablicu
+        /// Otvara formu za unos nove površine i osvježava tablicu PoljPovršina
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

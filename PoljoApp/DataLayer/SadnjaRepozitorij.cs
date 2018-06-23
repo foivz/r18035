@@ -25,15 +25,15 @@ namespace DataLayer
         }
 
         /// <summary>
-        /// Dohvaća namjene poljoprivrednih površina
+        /// Dohvaća sadni materijal
         /// </summary>
         /// <returns></returns>
-        public static List<NamjenaPovrsine> DohvatiNamjenePovršina()
+        public static List<SadniMaterijal> DohvatiSadniMaterijal()
         {
             using (var db = new PoljoAppEntities())
             {
-                List<NamjenaPovrsine> listaNamjenaPovrsina = db.namjena_povrsine.ToList();
-                return listaNamjenaPovrsina;
+                List<SadniMaterijal> listaSadnogMaterijala = db.sadni_materijal.ToList();
+                return listaSadnogMaterijala;
             }
         }
         /// <summary>

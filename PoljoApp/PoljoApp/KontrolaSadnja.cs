@@ -11,110 +11,112 @@ using DataLayer;
 
 namespace PoljoAppVerzija2
 {
+    /// <summary>
+    /// Omogućuje prikaz i upravljanje podatcima o sadnjama
+    /// </summary>
     public partial class KontrolaSadnja : UserControl
     {
         public KontrolaSadnja()
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Otvara formu za unos nove sadnje i osvježava tablicu Sadnja
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UiDodajSadnju_Click(object sender, EventArgs e)
         {
             UnosSadnje unosSadnje = new UnosSadnje();
             unosSadnje.ShowDialog();
             PrikaziSadnju();
         }
-
+        /// <summary>
+        /// Dodaje podatke o nazivima površina iz baze u combobox i također dodaje mogućost "Prikaži sve"
+        /// </summary>
         private void PrikaziPoljoprivrednePovršine()
         {
-            //Prikaz poljoprivrednih povrsina u combo boxu
-            BindingList<PoljPovrsina> listaPoljPovrsina = null;
-            using (var db= new PoljoAppEntities())
+            List <PoljPovrsina> listaPoljPovrsina = SadnjaRepozitorij.DohvatiPoljPovršine();
+            listaPoljPovrsina.Insert(0, new PoljPovrsina() { naziv = "Prikaži sve" });
+            foreach(var povrsina in listaPoljPovrsina)
             {
-               listaPoljPovrsina = new BindingList<PoljPovrsina> (db.polj_povrsina.ToList());
+                izborPoljPovrsina.Items.Add(povrsina.naziv);
             }
-            listaPoljPovrsina.Insert(0,new PoljPovrsina() { naziv = "Prikaži sve" });
-            poljpovrsinaBindingSource.DataSource = listaPoljPovrsina;
+            izborPoljPovrsina.SelectedIndex = 0;
         }
-
+        /// <summary>
+        /// Dodaje podatke o nazivima sadnog materijala iz baze u combobox i također dodaje mogućnost "Prikaži sve"
+        /// </summary>
         private void PrikaziVrsteSadnihMaterijala()
         {
-            //Prikaz vrsta sadnog materijala u combo boxu
-            BindingList<SadniMaterijal> listaSadnogMaterijala = null;
-            using (var db = new PoljoAppEntities())
+            List <SadniMaterijal> listaSadnogMaterijala = SadnjaRepozitorij.DohvatiSadniMaterijal();
+            listaSadnogMaterijala.Insert(0, new SadniMaterijal() { naziv = "Prikaži sve" });
+            foreach(var sadniMaterijal in listaSadnogMaterijala)
             {
-                listaSadnogMaterijala = new BindingList<SadniMaterijal>(db.sadni_materijal.ToList());
+                izborSadnogMaterijala.Items.Add(sadniMaterijal.naziv);
             }
-            listaSadnogMaterijala.Insert(0,new SadniMaterijal() { naziv = "Prikaži sve" });
-            sadnimaterijalBindingSource.DataSource = listaSadnogMaterijala;
+            izborSadnogMaterijala.SelectedIndex = 0;
         }
-
+        /// <summary>
+        /// Prikazuje i dohvaća podatke o sadnjama na temelju odabrane površine i sadnog materijala
+        /// </summary>
         private void PrikaziSadnju()
         {
-            //Prikaz sadnja
-            BindingList<SadnjaView> listaSadnja = null;
-            using (var db= new PoljoAppEntities())
-            {
-                var obj = izborPoljPovrsina.SelectedItem as PoljPovrsina;
-                var obj2 = izborSadnogMaterijala.SelectedItem as SadniMaterijal;
-                if(obj!=null && obj.naziv=="Prikaži sve"  && obj2!=null && obj2.naziv=="Prikaži sve")
-                {
-                    listaSadnja = new BindingList<SadnjaView>(db.SadnjaView.ToList());
-                }
-
-                else if (obj != null && obj2!= null && obj2.naziv=="Prikaži sve")
-                {
-                    listaSadnja = new BindingList<SadnjaView>(db.SadnjaView.Where(s=>s.id_povrsina==obj.id).ToList());
-                }
-
-                else if (obj2 != null && obj != null && obj.naziv == "Prikaži sve")
-                {
-                    listaSadnja = new BindingList<SadnjaView>(db.SadnjaView.Where(s => s.id_materijal == obj2.id).ToList());
-                }
-
-                else if(obj != null && obj2 != null)
-                {
-                    listaSadnja = new BindingList<SadnjaView>(db.SadnjaView.Where(s => (s.id_materijal == obj2.id && s.id_povrsina == obj.id)).ToList());
-                }
-
-            }
-            sadnjaViewBindingSource.DataSource = listaSadnja;
+            string povrsina=izborPoljPovrsina.Text;
+            string sadniMaterijal=izborSadnogMaterijala.Text;
+            sadnjaViewBindingSource.DataSource = SadnjaRepozitorij.DohvatiSadnju(povrsina, sadniMaterijal);
         }
+        /// <summary>
+        /// Otvara formu za ažuriranje sadnje i osvježuje prikaz u tablici
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void uiActionAzurirajSadnju_Click(object sender, EventArgs e)
         {
-            Sadnja zaIzmjenu = DohvatiOznacenuSadnju();
-            UnosSadnje azuriraj = new UnosSadnje(zaIzmjenu);
-            azuriraj.ShowDialog();
-            PrikaziSadnju();
+            DataLayer.Sadnja zaIzmjenu = DohvatiOznacenuSadnju();
+            if (zaIzmjenu != null)
+            {
+                UnosSadnje azuriraj = new UnosSadnje(zaIzmjenu);
+                azuriraj.ShowDialog();
+                PrikaziSadnju();
+            }
+            
         }
-
+        /// <summary>
+        /// Briše odabranu sadnju iz baze podataka
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void uiActionIzbrisiSadnju_Click(object sender, EventArgs e)
         {
-            Sadnja zaBrisanje = DohvatiOznacenuSadnju();
-
-            if (MessageBox.Show("Jeste li sigurni da želite obrisati sadnju?", "Upozorenje!", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+            DataLayer.Sadnja zaBrisanje = DohvatiOznacenuSadnju();
+            if (zaBrisanje != null)
             {
-                using (var db = new PoljoAppEntities())
+                if (MessageBox.Show("Jeste li sigurni da želite obrisati sadnju?", "Upozorenje!", MessageBoxButtons.YesNo) 
+                    == System.Windows.Forms.DialogResult.Yes)
                 {
-                    db.sadnja.Attach(zaBrisanje);
-                    db.sadnja.Remove(zaBrisanje);
-                    db.SaveChanges();
+                    using (var db= new PoljoAppEntities())
+                    {
+                        SadnjaRepozitorij.Obrisi(zaBrisanje);
+                        PrikaziSadnju();
+                    }
                 }
-
-            }
-            PrikaziSadnju();
+            }   
         }
+        /// <summary>
+        /// Dohvaća označenu sadnju na DataGridView-u
+        /// </summary>
+        /// <returns></returns>
         private Sadnja DohvatiOznacenuSadnju()
         {
-            SadnjaView oznacenaSadnja = sadnjaViewBindingSource.Current as SadnjaView;
-            Sadnja sadnjaZaIzmjenu;
-            using (var db=new PoljoAppEntities())
-            {
-                sadnjaZaIzmjenu = db.sadnja.Where(s => s.Id == oznacenaSadnja.Id).FirstOrDefault();
-            }
-            return sadnjaZaIzmjenu;
+            DataLayer.SadnjaView oznacenaSadnja = sadnjaViewBindingSource.Current as DataLayer.SadnjaView;
+            return SadnjaRepozitorij.DohvatiSadnjuPoIdu(oznacenaSadnja.Id);
         }
-
+        /// <summary>
+        /// Prikazuje početne podatke na kontroli
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void KontrolaSadnja_Load(object sender, EventArgs e)
         {
             PrikaziPoljoprivrednePovršine();
@@ -131,7 +133,9 @@ namespace PoljoAppVerzija2
         {
             PrikaziSadnju();
         }
-
+        /// <summary>
+        /// Otvara korisničku pomoć
+        /// </summary>
         public void OtvoriPomoc()
         {
             tabControl1.SelectedTab = pomocTab;
