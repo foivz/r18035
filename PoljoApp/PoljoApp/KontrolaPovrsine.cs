@@ -11,84 +11,97 @@ using DataLayer;
 
 namespace PoljoAppVerzija2
 {
+    /// <summary>
+    /// Omogućuje prikaz i upravljanje podatcima o površinama
+    /// </summary>
     public partial class KontrolaPovrsine : UserControl
     {
         public KontrolaPovrsine()
         {
             InitializeComponent();
-            PrikaziPovrsine();
         }
 
 
-
+        /// <summary>
+        /// Otvara formu za unos nove površine i osvježava tablicu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void uiDodajPovrsinu_Click(object sender, EventArgs e)
         {
-            //Dodavanje nove površine 
             UnosPovrsine unosPovrsine = new UnosPovrsine();
             unosPovrsine.ShowDialog();
             PrikaziPovrsine();
         }
-
+        /// <summary>
+        /// Prikazuje početne podatke na kontroli
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void KontrolaPovrsine_Load(object sender, EventArgs e)
         {
-            PrikaziNamjenePovrsina();
+            DohvatiNamjenePovrsina();
             PrikaziPovrsine();
         }
-
-        private void PrikaziNamjenePovrsina()
+        /// <summary>
+        /// Prikazuje i dohvaća podatke o površinama na temelju odabrane namjene površine
+        /// </summary>
+        private void PrikaziPovrsine()
         {
-            //Prikaz namjene površina
-            BindingList<NamjenaPovrsine> listaNamjenaPovrsina = null;
-            using (var db = new PoljoAppEntities())
-            {
-                listaNamjenaPovrsina = new BindingList<NamjenaPovrsine>(db.namjena_povrsine.ToList());
-            }
-            listaNamjenaPovrsina.Insert(0,new NamjenaPovrsine() { namjena = "Prikaži sve" });
-            namjenapovrsineBindingSource.DataSource = listaNamjenaPovrsina;
+            string namjena = izborNamjenePovrsina.Text;
+            poljPovrsinaViewBindingSource.DataSource = PovrsineRepozitorij.DohvatiPovršinu(namjena);
         }
-
+        /// <summary>
+        /// Dodaje podatke o namjeni površina iz baze u combobox i također dodaje mogućnost "Prikaži sve"
+        /// </summary>
+        private void DohvatiNamjenePovrsina()
+        {
+            
+            List<NamjenaPovrsine> listaNamjena = PovrsineRepozitorij.DohvatiNamjenePovršina();
+            listaNamjena.Insert(0, new NamjenaPovrsine() { namjena = "Prikaži sve" });
+            foreach(var namjenaPovrsine in listaNamjena)
+            {
+                izborNamjenePovrsina.Items.Add(namjenaPovrsine.namjena);
+            }
+            izborNamjenePovrsina.SelectedIndex = 0;
+        }
         private void izborNamjenePovrsina_SelectedIndexChanged(object sender, EventArgs e)
         {
             PrikaziPovrsine();
         }
-
-        public void PrikaziPovrsine()
-        {
-            //Prikaz površina
-            BindingList<PoljPovrsinaView> listaPovrsina = null;
-            using (var db = new PoljoAppEntities())
-            {
-                var obj = izborNamjenePovrsina.SelectedItem as NamjenaPovrsine;
-
-                if (obj != null && obj.namjena == "Prikaži sve")
-                    listaPovrsina = new BindingList<PoljPovrsinaView>(db.PoljPovrsinaView.ToList());
-
-                else if (obj != null)
-                {
-                    db.namjena_povrsine.Attach(obj);
-                    listaPovrsina = new BindingList<PoljPovrsinaView>(db.PoljPovrsinaView.Where(p=>p.id_namjena==obj.id).ToList());
-                }
-            }
-            poljPovrsinaViewBindingSource.DataSource = listaPovrsina;
-        }
-
+        /// <summary>
+        /// Otvara formu za ažuriranje površine i osvježava prikaz u tablici
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void uiActionAzuriraj_Click(object sender, EventArgs e)
         {
-            //Ažuriranje postojećih površina
-            PoljPovrsina odabranaPovršina = poljpovrsinaBindingSource.Current as PoljPovrsina;
-            if (odabranaPovršina != null)
+            DataLayer.PoljPovrsina zaIzmjenu = DohvatiOznacenuPovrsinu();
+            if (zaIzmjenu != null)
             {
-                UnosPovrsine formaUnosPovrsine = new UnosPovrsine(odabranaPovršina);
-                formaUnosPovrsine.ShowDialog();
+                UnosPovrsine forma = new UnosPovrsine(zaIzmjenu);
+                forma.ShowDialog();
                 PrikaziPovrsine();
             }
         }
-
+        /// <summary>
+        /// Dohvaća označenu površinu na DataGridView-u
+        /// </summary>
+        /// <returns></returns>
+        private DataLayer.PoljPovrsina DohvatiOznacenuPovrsinu()
+        {
+            DataLayer.PoljPovrsinaView odabranaPovrsina = poljPovrsinaViewBindingSource.Current as DataLayer.PoljPovrsinaView;
+            return PovrsineRepozitorij.DohvatiPovrsinuPoIDu(odabranaPovrsina.id);
+        }
+        /// <summary>
+        /// Briše odabrani proizvod
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void uiActionIzbrisi_Click_1(object sender, EventArgs e)
         {
-            //Brisanje površine
-            PoljPovrsina odabranaPovrsina = poljpovrsinaBindingSource.Current as PoljPovrsina;
-            if (odabranaPovrsina != null)
+            DataLayer.PoljPovrsina zaBrisanje = DohvatiOznacenuPovrsinu(); 
+            if (zaBrisanje != null)
             {
                 if (MessageBox.Show("Želte li izbrisati površinu?", "Pitanje",
                 MessageBoxButtons.YesNo,
@@ -96,15 +109,13 @@ namespace PoljoAppVerzija2
                 {
                     using (var db = new PoljoAppEntities())
                     {
-                        db.polj_povrsina.Attach(odabranaPovrsina);
-                        db.polj_povrsina.Remove(odabranaPovrsina);
-                        db.SaveChanges();
+                        PovrsineRepozitorij.Izbrisi(zaBrisanje);
+                        PrikaziPovrsine();
                     }
-                    PrikaziPovrsine();
+                    
                 }
             }
         }
-
         public void OtvoriPomoc()
         {
             tabControl1.SelectedTab = pomocTab;
