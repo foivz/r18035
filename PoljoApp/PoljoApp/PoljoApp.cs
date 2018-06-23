@@ -50,12 +50,20 @@ namespace PoljoAppVerzija2
         {
             DohvatiVrijeme();
         }
-
+        /// <summary>
+        /// Otvara kontrolu za CRUD operacije nad sadnjama
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UiActionOpenSadnja_Click(object sender, EventArgs e)
         {
             uiSadnja.BringToFront();
         }
-
+        /// <summary>
+        /// Otvara kontrolu za CRUD operacije nad površinama
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UiActionOpenPovrsine_Click(object sender, EventArgs e)
         {
             uiPovrsine.BringToFront();

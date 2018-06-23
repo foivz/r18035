@@ -49,7 +49,7 @@ namespace PoljoAppVerzija2
         private void PrikaziPovrsine()
         {
             string namjena = izborNamjenePovrsina.Text;
-            poljPovrsinaViewBindingSource.DataSource = PovrsineRepozitorij.DohvatiPovršinu(namjena);
+            poljPovrsinaViewBindingSource.DataSource = PovrsinaRepozitorij.DohvatiPovršinu(namjena);
         }
         /// <summary>
         /// Dodaje podatke o namjeni površina iz baze u combobox i također dodaje mogućnost "Prikaži sve"
@@ -57,7 +57,7 @@ namespace PoljoAppVerzija2
         private void DohvatiNamjenePovrsina()
         {
             
-            List<NamjenaPovrsine> listaNamjena = PovrsineRepozitorij.DohvatiNamjenePovršina();
+            List<NamjenaPovrsine> listaNamjena = PovrsinaRepozitorij.DohvatiNamjenePovršina();
             listaNamjena.Insert(0, new NamjenaPovrsine() { namjena = "Prikaži sve" });
             foreach(var namjenaPovrsine in listaNamjena)
             {
@@ -91,7 +91,7 @@ namespace PoljoAppVerzija2
         private DataLayer.PoljPovrsina DohvatiOznacenuPovrsinu()
         {
             DataLayer.PoljPovrsinaView odabranaPovrsina = poljPovrsinaViewBindingSource.Current as DataLayer.PoljPovrsinaView;
-            return PovrsineRepozitorij.DohvatiPovrsinuPoIDu(odabranaPovrsina.id);
+            return PovrsinaRepozitorij.DohvatiPovrsinuPoIDu(odabranaPovrsina.id);
         }
         /// <summary>
         /// Briše odabrani proizvod
@@ -109,7 +109,7 @@ namespace PoljoAppVerzija2
                 {
                     using (var db = new PoljoAppEntities())
                     {
-                        PovrsineRepozitorij.Izbrisi(zaBrisanje);
+                        PovrsinaRepozitorij.Izbrisi(zaBrisanje);
                         PrikaziPovrsine();
                     }
                     

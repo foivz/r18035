@@ -9,11 +9,11 @@ namespace DataLayer
     /// <summary>
     /// Klasa sadrži potrebne metode za CRUD operacije nad tablicom PoljPovrsina u bazi
     /// </summary>
-    public static class PovrsineRepozitorij
+    public static class PovrsinaRepozitorij
     {
         
         /// <summary>
-        /// Dohvaća namjene poljoprivrednih površina
+        /// Dohvaća namjene poljoprivrednih površina u combobox
         /// </summary>
         /// <returns></returns>
         public static List<NamjenaPovrsine> DohvatiNamjenePovršina()

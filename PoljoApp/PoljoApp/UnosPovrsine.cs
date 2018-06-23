@@ -72,7 +72,7 @@ namespace PoljoAppVerzija2
                     x_koordinata = decimal.Parse(uiUnosKoordinateX.Text),
                     y_koordinata = decimal.Parse(uiUnosKoordinateY.Text)
                 };
-                PovrsineRepozitorij.Spremi(novaPoljPovrsina);
+                PovrsinaRepozitorij.Spremi(novaPoljPovrsina);
                 Close();
                 
             }
@@ -83,7 +83,7 @@ namespace PoljoAppVerzija2
                 povrsinaZaIzmjenu.id_namjene = (int)uiOdabirNamjene.SelectedValue;
                 povrsinaZaIzmjenu.x_koordinata = decimal.Parse(uiUnosKoordinateX.Text);
                 povrsinaZaIzmjenu.y_koordinata = decimal.Parse(uiUnosKoordinateY.Text);
-                PovrsineRepozitorij.Ažuriraj(povrsinaZaIzmjenu);
+                PovrsinaRepozitorij.Ažuriraj(povrsinaZaIzmjenu);
             }
                 Close();  
         }
