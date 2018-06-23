@@ -49,6 +49,7 @@
             // 
             // uiActionSpremi
             // 
+            this.uiActionSpremi.Enabled = false;
             this.uiActionSpremi.Location = new System.Drawing.Point(256, 189);
             this.uiActionSpremi.Margin = new System.Windows.Forms.Padding(4);
             this.uiActionSpremi.Name = "uiActionSpremi";
@@ -145,7 +146,6 @@
             this.izborPovrsine.Size = new System.Drawing.Size(232, 24);
             this.izborPovrsine.TabIndex = 21;
             this.izborPovrsine.ValueMember = "id";
-            this.izborPovrsine.SelectedIndexChanged += new System.EventHandler(this.izborPovrsine_SelectedIndexChanged);
             // 
             // poljpovrsinaBindingSource
             // 
@@ -196,6 +196,7 @@
             this.KeyPreview = true;
             this.Name = "UnosSadnje";
             this.Text = "Unos Sadnje";
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.UnosSadnje_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.sadnimaterijalBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.poljpovrsinaBindingSource)).EndInit();
             this.ResumeLayout(false);

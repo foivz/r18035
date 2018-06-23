@@ -108,5 +108,6 @@ namespace PoljoAppVerzija2
             else uiActionSpremi.Enabled = false;
             
         }
+
     }
 }
