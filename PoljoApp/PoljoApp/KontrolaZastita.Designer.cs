@@ -36,18 +36,18 @@
             this.uiActionIzbrisi = new System.Windows.Forms.Button();
             this.uiActionAzuriraj = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.zastitaViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ActionDodajZastitu = new System.Windows.Forms.Button();
+            this.pomocTab = new System.Windows.Forms.TabPage();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.vrstazastiteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nazivDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.koncentracijaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Vrsta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.zastitaViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ActionDodajZastitu = new System.Windows.Forms.Button();
-            this.pomocTab = new System.Windows.Forms.TabPage();
-            this.vrstazastiteBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.sadnjaTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -139,30 +139,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(418, 179);
             this.dataGridView1.TabIndex = 5;
             // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "ID Zaštite";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            // 
-            // nazivDataGridViewTextBoxColumn
-            // 
-            this.nazivDataGridViewTextBoxColumn.DataPropertyName = "naziv";
-            this.nazivDataGridViewTextBoxColumn.HeaderText = "Naziv";
-            this.nazivDataGridViewTextBoxColumn.Name = "nazivDataGridViewTextBoxColumn";
-            // 
-            // koncentracijaDataGridViewTextBoxColumn
-            // 
-            this.koncentracijaDataGridViewTextBoxColumn.DataPropertyName = "koncentracija";
-            this.koncentracijaDataGridViewTextBoxColumn.HeaderText = "Koncentracija";
-            this.koncentracijaDataGridViewTextBoxColumn.Name = "koncentracijaDataGridViewTextBoxColumn";
-            // 
-            // Vrsta
-            // 
-            this.Vrsta.DataPropertyName = "Vrsta";
-            this.Vrsta.HeaderText = "Vrsta zaštite";
-            this.Vrsta.Name = "Vrsta";
-            // 
             // zastitaViewBindingSource
             // 
             this.zastitaViewBindingSource.DataSource = typeof(DataLayer.ZastitaView);
@@ -192,37 +168,6 @@
             this.pomocTab.Text = "Pomoć";
             this.pomocTab.UseVisualStyleBackColor = true;
             // 
-            // vrstazastiteBindingSource
-            // 
-            this.vrstazastiteBindingSource.DataSource = typeof(DataLayer.vrsta_zastite);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(426, 65);
-            this.label1.TabIndex = 1;
-            this.label1.Text = resources.GetString("label1.Text");
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(25, 89);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(380, 52);
-            this.label2.TabIndex = 2;
-            this.label2.Text = resources.GetString("label2.Text");
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(25, 151);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(395, 52);
-            this.label3.TabIndex = 3;
-            this.label3.Text = resources.GetString("label3.Text");
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -233,6 +178,62 @@
             this.label4.Text = "4. Brisanje zaštite\r\nKorisnik briše zaštitu tako da klikne na željenu zaštitu u t" +
     "ablici i zatim klikne na \r\ngumb \"Izbriši\". Na skočnom prozoru potrebno je odabra" +
     "ti \"Da\" za brisanje zaštite.";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(25, 151);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(395, 52);
+            this.label3.TabIndex = 3;
+            this.label3.Text = resources.GetString("label3.Text");
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(25, 89);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(380, 52);
+            this.label2.TabIndex = 2;
+            this.label2.Text = resources.GetString("label2.Text");
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(25, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(426, 65);
+            this.label1.TabIndex = 1;
+            this.label1.Text = resources.GetString("label1.Text");
+            // 
+            // vrstazastiteBindingSource
+            // 
+            this.vrstazastiteBindingSource.DataSource = typeof(DataLayer.vrsta_zastite);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "ID Zaštite";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nazivDataGridViewTextBoxColumn
+            // 
+            this.nazivDataGridViewTextBoxColumn.DataPropertyName = "naziv";
+            this.nazivDataGridViewTextBoxColumn.HeaderText = "Naziv";
+            this.nazivDataGridViewTextBoxColumn.Name = "nazivDataGridViewTextBoxColumn";
+            // 
+            // koncentracijaDataGridViewTextBoxColumn
+            // 
+            this.koncentracijaDataGridViewTextBoxColumn.DataPropertyName = "koncentracija";
+            this.koncentracijaDataGridViewTextBoxColumn.HeaderText = "Koncentracija";
+            this.koncentracijaDataGridViewTextBoxColumn.Name = "koncentracijaDataGridViewTextBoxColumn";
+            // 
+            // Vrsta
+            // 
+            this.Vrsta.DataPropertyName = "Vrsta";
+            this.Vrsta.HeaderText = "Vrsta zaštite";
+            this.Vrsta.Name = "Vrsta";
             // 
             // KontrolaZastita
             // 
@@ -265,14 +266,14 @@
         private System.Windows.Forms.TabPage pomocTab;
         private System.Windows.Forms.BindingSource vrstazastiteBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn prskanjeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nazivDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn koncentracijaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Vrsta;
         private System.Windows.Forms.BindingSource zastitaViewBindingSource;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nazivDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn koncentracijaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Vrsta;
     }
 }
