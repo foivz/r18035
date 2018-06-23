@@ -104,6 +104,7 @@
             // 
             // uiActionSpremi
             // 
+            this.uiActionSpremi.Enabled = false;
             this.uiActionSpremi.Location = new System.Drawing.Point(264, 204);
             this.uiActionSpremi.Margin = new System.Windows.Forms.Padding(4);
             this.uiActionSpremi.Name = "uiActionSpremi";
@@ -180,9 +181,11 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UnosPovrsine";
             this.Text = "Unos Povrsine";
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.UnosPovrsine_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.namjenapovrsineBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

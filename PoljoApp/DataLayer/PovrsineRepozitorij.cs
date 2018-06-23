@@ -11,25 +11,9 @@ namespace DataLayer
     /// </summary>
     public static class PovrsineRepozitorij
     {
+        
         /// <summary>
-        /// Ažurira proslijeđeni zapis o sadnji u bazi
-        /// </summary>
-        /// <param name="zaIzmjenu"></param>
-        public static void Ažuriraj (PoljPovrsina zaIzmjenu)
-        {
-            using (var db = new PoljoAppEntities())
-            {
-                PoljPovrsina mijenjaj = db.polj_povrsina.Find(zaIzmjenu.id);
-                mijenjaj.id_namjene = zaIzmjenu.id_namjene;
-                mijenjaj.namjena_povrsine = zaIzmjenu.namjena_povrsine;
-                mijenjaj.naziv = zaIzmjenu.naziv;
-                mijenjaj.x_koordinata = zaIzmjenu.x_koordinata;
-                mijenjaj.y_koordinata = zaIzmjenu.y_koordinata;
-                db.SaveChanges();
-            }
-        }
-        /// <summary>
-        /// Dohvcaća namjene poljoprivrednih površina
+        /// Dohvaća namjene poljoprivrednih površina
         /// </summary>
         /// <returns></returns>
         public static List<NamjenaPovrsine> DohvatiNamjenePovršina()
@@ -61,7 +45,7 @@ namespace DataLayer
             }
         }
         /// <summary>
-        /// Unosi nove površine u bazu podataka
+        /// Unosi novu površinu u bazu podataka
         /// </summary>
         /// <param name="novaPovrsina"></param>
         public static void Spremi(PoljPovrsina novaPovrsina)
@@ -73,7 +57,24 @@ namespace DataLayer
             }
         }
         /// <summary>
-        /// Briše površine iz baze podataka
+        /// Ažurira proslijeđeni zapis o sadnji u bazi
+        /// </summary>
+        /// <param name="zaIzmjenu"></param>
+        public static void Ažuriraj(PoljPovrsina zaIzmjenu)
+        {
+            using (var db = new PoljoAppEntities())
+            {
+                PoljPovrsina mijenjaj = db.polj_povrsina.Find(zaIzmjenu.id);
+                mijenjaj.id_namjene = zaIzmjenu.id_namjene;
+                mijenjaj.naziv = zaIzmjenu.naziv;
+                mijenjaj.x_koordinata = zaIzmjenu.x_koordinata;
+                mijenjaj.y_koordinata = zaIzmjenu.y_koordinata;
+                mijenjaj.povrsina_m2 = zaIzmjenu.povrsina_m2;
+                db.SaveChanges();
+            }
+        }
+        /// <summary>
+        /// Briše proslijeđenu površinu iz baze podataka
         /// </summary>
         /// <param name="zaIzbrisati"></param>
         public static void Izbrisi(PoljPovrsina zaIzbrisati)
@@ -85,7 +86,18 @@ namespace DataLayer
                 db.SaveChanges();
             }
         }
-
+        /// <summary>
+        /// Na temelju id-a traži zapis o površini
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public static PoljPovrsina DohvatiPovrsinuPoIDu(int id)
+        {
+            using (var db= new PoljoAppEntities())
+            {
+                return db.polj_povrsina.Find(id);
+            }
+        }
 
     }
 }

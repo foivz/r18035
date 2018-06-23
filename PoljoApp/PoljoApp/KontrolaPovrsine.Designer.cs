@@ -32,28 +32,28 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.povrsineTab = new System.Windows.Forms.TabPage();
             this.izborNamjenePovrsina = new System.Windows.Forms.ComboBox();
-            this.namjenapovrsineBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.uiActionIzbrisi = new System.Windows.Forms.Button();
             this.uiActionAzuriraj = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.poljPovrsinaViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.uiActionDodajPovrsinu = new System.Windows.Forms.Button();
-            this.pomocTab = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
-            this.poljpovrsinaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nazivDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.namjena = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.povrsinam2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.x_koordinata = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.y_koordinata = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_namjena = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.uiActionDodajPovrsinu = new System.Windows.Forms.Button();
+            this.pomocTab = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
+            this.namjenapovrsineBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nazivDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.povrsinam2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.poljPovrsinaViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.poljpovrsinaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1.SuspendLayout();
             this.povrsineTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.namjenapovrsineBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.poljPovrsinaViewBindingSource)).BeginInit();
             this.pomocTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.namjenapovrsineBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.poljPovrsinaViewBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.poljpovrsinaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -89,20 +89,13 @@
             // 
             // izborNamjenePovrsina
             // 
-            this.izborNamjenePovrsina.DataSource = this.namjenapovrsineBindingSource;
-            this.izborNamjenePovrsina.DisplayMember = "namjena";
             this.izborNamjenePovrsina.FormattingEnabled = true;
             this.izborNamjenePovrsina.Location = new System.Drawing.Point(35, 27);
             this.izborNamjenePovrsina.Margin = new System.Windows.Forms.Padding(4);
             this.izborNamjenePovrsina.Name = "izborNamjenePovrsina";
             this.izborNamjenePovrsina.Size = new System.Drawing.Size(160, 24);
             this.izborNamjenePovrsina.TabIndex = 9;
-            this.izborNamjenePovrsina.ValueMember = "id";
             this.izborNamjenePovrsina.SelectedIndexChanged += new System.EventHandler(this.izborNamjenePovrsina_SelectedIndexChanged);
-            // 
-            // namjenapovrsineBindingSource
-            // 
-            this.namjenapovrsineBindingSource.DataSource = typeof(DataLayer.NamjenaPovrsine);
             // 
             // uiActionIzbrisi
             // 
@@ -157,9 +150,34 @@
             this.dataGridView1.Size = new System.Drawing.Size(557, 220);
             this.dataGridView1.TabIndex = 5;
             // 
-            // poljPovrsinaViewBindingSource
+            // namjena
             // 
-            this.poljPovrsinaViewBindingSource.DataSource = typeof(DataLayer.PoljPovrsinaView);
+            this.namjena.DataPropertyName = "namjena";
+            this.namjena.HeaderText = "Namjena";
+            this.namjena.Name = "namjena";
+            this.namjena.ReadOnly = true;
+            // 
+            // x_koordinata
+            // 
+            this.x_koordinata.DataPropertyName = "x_koordinata";
+            this.x_koordinata.HeaderText = "x koordinata";
+            this.x_koordinata.Name = "x_koordinata";
+            this.x_koordinata.ReadOnly = true;
+            // 
+            // y_koordinata
+            // 
+            this.y_koordinata.DataPropertyName = "y_koordinata";
+            this.y_koordinata.HeaderText = "y koordinata";
+            this.y_koordinata.Name = "y_koordinata";
+            this.y_koordinata.ReadOnly = true;
+            // 
+            // id_namjena
+            // 
+            this.id_namjena.DataPropertyName = "id_namjena";
+            this.id_namjena.HeaderText = "id_namjena";
+            this.id_namjena.Name = "id_namjena";
+            this.id_namjena.ReadOnly = true;
+            this.id_namjena.Visible = false;
             // 
             // uiActionDodajPovrsinu
             // 
@@ -195,9 +213,9 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Pomoć korisniku";
             // 
-            // poljpovrsinaBindingSource
+            // namjenapovrsineBindingSource
             // 
-            this.poljpovrsinaBindingSource.DataSource = typeof(DataLayer.PoljPovrsina);
+            this.namjenapovrsineBindingSource.DataSource = typeof(DataLayer.NamjenaPovrsine);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -216,13 +234,6 @@
             this.nazivDataGridViewTextBoxColumn.Name = "nazivDataGridViewTextBoxColumn";
             this.nazivDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // namjena
-            // 
-            this.namjena.DataPropertyName = "namjena";
-            this.namjena.HeaderText = "Namjena";
-            this.namjena.Name = "namjena";
-            this.namjena.ReadOnly = true;
-            // 
             // povrsinam2DataGridViewTextBoxColumn
             // 
             this.povrsinam2DataGridViewTextBoxColumn.DataPropertyName = "povrsina_m2";
@@ -230,27 +241,13 @@
             this.povrsinam2DataGridViewTextBoxColumn.Name = "povrsinam2DataGridViewTextBoxColumn";
             this.povrsinam2DataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // x_koordinata
+            // poljPovrsinaViewBindingSource
             // 
-            this.x_koordinata.DataPropertyName = "x_koordinata";
-            this.x_koordinata.HeaderText = "x koordinata";
-            this.x_koordinata.Name = "x_koordinata";
-            this.x_koordinata.ReadOnly = true;
+            this.poljPovrsinaViewBindingSource.DataSource = typeof(DataLayer.PoljPovrsinaView);
             // 
-            // y_koordinata
+            // poljpovrsinaBindingSource
             // 
-            this.y_koordinata.DataPropertyName = "y_koordinata";
-            this.y_koordinata.HeaderText = "y koordinata";
-            this.y_koordinata.Name = "y_koordinata";
-            this.y_koordinata.ReadOnly = true;
-            // 
-            // id_namjena
-            // 
-            this.id_namjena.DataPropertyName = "id_namjena";
-            this.id_namjena.HeaderText = "id_namjena";
-            this.id_namjena.Name = "id_namjena";
-            this.id_namjena.ReadOnly = true;
-            this.id_namjena.Visible = false;
+            this.poljpovrsinaBindingSource.DataSource = typeof(DataLayer.PoljPovrsina);
             // 
             // KontrolaPovrsine
             // 
@@ -263,11 +260,11 @@
             this.Load += new System.EventHandler(this.KontrolaPovrsine_Load);
             this.tabControl1.ResumeLayout(false);
             this.povrsineTab.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.namjenapovrsineBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.poljPovrsinaViewBindingSource)).EndInit();
             this.pomocTab.ResumeLayout(false);
             this.pomocTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.namjenapovrsineBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.poljPovrsinaViewBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.poljpovrsinaBindingSource)).EndInit();
             this.ResumeLayout(false);
 
