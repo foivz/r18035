@@ -120,6 +120,26 @@
   <metadata name="sadniMaterijalViewBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>267, 17</value>
   </metadata>
+  <data name="label3.Text" xml:space="preserve">
+    <value>3. Ažuriranje proizvoda
+Korisnik ažurira podatke o nekom proizvodu tako da klikne na željeni proizvod u 
+tablici i zatim klikne na gumb "Ažuriraj". Gumb otvara formu s podacima tog proizvoda 
+koje korisnik može mijenjati (osim ID-a) i pohraniti u bazu klikom na gumb "Spremi".
+</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>2. Unos proizvoda
+Korisnik unosi proizvode klikom na gumb "Dodaj proizvod" koji otvara formu za unos 
+podataka novog proizvoda. Unose se svi podaci osim ID-a proizvoda. Nakon unosa 
+proizvoda u bazu osvježava se prikaz u tablici.</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>1. Pregled podataka
+Tablica prikazuje podatke o proizvodima koje je moguće sortirati pomoću padajećeg 
+izbornika u gornjem lijevom uglu iznad tablice. Padajući izbornik je na početku postavljen 
+na prikaz podataka svih vrsta proizvoda. Odabirom jedne od drugih opcija u izborniku 
+osvježava se prikaz u tablici i prikazuje samo proizvode odabrane vrste.</value>
+  </data>
   <metadata name="vrstasadnogmaterijalaBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>

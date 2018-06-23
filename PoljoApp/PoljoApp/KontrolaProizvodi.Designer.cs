@@ -29,26 +29,30 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KontrolaProizvodi));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.sadnjaTab = new System.Windows.Forms.TabPage();
             this.cmbIzborVrsteSadnogMaterijala = new System.Windows.Forms.ComboBox();
             this.uiIzbrisiProizvod = new System.Windows.Forms.Button();
             this.uiAzurirajProizvod = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.uiDodajProizvod = new System.Windows.Forms.Button();
-            this.pomocTab = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
-            this.sadniMaterijalViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.vrstasadnogmaterijalaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nazivDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.jedinicnamjeraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vrstaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sadniMaterijalViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.uiDodajProizvod = new System.Windows.Forms.Button();
+            this.pomocTab = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
+            this.vrstasadnogmaterijalaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.sadnjaTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.pomocTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sadniMaterijalViewBindingSource)).BeginInit();
+            this.pomocTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vrstasadnogmaterijalaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -136,45 +140,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(418, 179);
             this.dataGridView1.TabIndex = 5;
             // 
-            // uiDodajProizvod
-            // 
-            this.uiDodajProizvod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.uiDodajProizvod.Location = new System.Drawing.Point(341, 239);
-            this.uiDodajProizvod.Name = "uiDodajProizvod";
-            this.uiDodajProizvod.Size = new System.Drawing.Size(102, 34);
-            this.uiDodajProizvod.TabIndex = 4;
-            this.uiDodajProizvod.Text = "Dodaj proizvod";
-            this.uiDodajProizvod.UseVisualStyleBackColor = true;
-            this.uiDodajProizvod.Click += new System.EventHandler(this.UiDodajProizvod_Click);
-            // 
-            // pomocTab
-            // 
-            this.pomocTab.Controls.Add(this.label1);
-            this.pomocTab.Location = new System.Drawing.Point(4, 22);
-            this.pomocTab.Name = "pomocTab";
-            this.pomocTab.Padding = new System.Windows.Forms.Padding(3);
-            this.pomocTab.Size = new System.Drawing.Size(466, 279);
-            this.pomocTab.TabIndex = 0;
-            this.pomocTab.Text = "Pomoć";
-            this.pomocTab.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Pomoć korisniku";
-            // 
-            // sadniMaterijalViewBindingSource
-            // 
-            this.sadniMaterijalViewBindingSource.DataSource = typeof(DataLayer.SadniMaterijalView);
-            // 
-            // vrstasadnogmaterijalaBindingSource
-            // 
-            this.vrstasadnogmaterijalaBindingSource.DataSource = typeof(DataLayer.VrstaSadnogMaterijala);
-            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
@@ -203,6 +168,77 @@
             this.vrstaDataGridViewTextBoxColumn.Name = "vrstaDataGridViewTextBoxColumn";
             this.vrstaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // sadniMaterijalViewBindingSource
+            // 
+            this.sadniMaterijalViewBindingSource.DataSource = typeof(DataLayer.SadniMaterijalView);
+            // 
+            // uiDodajProizvod
+            // 
+            this.uiDodajProizvod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.uiDodajProizvod.Location = new System.Drawing.Point(341, 239);
+            this.uiDodajProizvod.Name = "uiDodajProizvod";
+            this.uiDodajProizvod.Size = new System.Drawing.Size(102, 34);
+            this.uiDodajProizvod.TabIndex = 4;
+            this.uiDodajProizvod.Text = "Dodaj proizvod";
+            this.uiDodajProizvod.UseVisualStyleBackColor = true;
+            this.uiDodajProizvod.Click += new System.EventHandler(this.UiDodajProizvod_Click);
+            // 
+            // pomocTab
+            // 
+            this.pomocTab.Controls.Add(this.label4);
+            this.pomocTab.Controls.Add(this.label3);
+            this.pomocTab.Controls.Add(this.label2);
+            this.pomocTab.Controls.Add(this.label1);
+            this.pomocTab.Location = new System.Drawing.Point(4, 22);
+            this.pomocTab.Name = "pomocTab";
+            this.pomocTab.Padding = new System.Windows.Forms.Padding(3);
+            this.pomocTab.Size = new System.Drawing.Size(466, 279);
+            this.pomocTab.TabIndex = 0;
+            this.pomocTab.Text = "Pomoć";
+            this.pomocTab.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(21, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(426, 65);
+            this.label1.TabIndex = 0;
+            this.label1.Text = resources.GetString("label1.Text");
+            // 
+            // vrstasadnogmaterijalaBindingSource
+            // 
+            this.vrstasadnogmaterijalaBindingSource.DataSource = typeof(DataLayer.VrstaSadnogMaterijala);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(21, 93);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(406, 52);
+            this.label2.TabIndex = 1;
+            this.label2.Text = resources.GetString("label2.Text");
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(21, 155);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(411, 52);
+            this.label3.TabIndex = 2;
+            this.label3.Text = resources.GetString("label3.Text");
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(21, 216);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(405, 39);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "4. Brisanje proizvoda\r\nKorisnik briše proizvod tako da klikne na željeni proizvod" +
+    " u tablici i zatim klikne na \r\ngumb \"Izbriši\". Na skočnom prozoru potrebno je od" +
+    "abrati \"Da\" za brisanje proizvoda.";
+            // 
             // KontrolaProizvodi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -214,9 +250,9 @@
             this.tabControl1.ResumeLayout(false);
             this.sadnjaTab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sadniMaterijalViewBindingSource)).EndInit();
             this.pomocTab.ResumeLayout(false);
             this.pomocTab.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sadniMaterijalViewBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vrstasadnogmaterijalaBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -239,5 +275,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nazivDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn jedinicnamjeraDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn vrstaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }

@@ -111,5 +111,6 @@ namespace PoljoAppVerzija2
             SadniMaterijalView oznaceni = sadniMaterijalViewBindingSource.Current as SadniMaterijalView;
             return ProizvodiRepozitorij.DohvatiMaterijalPoIDu(oznaceni.id);
         }
+
     }
 }

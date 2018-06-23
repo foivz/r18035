@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KontrolaZastita));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.sadnjaTab = new System.Windows.Forms.TabPage();
             this.uiIzborVrsteZastite = new System.Windows.Forms.ComboBox();
@@ -42,8 +43,11 @@
             this.zastitaViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ActionDodajZastitu = new System.Windows.Forms.Button();
             this.pomocTab = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
             this.vrstazastiteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.sadnjaTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -176,6 +180,9 @@
             // 
             // pomocTab
             // 
+            this.pomocTab.Controls.Add(this.label4);
+            this.pomocTab.Controls.Add(this.label3);
+            this.pomocTab.Controls.Add(this.label2);
             this.pomocTab.Controls.Add(this.label1);
             this.pomocTab.Location = new System.Drawing.Point(4, 22);
             this.pomocTab.Name = "pomocTab";
@@ -185,18 +192,47 @@
             this.pomocTab.Text = "Pomoć";
             this.pomocTab.UseVisualStyleBackColor = true;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Pomoć korisniku";
-            // 
             // vrstazastiteBindingSource
             // 
             this.vrstazastiteBindingSource.DataSource = typeof(DataLayer.vrsta_zastite);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(25, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(426, 65);
+            this.label1.TabIndex = 1;
+            this.label1.Text = resources.GetString("label1.Text");
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(25, 89);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(380, 52);
+            this.label2.TabIndex = 2;
+            this.label2.Text = resources.GetString("label2.Text");
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(25, 151);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(395, 52);
+            this.label3.TabIndex = 3;
+            this.label3.Text = resources.GetString("label3.Text");
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(25, 212);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(389, 39);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "4. Brisanje zaštite\r\nKorisnik briše zaštitu tako da klikne na željenu zaštitu u t" +
+    "ablici i zatim klikne na \r\ngumb \"Izbriši\". Na skočnom prozoru potrebno je odabra" +
+    "ti \"Da\" za brisanje zaštite.";
             // 
             // KontrolaZastita
             // 
@@ -227,7 +263,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button ActionDodajZastitu;
         private System.Windows.Forms.TabPage pomocTab;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.BindingSource vrstazastiteBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn prskanjeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
@@ -235,5 +270,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn koncentracijaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Vrsta;
         private System.Windows.Forms.BindingSource zastitaViewBindingSource;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }

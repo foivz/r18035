@@ -123,6 +123,26 @@
   <metadata name="zastitaViewBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>206, 23</value>
   </metadata>
+  <data name="label3.Text" xml:space="preserve">
+    <value>3. Ažuriranje zaštite
+Korisnik ažurira podatke o nekoj zaštiti tako da klikne na željenu zaštitu u 
+tablici i zatim klikne na gumb "Ažuriraj". Gumb otvara formu s podacima te zaštite 
+koje korisnik može mijenjati (osim ID-a) i pohraniti u bazu klikom na gumb "Spremi".
+</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>2. Unos zaštite
+Korisnik unosi zaštite klikom na gumb "Dodaj zaštitu" koji otvara formu za unos 
+podataka nove zaštite. Unose se svi podaci osim ID-a zaštite. Nakon unosa 
+zaštite u bazu osvježava se prikaz u tablici.</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>1. Pregled podataka
+Tablica prikazuje podatke o zaštitama koje je moguće sortirati pomoću padajećeg 
+izbornika u gornjem lijevom uglu iznad tablice. Padajući izbornik je na početku postavljen 
+na prikaz podataka svih vrsta zaštita. Odabirom jedne od drugih opcija u izborniku 
+osvježava se prikaz u tablici i prikazuje samo zaštite odabrane vrste.</value>
+  </data>
   <metadata name="vrstazastiteBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
