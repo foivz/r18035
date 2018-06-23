@@ -274,6 +274,7 @@
     <None Include="namjena_povrsine.datasource" />
     <None Include="packages.config" />
     <None Include="polj_povrsina.datasource" />
+    <None Include="Properties\DataSources\DataLayer.PoljPovrsinaView.datasource" />
     <None Include="Properties\DataSources\DataLayer.SadniMaterijalView.datasource" />
     <None Include="Properties\DataSources\DataLayer.ZastitaView.datasource" />
     <None Include="Properties\DataSources\djelatnik.datasource" />

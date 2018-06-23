@@ -217,42 +217,42 @@
             // datumsadnjeDataGridViewTextBoxColumn
             // 
             this.datumsadnjeDataGridViewTextBoxColumn.DataPropertyName = "datum_sadnje";
-            this.datumsadnjeDataGridViewTextBoxColumn.HeaderText = "datum_sadnje";
+            this.datumsadnjeDataGridViewTextBoxColumn.HeaderText = "Datum sadnje";
             this.datumsadnjeDataGridViewTextBoxColumn.Name = "datumsadnjeDataGridViewTextBoxColumn";
             this.datumsadnjeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // nazivDataGridViewTextBoxColumn
             // 
             this.nazivDataGridViewTextBoxColumn.DataPropertyName = "naziv";
-            this.nazivDataGridViewTextBoxColumn.HeaderText = "naziv";
+            this.nazivDataGridViewTextBoxColumn.HeaderText = "Naziv površine";
             this.nazivDataGridViewTextBoxColumn.Name = "nazivDataGridViewTextBoxColumn";
             this.nazivDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // nazivmaterijalDataGridViewTextBoxColumn
             // 
             this.nazivmaterijalDataGridViewTextBoxColumn.DataPropertyName = "naziv_materijal";
-            this.nazivmaterijalDataGridViewTextBoxColumn.HeaderText = "naziv_materijal";
+            this.nazivmaterijalDataGridViewTextBoxColumn.HeaderText = "Naziv sadnog materijala";
             this.nazivmaterijalDataGridViewTextBoxColumn.Name = "nazivmaterijalDataGridViewTextBoxColumn";
             this.nazivmaterijalDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // kolicinaDataGridViewTextBoxColumn
             // 
             this.kolicinaDataGridViewTextBoxColumn.DataPropertyName = "kolicina";
-            this.kolicinaDataGridViewTextBoxColumn.HeaderText = "kolicina";
+            this.kolicinaDataGridViewTextBoxColumn.HeaderText = "Količna sadnog materijala";
             this.kolicinaDataGridViewTextBoxColumn.Name = "kolicinaDataGridViewTextBoxColumn";
             this.kolicinaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // jedinicnamjeraDataGridViewTextBoxColumn
             // 
             this.jedinicnamjeraDataGridViewTextBoxColumn.DataPropertyName = "jedinicna_mjera";
-            this.jedinicnamjeraDataGridViewTextBoxColumn.HeaderText = "jedinicna_mjera";
+            this.jedinicnamjeraDataGridViewTextBoxColumn.HeaderText = "Jedinična mjera sadnog materijala";
             this.jedinicnamjeraDataGridViewTextBoxColumn.Name = "jedinicnamjeraDataGridViewTextBoxColumn";
             this.jedinicnamjeraDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // idpovrsinaDataGridViewTextBoxColumn
             // 
             this.idpovrsinaDataGridViewTextBoxColumn.DataPropertyName = "id_povrsina";
-            this.idpovrsinaDataGridViewTextBoxColumn.HeaderText = "id_povrsina";
+            this.idpovrsinaDataGridViewTextBoxColumn.HeaderText = "";
             this.idpovrsinaDataGridViewTextBoxColumn.Name = "idpovrsinaDataGridViewTextBoxColumn";
             this.idpovrsinaDataGridViewTextBoxColumn.ReadOnly = true;
             this.idpovrsinaDataGridViewTextBoxColumn.Visible = false;

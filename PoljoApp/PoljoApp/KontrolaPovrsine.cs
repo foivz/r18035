@@ -55,21 +55,21 @@ namespace PoljoAppVerzija2
         public void PrikaziPovrsine()
         {
             //Prikaz površina
-            BindingList<PoljPovrsina> listaPovrsina = null;
+            BindingList<PoljPovrsinaView> listaPovrsina = null;
             using (var db = new PoljoAppEntities())
             {
                 var obj = izborNamjenePovrsina.SelectedItem as NamjenaPovrsine;
 
                 if (obj != null && obj.namjena == "Prikaži sve")
-                    listaPovrsina = new BindingList<PoljPovrsina>(db.polj_povrsina.ToList());
+                    listaPovrsina = new BindingList<PoljPovrsinaView>(db.PoljPovrsinaView.ToList());
 
                 else if (obj != null)
                 {
                     db.namjena_povrsine.Attach(obj);
-                    listaPovrsina = new BindingList<PoljPovrsina>(obj.polj_povrsina.ToList());
+                    listaPovrsina = new BindingList<PoljPovrsinaView>(db.PoljPovrsinaView.Where(p=>p.id_namjena==obj.id).ToList());
                 }
             }
-            poljpovrsinaBindingSource.DataSource = listaPovrsina;
+            poljPovrsinaViewBindingSource.DataSource = listaPovrsina;
         }
 
         private void uiActionAzuriraj_Click(object sender, EventArgs e)

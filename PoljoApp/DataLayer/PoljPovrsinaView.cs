@@ -18,5 +18,8 @@ namespace DataLayer
         public string naziv { get; set; }
         public decimal povrsina_m2 { get; set; }
         public string namjena { get; set; }
+        public int id_namjena { get; set; }
+        public decimal x_koordinata { get; set; }
+        public decimal y_koordinata { get; set; }
     }
 }

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Djelatnik">
           <Key>
             <PropertyRef Name="Id" />
@@ -134,11 +134,17 @@ warning 6002: The table/view '18035_DB.18035_DB.PoljPovrsinaView' does not have 
             <PropertyRef Name="naziv" />
             <PropertyRef Name="povrsina_m2" />
             <PropertyRef Name="namjena" />
+            <PropertyRef Name="Expr1" />
+            <PropertyRef Name="x_koordinata" />
+            <PropertyRef Name="y_koordinata" />
           </Key>
           <Property Name="id" Type="int" Nullable="false" />
           <Property Name="naziv" Type="varchar" MaxLength="45" Nullable="false" />
           <Property Name="povrsina_m2" Type="decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="namjena" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Expr1" Type="int" Nullable="false" />
+          <Property Name="x_koordinata" Type="decimal" Precision="6" Scale="3" Nullable="false" />
+          <Property Name="y_koordinata" Type="decimal" Precision="6" Scale="3" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view '18035_DB.18035_DB.PrskanjeView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -360,7 +366,10 @@ FROM [18035_DB].[NavodnjavanjeView] AS [NavodnjavanjeView]</DefiningQuery>
 [PoljPovrsinaView].[id] AS [id], 
 [PoljPovrsinaView].[naziv] AS [naziv], 
 [PoljPovrsinaView].[povrsina_m2] AS [povrsina_m2], 
-[PoljPovrsinaView].[namjena] AS [namjena]
+[PoljPovrsinaView].[namjena] AS [namjena], 
+[PoljPovrsinaView].[Expr1] AS [Expr1], 
+[PoljPovrsinaView].[x_koordinata] AS [x_koordinata], 
+[PoljPovrsinaView].[y_koordinata] AS [y_koordinata]
 FROM [18035_DB].[PoljPovrsinaView] AS [PoljPovrsinaView]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="PrskanjeView" EntityType="Self.PrskanjeView" store:Type="Views" store:Schema="18035_DB">
@@ -445,8 +454,7 @@ FROM [18035_DB].[ZastitaView] AS [ZastitaView]</DefiningQuery>
             <End Role="zastita" EntitySet="zastita" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -595,11 +603,17 @@ FROM [18035_DB].[ZastitaView] AS [ZastitaView]</DefiningQuery>
             <PropertyRef Name="naziv" />
             <PropertyRef Name="povrsina_m2" />
             <PropertyRef Name="namjena" />
+            <PropertyRef Name="id_namjena" />
+            <PropertyRef Name="x_koordinata" />
+            <PropertyRef Name="y_koordinata" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" />
           <Property Name="naziv" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="povrsina_m2" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="namjena" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="id_namjena" Type="Int32" Nullable="false" />
+          <Property Name="x_koordinata" Type="Decimal" Nullable="false" Precision="6" Scale="3" />
+          <Property Name="y_koordinata" Type="Decimal" Nullable="false" Precision="6" Scale="3" />
         </EntityType>
         <EntityType Name="PrskanjeView">
           <Key>
@@ -977,6 +991,9 @@ FROM [18035_DB].[ZastitaView] AS [ZastitaView]</DefiningQuery>
           <EntitySetMapping Name="PoljPovrsinaView">
             <EntityTypeMapping TypeName="DBModel.PoljPovrsinaView">
               <MappingFragment StoreEntitySet="PoljPovrsinaView">
+                <ScalarProperty Name="y_koordinata" ColumnName="y_koordinata" />
+                <ScalarProperty Name="x_koordinata" ColumnName="x_koordinata" />
+                <ScalarProperty Name="id_namjena" ColumnName="Expr1" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="naziv" ColumnName="naziv" />
                 <ScalarProperty Name="povrsina_m2" ColumnName="povrsina_m2" />
