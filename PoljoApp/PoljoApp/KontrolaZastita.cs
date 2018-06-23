@@ -107,5 +107,10 @@ namespace PoljoAppVerzija2
             ZastitaView oznacena = zastitaViewBindingSource.Current as ZastitaView;
             return ZastitaRepozitorij.DohvatiZastituPoIDu(oznacena.id);
         }
+
+        public void OtvoriPomoc()
+        {
+            tabControl1.SelectedTab = pomocTab;
+        }
     }
 }

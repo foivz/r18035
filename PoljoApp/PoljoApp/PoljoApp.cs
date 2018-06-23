@@ -39,6 +39,9 @@ namespace PoljoAppVerzija2
             };
             OborineTimer.Tick += OborineTimer_Tick;
             OborineTimer.Start();
+
+            this.KeyPreview = true;
+            this.KeyDown += new KeyEventHandler(PoljoApp_KeyDown);
         }
 
         /// <summary>
@@ -162,6 +165,47 @@ namespace PoljoAppVerzija2
 
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             uiProizvodi.BringToFront();
+        }
+        /// <summary>
+        /// Provjerava da li je pritisnuta tipka F1 pa na trenutno aktivnoj kontroli otvara pomoć
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void PoljoApp_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                if (Controls.GetChildIndex(uiProizvodi) == 0)
+                {
+                    uiProizvodi.OtvoriPomoc();
+                    e.Handled = true;
+                }
+                if (Controls.GetChildIndex(uiZastita) == 0)
+                {
+                    uiZastita.OtvoriPomoc();
+                    e.Handled = true;
+                }
+                if (Controls.GetChildIndex(uiPovrsine) == 0)
+                {
+                    uiPovrsine.OtvoriPomoc();
+                    e.Handled = true;
+                }
+                if (Controls.GetChildIndex(uiPrskanje) == 0)
+                {
+                    uiPrskanje.OtvoriPomoc();
+                    e.Handled = true;
+                }
+                if (Controls.GetChildIndex(uiSadnja) == 0)
+                {
+                    uiSadnja.OtvoriPomoc();
+                    e.Handled = true;
+                }
+                if (Controls.GetChildIndex(uiNavodnjavanje) == 0)
+                {
+                    uiNavodnjavanje.OtvoriPomoc();
+                    e.Handled = true;
+                }
+            }
         }
     }
 }

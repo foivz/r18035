@@ -131,5 +131,10 @@ namespace PoljoAppVerzija2
         {
             PrikaziSadnju();
         }
+
+        public void OtvoriPomoc()
+        {
+            tabControl1.SelectedTab = pomocTab;
+        }
     }
 }

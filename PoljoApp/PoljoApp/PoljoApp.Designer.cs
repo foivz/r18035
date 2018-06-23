@@ -326,6 +326,7 @@
             this.Name = "PoljoApp";
             this.Text = "PoljoApp";
             this.Load += new System.EventHandler(this.PoljoApp_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PoljoApp_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
