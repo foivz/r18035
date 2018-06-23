@@ -67,6 +67,60 @@ namespace DataLayer
                 }
             }
         }
+        /// <summary>
+        /// Unosi novu sadnju u bazu podataka
+        /// </summary>
+        /// <param name="novaSadnja"></param>
+        public static void Spremi(Sadnja novaSadnja)
+        {
+            using (var db = new PoljoAppEntities())
+            {
+                db.sadnja.Add(novaSadnja);
+                db.SaveChanges();
+            }
+        }
+        /// <summary>
+        /// Ažurira proslijeđeni zapis o sadnji u bazi
+        /// </summary>
+        /// <param name="zaIzmjenu"></param>
+        public static void Ažuriraj (Sadnja zaIzmjenu)
+        {
+            using (var db = new PoljoAppEntities())
+            {
+                Sadnja mijenjaj = db.sadnja.Find(zaIzmjenu.Id);
+                mijenjaj.id_materijal = zaIzmjenu.id_materijal;
+                mijenjaj.id_povrsina = zaIzmjenu.id_povrsina;
+                mijenjaj.kolicina = zaIzmjenu.kolicina;
+                mijenjaj.datum_sadnje = zaIzmjenu.datum_sadnje;
+                db.SaveChanges();
+                
+            }
+        }
+        /// <summary>
+        /// Briše proslijeđenu sadnju iz baze podataka
+        /// </summary>
+        /// <param name="zaBrisanje"></param>
+        public static void Obrisi(Sadnja zaBrisanje)
+        {
+            using (var db = new PoljoAppEntities())
+            {
+                db.sadnja.Attach(zaBrisanje);
+                db.sadnja.Remove(zaBrisanje);
+                db.SaveChanges();
+            }
+        }
+        /// <summary>
+        /// Na temelju Id-a traži zapise o sadnji
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public static Sadnja DohvatiSadnjuPoIdu(int id)
+        {
+            using (var db = new PoljoAppEntities())
+            {
+                return db.sadnja.Find(id);
+            }
+        }
     }
 
 }
