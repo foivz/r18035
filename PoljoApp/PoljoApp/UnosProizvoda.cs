@@ -61,14 +61,16 @@ namespace PoljoAppVerzija2
         /// <summary>
         /// U slučaju novog proizvoda podatke sprema u novi objekt i sprema ga u bazu,
         /// u slučaju ažuriranja proizvoda mijenja mu podatke na one unesene u formu i sprema u bazu
+        /// U oba slučaja ako podaci nisu ispravni upozorava korisnika i traži ponovan unos
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void uiActionSpremi_Click(object sender, EventArgs e)
         {
-            if (this.materijalZaIzmjenu == null)
+            if (ValidirajUnos())
             {
-                //Kreirajnovi objekt sadnog materijala i prosljedi u DataLayer za spremanje novog objekta
+                if (this.materijalZaIzmjenu == null)
+                {
                     SadniMaterijal noviMaterijal = new SadniMaterijal()
                     {
                         naziv = uiUnosNaziva.Text,
@@ -77,22 +79,78 @@ namespace PoljoAppVerzija2
                     };
                     ProizvodiRepozitorij.Spremi(noviMaterijal);
                     Close();
+
+                }
+                else
+                {
+
+                    materijalZaIzmjenu.naziv = uiUnosNaziva.Text;
+                    materijalZaIzmjenu.jedinicna_mjera = uiActionOdabirJednicineMjere.Text;
+                    materijalZaIzmjenu.id_vrste_materijala = (int)uiActionOdabirVrste.SelectedValue;
+                    ProizvodiRepozitorij.Azuriraj(materijalZaIzmjenu);
+                    Close();
+                }
             }
             else
             {
-                //Ažuriraj materijal za izmjenu s novim unesenim vrijednostima i prosljedi u DataLayer za ažuriranje objekta
-               
-                materijalZaIzmjenu.naziv = uiUnosNaziva.Text;
-                materijalZaIzmjenu.jedinicna_mjera = uiActionOdabirJednicineMjere.Text;
-                materijalZaIzmjenu.id_vrste_materijala = (int)uiActionOdabirVrste.SelectedValue;
-                ProizvodiRepozitorij.Azuriraj(materijalZaIzmjenu);
-                Close();
+                MessageBox.Show("Uneseni podaci nisu ispravni! Pokušajte ponovno i odaberite jednu od ponuđenih vrijednosti.",
+                                    "Pogrešan unos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            
         }
 
         private void uiActionOdustani_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        /// <summary>
+        /// Provjerava da li se uneseni podaci podudaraju s ispravnim vrijednostima
+        /// Duljina naziva ne smije biti manje od 2 slova
+        /// </summary>
+        /// <returns>True ako je unos ispravan</returns>
+        private bool ValidirajUnos()
+        {
+            bool unosMjereValjan;
+            bool unosVrsteValjan;
+            bool unosNazivaValjan;
+            string unesenaMjera = uiActionOdabirJednicineMjere.Text;
+            string vrstaMaterijala = uiActionOdabirVrste.Text;
+            int unesenNaziv = uiUnosNaziva.TextLength;
+
+            if (unesenNaziv >= 2) unosNazivaValjan = true;
+            else unosNazivaValjan = false;
+
+            switch (unesenaMjera)
+            {
+                case "Komad":
+                    unosMjereValjan = true;
+                    break;
+                case "Kilogram":
+                    unosMjereValjan = true;
+                    break;
+                default:
+                    unosMjereValjan = false;
+                    break;
+            }
+            switch (vrstaMaterijala)
+            {
+                case "žitarice": unosVrsteValjan = true;
+                    break;
+                case "cvijece": unosVrsteValjan = true;
+                    break;
+                case "povrce": unosVrsteValjan = true;
+                    break;
+                case "voce": unosVrsteValjan = true;
+                    break;
+                default: unosVrsteValjan = false;
+                    break;
+            }
+
+            if (unosVrsteValjan && unosMjereValjan && unosNazivaValjan)
+            {
+                return true;
+            }
+            else return false;
         }
     }
 }
