@@ -39,7 +39,7 @@ namespace DataLayer
                 }
                 else
                 {
-                    return db.SadniMaterijalView.Where(n => n.naziv == vrsta).ToList();
+                    return db.SadniMaterijalView.Where(n => n.Vrsta == vrsta).ToList();
                 }
             }
         }
