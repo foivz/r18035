@@ -61,8 +61,10 @@ namespace PoljoAppVerzija2
         /// <param name="e"></param>
         private void uiActionSpremi_Click(object sender, EventArgs e)
         {
+            
             if (this.povrsinaZaIzmjenu == null)
             {
+
                 DataLayer.PoljPovrsina novaPoljPovrsina = new PoljPovrsina()
 
                 {

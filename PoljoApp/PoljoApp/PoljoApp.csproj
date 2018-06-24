@@ -105,6 +105,7 @@
     <Compile Include="Admin\UnosDjelatnika.Designer.cs">
       <DependentUpon>UnosDjelatnika.cs</DependentUpon>
     </Compile>
+    <Compile Include="ExceptionNemaInterneta.cs" />
     <Compile Include="KontrolaNavodnjavanje.cs">
       <SubType>UserControl</SubType>
     </Compile>
