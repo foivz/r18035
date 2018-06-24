@@ -132,6 +132,41 @@
   <metadata name="poljPovrsinaViewBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>527, 17</value>
   </metadata>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Površine:
+
+1. Pregled: Odabirom namjene površine iz padajućeg izbornika prikazuju se sve površine koje 
+imaju odabranu namjenu (oranica, plastenik, voćnjak, polje). Također je moguće odabrati 
+mogućnost "Prikaži sve"koja prikazuje sva unesena polja.
+
+2. Unos: Klikom na gumb "Dodaj površinu" dodaje se novi zapis o površini, nakon što se unesu 
+svi podatci gumb "Spremi" postaje aktivan i podatci se mogu spremiti
+
+3. Brisanje: Odabirom određene površine i klikom na gumb "Izbriši" otvara se novi skočni prozor 
+i odabirom "Da" briše se zapis o odabranoj površini
+
+4. Ažuriranje: Odabirom određene površine i zatim klikom na gumb "Ažuriraj" otvara se prozor
+za ažuriranje odabrane površine. Klikom na gumb "Spremi" sprema se ažurirani zapis o 
+odbranoj površini.
+
+
+</value>
+  </data>
+  <metadata name="namjena.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="x_koordinata.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="y_koordinata.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="id_namjena.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="poljPovrsinaViewBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>527, 17</value>
+  </metadata>
   <metadata name="namjenapovrsineBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>

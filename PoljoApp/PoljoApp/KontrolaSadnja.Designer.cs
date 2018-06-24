@@ -29,12 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KontrolaSadnja));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.sadnjaTab = new System.Windows.Forms.TabPage();
             this.izborSadnogMaterijala = new System.Windows.Forms.ComboBox();
-            this.sadnimaterijalBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.izborPoljPovrsina = new System.Windows.Forms.ComboBox();
-            this.poljpovrsinaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.uiActionIzbrisiSadnju = new System.Windows.Forms.Button();
             this.uiActionAzurirajSadnju = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -49,13 +48,15 @@
             this.uiActionDodajSadnju = new System.Windows.Forms.Button();
             this.pomocTab = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
+            this.sadnimaterijalBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.poljpovrsinaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1.SuspendLayout();
             this.sadnjaTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sadnimaterijalBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.poljpovrsinaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sadnjaViewBindingSource)).BeginInit();
             this.pomocTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sadnimaterijalBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.poljpovrsinaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -99,10 +100,6 @@
             this.izborSadnogMaterijala.TabIndex = 10;
             this.izborSadnogMaterijala.SelectedIndexChanged += new System.EventHandler(this.izborSadnogMaterijala_SelectedIndexChanged);
             // 
-            // sadnimaterijalBindingSource
-            // 
-            this.sadnimaterijalBindingSource.DataSource = typeof(DataLayer.SadniMaterijal);
-            // 
             // izborPoljPovrsina
             // 
             this.izborPoljPovrsina.FormattingEnabled = true;
@@ -112,10 +109,6 @@
             this.izborPoljPovrsina.Size = new System.Drawing.Size(160, 24);
             this.izborPoljPovrsina.TabIndex = 9;
             this.izborPoljPovrsina.SelectedIndexChanged += new System.EventHandler(this.izborPoljPovrsina_SelectedIndexChanged);
-            // 
-            // poljpovrsinaBindingSource
-            // 
-            this.poljpovrsinaBindingSource.DataSource = typeof(DataLayer.PoljPovrsina);
             // 
             // uiActionIzbrisiSadnju
             // 
@@ -255,9 +248,17 @@
             this.label1.Location = new System.Drawing.Point(28, 23);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 17);
+            this.label1.Size = new System.Drawing.Size(586, 289);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Pomoć korisniku";
+            this.label1.Text = resources.GetString("label1.Text");
+            // 
+            // sadnimaterijalBindingSource
+            // 
+            this.sadnimaterijalBindingSource.DataSource = typeof(DataLayer.SadniMaterijal);
+            // 
+            // poljpovrsinaBindingSource
+            // 
+            this.poljpovrsinaBindingSource.DataSource = typeof(DataLayer.PoljPovrsina);
             // 
             // KontrolaSadnja
             // 
@@ -270,12 +271,12 @@
             this.Load += new System.EventHandler(this.KontrolaSadnja_Load);
             this.tabControl1.ResumeLayout(false);
             this.sadnjaTab.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.sadnimaterijalBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.poljpovrsinaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sadnjaViewBindingSource)).EndInit();
             this.pomocTab.ResumeLayout(false);
             this.pomocTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sadnimaterijalBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.poljpovrsinaBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

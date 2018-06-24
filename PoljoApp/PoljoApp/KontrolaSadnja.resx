@@ -120,6 +120,26 @@
   <metadata name="sadnjaViewBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>705, 17</value>
   </metadata>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Sadnja:
+
+1. Pregled: Prilikom prikaza zapisa o sadnji, automatski se prikazuju sve sadnje. Odabirom
+iz padajućih izbornika, sadnja se može sortirati po površinama ili po sadnom 
+materijalu koji je posađen na površinama.
+
+2. Unos: Klikom na gumb "Dodaj sadnju" otvara se prozor za unos novog zapisa o sadnji,
+nakon što se unesu svi potrebni podatci aktivira se gumb "Spremi" i klikom na njega se 
+sprema novi zapis o sadnji.
+
+3. Brisanje: Odabirom određenog zapisa o sadnji i klikom na gumb "Izbriši" otvara se skočni 
+prozor i klikom na gumb "Da" brišu se podatci o odabranoj sadnji.
+
+4. Ažuriranje: Odabirom određenog zapisa o sadnji i klikom na gumb "Ažuriraj" otvara se 
+prozor za ažuriranje podataka o odabranoj sadnji. Klikom na gumb "Spremi" ažurirani
+podatci se spremaju.
+
+</value>
+  </data>
   <metadata name="sadnimaterijalBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>455, 17</value>
   </metadata>
