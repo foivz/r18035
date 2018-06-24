@@ -61,33 +61,41 @@ namespace PoljoAppVerzija2
         /// <param name="e"></param>
         private void uiActionSpremi_Click(object sender, EventArgs e)
         {
-            
-            if (this.povrsinaZaIzmjenu == null)
+            if (ValidirajUnos())
             {
-
-                DataLayer.PoljPovrsina novaPoljPovrsina = new PoljPovrsina()
-
+                if (this.povrsinaZaIzmjenu == null)
                 {
-                    naziv = uiUnosNaziva.Text,
-                    povrsina_m2 = int.Parse(uiUnosPovrsine.Text),
-                    id_namjene = (int)uiOdabirNamjene.SelectedValue,
-                    x_koordinata = decimal.Parse(uiUnosKoordinateX.Text),
-                    y_koordinata = decimal.Parse(uiUnosKoordinateY.Text)
-                };
-                PovrsinaRepozitorij.Spremi(novaPoljPovrsina);
+
+                    DataLayer.PoljPovrsina novaPoljPovrsina = new PoljPovrsina()
+
+                    {
+                        naziv = uiUnosNaziva.Text,
+                        povrsina_m2 = int.Parse(uiUnosPovrsine.Text),
+                        id_namjene = (int)uiOdabirNamjene.SelectedValue,
+                        x_koordinata = decimal.Parse(uiUnosKoordinateX.Text),
+                        y_koordinata = decimal.Parse(uiUnosKoordinateY.Text)
+                    };
+                    PovrsinaRepozitorij.Spremi(novaPoljPovrsina);
+                    Close();
+
+                }
+                else
+                {
+                    povrsinaZaIzmjenu.naziv = uiUnosNaziva.Text;
+                    povrsinaZaIzmjenu.povrsina_m2 = decimal.Parse(uiUnosPovrsine.Text);
+                    povrsinaZaIzmjenu.id_namjene = (int)uiOdabirNamjene.SelectedValue;
+                    povrsinaZaIzmjenu.x_koordinata = decimal.Parse(uiUnosKoordinateX.Text);
+                    povrsinaZaIzmjenu.y_koordinata = decimal.Parse(uiUnosKoordinateY.Text);
+                    PovrsinaRepozitorij.Ažuriraj(povrsinaZaIzmjenu);
+                }
                 Close();
-                
             }
             else
             {
-                povrsinaZaIzmjenu.naziv = uiUnosNaziva.Text;
-                povrsinaZaIzmjenu.povrsina_m2 = decimal.Parse(uiUnosPovrsine.Text);
-                povrsinaZaIzmjenu.id_namjene = (int)uiOdabirNamjene.SelectedValue;
-                povrsinaZaIzmjenu.x_koordinata = decimal.Parse(uiUnosKoordinateX.Text);
-                povrsinaZaIzmjenu.y_koordinata = decimal.Parse(uiUnosKoordinateY.Text);
-                PovrsinaRepozitorij.Ažuriraj(povrsinaZaIzmjenu);
+                MessageBox.Show("Uneseni podaci nisu ispravni! Pokušajte ponovno i odaberite jednu od ponuđenih vrijednosti.",
+                                    "Pogrešan unos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-                Close();  
+           
         }
         /// <summary>
         /// Zatvara formu za unos površine
@@ -109,6 +117,26 @@ namespace PoljoAppVerzija2
                 uiActionSpremi.Enabled = true;
             else uiActionSpremi.Enabled = false;
             
+        }
+        /// <summary>
+        /// Provjerava da li su uneseni podatci ispravni
+        /// </summary>
+        /// <returns></returns>
+        private bool ValidirajUnos()
+        {
+            int unosPovrsine;
+            decimal unosXKoordinate;
+            decimal unosYKoordinate;
+            if (int.TryParse(uiUnosPovrsine.Text, out unosPovrsine) 
+                && decimal.TryParse(uiUnosKoordinateX.Text, out unosXKoordinate)
+                && decimal.TryParse(uiUnosKoordinateY.Text, out unosYKoordinate))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            } 
         }
 
     }

@@ -87,28 +87,37 @@ namespace PoljoAppVerzija2
         /// <param name="e"></param>
         private void uiActionSpremi_Click(object sender, EventArgs e)
         {
-            if (this.sadnjaZaIzmjenu == null)
+            if (ValidirajUnos())
             {
-                DataLayer.Sadnja novaSadnja = new Sadnja()
+                if (this.sadnjaZaIzmjenu == null)
                 {
+                    DataLayer.Sadnja novaSadnja = new Sadnja()
+                    {
                         kolicina = uiUnosKolicine.Text.ToString(),
                         id_materijal = (int)izborProizvodaZaSadnju.SelectedValue,
                         id_povrsina = (int)izborPovrsine.SelectedValue,
                         datum_sadnje = datum.Value
-                };
-                SadnjaRepozitorij.Spremi(novaSadnja);
-                Close();
+                    };
+                    SadnjaRepozitorij.Spremi(novaSadnja);
+                    Close();
+                }
+                else
+                {
+                    sadnjaZaIzmjenu.id_materijal = (int)izborProizvodaZaSadnju.SelectedValue;
+                    sadnjaZaIzmjenu.id_povrsina = (int)izborPovrsine.SelectedValue;
+                    sadnjaZaIzmjenu.kolicina = uiUnosKolicine.Text.ToString();
+                    sadnjaZaIzmjenu.datum_sadnje = datum.Value;
+                    SadnjaRepozitorij.Ažuriraj(sadnjaZaIzmjenu);
+
+                    Close();
+                }
             }
             else
             {
-                sadnjaZaIzmjenu.id_materijal = (int)izborProizvodaZaSadnju.SelectedValue;
-                sadnjaZaIzmjenu.id_povrsina = (int)izborPovrsine.SelectedValue;
-                sadnjaZaIzmjenu.kolicina = uiUnosKolicine.Text.ToString();
-                sadnjaZaIzmjenu.datum_sadnje = datum.Value;
-                SadnjaRepozitorij.Ažuriraj(sadnjaZaIzmjenu);
-
-                Close();
+                MessageBox.Show("Uneseni podaci nisu ispravni! Pokušajte ponovno i odaberite jednu od ponuđenih vrijednosti.",
+                                   "Pogrešan unos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            
         }
         /// <summary>
         /// Ažurira mjernu jedinicu prema odabranom sadnom materijalu
@@ -131,6 +140,22 @@ namespace PoljoAppVerzija2
             if (uiUnosKolicine.Text != "")
                 uiActionSpremi.Enabled = true;
             else uiActionSpremi.Enabled = false;
+        }
+        /// <summary>
+        /// Provjerava da li su uneseni podatci ispravni
+        /// </summary>
+        /// <returns></returns>
+        private bool ValidirajUnos()
+        {
+            int kolicina;
+            if (int.TryParse(uiUnosKolicine.Text, out kolicina))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
