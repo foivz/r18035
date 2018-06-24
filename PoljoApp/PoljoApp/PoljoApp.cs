@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
+using System.Diagnostics;
 using DataLayer;
 
 namespace PoljoAppVerzija2
@@ -167,13 +168,14 @@ namespace PoljoAppVerzija2
             uiProizvodi.BringToFront();
         }
         /// <summary>
-        /// Provjerava da li je pritisnuta tipka F1 pa na trenutno aktivnoj kontroli otvara pomoć
+        /// Ako je pritisnuta tipka F1 otvara korisničku dokumentaciju u pregledniku
+        /// Ako je pritisnuta tipka F2 na trenutno aktivnoj kontroli otvara pomoć
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void PoljoApp_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.F1)
+            if (e.KeyCode == Keys.F2)
             {
                 if (Controls.GetChildIndex(uiProizvodi) == 0)
                 {
@@ -205,6 +207,11 @@ namespace PoljoAppVerzija2
                     uiNavodnjavanje.OtvoriPomoc();
                     e.Handled = true;
                 }
+            }
+            if (e.KeyCode == Keys.F1)
+            {
+                Process.Start("https://github.com/foivz/r18035/blob/master/datoteke/Korisni%C4%8Dka%20dokumentacija.pdf");
+                e.Handled = true;
             }
         }
     }
