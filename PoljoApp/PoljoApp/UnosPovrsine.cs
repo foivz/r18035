@@ -128,8 +128,8 @@ namespace PoljoAppVerzija2
             decimal unosXKoordinate;
             decimal unosYKoordinate;
             if (int.TryParse(uiUnosPovrsine.Text, out unosPovrsine) 
-                && decimal.TryParse(uiUnosKoordinateX.Text, out unosXKoordinate)
-                && decimal.TryParse(uiUnosKoordinateY.Text, out unosYKoordinate))
+                && decimal.TryParse(uiUnosKoordinateX.Text, out unosXKoordinate) && (unosXKoordinate<=90) && (unosXKoordinate>=0)
+                && decimal.TryParse(uiUnosKoordinateY.Text, out unosYKoordinate) && (unosYKoordinate <=180) && (unosYKoordinate>=0))
             {
                 return true;
             }
