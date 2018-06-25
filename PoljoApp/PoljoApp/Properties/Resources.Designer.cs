@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PoljoAppVerzija2.Properties {
+namespace PoljoApp.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace PoljoAppVerzija2.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("PoljoAppVerzija2.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("PoljoApp.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -63,9 +63,9 @@ namespace PoljoAppVerzija2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Logo___crni {
+        internal static System.Drawing.Bitmap Logocrni {
             get {
-                object obj = ResourceManager.GetObject("Logo - crni", resourceCulture);
+                object obj = ResourceManager.GetObject("Logocrni", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -40,7 +40,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::PoljoAppVerzija2.Properties.Resources.Logo___crni;
+            this.pictureBox1.Image = global::PoljoApp.Properties.Resources.Logocrni;
             this.pictureBox1.Location = new System.Drawing.Point(21, 16);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(96, 93);

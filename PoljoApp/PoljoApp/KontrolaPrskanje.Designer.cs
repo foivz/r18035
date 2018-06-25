@@ -64,10 +64,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.prskanjeTab);
             this.tabControl1.Controls.Add(this.pomocTab);
-            this.tabControl1.Location = new System.Drawing.Point(18, 18);
+            this.tabControl1.Location = new System.Drawing.Point(24, 22);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(474, 305);
+            this.tabControl1.Size = new System.Drawing.Size(632, 375);
             this.tabControl1.TabIndex = 9;
             // 
             // prskanjeTab
@@ -78,10 +79,11 @@
             this.prskanjeTab.Controls.Add(this.uiActionAzuriraj);
             this.prskanjeTab.Controls.Add(this.pregledPrskanja);
             this.prskanjeTab.Controls.Add(this.uiActionNovo);
-            this.prskanjeTab.Location = new System.Drawing.Point(4, 22);
+            this.prskanjeTab.Location = new System.Drawing.Point(4, 25);
+            this.prskanjeTab.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.prskanjeTab.Name = "prskanjeTab";
-            this.prskanjeTab.Padding = new System.Windows.Forms.Padding(3);
-            this.prskanjeTab.Size = new System.Drawing.Size(466, 279);
+            this.prskanjeTab.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.prskanjeTab.Size = new System.Drawing.Size(624, 346);
             this.prskanjeTab.TabIndex = 1;
             this.prskanjeTab.Text = "Prskanje";
             this.prskanjeTab.UseVisualStyleBackColor = true;
@@ -90,17 +92,19 @@
             // 
             this.izborGodine.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.izborGodine.FormattingEnabled = true;
-            this.izborGodine.Location = new System.Drawing.Point(26, 22);
+            this.izborGodine.Location = new System.Drawing.Point(35, 27);
+            this.izborGodine.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.izborGodine.Name = "izborGodine";
-            this.izborGodine.Size = new System.Drawing.Size(121, 21);
+            this.izborGodine.Size = new System.Drawing.Size(160, 24);
             this.izborGodine.TabIndex = 11;
             // 
             // uiActionIspis
             // 
             this.uiActionIspis.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.uiActionIspis.Location = new System.Drawing.Point(341, 14);
+            this.uiActionIspis.Location = new System.Drawing.Point(455, 17);
+            this.uiActionIspis.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.uiActionIspis.Name = "uiActionIspis";
-            this.uiActionIspis.Size = new System.Drawing.Size(102, 34);
+            this.uiActionIspis.Size = new System.Drawing.Size(136, 42);
             this.uiActionIspis.TabIndex = 8;
             this.uiActionIspis.Text = "Ispiši u PDF";
             this.uiActionIspis.UseVisualStyleBackColor = true;
@@ -109,9 +113,10 @@
             // uiActionIzbrisi
             // 
             this.uiActionIzbrisi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.uiActionIzbrisi.Location = new System.Drawing.Point(153, 239);
+            this.uiActionIzbrisi.Location = new System.Drawing.Point(204, 294);
+            this.uiActionIzbrisi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.uiActionIzbrisi.Name = "uiActionIzbrisi";
-            this.uiActionIzbrisi.Size = new System.Drawing.Size(102, 34);
+            this.uiActionIzbrisi.Size = new System.Drawing.Size(136, 42);
             this.uiActionIzbrisi.TabIndex = 7;
             this.uiActionIzbrisi.Text = "Izbriši";
             this.uiActionIzbrisi.UseVisualStyleBackColor = true;
@@ -120,9 +125,10 @@
             // uiActionAzuriraj
             // 
             this.uiActionAzuriraj.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.uiActionAzuriraj.Location = new System.Drawing.Point(25, 239);
+            this.uiActionAzuriraj.Location = new System.Drawing.Point(33, 294);
+            this.uiActionAzuriraj.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.uiActionAzuriraj.Name = "uiActionAzuriraj";
-            this.uiActionAzuriraj.Size = new System.Drawing.Size(102, 34);
+            this.uiActionAzuriraj.Size = new System.Drawing.Size(136, 42);
             this.uiActionAzuriraj.TabIndex = 6;
             this.uiActionAzuriraj.Text = "Ažuriraj";
             this.uiActionAzuriraj.UseVisualStyleBackColor = true;
@@ -149,12 +155,14 @@
             this.prezimeDataGridViewTextBoxColumn,
             this.idDataGridViewTextBoxColumn});
             this.pregledPrskanja.DataSource = this.prskanjeViewBindingSource;
-            this.pregledPrskanja.Location = new System.Drawing.Point(25, 54);
+            this.pregledPrskanja.Location = new System.Drawing.Point(33, 66);
+            this.pregledPrskanja.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pregledPrskanja.MultiSelect = false;
             this.pregledPrskanja.Name = "pregledPrskanja";
             this.pregledPrskanja.ReadOnly = true;
+            this.pregledPrskanja.RowHeadersVisible = false;
             this.pregledPrskanja.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.pregledPrskanja.Size = new System.Drawing.Size(418, 179);
+            this.pregledPrskanja.Size = new System.Drawing.Size(557, 220);
             this.pregledPrskanja.TabIndex = 5;
             // 
             // datumDataGridViewTextBoxColumn
@@ -230,9 +238,10 @@
             // uiActionNovo
             // 
             this.uiActionNovo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.uiActionNovo.Location = new System.Drawing.Point(341, 239);
+            this.uiActionNovo.Location = new System.Drawing.Point(455, 294);
+            this.uiActionNovo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.uiActionNovo.Name = "uiActionNovo";
-            this.uiActionNovo.Size = new System.Drawing.Size(102, 34);
+            this.uiActionNovo.Size = new System.Drawing.Size(136, 42);
             this.uiActionNovo.TabIndex = 4;
             this.uiActionNovo.Text = "Dodaj prskanje";
             this.uiActionNovo.UseVisualStyleBackColor = true;
@@ -242,10 +251,11 @@
             // 
             this.pomocTab.AutoScroll = true;
             this.pomocTab.Controls.Add(this.ispisPomoc);
-            this.pomocTab.Location = new System.Drawing.Point(4, 22);
+            this.pomocTab.Location = new System.Drawing.Point(4, 25);
+            this.pomocTab.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pomocTab.Name = "pomocTab";
-            this.pomocTab.Padding = new System.Windows.Forms.Padding(3);
-            this.pomocTab.Size = new System.Drawing.Size(466, 279);
+            this.pomocTab.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pomocTab.Size = new System.Drawing.Size(624, 346);
             this.pomocTab.TabIndex = 0;
             this.pomocTab.Text = "Pomoć";
             this.pomocTab.UseVisualStyleBackColor = true;
@@ -253,19 +263,21 @@
             // ispisPomoc
             // 
             this.ispisPomoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ispisPomoc.Location = new System.Drawing.Point(6, 19);
+            this.ispisPomoc.Location = new System.Drawing.Point(8, 23);
+            this.ispisPomoc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ispisPomoc.Name = "ispisPomoc";
-            this.ispisPomoc.Size = new System.Drawing.Size(460, 273);
+            this.ispisPomoc.Size = new System.Drawing.Size(613, 336);
             this.ispisPomoc.TabIndex = 0;
             this.ispisPomoc.Text = resources.GetString("ispisPomoc.Text");
             // 
             // KontrolaPrskanje
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tabControl1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "KontrolaPrskanje";
-            this.Size = new System.Drawing.Size(510, 340);
+            this.Size = new System.Drawing.Size(680, 418);
             this.Load += new System.EventHandler(this.KontrolaPrskanje_Load);
             this.tabControl1.ResumeLayout(false);
             this.prskanjeTab.ResumeLayout(false);

@@ -81,10 +81,11 @@
             this.navodnjavanjeTabs.Controls.Add(this.navodnjavanjeTab);
             this.navodnjavanjeTabs.Controls.Add(this.oborineTab);
             this.navodnjavanjeTabs.Controls.Add(this.pomocTab);
-            this.navodnjavanjeTabs.Location = new System.Drawing.Point(18, 18);
+            this.navodnjavanjeTabs.Location = new System.Drawing.Point(24, 22);
+            this.navodnjavanjeTabs.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.navodnjavanjeTabs.Name = "navodnjavanjeTabs";
             this.navodnjavanjeTabs.SelectedIndex = 0;
-            this.navodnjavanjeTabs.Size = new System.Drawing.Size(474, 305);
+            this.navodnjavanjeTabs.Size = new System.Drawing.Size(632, 375);
             this.navodnjavanjeTabs.TabIndex = 8;
             this.navodnjavanjeTabs.SelectedIndexChanged += new System.EventHandler(this.NavodnjavanjeTabs_SelectedIndexChanged);
             // 
@@ -96,10 +97,11 @@
             this.navodnjavanjeTab.Controls.Add(this.uiActionAzuiraj);
             this.navodnjavanjeTab.Controls.Add(this.dataGridView1);
             this.navodnjavanjeTab.Controls.Add(this.uiActionNovo);
-            this.navodnjavanjeTab.Location = new System.Drawing.Point(4, 22);
+            this.navodnjavanjeTab.Location = new System.Drawing.Point(4, 25);
+            this.navodnjavanjeTab.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.navodnjavanjeTab.Name = "navodnjavanjeTab";
-            this.navodnjavanjeTab.Padding = new System.Windows.Forms.Padding(3);
-            this.navodnjavanjeTab.Size = new System.Drawing.Size(466, 279);
+            this.navodnjavanjeTab.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.navodnjavanjeTab.Size = new System.Drawing.Size(624, 346);
             this.navodnjavanjeTab.TabIndex = 1;
             this.navodnjavanjeTab.Text = "Navodnjavanje";
             this.navodnjavanjeTab.UseVisualStyleBackColor = true;
@@ -108,18 +110,20 @@
             // 
             this.izborGodine.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.izborGodine.FormattingEnabled = true;
-            this.izborGodine.Location = new System.Drawing.Point(25, 22);
+            this.izborGodine.Location = new System.Drawing.Point(33, 27);
+            this.izborGodine.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.izborGodine.Name = "izborGodine";
-            this.izborGodine.Size = new System.Drawing.Size(121, 21);
+            this.izborGodine.Size = new System.Drawing.Size(160, 24);
             this.izborGodine.TabIndex = 13;
             this.izborGodine.SelectedIndexChanged += new System.EventHandler(this.IzborGodine_SelectedIndexChanged);
             // 
             // uiActionStatistika
             // 
             this.uiActionStatistika.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.uiActionStatistika.Location = new System.Drawing.Point(341, 14);
+            this.uiActionStatistika.Location = new System.Drawing.Point(455, 17);
+            this.uiActionStatistika.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.uiActionStatistika.Name = "uiActionStatistika";
-            this.uiActionStatistika.Size = new System.Drawing.Size(102, 34);
+            this.uiActionStatistika.Size = new System.Drawing.Size(136, 42);
             this.uiActionStatistika.TabIndex = 8;
             this.uiActionStatistika.Text = "Statistika";
             this.uiActionStatistika.UseVisualStyleBackColor = true;
@@ -128,9 +132,10 @@
             // uiActionIzbrisi
             // 
             this.uiActionIzbrisi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.uiActionIzbrisi.Location = new System.Drawing.Point(153, 239);
+            this.uiActionIzbrisi.Location = new System.Drawing.Point(204, 294);
+            this.uiActionIzbrisi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.uiActionIzbrisi.Name = "uiActionIzbrisi";
-            this.uiActionIzbrisi.Size = new System.Drawing.Size(102, 34);
+            this.uiActionIzbrisi.Size = new System.Drawing.Size(136, 42);
             this.uiActionIzbrisi.TabIndex = 7;
             this.uiActionIzbrisi.Text = "Izbriši";
             this.uiActionIzbrisi.UseVisualStyleBackColor = true;
@@ -139,9 +144,10 @@
             // uiActionAzuiraj
             // 
             this.uiActionAzuiraj.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.uiActionAzuiraj.Location = new System.Drawing.Point(25, 239);
+            this.uiActionAzuiraj.Location = new System.Drawing.Point(33, 294);
+            this.uiActionAzuiraj.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.uiActionAzuiraj.Name = "uiActionAzuiraj";
-            this.uiActionAzuiraj.Size = new System.Drawing.Size(102, 34);
+            this.uiActionAzuiraj.Size = new System.Drawing.Size(136, 42);
             this.uiActionAzuiraj.TabIndex = 6;
             this.uiActionAzuiraj.Text = "Ažuriraj";
             this.uiActionAzuiraj.UseVisualStyleBackColor = true;
@@ -167,12 +173,14 @@
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5});
             this.dataGridView1.DataSource = this.navodnjavanjeViewBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(25, 54);
+            this.dataGridView1.Location = new System.Drawing.Point(33, 66);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(418, 179);
+            this.dataGridView1.Size = new System.Drawing.Size(557, 220);
             this.dataGridView1.TabIndex = 5;
             // 
             // dataGridViewTextBoxColumn1
@@ -241,9 +249,10 @@
             // uiActionNovo
             // 
             this.uiActionNovo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.uiActionNovo.Location = new System.Drawing.Point(341, 239);
+            this.uiActionNovo.Location = new System.Drawing.Point(455, 294);
+            this.uiActionNovo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.uiActionNovo.Name = "uiActionNovo";
-            this.uiActionNovo.Size = new System.Drawing.Size(102, 34);
+            this.uiActionNovo.Size = new System.Drawing.Size(136, 42);
             this.uiActionNovo.TabIndex = 4;
             this.uiActionNovo.Text = "Dodaj navodnjavanje";
             this.uiActionNovo.UseVisualStyleBackColor = true;
@@ -255,10 +264,11 @@
             this.oborineTab.Controls.Add(this.uiActionOdbij);
             this.oborineTab.Controls.Add(this.uiActionUnesi);
             this.oborineTab.Controls.Add(this.pregledOborine);
-            this.oborineTab.Location = new System.Drawing.Point(4, 22);
+            this.oborineTab.Location = new System.Drawing.Point(4, 25);
+            this.oborineTab.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.oborineTab.Name = "oborineTab";
-            this.oborineTab.Padding = new System.Windows.Forms.Padding(3);
-            this.oborineTab.Size = new System.Drawing.Size(466, 279);
+            this.oborineTab.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.oborineTab.Size = new System.Drawing.Size(624, 346);
             this.oborineTab.TabIndex = 2;
             this.oborineTab.Text = "Oborine";
             this.oborineTab.UseVisualStyleBackColor = true;
@@ -266,18 +276,20 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(26, 12);
+            this.label2.Location = new System.Drawing.Point(35, 15);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(152, 13);
+            this.label2.Size = new System.Drawing.Size(202, 17);
             this.label2.TabIndex = 11;
             this.label2.Text = "Dohvaćeni zapisi o oborinama:";
             // 
             // uiActionOdbij
             // 
             this.uiActionOdbij.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.uiActionOdbij.Location = new System.Drawing.Point(137, 239);
+            this.uiActionOdbij.Location = new System.Drawing.Point(183, 294);
+            this.uiActionOdbij.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.uiActionOdbij.Name = "uiActionOdbij";
-            this.uiActionOdbij.Size = new System.Drawing.Size(102, 34);
+            this.uiActionOdbij.Size = new System.Drawing.Size(136, 42);
             this.uiActionOdbij.TabIndex = 10;
             this.uiActionOdbij.Text = "Izbriši";
             this.uiActionOdbij.UseVisualStyleBackColor = true;
@@ -286,9 +298,10 @@
             // uiActionUnesi
             // 
             this.uiActionUnesi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.uiActionUnesi.Location = new System.Drawing.Point(29, 239);
+            this.uiActionUnesi.Location = new System.Drawing.Point(39, 294);
+            this.uiActionUnesi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.uiActionUnesi.Name = "uiActionUnesi";
-            this.uiActionUnesi.Size = new System.Drawing.Size(102, 34);
+            this.uiActionUnesi.Size = new System.Drawing.Size(136, 42);
             this.uiActionUnesi.TabIndex = 9;
             this.uiActionUnesi.Text = "Unesi";
             this.uiActionUnesi.UseVisualStyleBackColor = true;
@@ -314,12 +327,13 @@
             this.idPovrsinaDataGridViewTextBoxColumn,
             this.idStanjaDataGridViewTextBoxColumn});
             this.pregledOborine.DataSource = this.oborineBindingSource;
-            this.pregledOborine.Location = new System.Drawing.Point(29, 40);
+            this.pregledOborine.Location = new System.Drawing.Point(39, 49);
+            this.pregledOborine.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pregledOborine.MultiSelect = false;
             this.pregledOborine.Name = "pregledOborine";
             this.pregledOborine.ReadOnly = true;
             this.pregledOborine.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.pregledOborine.Size = new System.Drawing.Size(397, 179);
+            this.pregledOborine.Size = new System.Drawing.Size(529, 220);
             this.pregledOborine.TabIndex = 0;
             // 
             // datumDataGridViewTextBoxColumn
@@ -391,10 +405,11 @@
             // 
             this.pomocTab.AutoScroll = true;
             this.pomocTab.Controls.Add(this.ispisPomoc);
-            this.pomocTab.Location = new System.Drawing.Point(4, 22);
+            this.pomocTab.Location = new System.Drawing.Point(4, 25);
+            this.pomocTab.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pomocTab.Name = "pomocTab";
-            this.pomocTab.Padding = new System.Windows.Forms.Padding(3);
-            this.pomocTab.Size = new System.Drawing.Size(466, 279);
+            this.pomocTab.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pomocTab.Size = new System.Drawing.Size(624, 346);
             this.pomocTab.TabIndex = 0;
             this.pomocTab.Text = "Pomoć";
             this.pomocTab.UseVisualStyleBackColor = true;
@@ -402,19 +417,21 @@
             // ispisPomoc
             // 
             this.ispisPomoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ispisPomoc.Location = new System.Drawing.Point(6, 11);
+            this.ispisPomoc.Location = new System.Drawing.Point(8, 14);
+            this.ispisPomoc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ispisPomoc.Name = "ispisPomoc";
-            this.ispisPomoc.Size = new System.Drawing.Size(440, 351);
+            this.ispisPomoc.Size = new System.Drawing.Size(587, 432);
             this.ispisPomoc.TabIndex = 0;
             this.ispisPomoc.Text = resources.GetString("ispisPomoc.Text");
             // 
             // KontrolaNavodnjavanje
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.navodnjavanjeTabs);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "KontrolaNavodnjavanje";
-            this.Size = new System.Drawing.Size(510, 340);
+            this.Size = new System.Drawing.Size(680, 418);
             this.Load += new System.EventHandler(this.KontrolaNavodnjavanje_Load);
             this.navodnjavanjeTabs.ResumeLayout(false);
             this.navodnjavanjeTab.ResumeLayout(false);

@@ -185,7 +185,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::PoljoAppVerzija2.Properties.Resources.Logo___crni;
+            this.pictureBox1.Image = global::PoljoApp.Properties.Resources.Logocrni;
             this.pictureBox1.Location = new System.Drawing.Point(161, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(53, 51);
@@ -298,7 +298,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.pictureBox3.Image = global::PoljoAppVerzija2.Properties.Resources.rain;
+            this.pictureBox3.Image = global::PoljoApp.Properties.Resources.rain;
             this.pictureBox3.Location = new System.Drawing.Point(65, 481);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(76, 62);
