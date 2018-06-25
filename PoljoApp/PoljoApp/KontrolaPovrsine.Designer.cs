@@ -90,6 +90,7 @@
             // 
             // izborNamjenePovrsina
             // 
+            this.izborNamjenePovrsina.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.izborNamjenePovrsina.FormattingEnabled = true;
             this.izborNamjenePovrsina.Location = new System.Drawing.Point(35, 27);
             this.izborNamjenePovrsina.Margin = new System.Windows.Forms.Padding(4);

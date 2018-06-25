@@ -74,6 +74,7 @@
             // 
             this.izborProizvodaZaSadnju.DataSource = this.sadnimaterijalBindingSource;
             this.izborProizvodaZaSadnju.DisplayMember = "naziv";
+            this.izborProizvodaZaSadnju.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.izborProizvodaZaSadnju.FormattingEnabled = true;
             this.izborProizvodaZaSadnju.Location = new System.Drawing.Point(198, 50);
             this.izborProizvodaZaSadnju.Margin = new System.Windows.Forms.Padding(4);
@@ -139,6 +140,7 @@
             // 
             this.izborPovrsine.DataSource = this.poljpovrsinaBindingSource;
             this.izborPovrsine.DisplayMember = "naziv";
+            this.izborPovrsine.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.izborPovrsine.FormattingEnabled = true;
             this.izborPovrsine.Location = new System.Drawing.Point(198, 11);
             this.izborPovrsine.Margin = new System.Windows.Forms.Padding(4);

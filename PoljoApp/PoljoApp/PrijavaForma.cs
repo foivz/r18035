@@ -9,6 +9,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataLayer;
+using System.Net.NetworkInformation;
 
 namespace PoljoAppVerzija2
 {
@@ -31,10 +32,17 @@ namespace PoljoAppVerzija2
         {
             string email = unosEmail.Text;
             string lozinka = unosLozinka.Text;
-
-            if (email != "" && lozinka != "")
-                IzvrsiPrijavu(email, lozinka);
-            else MessageBox.Show("Niste unijeli obje vrijednosti!");
+            try
+            {
+                if (email != "" && lozinka != "")
+                    IzvrsiPrijavu(email, lozinka);
+                else MessageBox.Show("Niste unijeli obje vrijednosti!");
+            }
+            catch(ExceptionNemaInterneta ex)
+            {
+                MessageBox.Show(ex.Poruka);
+            }
+            
         }
 
         /// <summary>
@@ -54,10 +62,19 @@ namespace PoljoAppVerzija2
         /// <param name="lozinka"></param>
         private void IzvrsiPrijavu(string email, string lozinka)
         {
+            DataLayer.Djelatnik korisnik;
             string lozinkaHash = Kriptiranje.NapraviHash(lozinka);
-            DataLayer.Djelatnik korisnik = DjelatniciRepozitorij.Prijava(email, lozinkaHash);
+            if (!NetworkInterface.GetIsNetworkAvailable())
+            {
+                throw new ExceptionNemaInterneta("Nema interneta!");
+            }
+            else
+            {
+                 korisnik=DjelatniciRepozitorij.Prijava(email, lozinkaHash);
+            }
             
-            if (korisnik != null) {
+            if (korisnik != null)
+            {
                 this.Hide();
                 PoljoApp app = new PoljoApp(korisnik);
                 app.FormClosed += (s, args) => this.Close();

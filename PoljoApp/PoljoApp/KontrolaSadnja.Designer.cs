@@ -92,6 +92,7 @@
             // 
             // izborSadnogMaterijala
             // 
+            this.izborSadnogMaterijala.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.izborSadnogMaterijala.FormattingEnabled = true;
             this.izborSadnogMaterijala.Location = new System.Drawing.Point(204, 27);
             this.izborSadnogMaterijala.Margin = new System.Windows.Forms.Padding(4);
@@ -102,6 +103,7 @@
             // 
             // izborPoljPovrsina
             // 
+            this.izborPoljPovrsina.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.izborPoljPovrsina.FormattingEnabled = true;
             this.izborPoljPovrsina.Location = new System.Drawing.Point(33, 27);
             this.izborPoljPovrsina.Margin = new System.Windows.Forms.Padding(4);

@@ -118,6 +118,7 @@
             // 
             this.uiOdabirNamjene.DataSource = this.namjenapovrsineBindingSource;
             this.uiOdabirNamjene.DisplayMember = "namjena";
+            this.uiOdabirNamjene.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.uiOdabirNamjene.FormattingEnabled = true;
             this.uiOdabirNamjene.Location = new System.Drawing.Point(129, 81);
             this.uiOdabirNamjene.Margin = new System.Windows.Forms.Padding(4);
