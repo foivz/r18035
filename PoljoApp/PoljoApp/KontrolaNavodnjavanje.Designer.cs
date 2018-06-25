@@ -106,6 +106,7 @@
             // 
             // izborGodine
             // 
+            this.izborGodine.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.izborGodine.FormattingEnabled = true;
             this.izborGodine.Location = new System.Drawing.Point(25, 22);
             this.izborGodine.Name = "izborGodine";

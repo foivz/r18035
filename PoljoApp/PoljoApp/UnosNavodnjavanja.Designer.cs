@@ -49,6 +49,7 @@
             // 
             this.izborPovrsine.DataSource = this.poljpovrsinaBindingSource;
             this.izborPovrsine.DisplayMember = "naziv";
+            this.izborPovrsine.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.izborPovrsine.FormattingEnabled = true;
             this.izborPovrsine.Location = new System.Drawing.Point(15, 115);
             this.izborPovrsine.Name = "izborPovrsine";
@@ -85,6 +86,7 @@
             // 
             this.izborVrsta.DataSource = this.stanjeNavodnjavanjaBindingSource;
             this.izborVrsta.DisplayMember = "Naziv";
+            this.izborVrsta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.izborVrsta.FormattingEnabled = true;
             this.izborVrsta.Location = new System.Drawing.Point(104, 46);
             this.izborVrsta.Name = "izborVrsta";

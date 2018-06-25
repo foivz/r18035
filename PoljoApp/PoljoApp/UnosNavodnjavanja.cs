@@ -100,7 +100,7 @@ namespace PoljoAppVerzija2
         /// <param name="e"></param>
         private void UiActionSpremi_Click(object sender, EventArgs e)
         {
-            if (this.NavodnjavanjeZaIzmjenu == null)
+            if (this.NavodnjavanjeZaIzmjenu == null && Validiraj())
             {
                 DataLayer.Navodnjavanje novo = new DataLayer.Navodnjavanje()
                 {
@@ -112,17 +112,25 @@ namespace PoljoAppVerzija2
                 NavodnjavanjeRepozitorij.Spremi(novo);
                 Close();
             }
-            else
-            {                
+            else if (this.NavodnjavanjeZaIzmjenu != null && Validiraj())
+            {
                 NavodnjavanjeZaIzmjenu.IdPovrsina = (int)izborPovrsine.SelectedValue;
                 NavodnjavanjeZaIzmjenu.Datum = izborDatum.Value;
                 NavodnjavanjeZaIzmjenu.KolicinaVode = decimal.Parse(unosKolicinaVode.Text);
                 NavodnjavanjeZaIzmjenu.IdStanja = (int)izborVrsta.SelectedValue;
 
-                NavodnjavanjeRepozitorij.Azuriraj(NavodnjavanjeZaIzmjenu); 
-                
+                NavodnjavanjeRepozitorij.Azuriraj(NavodnjavanjeZaIzmjenu);
+
                 Close();
             }
+            else MessageBox.Show("Uneseni podaci nisu ispravni! Pokušajte ponovno i odaberite jednu od ponuđenih vrijednosti.",
+                                   "Pogrešan unos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+        private bool Validiraj()
+        {
+            if (double.TryParse(unosKolicinaVode.Text, out double kolicina))
+                return true;
+            else return false;
         }
     }
 }

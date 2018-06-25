@@ -34,6 +34,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.izborDjelatnik = new System.Windows.Forms.ComboBox();
+            this.djelatnikBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.izborDatum = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -43,10 +44,9 @@
             this.zastitaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label5 = new System.Windows.Forms.Label();
             this.unosOpis = new System.Windows.Forms.TextBox();
-            this.djelatnikBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.djelatnikBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.poljpovrsinaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zastitaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.djelatnikBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // uiActionOdustani
@@ -91,12 +91,17 @@
             // 
             this.izborDjelatnik.DataSource = this.djelatnikBindingSource;
             this.izborDjelatnik.DisplayMember = "Ime";
+            this.izborDjelatnik.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.izborDjelatnik.FormattingEnabled = true;
             this.izborDjelatnik.Location = new System.Drawing.Point(106, 46);
             this.izborDjelatnik.Name = "izborDjelatnik";
             this.izborDjelatnik.Size = new System.Drawing.Size(156, 21);
             this.izborDjelatnik.TabIndex = 14;
             this.izborDjelatnik.ValueMember = "Id";
+            // 
+            // djelatnikBindingSource
+            // 
+            this.djelatnikBindingSource.DataSource = typeof(DataLayer.Djelatnik);
             // 
             // izborDatum
             // 
@@ -127,6 +132,7 @@
             // 
             this.izborPovrsine.DataSource = this.poljpovrsinaBindingSource;
             this.izborPovrsine.DisplayMember = "naziv";
+            this.izborPovrsine.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.izborPovrsine.FormattingEnabled = true;
             this.izborPovrsine.Location = new System.Drawing.Point(17, 115);
             this.izborPovrsine.Name = "izborPovrsine";
@@ -138,6 +144,7 @@
             // 
             this.izborZastita.DataSource = this.zastitaBindingSource;
             this.izborZastita.DisplayMember = "naziv";
+            this.izborZastita.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.izborZastita.FormattingEnabled = true;
             this.izborZastita.Location = new System.Drawing.Point(211, 115);
             this.izborZastita.Name = "izborZastita";
@@ -162,10 +169,6 @@
             this.unosOpis.Size = new System.Drawing.Size(350, 73);
             this.unosOpis.TabIndex = 22;
             // 
-            // djelatnikBindingSource
-            // 
-            this.djelatnikBindingSource.DataSource = typeof(DataLayer.Djelatnik);
-            // 
             // UnosPrskanja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -187,9 +190,9 @@
             this.Name = "UnosPrskanja";
             this.Text = "Unos prskanja";
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.UnosPrskanja_KeyUp);
+            ((System.ComponentModel.ISupportInitialize)(this.djelatnikBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.poljpovrsinaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.zastitaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.djelatnikBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
