@@ -112,7 +112,7 @@ namespace PoljoAppVerzija2
 
             switch (unesenaVrsta)
             {
-                case "fungcid":
+                case "fungicid":
                     unosVrsteValjan = true;
                     break;
                 case "gnojivo":

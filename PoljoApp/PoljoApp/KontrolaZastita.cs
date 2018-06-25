@@ -81,7 +81,7 @@ namespace PoljoAppVerzija2
             
         }
         /// <summary>
-        /// Briše zaštitu odabranu na DataGridViewu
+        /// Briše zaštitu odabranu ako se ona ne koristi u nekom prskanju, u protivnom upozorava korisnika
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -93,8 +93,16 @@ namespace PoljoAppVerzija2
                 if (MessageBox.Show("Želte li izbrisati zaštitu?", "Pitanje", MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
                 {
-                    ZastitaRepozitorij.Izbrisi(odabranaZastita);
-                    PrikaziZastite();
+                    if (ZastitaRepozitorij.ValidirajBrisanje(odabranaZastita))
+                    {
+                        ZastitaRepozitorij.Izbrisi(odabranaZastita);
+                        PrikaziZastite();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Pokušavate obrisati zaštitu koji ste koristili! Ako želite obrisati ovu zaštitu molimo vas prvo izbrišite sva prskanja na kojima ste ga naveli.",
+                            "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
             }
         }

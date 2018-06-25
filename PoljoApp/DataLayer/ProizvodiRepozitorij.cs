@@ -97,5 +97,33 @@ namespace DataLayer
                 return db.sadni_materijal.Find(id);
             }
         }
+
+        /// <summary>
+        /// Provjerava da li se proizvod za brisanje nalazi na jednoj od sadnja
+        /// </summary>
+        /// <param name="materijalZaBrisati"></param>
+        /// <returns>ako se proizvod nalazi na sadnji false, ako ne true</returns>
+        public static bool ValidirajBrisanje(SadniMaterijal materijalZaBrisati)
+        {
+            bool smijeBrisati = false;
+            using (var db = new PoljoAppEntities())
+            {
+                List<Sadnja> listaSadnji = db.sadnja.ToList();
+                if (listaSadnji.Count != 0)
+                {
+                    foreach (var sadnja in listaSadnji)
+                    {
+                        if (sadnja.sadni_materijal.id == materijalZaBrisati.id)
+                        {
+                            smijeBrisati = false;
+                        }
+                        else smijeBrisati = true;
+                    }
+                }
+                else smijeBrisati = true;
+            }
+            return smijeBrisati;
+        }
+
     }
 }

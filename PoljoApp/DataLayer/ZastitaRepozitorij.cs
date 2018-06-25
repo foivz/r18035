@@ -94,5 +94,32 @@ namespace DataLayer
                 return db.zastita.Find(id);
             }
         }
+
+        /// <summary>
+        /// Provjerava da li se zaštita za brisanje nalazi na jednom od prskanja
+        /// </summary>
+        /// <param name="zastitaZaBrisanje"></param>
+        /// <returns>ako se zaštita koristi u prskanju false, ako ne true </returns>
+        public static bool ValidirajBrisanje(zastita zastitaZaBrisanje)
+        {
+            bool smijeBrisati = false;
+            using (var db = new PoljoAppEntities())
+            {
+                List<Prskanje> listaPrskanja = db.Prskanje.ToList();
+                if (listaPrskanja.Count != 0)
+                {
+                    foreach (Prskanje prskanje in listaPrskanja)
+                    {
+                        if (prskanje.zastita.id == zastitaZaBrisanje.id)
+                        {
+                            smijeBrisati = false;
+                        }
+                        else smijeBrisati = true;
+                    }
+                }
+                else smijeBrisati = true;
+            }
+            return smijeBrisati;
+        }
     }
 }
