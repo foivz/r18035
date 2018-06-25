@@ -119,7 +119,9 @@ namespace PoljoAppVerzija2
             }
             PrikaziPrskanja();
         }
-
+        /// <summary>
+        /// Otvara tab pomoći
+        /// </summary>
         public void OtvoriPomoc()
         {
             tabControl1.SelectedTab = pomocTab;

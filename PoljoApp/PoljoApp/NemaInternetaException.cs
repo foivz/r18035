@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 namespace PoljoAppVerzija2
 {
     /// <summary>
-    /// Iznika u slučaju ako nema interneta
+    /// Iznimka u slučaju ako nema interneta
     /// </summary>
-    class ExceptionNemaInterneta : Exception
+    class NemaInternetaException : Exception
     {
         public string Poruka;
-        public ExceptionNemaInterneta(string poruka)
+        public NemaInternetaException(string poruka)
         {
             this.Poruka = poruka;
         }

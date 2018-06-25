@@ -38,7 +38,7 @@ namespace PoljoAppVerzija2
                     IzvrsiPrijavu(email, lozinka);
                 else MessageBox.Show("Niste unijeli obje vrijednosti!");
             }
-            catch(ExceptionNemaInterneta ex)
+            catch(NemaInternetaException ex)
             {
                 MessageBox.Show(ex.Poruka);
             }
@@ -66,7 +66,7 @@ namespace PoljoAppVerzija2
             string lozinkaHash = Kriptiranje.NapraviHash(lozinka);
             if (!NetworkInterface.GetIsNetworkAvailable())
             {
-                throw new ExceptionNemaInterneta("Nema interneta!");
+                throw new NemaInternetaException("Nema interneta!");
             }
             else
             {
