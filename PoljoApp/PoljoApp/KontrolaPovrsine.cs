@@ -16,6 +16,9 @@ namespace PoljoAppVerzija2
     /// </summary>
     public partial class KontrolaPovrsine : UserControl
     {
+        /// <summary>
+        /// Konstruktor koji inicijalizira komponentu
+        /// </summary>
         public KontrolaPovrsine()
         {
             InitializeComponent();
@@ -65,6 +68,11 @@ namespace PoljoAppVerzija2
             }
             izborNamjenePovrsina.SelectedIndex = 0;
         }
+        /// <summary>
+        /// Osvježava prikaz površina prilikom promjene indexa
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void izborNamjenePovrsina_SelectedIndexChanged(object sender, EventArgs e)
         {
             PrikaziPovrsine();

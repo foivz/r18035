@@ -16,6 +16,9 @@ namespace PoljoAppVerzija2
     /// </summary>
     public partial class KontrolaSadnja : UserControl
     {
+        /// <summary>
+        /// Konstruktor koji inicijalizira komponentu
+        /// </summary>
         public KontrolaSadnja()
         {
             InitializeComponent();
@@ -123,12 +126,20 @@ namespace PoljoAppVerzija2
             PrikaziVrsteSadnihMaterijala();
             PrikaziSadnju();
         }
-
+        /// <summary>
+        /// Osvježava prikaz sadnje prilikom promjene indexa
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void izborPoljPovrsina_SelectedIndexChanged(object sender, EventArgs e)
         {
             PrikaziSadnju();
         }
-
+        /// <summary>
+        /// Osvježaba prikaz sadnje prilikom promjene indexa
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void izborSadnogMaterijala_SelectedIndexChanged(object sender, EventArgs e)
         {
             PrikaziSadnju();
