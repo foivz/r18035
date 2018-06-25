@@ -58,13 +58,17 @@ namespace DataLayer
         /// Briše proslijeđenog djelatnika iz baze
         /// </summary>
         /// <param name="zaBrisanje"></param>
-        public static void Izbrisi(Djelatnik zaBrisanje)
+        public static bool Izbrisi(Djelatnik zaBrisanje)
         {
             using (var db = new PoljoAppEntities())
             {
                 db.Djelatnik.Attach(zaBrisanje);
-                db.Djelatnik.Remove(zaBrisanje);
-                db.SaveChanges();
+                if (zaBrisanje.Prskanje.Count > 0) return false;
+                else {
+                    db.Djelatnik.Remove(zaBrisanje);
+                    db.SaveChanges();
+                    return true;
+                }
             }
         }
 

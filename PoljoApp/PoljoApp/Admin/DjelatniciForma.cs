@@ -77,7 +77,7 @@ namespace PoljoAppVerzija2.Admin
             
             if (MessageBox.Show("Jeste li ste sigurni da želite obrisati djelatnika?", "Upozorenje!", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
             {
-                DjelatniciRepozitorij.Izbrisi(zaBrisanje);
+                if(!DjelatniciRepozitorij.Izbrisi(zaBrisanje)) MessageBox.Show("Zapis je nemoguće obrisati jer je djelatnik obavljao prskanje!");
             }
         }
     }
