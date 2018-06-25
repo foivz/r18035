@@ -42,12 +42,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.sadniMaterijalViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.vrstasadnogmaterijalaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nazivDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.jedinicnamjeraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vrstaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sadniMaterijalViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vrstasadnogmaterijalaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1.SuspendLayout();
             this.sadnjaTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -63,10 +63,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.sadnjaTab);
             this.tabControl1.Controls.Add(this.pomocTab);
-            this.tabControl1.Location = new System.Drawing.Point(18, 18);
+            this.tabControl1.Location = new System.Drawing.Point(24, 22);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(474, 305);
+            this.tabControl1.Size = new System.Drawing.Size(632, 375);
             this.tabControl1.TabIndex = 9;
             // 
             // sadnjaTab
@@ -76,29 +77,33 @@
             this.sadnjaTab.Controls.Add(this.uiAzurirajProizvod);
             this.sadnjaTab.Controls.Add(this.dataGridView1);
             this.sadnjaTab.Controls.Add(this.uiDodajProizvod);
-            this.sadnjaTab.Location = new System.Drawing.Point(4, 22);
+            this.sadnjaTab.Location = new System.Drawing.Point(4, 25);
+            this.sadnjaTab.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.sadnjaTab.Name = "sadnjaTab";
-            this.sadnjaTab.Padding = new System.Windows.Forms.Padding(3);
-            this.sadnjaTab.Size = new System.Drawing.Size(466, 279);
+            this.sadnjaTab.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.sadnjaTab.Size = new System.Drawing.Size(624, 346);
             this.sadnjaTab.TabIndex = 1;
             this.sadnjaTab.Text = "Proizvodi";
             this.sadnjaTab.UseVisualStyleBackColor = true;
             // 
             // cmbIzborVrsteSadnogMaterijala
             // 
+            this.cmbIzborVrsteSadnogMaterijala.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbIzborVrsteSadnogMaterijala.FormattingEnabled = true;
-            this.cmbIzborVrsteSadnogMaterijala.Location = new System.Drawing.Point(26, 22);
+            this.cmbIzborVrsteSadnogMaterijala.Location = new System.Drawing.Point(35, 27);
+            this.cmbIzborVrsteSadnogMaterijala.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbIzborVrsteSadnogMaterijala.Name = "cmbIzborVrsteSadnogMaterijala";
-            this.cmbIzborVrsteSadnogMaterijala.Size = new System.Drawing.Size(121, 21);
+            this.cmbIzborVrsteSadnogMaterijala.Size = new System.Drawing.Size(160, 24);
             this.cmbIzborVrsteSadnogMaterijala.TabIndex = 9;
             this.cmbIzborVrsteSadnogMaterijala.SelectedIndexChanged += new System.EventHandler(this.cmbIzborVrsteSadnogMaterijala_SelectedIndexChanged);
             // 
             // uiIzbrisiProizvod
             // 
             this.uiIzbrisiProizvod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.uiIzbrisiProizvod.Location = new System.Drawing.Point(153, 239);
+            this.uiIzbrisiProizvod.Location = new System.Drawing.Point(204, 294);
+            this.uiIzbrisiProizvod.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.uiIzbrisiProizvod.Name = "uiIzbrisiProizvod";
-            this.uiIzbrisiProizvod.Size = new System.Drawing.Size(102, 34);
+            this.uiIzbrisiProizvod.Size = new System.Drawing.Size(136, 42);
             this.uiIzbrisiProizvod.TabIndex = 7;
             this.uiIzbrisiProizvod.Text = "Izbriši";
             this.uiIzbrisiProizvod.UseVisualStyleBackColor = true;
@@ -107,9 +112,10 @@
             // uiAzurirajProizvod
             // 
             this.uiAzurirajProizvod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.uiAzurirajProizvod.Location = new System.Drawing.Point(25, 239);
+            this.uiAzurirajProizvod.Location = new System.Drawing.Point(33, 294);
+            this.uiAzurirajProizvod.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.uiAzurirajProizvod.Name = "uiAzurirajProizvod";
-            this.uiAzurirajProizvod.Size = new System.Drawing.Size(102, 34);
+            this.uiAzurirajProizvod.Size = new System.Drawing.Size(136, 42);
             this.uiAzurirajProizvod.TabIndex = 6;
             this.uiAzurirajProizvod.Text = "Ažuriraj";
             this.uiAzurirajProizvod.UseVisualStyleBackColor = true;
@@ -131,21 +137,23 @@
             this.jedinicnamjeraDataGridViewTextBoxColumn,
             this.vrstaDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.sadniMaterijalViewBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(25, 54);
+            this.dataGridView1.Location = new System.Drawing.Point(33, 66);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(418, 179);
+            this.dataGridView1.Size = new System.Drawing.Size(557, 220);
             this.dataGridView1.TabIndex = 5;
             // 
             // uiDodajProizvod
             // 
             this.uiDodajProizvod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.uiDodajProizvod.Location = new System.Drawing.Point(341, 239);
+            this.uiDodajProizvod.Location = new System.Drawing.Point(455, 294);
+            this.uiDodajProizvod.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.uiDodajProizvod.Name = "uiDodajProizvod";
-            this.uiDodajProizvod.Size = new System.Drawing.Size(102, 34);
+            this.uiDodajProizvod.Size = new System.Drawing.Size(136, 42);
             this.uiDodajProizvod.TabIndex = 4;
             this.uiDodajProizvod.Text = "Dodaj proizvod";
             this.uiDodajProizvod.UseVisualStyleBackColor = true;
@@ -157,10 +165,11 @@
             this.pomocTab.Controls.Add(this.label3);
             this.pomocTab.Controls.Add(this.label2);
             this.pomocTab.Controls.Add(this.label1);
-            this.pomocTab.Location = new System.Drawing.Point(4, 22);
+            this.pomocTab.Location = new System.Drawing.Point(4, 25);
+            this.pomocTab.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pomocTab.Name = "pomocTab";
-            this.pomocTab.Padding = new System.Windows.Forms.Padding(3);
-            this.pomocTab.Size = new System.Drawing.Size(466, 279);
+            this.pomocTab.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pomocTab.Size = new System.Drawing.Size(624, 346);
             this.pomocTab.TabIndex = 0;
             this.pomocTab.Text = "Pomoć";
             this.pomocTab.UseVisualStyleBackColor = true;
@@ -168,9 +177,10 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(21, 216);
+            this.label4.Location = new System.Drawing.Point(28, 266);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(405, 39);
+            this.label4.Size = new System.Drawing.Size(539, 51);
             this.label4.TabIndex = 3;
             this.label4.Text = "4. Brisanje proizvoda\r\nKorisnik briše proizvod tako da klikne na željeni proizvod" +
     " u tablici i zatim klikne na \r\ngumb \"Izbriši\". Na skočnom prozoru potrebno je od" +
@@ -179,37 +189,32 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 155);
+            this.label3.Location = new System.Drawing.Point(28, 191);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(411, 52);
+            this.label3.Size = new System.Drawing.Size(549, 68);
             this.label3.TabIndex = 2;
             this.label3.Text = resources.GetString("label3.Text");
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 93);
+            this.label2.Location = new System.Drawing.Point(28, 114);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(406, 52);
+            this.label2.Size = new System.Drawing.Size(540, 68);
             this.label2.TabIndex = 1;
             this.label2.Text = resources.GetString("label2.Text");
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 19);
+            this.label1.Location = new System.Drawing.Point(28, 23);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(426, 65);
+            this.label1.Size = new System.Drawing.Size(569, 85);
             this.label1.TabIndex = 0;
             this.label1.Text = resources.GetString("label1.Text");
-            // 
-            // sadniMaterijalViewBindingSource
-            // 
-            this.sadniMaterijalViewBindingSource.DataSource = typeof(DataLayer.SadniMaterijalView);
-            // 
-            // vrstasadnogmaterijalaBindingSource
-            // 
-            this.vrstasadnogmaterijalaBindingSource.DataSource = typeof(DataLayer.VrstaSadnogMaterijala);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -240,13 +245,22 @@
             this.vrstaDataGridViewTextBoxColumn.Name = "vrstaDataGridViewTextBoxColumn";
             this.vrstaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // sadniMaterijalViewBindingSource
+            // 
+            this.sadniMaterijalViewBindingSource.DataSource = typeof(DataLayer.SadniMaterijalView);
+            // 
+            // vrstasadnogmaterijalaBindingSource
+            // 
+            this.vrstasadnogmaterijalaBindingSource.DataSource = typeof(DataLayer.VrstaSadnogMaterijala);
+            // 
             // KontrolaProizvodi
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tabControl1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "KontrolaProizvodi";
-            this.Size = new System.Drawing.Size(510, 340);
+            this.Size = new System.Drawing.Size(680, 418);
             this.Load += new System.EventHandler(this.KontrolaProizvodi_Load);
             this.tabControl1.ResumeLayout(false);
             this.sadnjaTab.ResumeLayout(false);

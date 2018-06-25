@@ -98,6 +98,71 @@ namespace DataLayer
                 return db.polj_povrsina.Find(id);
             }
         }
+        /// <summary>
+        /// Provjerava da li se površina koristi u nekim drugim tablicama
+        /// </summary>
+        /// <param name="površinaZaBrisati"></param>
+        /// <returns></returns>
+        public static bool ValidirajBrisanje(PoljPovrsina površinaZaBrisati)
+        {
+            bool smijeBrisatiSadnja = false;
+            bool smijeBrisatiNavodnjavanje = false;
+            bool smijeBrisatiPrskanje = false;
 
+            using (var db = new PoljoAppEntities())
+            {
+                List<Sadnja> listaSadnji = db.sadnja.ToList();
+                List <Navodnjavanje> listaNavodnjavanja= db.Navodnjavanje.ToList();
+                List<Prskanje> listaPrskanje = db.Prskanje.ToList();
+
+                if (listaSadnji.Count != 0)
+                {
+                    foreach (var sadnja in listaSadnji)
+                    {
+                        if (sadnja.polj_povrsina.id == površinaZaBrisati.id)
+                        {
+                            smijeBrisatiSadnja = false;
+                        }
+                        else smijeBrisatiSadnja = true;
+                    }
+                }
+                else smijeBrisatiSadnja = true;
+
+                if (listaNavodnjavanja.Count != 0)
+                {
+                    foreach (var navodnjavanje in listaNavodnjavanja)
+                    {
+                        if (navodnjavanje.polj_povrsina.id == površinaZaBrisati.id)
+                        {
+                            smijeBrisatiNavodnjavanje = false;
+                        }
+                        else smijeBrisatiNavodnjavanje = true;
+                    }
+                }
+                else smijeBrisatiNavodnjavanje = true;
+
+                if (listaPrskanje.Count != 0)
+                {
+                    foreach (var prskanje in listaPrskanje)
+                    {
+                        if (prskanje.polj_povrsina.id == površinaZaBrisati.id)
+                        {
+                            smijeBrisatiPrskanje = false;
+                        }
+                        else smijeBrisatiPrskanje = true;
+                    }
+                }
+                else smijeBrisatiPrskanje = true;
+            }
+            if(smijeBrisatiSadnja && smijeBrisatiPrskanje && smijeBrisatiNavodnjavanje)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
     }
 }

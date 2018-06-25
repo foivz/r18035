@@ -45,10 +45,12 @@
             // 
             this.uiActionOdabirVrste.DataSource = this.vrstazastiteBindingSource;
             this.uiActionOdabirVrste.DisplayMember = "naziv";
+            this.uiActionOdabirVrste.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.uiActionOdabirVrste.FormattingEnabled = true;
-            this.uiActionOdabirVrste.Location = new System.Drawing.Point(94, 72);
+            this.uiActionOdabirVrste.Location = new System.Drawing.Point(125, 89);
+            this.uiActionOdabirVrste.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.uiActionOdabirVrste.Name = "uiActionOdabirVrste";
-            this.uiActionOdabirVrste.Size = new System.Drawing.Size(177, 21);
+            this.uiActionOdabirVrste.Size = new System.Drawing.Size(235, 24);
             this.uiActionOdabirVrste.TabIndex = 16;
             this.uiActionOdabirVrste.ValueMember = "id";
             // 
@@ -58,9 +60,10 @@
             // 
             // uiActionSpremi
             // 
-            this.uiActionSpremi.Location = new System.Drawing.Point(196, 109);
+            this.uiActionSpremi.Location = new System.Drawing.Point(261, 134);
+            this.uiActionSpremi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.uiActionSpremi.Name = "uiActionSpremi";
-            this.uiActionSpremi.Size = new System.Drawing.Size(75, 23);
+            this.uiActionSpremi.Size = new System.Drawing.Size(100, 28);
             this.uiActionSpremi.TabIndex = 15;
             this.uiActionSpremi.Text = "Spremi";
             this.uiActionSpremi.UseVisualStyleBackColor = true;
@@ -68,9 +71,10 @@
             // 
             // uiActionOdustani
             // 
-            this.uiActionOdustani.Location = new System.Drawing.Point(94, 109);
+            this.uiActionOdustani.Location = new System.Drawing.Point(125, 134);
+            this.uiActionOdustani.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.uiActionOdustani.Name = "uiActionOdustani";
-            this.uiActionOdustani.Size = new System.Drawing.Size(75, 23);
+            this.uiActionOdustani.Size = new System.Drawing.Size(100, 28);
             this.uiActionOdustani.TabIndex = 14;
             this.uiActionOdustani.Text = "Odustani";
             this.uiActionOdustani.UseVisualStyleBackColor = true;
@@ -78,50 +82,55 @@
             // 
             // uiUnosKoncentracije
             // 
-            this.uiUnosKoncentracije.Location = new System.Drawing.Point(94, 41);
+            this.uiUnosKoncentracije.Location = new System.Drawing.Point(125, 50);
+            this.uiUnosKoncentracije.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.uiUnosKoncentracije.Name = "uiUnosKoncentracije";
-            this.uiUnosKoncentracije.Size = new System.Drawing.Size(177, 20);
+            this.uiUnosKoncentracije.Size = new System.Drawing.Size(235, 22);
             this.uiUnosKoncentracije.TabIndex = 13;
             // 
             // uiUnosNaziva
             // 
-            this.uiUnosNaziva.Location = new System.Drawing.Point(94, 12);
+            this.uiUnosNaziva.Location = new System.Drawing.Point(125, 15);
+            this.uiUnosNaziva.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.uiUnosNaziva.Name = "uiUnosNaziva";
-            this.uiUnosNaziva.Size = new System.Drawing.Size(177, 20);
+            this.uiUnosNaziva.Size = new System.Drawing.Size(235, 22);
             this.uiUnosNaziva.TabIndex = 12;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 72);
+            this.label3.Location = new System.Drawing.Point(12, 89);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(34, 13);
+            this.label3.Size = new System.Drawing.Size(45, 17);
             this.label3.TabIndex = 11;
             this.label3.Text = "Vrsta:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 44);
+            this.label2.Location = new System.Drawing.Point(12, 54);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 13);
+            this.label2.Size = new System.Drawing.Size(98, 17);
             this.label2.TabIndex = 10;
             this.label2.Text = "Koncentracija:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 15);
+            this.label1.Location = new System.Drawing.Point(12, 18);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 13);
+            this.label1.Size = new System.Drawing.Size(47, 17);
             this.label1.TabIndex = 9;
             this.label1.Text = "Naziv:";
             // 
             // UnosZastite
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(291, 147);
+            this.ClientSize = new System.Drawing.Size(388, 181);
             this.Controls.Add(this.uiActionOdabirVrste);
             this.Controls.Add(this.uiActionSpremi);
             this.Controls.Add(this.uiActionOdustani);
@@ -130,6 +139,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "UnosZastite";
             this.Text = "Unos zastite";
             ((System.ComponentModel.ISupportInitialize)(this.vrstazastiteBindingSource)).EndInit();

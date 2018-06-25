@@ -117,8 +117,17 @@ namespace PoljoAppVerzija2
                 {
                     using (var db = new PoljoAppEntities())
                     {
-                        PovrsinaRepozitorij.Izbrisi(zaBrisanje);
-                        PrikaziPovrsine();
+                        if (PovrsinaRepozitorij.ValidirajBrisanje(zaBrisanje))
+                        {
+                            PovrsinaRepozitorij.Izbrisi(zaBrisanje);
+                            PrikaziPovrsine();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Pokušavate obrisati površinu na kojoj ste sadili, prskali ili navodnjavali! Ako želite obrisati ovu površinu molimo vas prvo izbrišite sve sadnje, prskanja i navodnjavanja na toj površini.",
+                            "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                        
                     }
                     
                 }
