@@ -85,7 +85,7 @@ namespace PoljoAppVerzija2
             }
         }
         /// <summary>
-        /// Briše odabrani proizvod
+        /// Briše odabrani proizvod ako se on nije posađen, u suprotnom vraća upozorenje
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -97,8 +97,17 @@ namespace PoljoAppVerzija2
                 if (MessageBox.Show("Želte li izbrisati proizvod?", "Pitanje", MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
                 {
-                    ProizvodiRepozitorij.Izbrisi(odabraniProizvod);
-                    PrikaziSadniMaterijal();
+                    if (ProizvodiRepozitorij.ValidirajBrisanje(odabraniProizvod))
+                    {
+                        ProizvodiRepozitorij.Izbrisi(odabraniProizvod);
+                        PrikaziSadniMaterijal();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Pokušavate obrisati proizvod koji ste posadili! Ako želite obrisati ovaj proizvod molimo vas prvo izbrišite sve sadnje na kojima ste ga naveli.", 
+                            "Upozorenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    
                 }
             }
         }
